@@ -65,3 +65,5 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 # portail-web-aia-bandjoun
+# portail-web-aia-bandjoun
+il s'agit d'un site pour l'unité de recherche Aia de l'IUT-FV de bandjoun que nous devons réaliser dans le carde de notre projet de fin d'etude
