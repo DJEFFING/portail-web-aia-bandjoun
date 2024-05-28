@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('notes', function (Blueprint $table) {
             $table->id();
-            $table->string("nom");
+            $table->integer("note_value");
+            $table->unsignedBigInteger("evernement_id");
+            $table->foreign("evernement_id")->references("id")->on("evernements")->onDelete("cascade");
+            $table->boolean("status")->default(false);
+
             $table->timestamps();
         });
     }
@@ -23,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('notes');
     }
 };

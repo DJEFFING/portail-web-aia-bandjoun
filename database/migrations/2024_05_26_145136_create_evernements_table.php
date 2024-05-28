@@ -11,9 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('evernements', function (Blueprint $table) {
             $table->id();
-            $table->string("nom");
+            $table->string("titre");
+            $table->longText("description_1");
+            $table->string("media_url");
+            $table->longText("description_2");
+            $table->boolean("status")->default(false);
+
             $table->timestamps();
         });
     }
@@ -23,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('evernements');
     }
 };

@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserRole extends Model
+class Equipe extends Model
 {
     use HasFactory;
-    protected $fillable =[
-        "user_id",
-        "role_id"
-    ];
+
+    public function poleRecherche()
+    {
+        return $this->belongsTo(PoleRecherche::class);
+    }
 }

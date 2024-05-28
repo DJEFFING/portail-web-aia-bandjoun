@@ -7,7 +7,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">
-                        <h2 data-aos="fade-down">Welcome to <span>UpConstruction</span></h2>
+                        <h2 data-aos="fade-down">Welcome to <span>ur-AIA</span></h2>
                         <p data-aos="fade-up">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                             tempor
                             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -51,68 +51,50 @@
     </section><!-- End Hero Section -->
 
     <main id="main">
+         <!-- ======= About Section ======= -->
+         <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
 
-        <!-- ======= Get Started Section ======= -->
-        <section id="get-started" class="get-started section-bg">
-            <div class="container">
+                <div class="row position-relative">
 
-                <div class="row justify-content-between gy-4">
+                    <div class="col-lg-7 about-img" style="background-image: url( {{ asset('asset_web/assets/img/about.jpg') }} );"></div>
 
-                    <div class="col-lg-6 d-flex align-items-center" data-aos="fade-up">
-                        <div class="content">
-                            <h3>Minus hic non reiciendis ea possimus at quia.</h3>
-                            <p>Rem id rerum. Debitis deserunt quidem delectus expedita ducimus dolor. Aut iusto ipsa.
-                                Eos ipsum nobis
-                                ipsa soluta itaque perspiciatis fuga ipsum perspiciatis. Eum amet fugiat totam nisi
-                                possimus ut delectus
-                                dicta.
-                            <p>Aliquam velit deserunt autem. Inventore et saepe. Tenetur suscipit eligendi labore culpa
-                                eos. Deserunt
-                                porro magni qui necessitatibus dolorem at animi cupiditate.</p>
+                    <div class="col-lg-7">
+                        <h2>Consequatur eius et magnam</h2>
+                        <div class="our-story">
+                            <h4>Est 1988</h4>
+                            <h3>Our Story</h3>
+                            <p>Inventore aliquam beatae at et id alias. Ipsa dolores amet consequuntur minima quia maxime
+                                autem.
+                                Quidem id sed ratione. Tenetur provident autem in reiciendis rerum at dolor. Aliquam
+                                consectetur
+                                laudantium temporibus dicta minus dolor.</p>
+                            <ul>
+                                <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea
+                                        commo</span></li>
+                                <li><i class="bi bi-check-circle"></i> <span>Duis aute irure dolor in reprehenderit
+                                        in</span></li>
+                                <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea</span>
+                                </li>
+                            </ul>
+                            <p>Vitae autem velit excepturi fugit. Animi ad non. Eligendi et non nesciunt suscipit
+                                repellendus porro in
+                                quo eveniet. Molestias in maxime doloremque.</p>
+
+                            <div class="watch-video d-flex align-items-center position-relative">
+                                <i class="bi bi-play-circle"></i>
+                                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox stretched-link">Watch
+                                    Video</a>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-5" data-aos="fade">
-                        <form action="forms/quote.php" method="post" class="php-email-form">
-                            <h3>Get a quote</h3>
-                            <p>Vel nobis odio laboriosam et hic voluptatem. Inventore vitae totam. Rerum repellendus
-                                enim linead sero
-                                park flows.</p>
-                            <div class="row gy-3">
-
-                                <div class="col-md-12">
-                                    <input type="text" name="name" class="form-control" placeholder="Name" required>
-                                </div>
-
-                                <div class="col-md-12 ">
-                                    <input type="email" class="form-control" name="email" placeholder="Email" required>
-                                </div>
-
-                                <div class="col-md-12">
-                                    <input type="text" class="form-control" name="phone" placeholder="Phone" required>
-                                </div>
-
-                                <div class="col-md-12">
-                                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-                                </div>
-
-                                <div class="col-md-12 text-center">
-                                    <div class="loading">Loading</div>
-                                    <div class="error-message"></div>
-                                    <div class="sent-message">Your quote request has been sent successfully. Thank you!
-                                    </div>
-
-                                    <button type="submit">Get a quote</button>
-                                </div>
-
-                            </div>
-                        </form>
-                    </div><!-- End Quote Form -->
 
                 </div>
 
             </div>
-        </section><!-- End Get Started Section -->
+        </section>
+        <!-- End About Section -->
+
 
         <!-- ======= Constructions Section ======= -->
         <section id="constructions" class="constructions">
