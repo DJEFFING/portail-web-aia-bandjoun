@@ -47,16 +47,23 @@
                 <li>
                     <center><div class="sidebar-small-cap">Managment Admin</div></center>
                 </li>
-
                 <li class="dropdown-toggle no-arrow">
-                    </span>Teams</a>
+                    <a href="{{ route('admin.fonction.index') }}"></span>Fonction</a>
                 </li>
 
-                <li class="dropdown-toggle no-arrow">
-                    </span>Projets</a>
+                <li class="dropdown active">
+                    <a  href="javascript:;" class="dropdown-toggle">
+                        <span class="micon dw dw-library"></span><span class="mtext">Pole Recherhe</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="{{ route('admin.poleRecherche.showStore') }}">Ajouter</a></li>
+                        <li><a href="{{ route('admin.poleRecherche.index') }}">Liste</a></li>
+                    </ul>
                 </li>
 
-                <li class="dropdown-toggle no-arrow">
+
+
+                {{-- <li class="dropdown-toggle no-arrow">
                     </span>Equipes</a>
                 </li>
 
@@ -90,7 +97,7 @@
 
                 <li class="dropdown-toggle no-arrow">
                     </span>Dongs</a>
-                </li>
+                </li> --}}
 
             </ul>
         </div>

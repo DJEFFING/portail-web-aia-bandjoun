@@ -5,11 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserRole extends Model
+class Evernement extends Model
 {
     use HasFactory;
-    protected $fillable =[
-        "user_id",
-        "role_id"
+    
+    protected $fillable = [
+        "titre",
+        "description_1",
+        "description_2",
+        "media_url",
     ];
 }

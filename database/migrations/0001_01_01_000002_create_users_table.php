@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string("twiter_url")->nullable();
             $table->string("web_url")->nullable();
             $table->string('password');
+            
 
             $table->rememberToken();
             $table->timestamps();
