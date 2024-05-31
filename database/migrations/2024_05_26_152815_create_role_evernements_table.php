@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('role_evernements', function (Blueprint $table) {
             $table->id();
             $table->string("nom");
+            $table->string("description");
             $table->boolean("status")->default(false);
 
             $table->timestamps();

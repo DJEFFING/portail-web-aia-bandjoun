@@ -4,6 +4,17 @@
 
     </div>
     <div class="header-right">
+
+
+        <div class="dashboard-setting user-notification">
+            @if (Auth::user()->getRole("Admin"))
+            <span class="badge badge-danger">Admin</span>
+            @else
+            <span class="badge badge-success">Membre</span>
+            @endif
+
+        </div>
+
         <div class="dashboard-setting user-notification">
             <div class="dropdown">
                 <a class="dropdown-toggle no-arrow" href="javascript:;" data-toggle="right-sidebar">

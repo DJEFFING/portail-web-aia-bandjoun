@@ -29,7 +29,7 @@ class UserRoleSeeder extends Seeder
         ];
 
         UserRole::create($userRole_1);
-        UserRole::create($userRole_2);
-        UserRole::create($userRole_3);
+        // UserRole::create($userRole_2);
+        // UserRole::create($userRole_3);
     }
 }

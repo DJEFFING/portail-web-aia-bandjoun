@@ -12,4 +12,9 @@ class Type extends Model
     protected $fillable =[
         "nom"
     ];
+
+    public function evernements()
+    {
+        return $this->belongsToMany(Evernement::class, 'type_evernements');
+    }
 }

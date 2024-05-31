@@ -44,34 +44,51 @@
                                                                 <span class="badge badge-success">Reponssable</span> :<label
                                                                     for="">{{ $listPole->user->name }}</label>
                                                                 <div class="pt-10">
+
                                                                     <a href="{{ route('admin.poleRecherche.show', $listPole->id) }}"
                                                                         class="btn btn-sm btn-outline-info me-2">
                                                                         <i class="dw dw-eye"></i>
                                                                     </a>
-                                                                    <a href="{{ route('admin.poleRecherche.showUpdate', $listPole->id) }}"
-                                                                        class="btn btn-sm btn-outline-warning me-2">
-                                                                        <i class="dw dw-edit2"></i>
-                                                                    </a>
-                                                                    <button class="btn btn-sm btn-outline-danger"
-                                                                        data-toggle="modal" data-target= "{{ '#delete'.$listPole->id }}">
-                                                                        <i class="dw dw-delete-3"></i>
-                                                                    </button>
+
+                                                                    @if (Auth::user()->getRole('Admin'))
+
+                                                                        <a href="{{ route('admin.poleRecherche.showUpdate', $listPole->id) }}"
+                                                                            class="btn btn-sm btn-outline-warning me-2">
+                                                                            <i class="dw dw-edit2"></i>
+                                                                        </a>
+
+                                                                        <button class="btn btn-sm btn-outline-danger"
+                                                                            data-toggle="modal"
+                                                                            data-target= "{{ '#delete' . $listPole->id }}">
+                                                                            <i class="dw dw-delete-3"></i>
+                                                                        </button>
+                                                                    @endif
+
                                                                     <small class="me-2">
-                                                                        <a href="{{ route('admin.poleRecherche.isVisble', $listPole->id) }}">
+                                                                        <a
+                                                                            href="{{(Auth::user()->getRole("admin")) ? route('admin.poleRecherche.isVisble', $listPole->id) : '#'}}">
                                                                             @if ($listPole->status)
-                                                                            <span class="badge badge-success">
-                                                                                publier
-                                                                            </span>
+                                                                                <span class="badge badge-success">
+                                                                                    publier
+                                                                                </span>
                                                                             @else
-                                                                            <span class="badge badge-danger">
-                                                                                non-public
-                                                                            </span>
+                                                                                <span class="badge badge-danger">
+                                                                                    non-public
+                                                                                </span>
                                                                             @endif
 
                                                                         </a>
                                                                     </small>
 
-                                                                    @include('admin.global-modal.delete-modal',["url" => route('admin.poleRecherche.delete', $listPole->id),"id"=>$listPole->id])
+                                                                    @include(
+                                                                        'admin.global-modal.delete-modal',
+                                                                        [
+                                                                            'url' => route(
+                                                                                'admin.poleRecherche.delete',
+                                                                                $listPole->id),
+                                                                            'id' => $listPole->id,
+                                                                        ]
+                                                                    )
                                                                 </div>
                                                             </div>
                                                         </div>

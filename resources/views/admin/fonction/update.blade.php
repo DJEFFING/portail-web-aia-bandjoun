@@ -8,7 +8,7 @@
                     <span aria-hidden="true">X</span>
                 </button>
             </div>
-            <form action="{{ route('admin.fonction.update',$item) }}" method="POST">
+            <form action="{{ route('admin.fonction.update',$item->id) }}" method="POST">
                 @csrf
             <div class="modal-body text-center">
                 <div class="col-md-12">
