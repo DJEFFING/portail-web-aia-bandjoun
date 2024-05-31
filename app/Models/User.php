@@ -104,4 +104,9 @@ class User extends Authenticatable
         return $this->hasMany(Projet::class);
     }
 
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
+
 }

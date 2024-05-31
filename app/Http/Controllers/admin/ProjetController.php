@@ -19,7 +19,7 @@ class ProjetController extends Controller
 {
     public  function index()
     {
-        $listProjet = Projet::all();
+        $listProjet = Projet::latest()->get();
         return view('admin.gestion-projet.projet.index',compact('listProjet'));
     }
 
@@ -43,16 +43,16 @@ class ProjetController extends Controller
     public function showStore()
     {
 
-        $listUsers = User::all();
-        $listPoles = PoleRecherche::all();
+        $listUsers = User::latest()->get();
+        $listPoles = PoleRecherche::latest()->get();
         return view('admin.gestion-projet.projet.create',compact('listUsers','listPoles'));
     }
 
     public function showUpdate(Projet $projet)
     {
 
-        $listUsers = User::all();
-        $listPoles = PoleRecherche::all();
+        $listUsers = User::latest()->get();
+        $listPoles = PoleRecherche::latest()->get();
         return view('admin.gestion-projet.projet.update',compact('projet','listUsers','listPoles'));
     }
 
@@ -61,7 +61,7 @@ class ProjetController extends Controller
         // dd($projet);
         $listPartenaire = $this->getPartenaire($projet->id);
         $listEquipe = $this->getEquipe($projet);
-        $listRoleEquipeProjet = RoleEquipeProjet::all();
+        $listRoleEquipeProjet = RoleEquipeProjet::latest()->get();
         return view('admin.gestion-projet.projet.show',compact('projet','listEquipe','listRoleEquipeProjet','listPartenaire'));
 
     }
@@ -146,7 +146,7 @@ class ProjetController extends Controller
 
     public function getPartenaire($projet_id)
     {
-        $paratenaires = Partenaire::all();
+        $paratenaires = Partenaire::latest()->get();
         $listPartenaire = [];
         foreach($paratenaires as $paratenaire)
         {

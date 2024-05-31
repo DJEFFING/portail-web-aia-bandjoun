@@ -24,4 +24,9 @@ class PoleRecherche extends Model
     public function equipes(){
         return $this->hasMany(Equipe::class);
     }
+
+    public function revues()
+    {
+        return $this->hasMany(Revue::class);
+    }
 }

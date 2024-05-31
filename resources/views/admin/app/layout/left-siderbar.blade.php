@@ -74,8 +74,8 @@
                         <span class="micon dw dw-library"></span><span class="mtext">Pole Recherhe</span>
                     </a>
                     <ul class="submenu">
-                        @if (Auth::user()->getRole("Admin"))
-                        <li><a href="{{ route('admin.poleRecherche.showStore') }}">Ajouter</a></li>
+                        @if (Auth::user()->getRole('Admin'))
+                            <li><a href="{{ route('admin.poleRecherche.showStore') }}">Ajouter</a></li>
                         @endif
                         <li><a href="{{ route('admin.poleRecherche.index') }}">Liste</a></li>
                     </ul>
@@ -89,7 +89,9 @@
 
                         <li><a href="{{ route('admin.roleEquipe.index') }}">Role Equipe</a></li>
                         <li><a href="{{ route('admin.equipe.index') }} ">Liste Equipe</a></li>
-                        <li><a href="{{ route('admin.equipe.showStore') }}">Ajouter une Equipe</a></li>
+                        @if (Auth::user()->getRole('Admin'))
+                            <li><a href="{{ route('admin.equipe.showStore') }}">Ajouter une Equipe</a></li>
+                        @endif
 
 
                     </ul>
@@ -103,8 +105,10 @@
 
                         <li><a href="{{ route('admin.typeEvernement.index') }}">Type Evènement</a></li>
                         <li><a href="{{ route('admin.roleEvernement.index') }}">Role Evènement</a></li>
-                        <li><a href="{{ route('admin.evernement.showStore') }}">Ajouter une Evènement</a></li>
-                        <li><a href="{{ route('admin.evernement.index') }}">Liste  Evènement</a></li>
+                        @if (Auth::user()->getRole('Admin'))
+                            <li><a href="{{ route('admin.evernement.showStore') }}">Ajouter une Evènement</a></li>
+                        @endif
+                        <li><a href="{{ route('admin.evernement.index') }}">Liste Evènement</a></li>
 
 
                     </ul>
@@ -116,8 +120,21 @@
                     </a>
                     <ul class="submenu">
                         <li><a href="{{ route('admin.roleEquipeProjet.index') }}">Role Projet</a></li>
-                        <li><a href="{{ route('admin.projet.showStore') }}">Ajouter Projet</a></li>
-                        <li><a href="{{ route('admin.projet.index') }}">Liste  Projets</a></li>
+                        @if (Auth::user()->getRole('Admin'))
+                            <li><a href="{{ route('admin.projet.showStore') }}">Ajouter Projet</a></li>
+                        @endif
+                        <li><a href="{{ route('admin.projet.index') }}">Liste Projets</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown active">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon dw dw-library"></span><span class="mtext">Blogs</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="{{ route('admin.revue.index') }}">Revues</a></li>
+                        <li><a href="{{ route('admin.article.showStore') }}">Ajouter un Article</a></li>
+                        <li><a href="{{ route('admin.article.index') }}">Articles</a></li>
                     </ul>
                 </li>
 

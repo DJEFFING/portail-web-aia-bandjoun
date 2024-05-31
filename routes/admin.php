@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\ArticleController;
 use App\Http\Controllers\admin\authantification\LoginController;
 use App\Http\Controllers\admin\equipeController;
 use App\Http\Controllers\admin\EvernementController;
@@ -7,6 +8,7 @@ use App\Http\Controllers\admin\fonctionController;
 use App\Http\Controllers\admin\PartenaireController;
 use App\Http\Controllers\admin\PoleRechercheController;
 use App\Http\Controllers\admin\ProjetController;
+use App\Http\Controllers\admin\RevueController;
 use App\Http\Controllers\admin\RoleEquipeController;
 use App\Http\Controllers\admin\RoleEquipeProjetController;
 use App\Http\Controllers\admin\RoleEvernementController;
@@ -138,6 +140,27 @@ Route::name('admin.')->prefix('admin/')->group(function () {
             Route::get('/{projet}-isVisible', 'isVisible')->name('isVisible');
 
             Route::delete('/{projet}', 'delete')->name('delete');
+        });
+
+        Route::middleware(['role:Admin'])->controller(RevueController::class)->name('revue.')->prefix('revue/')->group(function(){
+            Route::get('/','index')->name('index')->withoutMiddleware(['role:Admin']);
+            Route::post('/','store')->name('store');
+            Route::post('/{revue}','update')->name('update');
+            Route::delete('/{revue}','delete')->name('delete');
+        });
+
+        Route::middleware(['role:Admin'])->controller(ArticleController::class)->name('article.')->prefix('article')->group(function () {
+            Route::get('/', 'index')->name('index')->withoutMiddleware(['role:Admin']);
+            Route::get('/showStore', 'showStore')->name('showStore')->withoutMiddleware(['role:Admin']);
+            Route::get('/{article}-showUpdate', 'showUpdate')->name('showUpdate')->withoutMiddleware(['role:Admin']);
+            Route::get('/{article}-show', 'show')->name('show')->withoutMiddleware(['role:Admin']);
+            Route::get('/{article}-isVisible','isVisible')->name('isVisible');
+
+            Route::post('/', 'store')->name('store')->withoutMiddleware(['role:Admin']);
+            Route::post('/{article}-update', 'update')->name('update')->withoutMiddleware(['role:Admin']);
+
+            Route::get('/{article}-isVisible', 'isVisible')->name('isVisible');
+            Route::delete('/{article}', 'delete')->name('delete');
         });
 
 

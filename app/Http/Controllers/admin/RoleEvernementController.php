@@ -10,7 +10,7 @@ class RoleEvernementController extends Controller
 {
     public function index()
     {
-        $listRoleEvernement = RoleEvernement::all();
+        $listRoleEvernement = RoleEvernement::latest()->get();
         return view('admin.gestion-vernement.role_evernement.index',compact('listRoleEvernement'));
     }
 
