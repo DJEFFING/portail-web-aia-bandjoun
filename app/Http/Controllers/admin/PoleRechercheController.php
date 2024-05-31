@@ -45,10 +45,11 @@ class PoleRechercheController extends Controller
             ]
         );
         // dd($request);
-        // $media = $request->media_url->store->('pole_recherhe');
-        $media = "http://127.0.0.1:8000/asset_web/assets/img/projects/repairs-1.jpg";
+        // $media = "http://127.0.0.1:8000/asset_web/assets/img/projects/repairs-1.jpg";
         // $media = $request->store->media_url->public('pole_recherhe');
 
+        $media = $request->file('media_url')->store('pole_recherche');
+        
         $newPoleRecherche = [
             'titre' => $request->titre,
             'description_1' => $request->description_1,

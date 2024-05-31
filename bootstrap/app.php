@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\UserHasRole;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -18,6 +19,9 @@ return Application::configure(basePath: dirname(__DIR__))
         }
     )->withMiddleware(function (Middleware $middleware) {
         //
+        // $middleware->append(UserHasRole::class);
+        // $middleware->appendToGroup('role', [UserHasRole::class]);
+        $middleware->alias(['role'=>UserHasRole::class]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

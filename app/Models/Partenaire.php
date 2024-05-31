@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Partenaire extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        "nom",
+        "description",
+        "logo_url",
+        "status"
+    ];
 }

@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string("titre");
             $table->longText("description_1");
             $table->longText("description_2");
+            $table->date("date_debut");
+            $table->date("date_fin");
             $table->string("media_url");
             $table->unsignedBigInteger("user_id")->unique(); // responssable du projet
             $table->unsignedBigInteger("pole_recherche_id");

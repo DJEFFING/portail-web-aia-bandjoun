@@ -19,10 +19,13 @@
                             <h4 class="text-blue h4">Liste</h4>
 
                         </div>
-                        <div class="pull-right">
-                            <a href="#striped-table" class="btn btn-primary btn-sm scroll-click" rel="content-y"
-                                data-toggle="modal" data-target="#Ajouter" role="button">Ajouter</a>
-                        </div>
+                        @if (Auth::user()->getRole('Admin'))
+                            <div class="pull-right">
+                                <a href="#striped-table" class="btn btn-primary btn-sm scroll-click" rel="content-y"
+                                    data-toggle="modal" data-target="#Ajouter" role="button">Ajouter</a>
+                            </div>
+                        @endif
+
                     </div>
                     <table class="table table-striped">
                         <thead>
@@ -45,20 +48,23 @@
                                             data-target="{{ '#show' . $fonction->id }}">
                                             <i class="dw dw-eye"></i>
                                         </button>
-                                        <button href="" class="btn btn-sm btn-outline-warning me-2"
-                                            data-toggle="modal" data-target="{{ '#update' . $fonction->id }}">
-                                            <i class="dw dw-edit2"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-danger" data-toggle="modal"
-                                            data-target="{{ '#delete' . $fonction->id }}">
-                                            <i class="dw dw-delete-3"></i>
-                                        </button>
+                                        @if (Auth::user()->getRole('Admin'))
+                                            <button href="" class="btn btn-sm btn-outline-warning me-2"
+                                                data-toggle="modal" data-target="{{ '#update' . $fonction->id }}">
+                                                <i class="dw dw-edit2"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger" data-toggle="modal"
+                                                data-target="{{ '#delete' . $fonction->id }}">
+                                                <i class="dw dw-delete-3"></i>
+                                            </button>
+                                        @endif
                                     </td>
 
                                     @include('admin.fonction.show', [
                                         'id' => $fonction->id,
                                         'item' => $fonction,
                                     ])
+
                                     @include('admin.fonction.update', [
                                         'id' => $fonction->id,
                                         'item' => $fonction,
@@ -67,6 +73,7 @@
                                         'id' => $fonction->id,
                                         'url' => route('admin.fonction.delete', $fonction->id),
                                     ])
+
                                 </tr>
 
                             @empty
