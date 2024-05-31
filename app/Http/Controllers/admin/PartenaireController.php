@@ -12,7 +12,7 @@ class PartenaireController extends Controller
     public function index()
     {
 
-        $listPartenaires = Partenaire::all();
+        $listPartenaires = Partenaire::latest()->get();;
         return view('admin.partenaire.index',compact('listPartenaires'));
     }
 

@@ -14,8 +14,8 @@ class equipeController extends Controller
 {
     public function index()
     {
-        $equipes = Equipe::all();
-        $poleRecherches = PoleRecherche::all();
+        $equipes = Equipe::latest()->get();
+        $poleRecherches = PoleRecherche::latest()->get();;
 
         return view('admin.gestion-equipe.equipes.index', compact('equipes', 'poleRecherches'));
     }

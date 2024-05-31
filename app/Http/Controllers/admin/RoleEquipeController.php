@@ -10,7 +10,7 @@ class RoleEquipeController extends Controller
 {
     public function index()
     {
-        $roleEquipes = RoleEquipe::all();
+        $roleEquipes = RoleEquipe::latest()->get();
         return view('admin.gestion-equipe.role_equipe.index',compact('roleEquipes'));
     }
 

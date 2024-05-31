@@ -11,7 +11,7 @@ class RoleEquipeProjetController extends Controller
     public function index()
     {
 
-       $listRoleEquipeProjet =  RoleEquipeProjet::all();
+       $listRoleEquipeProjet =  RoleEquipeProjet::latest()->get();
         return view('admin.gestion-projet.role_projets.index',compact('listRoleEquipeProjet'));
     }
 

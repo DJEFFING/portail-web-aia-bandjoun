@@ -51,9 +51,8 @@
                                             @forelse ($poleRecherche->equipes as $equipe)
 
                                             <li>
-                                                <h4><a href="#">Ut enim ad minim veniam, quis nostrud exercitation
-                                                        ullamco</a></h4>
-                                                <span>HTML</span>
+                                                <h4><a href="{{ route('admin.equipe.show',$equipe->id) }}">{{ $equipe->titre }}</a></h4>
+                                                {{-- <span>HTML</span> --}}
                                             </li>
 
                                             @empty

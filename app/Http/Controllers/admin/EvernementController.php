@@ -17,8 +17,8 @@ class EvernementController extends Controller
 {
     public  function index()
     {
-        $listEvernement = Evernement::all();
-        $listTypeEvernement = Type::all();
+        $listEvernement = Evernement::latest()->get();;
+        $listTypeEvernement = Type::latest()->get();;
         return view('admin.gestion-vernement.evernement.index',compact('listEvernement','listTypeEvernement'));
     }
 

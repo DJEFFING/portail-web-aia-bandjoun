@@ -10,7 +10,7 @@ class TypeEvernementController extends Controller
 {
     public function index()
     {
-        $listTypeEvernements = Type::all();
+        $listTypeEvernements = Type::latest()->get();
        return view('admin.gestion-vernement.type_evernement.index',compact('listTypeEvernements'));
     }
 

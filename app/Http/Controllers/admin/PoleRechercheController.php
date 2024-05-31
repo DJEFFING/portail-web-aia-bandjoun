@@ -17,14 +17,14 @@ class PoleRechercheController extends Controller
 
     public function showStore()
     {
-        $userList  = User::all();
+        $userList  = User::latest()->get();
         return view('admin.pole_recherche.store', compact('userList'));
     }
 
     public function showUpdate(PoleRecherche $poleRecherche)
     {
 
-        $userList  = User::all();
+        $userList  = User::latest()->get();
         return view('admin.pole_recherche.update', compact('poleRecherche', 'userList'));
     }
 
@@ -48,8 +48,8 @@ class PoleRechercheController extends Controller
         // $media = "http://127.0.0.1:8000/asset_web/assets/img/projects/repairs-1.jpg";
         // $media = $request->store->media_url->public('pole_recherhe');
 
-        $media = $request->file('media_url')->store('pole_recherche');
-        
+        $media = $request->file('media_url')->store('public','pole_recherche');
+
         $newPoleRecherche = [
             'titre' => $request->titre,
             'description_1' => $request->description_1,
@@ -82,8 +82,8 @@ class PoleRechercheController extends Controller
 
 
         $media = $request->media_url;
-        if ($request->media_url != null) {
-            $media = "http://127.0.0.1:8000/asset_web/assets/img/projects/repairs-1.jpg";
+        if ($request->hasFile('media_url')) {
+            $media = $request->file('media_url')->store('public','pole_recherche');
         }
         $poleRecherche->update([
             'titre' => $request->titre,

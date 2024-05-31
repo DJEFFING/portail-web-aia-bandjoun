@@ -10,7 +10,7 @@ class fonctionController extends Controller
 {
     public function index()
     {
-        $fonctions = Fonction::all();
+        $fonctions = Fonction::latest()->get();;
         return view('admin.fonction.index',compact('fonctions'));
     }
 
