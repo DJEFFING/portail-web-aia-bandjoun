@@ -167,6 +167,7 @@ Route::name('admin.')->prefix('admin/')->group(function () {
 
         Route::controller(userController::class)->name('user.')->prefix('user/')->group(function(){
             Route::get('/','index')->name('index');
+            Route::get('/{user}-show','show')->name('show');
             Route::post('/','store')->name('store');
             Route::post('/{user}-update','update')->name('update');
             Route::get('/profil','profil')->name('profil');

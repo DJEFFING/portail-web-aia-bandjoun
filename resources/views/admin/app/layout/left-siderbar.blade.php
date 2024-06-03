@@ -55,6 +55,8 @@
                         <div class="sidebar-small-cap">Managment Admin</div>
                     </center>
                 </li>
+
+
                 <a href="{{ route('admin.fonction.index') }}">
                     <li class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-house-1"></span>
@@ -66,6 +68,14 @@
                     <li class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-house-1"></span>
                         Partenaires
+                    </li>
+                </a>
+
+                <li></li>
+                <a href="{{ route('admin.user.index') }}">
+                    <li class="dropdown-toggle no-arrow">
+                        <i class="fa fa-users"></i>
+                        Utilisateur
                     </li>
                 </a>
 

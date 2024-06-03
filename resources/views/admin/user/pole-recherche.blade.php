@@ -2,7 +2,11 @@
     <div class="pd-20">
         <div class="profile-timeline">
             <div class="timeline-month">
+                @if(Auth::user()->id == $user->id)
                 <h5>Vous êtes responsable d'un pôle de recherche.</h5>
+                @else
+                <h5>Pôle de recherche.</h5>
+                @endif
             </div>
             <div class="blog-list">
                 <ul>

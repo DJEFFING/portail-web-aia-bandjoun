@@ -2,7 +2,11 @@
     <div class="pd-20">
         <div class="profile-timeline">
             <div class="timeline-month">
-                <h5>{{ $titre }}</h5>
+                @if(Auth::user()->id == $user->id)
+                    <h5>{{ $titre }}</h5>
+                @else
+                <h5>Equipe</h5>
+                @endif
             </div>
             <div class="blog-list">
                 <ul>

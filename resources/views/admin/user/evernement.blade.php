@@ -3,7 +3,11 @@
         <div class="profile-timeline">
             <div class="task-title row align-items-center">
                 <div class="col-md-8 col-sm-12">
+                @if(Auth::user()->id == $user->id)
                     <h5>Les Evénements auxquels vous participez.({{ count($evenements) }})</h5>
+                @else
+                <h5>Les Evénements.({{ count($evenements) }})</h5>
+                @endif
                 </div>
 
             </div>
@@ -49,7 +53,7 @@
 
                                                     <small class="me-2">
                                                         <a
-                                                            href="{{ Auth::user()->getRole('admin') ? route('admin.evernement.isVisble', $evenement->id) : '#' }}">
+                                                            href="{{ Auth::user()->getRole('admin') ? route('admin.evernement.isVisible', $evenement->id) : '#' }}">
                                                             @if ($evenement->status)
                                                                 <span class="badge badge-success">
                                                                     publier
@@ -62,11 +66,12 @@
 
                                                         </a>
                                                     </small>
-
+                                                    
                                                     @include('admin.global-modal.delete-modal', [
                                                         'url' => route('admin.evernement.delete', $evenement->id),
                                                         'id' => $evenement->id,
                                                     ])
+
                                                 </div>
                                             </div>
                                         </div>
