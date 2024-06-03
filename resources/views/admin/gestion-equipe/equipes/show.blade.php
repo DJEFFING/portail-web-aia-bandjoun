@@ -9,19 +9,14 @@
                             <div class="title">
                                 <h4>Detaill d'une equipe</h4>
                             </div>
-                            <nav aria-label="breadcrumb" role="navigation">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{ route('admin.poleRecherche.index') }}">Pole De
-                                            Recheche</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Detail> {{ $equipe->titre }}</li>
-                                </ol>
-                            </nav>
+                            <h5><small><span class="badge badge-danger">Pole Recherche :</span></small> {{ $equipe->poleRecherche->titre }}</h5><br>
+                            <h5><small><span class="badge badge-success">Titre :</span></small>  {{ $equipe->titre }}</h5>
                         </div>
                     </div>
                 </div>
                 <div class="blog-wrap">
                     <div class="container pd-0">
-                        <h4>{{ $equipe->titre }}</h4>
+
                         <div class="row">
                             <div class="col-md-8 col-sm-12">
                                 <div class="blog-detail card-box overflow-hidden mb-30">
@@ -29,10 +24,12 @@
                                         <img src="{{ asset('storage/' . $equipe->media_url) }}" alt="">
                                     </div>
                                     <div class="blog-caption">
+                                        <h4>{{ $equipe->titre }}</h4>
                                         {!! $equipe->description_2 !!}
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-md-4 col-sm-12">
                                 <div class="card-box mb-30">
                                     <h5 class="pd-20 h5 mb-0"><span class="badge badge-success">Reponssable</span></h5>
@@ -40,8 +37,8 @@
 
                                         <a class="list-group-item d-flex align-items-center justify-content-between"
                                             href="#">
-                                            <img src="{{ asset('asset_admin/vendors/images/photo1.jpg') }} "
-                                                style="width: 70px; height: 70px;" alt="">
+                                            <img src="{{ asset(asset('storage/'.$equipe->user->profil_url)) }} "
+                                                class="avatar-photo" style="width: 70px; height: 70px;" alt="">
                                             <span class="user-name">{{ $equipe->user->name }}</span>
                                         </a>
                                     </div>

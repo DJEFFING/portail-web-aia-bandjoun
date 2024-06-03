@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Equipe;
 use App\Models\PoleRecherche;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class PoleRechercheController extends Controller
 
     public function showStore()
     {
-        $userList  = User::latest()->get();
+        $userList  = $this->getUser();
         return view('admin.pole_recherche.store', compact('userList'));
     }
 
@@ -41,14 +42,14 @@ class PoleRechercheController extends Controller
             ],
             [
                 'user_id.required' => 'le responsable du pôle est obligatoire',
-                'user_id.unique' => "le membre selectionner est déjà reponssable d'un pôle de recherche"
+                'user_id.unique' => "Le membre sélectionné est déjà responsable d'un pôle de recherche."
             ]
         );
         // dd($request);
         // $media = "http://127.0.0.1:8000/asset_web/assets/img/projects/repairs-1.jpg";
         // $media = $request->store->media_url->public('pole_recherhe');
 
-        $media = $request->file('media_url')->store('public','pole_recherche');
+        $media = $request->file('media_url')->store('pole_recherche','public');
 
         $newPoleRecherche = [
             'titre' => $request->titre,
@@ -83,13 +84,13 @@ class PoleRechercheController extends Controller
 
         $media = $request->media_url;
         if ($request->hasFile('media_url')) {
-            $media = $request->file('media_url')->store('public','pole_recherche');
+            $media = $request->file('media_url')->store('pole_recherche','public');
+            $poleRecherche->update(["media_url"=>$media]);
         }
         $poleRecherche->update([
             'titre' => $request->titre,
             'description_1' => $request->description_1,
             'description_2' => $request->description_2,
-            'media_url' => $media,
             'user_id' => $request->user_id,
         ]);
 
@@ -109,5 +110,23 @@ class PoleRechercheController extends Controller
         //suppression des images enregistrer
         $poleRecherche->delete();
         return redirect()->back()->with('message','le pôle a été supprimé avec success !!');
+    }
+
+    public function getUser()
+    {
+        // Récupérer les IDs des responsables de pôle et d'équipe
+        $listRespPole = PoleRecherche::pluck('user_id')->toArray();
+        $listRespEquipe = Equipe::pluck('user_id')->toArray();
+
+        // Récupérer les IDs des utilisateurs qui sont membres d'une équipe
+        $listEquipeUser = User::whereHas('equipe')->pluck('id')->toArray();
+
+        // Combiner toutes les IDs dans un seul tableau pour vérifier l'exclusion
+        $excludedUserIds = array_merge($listRespPole, $listRespEquipe, $listEquipeUser);
+
+        // Récupérer les utilisateurs qui ne sont dans aucune des listes
+        $listMembre = User::whereNotIn('id', $excludedUserIds)->get();
+
+        return $listMembre;
     }
 }

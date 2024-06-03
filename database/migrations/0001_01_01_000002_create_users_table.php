@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('telephone')->unique();
-
+            $table->string('grade')->nullable();
+            $table->string('adress')->nullable();
+ 
             $table->string('prenom');
             $table->string('description');
             $table->enum("sexe",['M','F']);
@@ -25,10 +27,11 @@ return new class extends Migration
             $table->string('profil_url')->nullable();
             $table->string("facebook_url")->nullable();
             $table->string("instagram_url")->nullable();
+            $table->string("linkdin_url")->nullable();
             $table->string("twiter_url")->nullable();
             $table->string("web_url")->nullable();
             $table->string('password');
-            
+
 
             $table->rememberToken();
             $table->timestamps();

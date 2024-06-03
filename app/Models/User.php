@@ -25,9 +25,12 @@ class User extends Authenticatable
         "telephone",
         "description",
         "sexe",
+        "grade",
+        "adress",
         "profil_url",
         "facebook_url",
         "instagram_url",
+        "linkdin_url",
         "twiter_url",
         "web_url",
 
@@ -83,30 +86,41 @@ class User extends Authenticatable
         return $this->belongsToMany(Equipe::class,'equipe_users');
     }
 
+    //pour avoir la liste des roles que l'utilisateur à dans un évènement
     public function roleEquipe(){
         return $this->belongsToMany(RoleEquipe::class, 'equipe_users');
     }
 
+    //pour avoir la liste des roles que l'utilisateur dans les événements
     public function roleEvernements(){
         return $this->belongsToMany(RoleEvernement::class,'user_evernements')
         ->withPivot("user_id", "evernement_id", "role_evernement_id");
     }
 
 
+    //pour avoir la liste des événement au quels participe l'utilisateur
     public function evernements()
     {
         return $this->belongsToMany(Evernement::class,'user_evernements')
         ->withPivot("user_id", "evernement_id", "role_evernement_id");
     }
 
+    //pour avoir la list des projets dont l'utilisateur est le responsable
     public function projet()
     {
         return $this->hasMany(Projet::class);
     }
 
+    //pour avoir la liste des articles écrite par un utilisateur
     public function articles()
     {
         return $this->hasMany(Article::class);
+    }
+
+    //pour avoir les notifications de l'utilisateurs
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
     }
 
 }

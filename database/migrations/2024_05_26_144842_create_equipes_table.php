@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('equipes', function (Blueprint $table) {
             $table->id();
             $table->string("titre");
+            $table->string("code_equipe")->nullable();
             $table->longText("description_1");
             $table->longText("description_2");
             $table->string("media_url");

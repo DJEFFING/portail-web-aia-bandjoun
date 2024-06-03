@@ -29,7 +29,7 @@
                                                 <div class="row no-gutters">
                                                     <div class="col-lg-4 col-md-12 col-sm-12">
                                                         <div class="blog-img">
-                                                            <img src="{{ $listPole->media_url }}" alt=""
+                                                            <img src="{{ asset('storage/'.$listPole->media_url )}}" alt=""
                                                                 class="bg_img">
                                                         </div>
                                                     </div>

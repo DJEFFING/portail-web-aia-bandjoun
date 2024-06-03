@@ -13,6 +13,7 @@ class PoleRecherche extends Model
         'description_1',
         'description_2',
         'media_url',
+        "code_pole",
         'user_id',
         'status',
     ];

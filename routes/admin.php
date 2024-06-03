@@ -13,6 +13,7 @@ use App\Http\Controllers\admin\RoleEquipeController;
 use App\Http\Controllers\admin\RoleEquipeProjetController;
 use App\Http\Controllers\admin\RoleEvernementController;
 use App\Http\Controllers\admin\TypeEvernementController;
+use App\Http\Controllers\admin\userController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -164,13 +165,18 @@ Route::name('admin.')->prefix('admin/')->group(function () {
         });
 
 
-
-
-        Route::prefix('user/')->group(function () {
-            Route::get('/profil', function () {
-                return view('admin.profil');
-            })->name('profil');
+        Route::controller(userController::class)->name('user.')->prefix('user/')->group(function(){
+            Route::get('/','index')->name('index');
+            Route::post('/','store')->name('store');
+            Route::post('/{user}-update','update')->name('update');
+            Route::get('/profil','profil')->name('profil');
         });
+
+        // Route::prefix('user/')->group(function () {
+        //     Route::get('/profil', function () {
+        //         return view('admin.profil');
+        //     })->name('profil');
+        // });
     });
 
 
