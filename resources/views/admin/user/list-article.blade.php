@@ -7,11 +7,13 @@
                 <div class="col-md-8 col-sm-12">
                     <h5>Liste Article ({{ count($user->articles) }})</h5>
                 </div>
-                <div class="col-md-4 col-sm-12 text-right">
-                    <a href="{{ route('admin.article.showStore') }}"
-                        class="bg-light-blue btn text-blue weight-500"><i
-                            class="ion-plus-round"></i> Add</a>
-                </div>
+                @if(Auth::user()->id == $user->id)
+                    <div class="col-md-4 col-sm-12 text-right">
+                        <a href="{{ route('admin.article.showStore') }}"
+                            class="bg-light-blue btn text-blue weight-500"><i
+                                class="ion-plus-round"></i> Add</a>
+                    </div>
+                @endif
             </div>
 
             <div class="blog-list">

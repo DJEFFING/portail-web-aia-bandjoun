@@ -1,0 +1,229 @@
+@extends('admin.app.app')
+@section('content')
+    <div class="main-container">
+        <div class="pd-ltr-20 xs-pd-20-10">
+            <div class="min-height-200px">
+                <div class="page-header">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="title">
+                                <h4>Liste Utilisateurs</h4>
+                            </div>
+                            <nav aria-label="breadcrumb" role="navigation">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Liste Utilisateur</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- List Des Responssable de pole de Recherche -->
+                <div class="row clearfix">
+                    <!-- List Des Responssable de pole de Recherche -->
+                        @forelse ($listUserRespPole as $user)
+                            <a href="{{ route('admin.user.show',$user->id) }}">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-30">
+                                    <div class="pd-20 card-box height-100-p">
+                                        @if ($user->profil_url != null)
+                                            <div class="profile-photo" style="margin-bottom: 50px;">
+                                                <img src="{{ asset('storage/' . $user->profil_url) }}" alt=""
+                                                    class="avatar-photo">
+                                            </div>
+                                        @else
+                                            <div class="profile-photo" style="margin-bottom: 50px;">
+                                                <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }}"
+                                                    alt="" class="avatar-photo">
+                                            </div>
+                                        @endif
+
+                                        <h5 class="text-center h5 mb-0">
+                                            {{ $user->name }}
+                                            @if ($user->getRole('admin'))
+                                                <span class="badge badge-danger">Admin</span>
+                                            @endif
+                                        </h5>
+                                        <br>
+                                        <center>
+                                            <p><span class="badge badge-success">Pôle de Recherche</span></p>
+                                        </center>
+                                        <p class="text-center text-muted font-14"><strong><span class="badge badge-warning text-white">Resp</span> :
+                                                {{ $user->poleRecherches[0]->titre }}</strong></p>
+                                        <div class="profile-info">
+                                            <h5 class="mb-20 h5 text-blue">Contact </h5>
+                                            <ul>
+                                                <li>
+                                                    <span>Email :</span>
+                                                    {{ $user->email }}
+                                                </li>
+                                                <li>
+                                                    <span>Telephone :</span>
+                                                    {{ $user->telephone }}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="profile-social">
+                                            <h5 class="mb-20 h5 text-blue">Lien Social</h5>
+                                            <ul class="clearfix">
+                                                <li><a href="{{ $user->facebook_url }}" class="btn" data-bgcolor="#3b5998"
+                                                        data-color="#ffffff"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="{{ $user->twiter_url }}" class="btn" data-bgcolor="#1da1f2"
+                                                        data-color="#ffffff"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="{{ $user->linkdin_url }}" class="btn" data-bgcolor="#007bb5"
+                                                        data-color="#ffffff"><i class="fa fa-linkedin"></i></a></li>
+                                                <li><a href="{{ $user->instagram_url }}" class="btn" data-bgcolor="#f46f30"
+                                                        data-color="#ffffff"><i class="fa fa-instagram"></i></a></li>
+                                                <li><a href="{{ $user->web_url }}" class="btn" data-bgcolor="#c32361"
+                                                        data-color="#ffffff"><i class="fa fa-dribbble"></i></a></li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </a>
+                        @empty
+                        @endforelse
+                    <!-- List Des Responssable de pole de Recherche -->
+
+
+                    <!-- List Des Responssable d'equipe-->
+                        @forelse ($listUserRespEquipe as $user)
+                        <a href="{{ route('admin.user.show',$user->id) }}">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-30">
+                                <div class="pd-20 card-box height-100-p">
+                                    @if ($user->profil_url != null)
+                                        <div class="profile-photo" style="margin-bottom: 50px;">
+                                            <img src="{{ asset('storage/' . $user->profil_url) }}" alt=""
+                                                class="avatar-photo">
+                                        </div>
+                                    @else
+                                        <div class="profile-photo">
+                                            <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }}"
+                                                alt="" class="avatar-photo">
+                                        </div>
+                                    @endif
+
+                                    <h5 class="text-center h5 mb-0">
+                                        {{ $user->name }}
+                                        @if ($user->getRole('admin'))
+                                            <span class="badge badge-danger">Admin</span>
+                                        @endif
+                                    </h5>
+                                    <br>
+                                    <center>
+                                        <p><span class="badge badge-info">Equipe</span></p>
+                                    </center>
+                                    <p class="text-center text-muted font-14"><strong><span class="badge badge-warning text-white">Resp</span> :
+                                            {{ $user->equipes[0]->titre }}</strong></p>
+                                    <div class="profile-info">
+                                        <h5 class="mb-20 h5 text-blue">Contact </h5>
+                                        <ul>
+                                            <li>
+                                                <span>Email :</span>
+                                                {{ $user->email }}
+                                            </li>
+                                            <li>
+                                                <span>Telephone :</span>
+                                                {{ $user->telephone }}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="profile-social">
+                                        <h5 class="mb-20 h5 text-blue">Lien Social</h5>
+                                        <ul class="clearfix">
+                                            <li><a href="{{ $user->facebook_url }}" class="btn" data-bgcolor="#3b5998"
+                                                    data-color="#ffffff"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="{{ $user->twiter_url }}" class="btn" data-bgcolor="#1da1f2"
+                                                    data-color="#ffffff"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="{{ $user->linkdin_url }}" class="btn" data-bgcolor="#007bb5"
+                                                    data-color="#ffffff"><i class="fa fa-linkedin"></i></a></li>
+                                            <li><a href="{{ $user->instagram_url }}" class="btn" data-bgcolor="#f46f30"
+                                                    data-color="#ffffff"><i class="fa fa-instagram"></i></a></li>
+                                            <li><a href="{{ $user->web_url }}" class="btn" data-bgcolor="#c32361"
+                                                    data-color="#ffffff"><i class="fa fa-dribbble"></i></a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </a>
+                        @empty
+                        @endforelse
+                    <!--END List Des Responssable d'equipe-->
+
+
+                    <!-- Liste Membres Equipe-->
+                    @forelse ($listMenbreEquipeUser as $user)
+                    <a href="{{ route('admin.user.show',$user->id) }}">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-30">
+                            <div class="pd-20 card-box height-100-p">
+                                @if ($user->profil_url != null)
+                                    <div class="profile-photo" style="margin-bottom: 50px;">
+                                        <img src="{{ asset('storage/' . $user->profil_url) }}" alt=""
+                                            class="avatar-photo">
+                                    </div>
+                                @else
+                                    <div class="profile-photo">
+                                        <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }}"
+                                            alt="" class="avatar-photo">
+                                    </div>
+                                @endif
+
+                                <h5 class="text-center h5 mb-0">
+                                    {{ $user->name }}
+                                    @if ($user->getRole('admin'))
+                                        <span class="badge badge-danger">Admin</span>
+                                    @endif
+                                </h5>
+                                <br>
+                                <center>
+                                    <p><span class="badge badge-secondary">Membre Equipe</span></p>
+                                </center>
+                                <p class="text-center text-muted font-14"><strong>
+                                        {{ $user->equipe[0]->titre }}</strong></p>
+                                <div class="profile-info">
+                                    <h5 class="mb-20 h5 text-blue">Contact </h5>
+                                    <ul>
+                                        <li>
+                                            <span>Email :</span>
+                                            {{ $user->email }}
+                                        </li>
+                                        <li>
+                                            <span>Telephone :</span>
+                                            {{ $user->telephone }}
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="profile-social">
+                                    <h5 class="mb-20 h5 text-blue">Lien Social</h5>
+                                    <ul class="clearfix">
+                                        <li><a href="{{ $user->facebook_url }}" class="btn" data-bgcolor="#3b5998"
+                                                data-color="#ffffff"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="{{ $user->twiter_url }}" class="btn" data-bgcolor="#1da1f2"
+                                                data-color="#ffffff"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="{{ $user->linkdin_url }}" class="btn" data-bgcolor="#007bb5"
+                                                data-color="#ffffff"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="{{ $user->instagram_url }}" class="btn" data-bgcolor="#f46f30"
+                                                data-color="#ffffff"><i class="fa fa-instagram"></i></a></li>
+                                        <li><a href="{{ $user->web_url }}" class="btn" data-bgcolor="#c32361"
+                                                data-color="#ffffff"><i class="fa fa-dribbble"></i></a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+                    @empty
+                    @endforelse
+                <!--END Liste Membres Equipe-->
+
+                </div>
+
+            </div>
+            <div class="footer-wrap pd-20 mb-20 card-box">
+                UR-AIA BANDJOUN
+            </div>
+        </div>
+    </div>
+@endsection

@@ -30,4 +30,9 @@ class PoleRecherche extends Model
     {
         return $this->hasMany(Revue::class);
     }
+
+    public function projets()
+    {
+        return $this->hasMany(Projet::class);
+    }
 }
