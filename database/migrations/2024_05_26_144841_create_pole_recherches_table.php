@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('pole_recherches', function (Blueprint $table) {
             $table->id();
             $table->string("titre");
+            $table->string("code_pole")->nullable();
             $table->longText("description_1");
             $table->longText("description_2");
             $table->string("media_url");

@@ -60,6 +60,10 @@
 	@include('admin.app.layout.left-siderbar')
     <!--END left-side-bar -->
 
+    <!-- notification view -->
+    @include('admin.app.notification')
+    <!-- End notification view -->
+
 	<div class="mobile-menu-overlay"></div>
 
 	@yield('content')
@@ -74,5 +78,21 @@
 	<script src="{{ asset('asset_admin/src/plugins/datatables/js/dataTables.responsive.min.js') }}"></script>
 	<script src="{{ asset('asset_admin/src/plugins/datatables/js/responsive.bootstrap4.min.js') }}"></script>
 	<script src="{{ asset('asset_admin/vendors/scripts/dashboard.js') }}"></script>
+
+    <script>
+        function modal(){
+            $(document).ready(function() {
+            $('.list-group-item-action').click(function() {
+                var id = $(this).data('id');
+                var description = $(this).find('div p').text();
+                console.log(description);
+                var date = $(this).find('div small').text();
+                $('#created_atDescription').text(date);
+                $('#notificationDescription').text(description);
+            });
+        });
+        }
+
+    </script>
 </body>
 </html>

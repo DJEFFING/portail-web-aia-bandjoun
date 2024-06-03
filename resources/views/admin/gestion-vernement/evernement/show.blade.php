@@ -138,11 +138,11 @@
                                     <h5 class="pd-20 h5 mb-0 col-10">Membres ({{ count($evernement->membres) }})</h5>
                                     <div class="latest-post">
                                         <ul>
-                                            @forelse ($evernement->membres as $menbre)
+                                            @forelse ($evernement->membres as $membre)
                                                 <li>
-                                                    <h4><a href="#">{{ $menbre->name }}</a></h4>
+                                                    <h4><a href="#">{{ $membre->name }}</a></h4>
                                                     <span
-                                                        class="badge badge-info text-white">{{ app\Models\RoleEvernement::find($menbre->pivot->role_evernement_id)->nom }}</span>
+                                                        class="badge badge-info text-white">{{ app\Models\RoleEvernement::find($membre->pivot->role_evernement_id)->nom }}</span>
                                                 </li>
 
                                             @empty

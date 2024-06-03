@@ -21,14 +21,16 @@
                 </div>
                 <div class="blog-wrap">
                     <div class="container pd-0">
-                        <h4>{{  $poleRecherche->titre }}</h4>
+
                         <div class="row">
                             <div class="col-md-8 col-sm-12">
                                 <div class="blog-detail card-box overflow-hidden mb-30">
                                     <div class="blog-img">
-                                        <img src="{{ $poleRecherche->media_url }}" alt="">
+                                        <img src="{{ asset('storage/'.$poleRecherche->media_url )}}" alt="">
                                     </div>
+
                                     <div class="blog-caption">
+                                        <h4>{{  $poleRecherche->titre }}</h4>
                                         {!! $poleRecherche->description_2 !!}
                                     </div>
                                 </div>
@@ -39,7 +41,7 @@
                                     <div class="list-group">
 
                                         <a class="list-group-item d-flex align-items-center justify-content-between" href="#">
-                                            <img src="{{ asset('asset_admin/vendors/images/photo1.jpg') }} " style="width: 70px; height: 70px;" alt="">
+                                            <img src="{{ asset('storage/'.$poleRecherche->user->profil_url) }} " style="width: 70px; height: 70px;" alt="">
                                             <span class="user-name">{{$poleRecherche->user->name}}</span>
                                         </a>
                                     </div>

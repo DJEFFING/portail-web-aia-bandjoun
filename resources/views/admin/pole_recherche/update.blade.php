@@ -15,7 +15,7 @@
                 </div>
 
 
-                <form class="html-editor pd-20 card-box mb-30" method="POST" action="{{ route('admin.poleRecherche.update',$poleRecherche->id) }}">
+                <form class="html-editor pd-20 card-box mb-30" method="POST" action="{{ route('admin.poleRecherche.update',$poleRecherche->id) }}" enctype="multipart/form-data">
                     <h4 class="h4 text-blue">Ce formulaire Permet Modifier un Pole Recherche</h4>
                     @csrf
                     <div class="col-md-12">
@@ -29,7 +29,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Image : </label><span class="text-danger">*</span>
-                            <input type="file" value="{{ $poleRecherche->media_url }}" name="media_url" class="form-control" required>
+                            <input type="file" value="{{ $poleRecherche->media_url }}" name="media_url" class="form-control">
                         </div>
                     </div>
                     <!--END Image -->

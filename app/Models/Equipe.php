@@ -13,6 +13,7 @@ class Equipe extends Model
         "description_1",
         "description_2",
         "media_url",
+        "code_equipe",
         "user_id",
         "pole_recherche_id",
         "status"

@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="title">
-                                <h4 class="text-warning">Modifer le Pole de Recherche</h4>
+                                <h4 class="text-warning">Modifier l’équipe.</h4>
                                 <h5 class="help-block form-text"  style="color:red;">{!! $errors->first('user_id', '<p class="help-block" style="color:red">:message</p>') !!}</h5>
                             </div>
                         </div>
@@ -16,7 +16,7 @@
 
 
                 <form class="html-editor pd-20 card-box mb-30" method="POST" action="{{ route('admin.equipe.update',$equipe->id) }}" enctype="multipart/form-data">
-                    <h4 class="h4 text-blue">Ce formulaire Permet Modifier un Pole Recherche</h4>
+                    <h4 class="h4 text-blue">Ce formulaire permet de modifier une équipe.</h4>
                     @csrf
                     <div class="col-md-12">
                         <div class="form-group">
