@@ -41,7 +41,12 @@
                                     <div class="list-group">
 
                                         <a class="list-group-item d-flex align-items-center justify-content-between" href="#">
-                                            <img src="{{ asset('storage/'.$poleRecherche->user->profil_url) }} " style="width: 70px; height: 70px;" alt="">
+                                            @if ($poleRecherche->user->profil_url)
+                                                <img src="{{ asset('storage/'.$poleRecherche->user->profil_url) }} " style="width: 70px; height: 70px;" alt="">
+                                            @else
+                                            <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }} " style="width: 70px; height: 70px;" alt="">
+                                            @endif
+
                                             <span class="user-name">{{$poleRecherche->user->name}}</span>
                                         </a>
                                     </div>

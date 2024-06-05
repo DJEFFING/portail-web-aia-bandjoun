@@ -14,7 +14,7 @@
                 </div>
 
 
-                <form class="html-editor pd-20 card-box mb-30" method="POST" action="{{ route('admin.poleRecherche.store') }}">
+                <form class="html-editor pd-20 card-box mb-30" method="POST" action="{{ route('admin.poleRecherche.store') }}" enctype="multipart/form-data">
                     <h4 class="h4 text-blue">Ce formulaire Permet D'ajouter un nouveau Pole De Recherche</h4>
                     @csrf
                     <div class="col-md-12">

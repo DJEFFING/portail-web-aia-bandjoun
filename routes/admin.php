@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\AproposController;
 use App\Http\Controllers\admin\ArticleController;
 use App\Http\Controllers\admin\authantification\LoginController;
 use App\Http\Controllers\admin\equipeController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\admin\RevueController;
 use App\Http\Controllers\admin\RoleEquipeController;
 use App\Http\Controllers\admin\RoleEquipeProjetController;
 use App\Http\Controllers\admin\RoleEvernementController;
+use App\Http\Controllers\admin\SlideController;
 use App\Http\Controllers\admin\TypeEvernementController;
 use App\Http\Controllers\admin\userController;
 use Illuminate\Support\Facades\Auth;
@@ -171,6 +173,21 @@ Route::name('admin.')->prefix('admin/')->group(function () {
             Route::post('/','store')->name('store');
             Route::post('/{user}-update','update')->name('update');
             Route::get('/profil','profil')->name('profil');
+        });
+
+
+        Route::middleware(['role:Admin'])->controller(SlideController::class)->name('slide.')->prefix('slide/')->group(function(){
+            Route::get('/','index')->name('index');
+            Route::post('/','store')->name('store');
+            Route::post('/{slide}','update')->name('update');
+            Route::delete('/{slide}','delete')->name('delete');
+        });
+
+        Route::middleware(['role:Admin'])->controller(AproposController::class)->name('apropos.')->prefix('apropos/')->group(function(){
+            Route::get('/','index')->name('index');
+            Route::post('/','store')->name('store');
+            Route::post('/{apropos}','update')->name('update');
+            Route::delete('/{apropos}','delete')->name('delete');
         });
 
         // Route::prefix('user/')->group(function () {
