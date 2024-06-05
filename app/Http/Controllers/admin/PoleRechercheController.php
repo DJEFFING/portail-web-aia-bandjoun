@@ -49,17 +49,22 @@ class PoleRechercheController extends Controller
         // $media = "http://127.0.0.1:8000/asset_web/assets/img/projects/repairs-1.jpg";
         // $media = $request->store->media_url->public('pole_recherhe');
 
-        $media = $request->file('media_url')->store('pole_recherche','public');
+        if ($request->hasFile('media_url')) {
+            $media = $request->file('media_url')->store('pole_recherche','public');
+            $newPoleRecherche = [
+                'titre' => $request->titre,
+                'description_1' => $request->description_1,
+                'description_2' => $request->description_2,
+                'media_url' => $media,
+                'user_id' => $request->user_id,
+            ];
+            PoleRecherche::create($newPoleRecherche);
+        }
 
-        $newPoleRecherche = [
-            'titre' => $request->titre,
-            'description_1' => $request->description_1,
-            'description_2' => $request->description_2,
-            'media_url' => $media,
-            'user_id' => $request->user_id,
-        ];
 
-        PoleRecherche::create($newPoleRecherche);
+
+
+
         return redirect(route('admin.poleRecherche.index'))->with('message', ['le pole de recherche à été crée avec success !!']);
     }
 

@@ -24,11 +24,11 @@
 
                     <li class="dropdown">
                         <a href="javascript:;" class="dropdown-toggle">
-                            <span class="micon dw dw-house-1"></span><span class="mtext">Memue</span>
+                            <span class="micon dw dw-house-1"></span><span class="mtext">Acceuil</span>
                         </a>
                         <ul class="submenu">
-                            <li><a href="index.html">Slide Section</a></li>
-                            <li><a href="index2.html">Appropos Section</a></li>
+                            <li><a href="{{ route('admin.slide.index') }}">Slide Section</a></li>
+                            <li><a href="{{ route('admin.apropos.index') }}">Appropos Section</a></li>
                         </ul>
                     </li>
 

@@ -66,10 +66,16 @@
                                     <h5 class="pd-20 h5 mb-0"><span class="badge badge-success">Reponssable</span></h5>
                                     <div class="list-group">
 
-                                        <a class="list-group-item d-flex align-items-center justify-content-between"
+                                        <a href="{{ route('admin.user.show',$projet->user->id) }}" class="list-group-item d-flex align-items-center justify-content-between"
                                             href="#">
-                                            <img src="{{ asset('asset_admin/vendors/images/photo1.jpg') }} "
+                                            @if ($projet->user->profil_url)
+                                                <img src="{{ asset('storage/'.$projet->user->profil_url) }}"
                                                 style="width: 70px; height: 70px;" alt="">
+                                            @else
+                                                <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }}"
+                                                style="width: 70px; height: 70px;" alt="">
+                                            @endif
+
                                             <span class="user-name">{{ $projet->user->name }}</span>
                                         </a>
                                     </div>
