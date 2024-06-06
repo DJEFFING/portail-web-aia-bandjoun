@@ -49,9 +49,25 @@
 
                                     </li>
                                     <li>
+                                        <span>Fonction :</span>
+                                        <span class="badge badge-primary  text-white">{{ $user->fonction->nom }}</span>
+                                    </li>
+                                    <li>
                                         <span>Address:</span>
                                         {{ $user->adress }}
                                     </li>
+
+                                    <li>
+                                        <span>Grade:</span>
+                                        {{ $user->grade }}
+                                    </li>
+
+                                    <li>
+                                        <span>Lieu de Travail:</span>
+                                        {{ $user->lieu_travail }}
+                                    </li>
+
+
                                 </ul>
                             </div>
                             <div class="profile-social">

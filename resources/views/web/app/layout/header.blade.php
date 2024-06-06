@@ -13,8 +13,8 @@
             <ul>
 
                 <li><a href="/" @if ($page == 0) class="active" @endif>Acceuil</a></li>
-                <li><a href="/about_us" @if ($page == 1) class="active" @endif>APROPOS</a></li>
-                <li><a href="/evernements" @if ($page == 2) class="active" @endif>EVERNEMENTS</a></li>
+                <li><a href="{{ route('web.apropos') }}" @if ($page == 1) class="active" @endif>À PROPOS</a></li>
+                <li><a href="{{ route('web.evernement') }}" @if ($page == 2) class="active" @endif>EVENEMENTS</a></li>
                 <li class="dropdown"><a href="#"><span>RECHERCHE</span> <i
                             class="bi bi-chevron-down dropdown-indicator"></i></a>
                     <ul>

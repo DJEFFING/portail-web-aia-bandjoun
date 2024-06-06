@@ -13,4 +13,12 @@ class Fonction extends Model
         "nom",
         "description"
         ];
+
+    public function users()
+    {
+
+        return $this->hasMany(User::class);
+    }
+
 }
+

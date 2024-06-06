@@ -18,11 +18,21 @@
                 <form class="html-editor pd-20 card-box mb-30" method="POST" action="{{ route('admin.equipe.update',$equipe->id) }}" enctype="multipart/form-data">
                     <h4 class="h4 text-blue">Ce formulaire permet de modifier une équipe.</h4>
                     @csrf
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>Titre : </label><span class="text-danger">*</span>
-                            <input type="text" name="titre"  value="{{ $equipe->titre }}" class="form-control" required>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Code  : </label><span class="text-danger">*</span>
+                                <input type="text" name="code_equipe" value="{{ $equipe->code_equipe }}" class="form-control" required>
+                            </div>
                         </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Titre : </label><span class="text-danger">*</span>
+                                <input type="text" name="titre" value="{{ $equipe->titre }}" class="form-control" required>
+                            </div>
+                        </div>
+
                     </div>
 
                     <!-- Image -->
