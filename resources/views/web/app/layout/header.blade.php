@@ -15,18 +15,13 @@
                 <li><a href="/" @if ($page == 0) class="active" @endif>Acceuil</a></li>
                 <li><a href="{{ route('web.apropos') }}" @if ($page == 1) class="active" @endif>À PROPOS</a></li>
                 <li><a href="{{ route('web.evernement') }}" @if ($page == 2) class="active" @endif>EVENEMENTS</a></li>
-                <li class="dropdown"><a href="#"><span>RECHERCHE</span> <i
-                            class="bi bi-chevron-down dropdown-indicator"></i></a>
-                    <ul>
-                        <li><a href="#">RECHERCHE_1</a></li>
-                        <li><a href="#">RECHERCHE_2</a></li>
-                        <li><a href="#">RECHERCHE_3</a></li>
+                <li><a href="{{ route('web.pole-recherche') }}" @if ($page == 3) class="active" @endif>RECHERCHE</a></li>
+                <li><a href="{{ route('web.equipes') }}" @if ($page == 4) class="active" @endif>Equipes</a></li>
 
-                    </ul>
-                </li>
-                <li><a href="/Projet" @if ($page == 3) class="active" @endif>PROJETS</a></li>
-                <li><a href="blog.html">Blogs</a></li>
-                <li><a href="blog.html">MENBRES</a></li>
+                <li><a href=" {{ route('web.projets') }} " @if ($page == 5) class="active" @endif>PROJETS</a></li>
+                <li><a href=" {{ route('web.blogs') }} " @if ($page == 6) class="active" @endif>Blogs</a></li>
+
+                <li><a href="{{ route('web.membres') }}" @if ($page == 7) class="active" @endif>MENBRES</a></li>
                 <li class="dropdown"><a href="#"><span>AUTRES</span> <i
                             class="bi bi-chevron-down dropdown-indicator"></i></a>
                     <ul>

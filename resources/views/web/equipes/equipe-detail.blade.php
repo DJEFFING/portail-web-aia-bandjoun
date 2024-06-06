@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="col-lg-4" >
-                        <div class="card" style="width: 18rem;">
+                        <div class="card">
 
                             <div class="row">
                                 @if ($equipe->user->profil_url)
