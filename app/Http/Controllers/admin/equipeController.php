@@ -29,6 +29,7 @@ class equipeController extends Controller
             $media = $request->file('media_url')->store('equipe', 'public');
             Equipe::create(
                 [
+                    "code_equipe" => $request->code_equipe,
                     "titre" => $request->titre,
                     "description_1" => $request->description_1,
                     "description_2" => $request->description_2,
@@ -76,6 +77,7 @@ class equipeController extends Controller
         }
 
         $equipe->update([
+            "code_equipe" => $request->code_equipe,
             "titre" => $request->titre,
             "description_1" => $request->description_1,
             "description_2" => $request->description_2,

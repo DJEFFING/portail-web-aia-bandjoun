@@ -52,6 +52,7 @@ class PoleRechercheController extends Controller
         if ($request->hasFile('media_url')) {
             $media = $request->file('media_url')->store('pole_recherche','public');
             $newPoleRecherche = [
+                'code_pole' => $request->code_pole,
                 'titre' => $request->titre,
                 'description_1' => $request->description_1,
                 'description_2' => $request->description_2,
@@ -93,6 +94,7 @@ class PoleRechercheController extends Controller
             $poleRecherche->update(["media_url"=>$media]);
         }
         $poleRecherche->update([
+            'code_pole'=>$request->code_pole,
             'titre' => $request->titre,
             'description_1' => $request->description_1,
             'description_2' => $request->description_2,

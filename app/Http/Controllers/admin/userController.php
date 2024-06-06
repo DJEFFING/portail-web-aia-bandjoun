@@ -4,9 +4,13 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Equipe;
+use App\Models\Fonction;
 use App\Models\PoleRecherche;
+use App\Models\Revue;
+use App\Models\Role;
 use App\Models\RoleEvernement;
 use App\Models\User;
+use App\Models\UserRole;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,7 +33,10 @@ class userController extends Controller
 
         //les utilisateur qui font partir des equipe
         $listMenbreEquipeUser = User::whereHas('equipe')->get();
-        return view('admin.user.gestion-user.index',compact('listUserRespPole','listUserRespEquipe','listMenbreEquipeUser'));
+
+        $listRole = Role::all();
+        $listFonction = Fonction::all();
+        return view('admin.user.gestion-user.index',compact('listUserRespPole','listUserRespEquipe','listMenbreEquipeUser','listRole','listFonction'));
     }
 
     public function store(Request $request)
@@ -68,6 +75,36 @@ class userController extends Controller
 
     }
 
+    public function updateDroit(Request $request,User $user)
+    {
+        if((UserRole::where("user_id",$user->id)
+            ->where("role_id",$request->role_id)->exists()
+        )){
+            $user->update([
+                    "fonction_id" => $request->fonction_id
+            ]);
+
+        }else{
+            UserRole::where("user_id",$user->id)->delete();
+
+            $user->update([
+                    "fonction_id" => $request->fonction_id
+            ]);
+
+            if(Auth::user()->id != $user->id){
+                UserRole::create([
+                    "user_id" => $user->id,
+                    "role_id" => $request->role_id
+                ]);
+            }
+
+
+        }
+
+
+        return redirect()->back()->with('message','La fonction a été changée avec succès !!');
+    }
+
     public function delete(User $user)
     {
 
@@ -101,6 +138,8 @@ class userController extends Controller
 
         return $listMembre;
     }
+
+
 
 
 }

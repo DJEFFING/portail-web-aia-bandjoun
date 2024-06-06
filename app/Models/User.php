@@ -25,6 +25,7 @@ class User extends Authenticatable
         "telephone",
         "description",
         "sexe",
+        "lieu_travail",
         "grade",
         "adress",
         "profil_url",
@@ -33,6 +34,7 @@ class User extends Authenticatable
         "linkdin_url",
         "twiter_url",
         "web_url",
+        "fonction_id"
 
     ];
 
@@ -121,6 +123,11 @@ class User extends Authenticatable
     public function notifications()
     {
         return $this->hasMany(Notification::class);
+    }
+
+    public function fonction()
+    {
+        return $this->belongsTo(Fonction::class);
     }
 
 }

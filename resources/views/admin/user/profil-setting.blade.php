@@ -29,22 +29,20 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Gender</label>
-                        <div class="d-flex">
-                            <div class="custom-control custom-radio mb-5 mr-20">
-                                <input type="radio" id="customRadio4"
-                                    name="sexe" class="custom-control-input">
-                                <label class="custom-control-label weight-400"
-                                    for="customRadio4">Homme</label>
-                            </div>
-                            <div class="custom-control custom-radio mb-5">
-                                <input type="radio" id="customRadio5"
-                                    name="sexe" class="custom-control-input">
-                                <label class="custom-control-label weight-400"
-                                    for="customRadio5">Femme</label>
-                            </div>
-                        </div>
+                        <label>Grade :</label>
+                        <input class="form-control "
+                            type="text" value="{{ $user->grade }}"
+                            name="grade">
                     </div>
+
+                    <div class="form-group">
+                        <label>Lieu de Travail :</label>
+                        <input class="form-control "
+                            type="text" value="{{ $user->lieu_travail }}"
+                            name="lieu_travail">
+                    </div>
+
+
 
                     <div class="form-group">
                         <label>Profil : </label>

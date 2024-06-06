@@ -172,6 +172,7 @@ Route::name('admin.')->prefix('admin/')->group(function () {
             Route::get('/{user}-show','show')->name('show');
             Route::post('/','store')->name('store');
             Route::post('/{user}-update','update')->name('update');
+            Route::post('/{user}-update-droit','updateDroit')->name('update-droit');
             Route::get('/profil','profil')->name('profil');
         });
 
@@ -189,12 +190,7 @@ Route::name('admin.')->prefix('admin/')->group(function () {
             Route::post('/{apropos}','update')->name('update');
             Route::delete('/{apropos}','delete')->name('delete');
         });
-
-        // Route::prefix('user/')->group(function () {
-        //     Route::get('/profil', function () {
-        //         return view('admin.profil');
-        //     })->name('profil');
-        // });
+        
     });
 
 

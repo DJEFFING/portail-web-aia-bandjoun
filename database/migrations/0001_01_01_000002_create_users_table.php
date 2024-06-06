@@ -17,8 +17,9 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('telephone')->unique();
             $table->string('grade')->nullable();
+            $table->string('lieu_travail')->nullable();
             $table->string('adress')->nullable();
- 
+
             $table->string('prenom');
             $table->string('description');
             $table->enum("sexe",['M','F']);
@@ -31,6 +32,9 @@ return new class extends Migration
             $table->string("twiter_url")->nullable();
             $table->string("web_url")->nullable();
             $table->string('password');
+            $table->unsignedBigInteger("fonction_id")->nullable();
+
+            $table->foreign('fonction_id')->references('id')->on("fonctions")->onDelete("cascade");
 
 
             $table->rememberToken();

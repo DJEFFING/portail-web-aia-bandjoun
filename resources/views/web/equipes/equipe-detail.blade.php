@@ -6,10 +6,10 @@
         <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/breadcrumbs-bg.jpg');">
             <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-                <h2>Pôle de Recherche Détail</h2>
+                <h2>Equipe Détail</h2>
                 <ol>
                     <li><a href="{{ route('web.acceuil') }}">Acceuil</a></li>
-                    <li>Pôle de Recherche Détail</li>
+                    <li>Equipe Détail</li>
                 </ol>
 
             </div>
@@ -24,11 +24,11 @@
 
 
                     <div class="col-lg-8">
-                        <img src="{{ asset('storage/'.$poleRecherche->media_url) }}" alt="" class="img-fluid services-img">
-                        <h3>{{ $poleRecherche->titre }}</h3>
+                        <img src="{{ asset('storage/'.$equipe->media_url) }}" alt="" class="img-fluid services-img">
+                        <h3>{{ $equipe->titre }}</h3>
                         <div class="container mt-5">
                             <div id="article-content">
-                                <p class="text-justify">{!! $poleRecherche->description_2 !!}</p>
+                                <p class="text-justify">{!! $equipe->description_2 !!}</p>
                             </div>
                         </div>
 
@@ -39,29 +39,30 @@
                         <div class="card" style="width: 18rem;">
 
                             <div class="row">
-                                @if ($poleRecherche->user->profil_url)
-                                <img src="{{ asset('storage/'.$poleRecherche->user->profil_url) }}" class="p-3 card-img-top rounded-circle img-fluid w-50 h-100" alt="...">
+                                @if ($equipe->user->profil_url)
+                                <img src="{{ asset('storage/'.$equipe->user->profil_url) }}" class="p-3 card-img-top rounded-circle img-fluid w-50 h-100" alt="...">
                                 @else
                                 <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }} " class="p-3 card-img-top rounded-circle img-fluid w-50 h-100" alt="...">
                                 @endif
                             </div>
 
                             <div class="card-body">
-                                <p><strong>Nom :</strong> {{ $poleRecherche->user->name }}</p>
-                                <p><strong>mail :</strong> {{ $poleRecherche->user->email }}</p>
-                                <p><strong>telephone :</strong> {{ $poleRecherche->user->telephone }}</p>
-                                <p><strong>address :</strong> {{ $poleRecherche->user->adress }}</p>
+                                <p><strong>Nom :</strong> {{ $equipe->user->name }}</p>
+                                <p><strong>mail :</strong> {{ $equipe->user->email }}</p>
+                                <p><strong>telephone :</strong> {{ $equipe->user->telephone }}</p>
+                                <p><strong>address :</strong> {{ $equipe->user->adress }}</p>
                               <p class="card-text text-blue w-50 h-50" style="background-color: green;color:white; text-align: center">Responssable</p>
                             </div>
                         </div><br>
 
 
-                        <br><div class="services-list" style="margin-left: 60px;">
-                            <h4>Equipe ({{ count($poleRecherche->equipes) }})</h4>
-                            @forelse ($poleRecherche->equipes as $equipe)
-                            <a href="#">Remodeling</a><hr>
+                        <br><div class="services-list">
+                            <h4>Membre ({{ count($equipe->menbres) }})</h4>
+                            @forelse ($equipe->menbres as $menbre)
+                            <a href="#">{{ $menbre->name }}</a>
+                            <p style="background-color: blue; color:white; text-align: center; width: 150px;">{{ $menbre->roleEquipe[0]->nom }}</p><br><hr>
                             @empty
-                            <center>Pas d'équipe</center>
+                            <center>Pas de Membre</center>
                             @endforelse
                         </div>
 
@@ -73,5 +74,4 @@
         </section><!-- End Service Details Section -->
 
     </main><!-- End #main -->
-
 @endsection
