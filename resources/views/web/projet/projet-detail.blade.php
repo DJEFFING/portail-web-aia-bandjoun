@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="col-lg-4">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card">
 
                             <div class="row">
                                 @if ($projet->user->profil_url)
@@ -52,16 +52,19 @@
 
                             <div class="card-body">
                                 <p><strong>Nom :</strong> {{ $projet->user->name }}</p>
+                                <p><strong>mail :</strong> {{ $projet->user->email }}</p>
+                                <p><strong>telephone :</strong> {{ $projet->user->telephone }}</p>
+                                <p><strong>address :</strong> {{ $projet->user->adress }}</p>
                                 <p class="card-text text-blue w-50 h-50"
                                     style="background-color: green;color:white; text-align: center">Responssable</p>
                             </div>
                         </div><br>
 
                         <br>
-                        <div class="services-list" style="margin-left: 60px;">
+                        <div class="services-list">
                             <h4>Equipe ({{ count($projet->equipes()->where('status', true)->get()) }})</h4>
                             @forelse ($projet->equipes()->where("status",true)->get() as $equipe)
-                                <a href="#">{{ $equipe->titre }}</a>
+                                <a href="{{ route('web.show-equipe',$equipe->id) }}">{{ $equipe->titre }} ({{ $equipe->code_equipe }})</a>
                                 <p class="card-text text-blue w-50 h-50"
                                     style="background-color: rgb(18, 62, 209);color:white; text-align: center">
                                     {{ app\models\RoleEquipeProjet::find($equipe->pivot->role_equipe_projet_id)->nom }}</p>
@@ -72,7 +75,7 @@
                         </div><br>
 
                         <br>
-                        <div class="services-list" style="margin-left: 60px;">
+                        <div class="services-list">
                             <h4>Partenaire : ({{ count($projet->partenaires) }})</h4>
                             @forelse ($projet->partenaires as $partenaire)
                                 <a href="#">{{ $partenaire->titre }}</a>

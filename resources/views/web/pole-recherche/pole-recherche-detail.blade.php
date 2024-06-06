@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="col-lg-4" >
-                        <div class="card" style="width: 18rem;">
+                        <div class="card">
 
                             <div class="row">
                                 @if ($poleRecherche->user->profil_url)
@@ -56,10 +56,10 @@
                         </div><br>
 
 
-                        <br><div class="services-list" style="margin-left: 60px;">
+                        <br><div class="services-list">
                             <h4>Equipe ({{ count($poleRecherche->equipes) }})</h4>
                             @forelse ($poleRecherche->equipes as $equipe)
-                            <a href="#">Remodeling</a><hr>
+                            <a href="{{ route('web.show-equipe',$equipe->id) }}">{{ $equipe->titre }}  ({{ $equipe->code_equipe }})</a><hr>
                             @empty
                             <center>Pas d'équipe</center>
                             @endforelse
