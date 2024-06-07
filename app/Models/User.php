@@ -130,4 +130,67 @@ class User extends Authenticatable
         return $this->belongsTo(Fonction::class);
     }
 
+    public function getProjet()
+    {
+        $projetResp = [];
+        $projetPoleResp = [];
+        $projetEquipeResp = [];
+        $projetEquipe = [];
+
+        //les projet dont l'utilisateur est responsable
+        if($this->projet->isNotEmpty()){
+            $projetResp = $this->projet->toArray();
+        }
+
+        //les projet du pole de recherche dont l'utilisateur est reponsable
+        if($this->poleRecherches->isNotEmpty() && $this->poleRecherches[0]->projets->isNotEmpty()){
+            $projetPoleResp = $this->poleRecherches[0]->projets->toArray();
+        }
+
+
+        //le projet de l'equipe dont l'utilisateur est responsable
+        if($this->equipes->isNotEmpty() && $this->equipes[0]->projets->isNotEmpty()){
+            $projetEquipeResp = $this->equipes[0]->projets->toArray();
+        }
+
+
+        //les projets de l'equipe dont l'utilisateur fait partie
+        if($this->equipe->isNotEmpty() && $this->equipe[0]->projets->isNotEmpty()){
+            $projetEquipe = $this->equipe[0]->projets->toArray();
+        }
+
+
+        return array_merge($projetResp, $projetPoleResp, $projetEquipeResp, $projetEquipe);
+    }
+
+    // public function getProjet(): Collection
+    // {
+    //     $projetResp = collect();
+    //     $projetPoleResp = collect();
+    //     $projetEquipeResp = collect();
+    //     $projetEquipe = collect();
+
+    //     // Les projets dont l'utilisateur est responsable
+    //     if($this->projets->isNotEmpty()){
+    //         $projetResp = $this->projets;
+    //     }
+
+    //     // Les projets du pôle de recherche dont l'utilisateur est responsable
+    //     if($this->poleRecherches->isNotEmpty() && $this->poleRecherches[0]->projets->isNotEmpty()){
+    //         $projetPoleResp = $this->poleRecherches[0]->projets;
+    //     }
+
+    //     // Les projets de l'équipe dont l'utilisateur est responsable
+    //     if($this->equipes->isNotEmpty() && $this->equipes[0]->projets->isNotEmpty()){
+    //         $projetEquipeResp = $this->equipes[0]->projets;
+    //     }
+
+    //     // Les projets de l'équipe dont l'utilisateur fait partie
+    //     if($this->equipe->isNotEmpty() && $this->equipe[0]->projets->isNotEmpty()){
+    //         $projetEquipe = $this->equipe[0]->projets;
+    //     }
+
+    //     return $projetResp->merge($projetPoleResp)->merge($projetEquipeResp)->merge($projetEquipe);
+    // }
+
 }

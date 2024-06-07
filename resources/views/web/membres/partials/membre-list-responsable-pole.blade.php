@@ -15,16 +15,18 @@
             </div>
         </div>
 
-        <a href="{{ route('web.show-profil',$user->id) }}">
-            <div class="member-info text-center">
+
+        <div class="member-info text-center">
+            <a href="{{ route('web.show-profil', $user->id) }}">
                 <h4>{{ $user->name }}</h4>
-                <h6>{{ $user->grade }}-{{ $user->lieu_travail }}</h6>
-                <p style="background-color: green; color: white; text-align: center;">Pôle de Recherche</p>
-                <p><strong>resp : </strong>{{ $user->poleRecherches[0]->titre }}</p>
-                <span>{{ $user->fonction->nom }}</span>
-                <p>{{ Str::limit($user->description, 30, '...') }}</p>
-            </div>
-        </a>
+            </a>
+            <h6>{{ $user->grade }}-{{ $user->lieu_travail }}</h6>
+            <p style="background-color: green; color: white; text-align: center;">Pôle de Recherche</p>
+            <p><strong>resp : </strong>{{ $user->poleRecherches[0]->titre }}</p>
+            <span>{{ $user->fonction->nom }}</span>
+            <p>{{ Str::limit($user->description, 30, '...') }}</p>
+        </div>
+
     </div><!-- End Team Member -->
 @empty
     <center>

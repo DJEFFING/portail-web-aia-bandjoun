@@ -1,4 +1,4 @@
-@extends('web.app.app', ['page' => 0])
+@extends('web.app.app', ['page' => 4])
 @section('content')
     <main id="main">
 
@@ -47,7 +47,7 @@
                             </div>
 
                             <div class="card-body">
-                                <p><strong>Nom :</strong> {{ $equipe->user->name }}</p>
+                                <a href="{{ route('web.show-profil', $equipe->user->id) }}"><p><strong>Nom :</strong> {{ $equipe->user->name }}</p></a>
                                 <p><strong>mail :</strong> {{ $equipe->user->email }}</p>
                                 <p><strong>telephone :</strong> {{ $equipe->user->telephone }}</p>
                                 <p><strong>address :</strong> {{ $equipe->user->adress }}</p>
@@ -59,7 +59,7 @@
                         <br><div class="services-list">
                             <h4>Membre ({{ count($equipe->menbres) }})</h4>
                             @forelse ($equipe->menbres as $menbre)
-                            <a href="#">{{ $menbre->name }}</a>
+                            <a href="{{ route('web.show-profil', $menbre->id) }}">{{ $menbre->name }}</a>
                             <p style="background-color: blue; color:white; text-align: center; width: 150px;">{{ $menbre->roleEquipe[0]->nom }}</p><br><hr>
                             @empty
                             <center>Pas de Membre</center>

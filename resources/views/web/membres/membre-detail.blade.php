@@ -23,27 +23,54 @@
                     <div class="col-lg-4">
                         <div class="sidebar">
 
-                            <div class="row">
+                            <div class="row gy-4">
                                 @if ($user->profil_url)
                                     <img src="{{ asset('storage/' . $user->profil_url) }}"
-                                        class="p-3 card-img-top rounded-circle img-fluid w-50 h-100" alt="...">
+                                        class="p-3 card-img-top rounded-circle img-fluid w-50 h-100 col-md-6"
+                                        alt="...">
                                 @else
                                     <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }} "
                                         class="p-3 card-img-top rounded-circle img-fluid w-50 h-100" alt="...">
                                 @endif
-                            </div>
+                                <div class="col-md-6">
+                                    <p><strong>Nom :</strong> {{ $user->name }}</p>
+                                    <p><strong>Prenom :</strong> {{ $user->prenom }}</p>
+                                    <p><strong>Grade :</strong> {{ $user->grade }}</p>
 
+                                </div>
+
+                            </div><br>
+
+                            @if ($user->poleRecherches->isNotEmpty())
+                                <div class="card p-3">
+                                    <p style="background-color: green; color: white; text-align: center;">Pôle de Recherche
+                                    </p>
+                                    <p><strong>resp : </strong><a href="{{ route('web.show-poleRecherche',$user->poleRecherches[0]->id) }}">{{ $user->poleRecherches[0]->titre }}</a></p>
+                                </div>
+                            @elseif($user->equipes->isNotEmpty())
+                                <div class="card p-3">
+                                    <p style="background-color: rgb(20, 39, 218); color: white; text-align: center;">Equipe</p>
+                                    <p><strong>resp : </strong><a href="{{ route('web.show-equipe',$user->equipes[0]->id) }}">{{ $user->equipes[0]->titre }}</a></p>
+                                </div>
+                            @elseif($user->equipe->isNotEmpty())
+                                <div class="card p-3">
+                                    <p style="background-color: rgb(159, 216, 226); color: white; text-align: center;">Membre Equipe</p>
+                                    <p><strong>Equipe : </strong><a href="{{ route('web.show-equipe',$user->equipe[0]->id) }}">{{ $user->equipe[0]->titre }}</a></p>
+                                </div>
+                            @endif
+
+                            <br>
                             <div class="card-body">
-                                <p><strong>Nom :</strong> {{ $user->name }}</p>
-                                <p><strong>Prenom :</strong> {{ $user->prenom }}</p>
-                                <p><strong>Grade :</strong> {{ $user->grade }}</p>
                                 <p><strong>Lieu de Travail :</strong> {{ $user->lieu_travail }}</p>
                                 <p><strong>Email :</strong> {{ $user->email }}</p>
                                 <p><strong>telephone :</strong> {{ $user->telephone }}</p>
                                 <p><strong>address :</strong> {{ $user->adress }}</p>
                                 <p class="card-text text-blue w-50 h-50"
                                     style="background-color: rgb(35, 161, 245);color:white; text-align: center">
-                                    {{ $user->fonction->nom }}</p>
+                                    {{ $user->fonction->nom }}
+                                </p>
+                                <hr>
+                                <p>{{ $user->description }}</p>
                             </div>
                             <br>
 
@@ -61,11 +88,18 @@
                         @include('web.membres.partials.membre-list-article')
                         <!--END List Arcticle -->
 
-                        @if($user->evernements->isNotEmpty())
+                        @if ($user->evernements->isNotEmpty())
                             <!-- List Evernement -->
-                                @include('web.membres.partials.membre-list-evernement')
+                            @include('web.membres.partials.membre-list-evernement')
                             <!--END List Evernement -->
                         @endif
+
+                        @if ($user->getProjet())
+                            <!-- List Projet -->
+                            @include('web.membres.partials.membre-list-projet')
+                            <!--END List Projet -->
+                        @endif
+
                     </div>
                 </div>
             </div>

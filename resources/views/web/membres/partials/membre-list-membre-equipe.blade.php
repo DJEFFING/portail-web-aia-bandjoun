@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="member-info text-center">
-            <h4>{{ $user->name }}</h4>
+            <a href="{{ route('web.show-profil',$user->id) }}"><h4>{{ $user->name }}</h4></a>
             <h6>{{ $user->grade }}-{{ $user->lieu_travail }}</h6>
             <p style="background-color: rgb(159, 216, 226); color: white; text-align: center;">Membre Equipe</p>
             <p><strong>Membre : </strong>{{ $user->equipe[0]->titre }}</p>

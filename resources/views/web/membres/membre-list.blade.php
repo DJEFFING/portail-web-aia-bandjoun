@@ -43,20 +43,6 @@
                                     </div>
                                     <!-- End sidebar search formn-->
 
-                                    {{-- <div class="sidebar-item categories">
-                                            <h3 class="sidebar-title">Revue</h3>
-                                            <ul class="mt-3">
-                                                @forelse ($revues as $revue)
-                                                    <li><a href="#">{{ $revue->titre }}
-                                                            <span>({{ count($revue->articles) }})</span></a></li>
-                                                @empty
-                                                    <p>Pas de revue</p>
-                                                @endforelse
-
-                                            </ul>
-                                        </div> --}}
-                                    <!-- End sidebar categories-->
-
                                 </div>
                             </div>
                         <!--END zone de recherche -->
