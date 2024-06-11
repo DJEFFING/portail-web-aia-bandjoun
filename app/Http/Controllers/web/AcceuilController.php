@@ -113,6 +113,11 @@ class AcceuilController extends Controller
         return view('web.membres.membre-list',compact('listUserRespPole','listUserRespEquipe','listMenbreEquipeUser','autreUser'));
     }
 
+    public function contact()
+    {
+        return view('web.contact');
+    }
+
 
     public function showPoleRecherche(PoleRecherche $poleRecherche)
     {

@@ -2,7 +2,7 @@
 @section('content')
     <div class="main-container">
         <div class="pd-ltr-20">
-           
+
             <div class="row">
                 <div class="col-xl-3 mb-30">
                     <div class="card-box height-100-p widget-style1">
@@ -11,8 +11,8 @@
                                 <div id="chart"></div>
                             </div>
                             <div class="widget-data">
-                                <div class="h4 mb-0">2020</div>
-                                <div class="weight-600 font-14">Contact</div>
+                                <div class="h4 mb-0">{{ $nbrUser }}</div>
+                                <div class="weight-600 font-14">Utilisateurs</div>
                             </div>
                         </div>
                     </div>
@@ -24,8 +24,8 @@
                                 <div id="chart2"></div>
                             </div>
                             <div class="widget-data">
-                                <div class="h4 mb-0">400</div>
-                                <div class="weight-600 font-14">Deals</div>
+                                <div class="h4 mb-0">{{ $nbrEquipe }}</div>
+                                <div class="weight-600 font-14">Equipes</div>
                             </div>
                         </div>
                     </div>
@@ -37,8 +37,8 @@
                                 <div id="chart3"></div>
                             </div>
                             <div class="widget-data">
-                                <div class="h4 mb-0">350</div>
-                                <div class="weight-600 font-14">Campaign</div>
+                                <div class="h4 mb-0">{{ $nbrProjet }}</div>
+                                <div class="weight-600 font-14">Projets</div>
                             </div>
                         </div>
                     </div>
@@ -50,8 +50,8 @@
                                 <div id="chart4"></div>
                             </div>
                             <div class="widget-data">
-                                <div class="h4 mb-0">$6060</div>
-                                <div class="weight-600 font-14">Worth</div>
+                                <div class="h4 mb-0">{{ $nbrArticle }}</div>
+                                <div class="weight-600 font-14">Articles</div>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
             <div class="row">
                 <div class="col-xl-8 mb-30">
                     <div class="card-box height-100-p pd-20">
-                        <h2 class="h4 mb-20">Activity</h2>
+                        <h2 class="h4 mb-20">Fréquance de Publication d'article</h2>
                         <div id="chart5"></div>
                     </div>
                 </div>
@@ -231,3 +231,4 @@
         </div>
     </div>
 @endsection
+

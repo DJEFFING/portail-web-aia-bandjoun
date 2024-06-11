@@ -15,7 +15,7 @@ class LoginController extends Controller
     public function loginPage()
     {
         if(auth()->check()){
-            redirect('admin/');
+            redirect(route('admin.index'));
         }
         return view('admin.authantification.login.login-page')->with('message',"connectez-vous !!");
     }

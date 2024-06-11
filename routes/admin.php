@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\AproposController;
 use App\Http\Controllers\admin\ArticleController;
 use App\Http\Controllers\admin\authantification\LoginController;
+use App\Http\Controllers\admin\DashboadController;
 use App\Http\Controllers\admin\equipeController;
 use App\Http\Controllers\admin\EvernementController;
 use App\Http\Controllers\admin\fonctionController;
@@ -16,7 +17,6 @@ use App\Http\Controllers\admin\RoleEvernementController;
 use App\Http\Controllers\admin\SlideController;
 use App\Http\Controllers\admin\TypeEvernementController;
 use App\Http\Controllers\admin\userController;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/loginPage', [LoginController::class, 'loginPage'])->name('login-page');
@@ -24,14 +24,16 @@ Route::get('/login', [LoginController::class, 'loginPage'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('admin.login');
 Route::get('/logout', [LoginController::class, 'logout'])->name('admin.logout');
 
+Route::get('acceuil/',[DashboadController::class,'index'])->name("acceuil");
+
 // Route::get('/')
 
 Route::get('/', function () {
     if (!Auth()->check()) {
         return redirect(route('login-page'));
     }
-    return view('admin.index');
-});
+    return redirect(route('acceuil'));
+})->name('admin.index');
 
 
 Route::name('admin.')->prefix('admin/')->group(function () {
@@ -190,7 +192,7 @@ Route::name('admin.')->prefix('admin/')->group(function () {
             Route::post('/{apropos}','update')->name('update');
             Route::delete('/{apropos}','delete')->name('delete');
         });
-        
+
     });
 
 

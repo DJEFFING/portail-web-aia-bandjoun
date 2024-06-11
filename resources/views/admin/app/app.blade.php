@@ -34,18 +34,18 @@
 </head>
 <body>
     <!-- loader -->
-	{{-- <div class="pre-loader">
-		<div class="pre-loader-box">
-			<div class="loader-logo"><img src="{{ asset('asset_admin/vendors/images/deskapp-logo.svg') }} " alt=""></div>
-			<div class='loader-progress' id="progress_div">
-				<div class='bar' id='bar1'></div>
-			</div>
-			<div class='percent' id='percent1'>0%</div>
-			<div class="loading-text">
-				Loading...
-			</div>
-		</div>
-	</div> --}}
+        {{-- <div class="pre-loader">
+            <div class="pre-loader-box">
+                <div class="loader-logo"><img src="{{ asset('asset_admin/vendors/images/deskapp-logo.svg') }} " alt=""></div>
+                <div class='loader-progress' id="progress_div">
+                    <div class='bar' id='bar1'></div>
+                </div>
+                <div class='percent' id='percent1'>0%</div>
+                <div class="loading-text">
+                    Loading...
+                </div>
+            </div>
+        </div> --}}
     <!--END loader -->
 
     <!-- header -->
@@ -77,7 +77,8 @@
 	<script src="{{ asset('asset_admin/src/plugins/datatables/js/dataTables.bootstrap4.min.js') }}"></script>
 	<script src="{{ asset('asset_admin/src/plugins/datatables/js/dataTables.responsive.min.js') }}"></script>
 	<script src="{{ asset('asset_admin/src/plugins/datatables/js/responsive.bootstrap4.min.js') }}"></script>
-	<script src="{{ asset('asset_admin/vendors/scripts/dashboard.js') }}"></script>
+	@include('admin.app.layout.dashboard')
+   
 
     <script>
         function modal(){

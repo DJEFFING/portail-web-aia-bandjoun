@@ -12,6 +12,7 @@ Route::controller(AcceuilController::class)->name("web.")->group(function(){
     Route::get('/projets','projets')->name('projets');
     Route::get('/blogs','blogs')->name('blogs');
     Route::get('/membres','membres')->name('membres');
+    Route::get('/contact','contact')->name('contact');
 
 
     Route::get('/{user}-show-profil','showProfil')->name('show-profil');
