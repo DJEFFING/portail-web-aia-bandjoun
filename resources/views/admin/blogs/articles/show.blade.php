@@ -83,6 +83,7 @@
                                 </div>
 
                             </div>
+
                             <div class="col-md-4 col-sm-12">
                                 <div class="card-box mb-30">
                                     <h5 class="pd-20 h5 mb-0"><span class="badge badge-success">Auteur</span></h5>
@@ -90,8 +91,15 @@
 
                                         <a class="list-group-item d-flex align-items-center justify-content-between"
                                             href="#">
-                                            <img src="{{ asset('asset_admin/vendors/images/photo1.jpg') }} "
+                                            @if ($article->user->profil_url)
+                                                <img src="{{ asset('storage/'.$article->user->profil_url) }} "
                                                 style="width: 70px; height: 70px;" alt="">
+                                            @else
+                                                <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }} "
+                                                style="width: 70px; height: 70px;" alt="">
+                                            @endif
+
+
                                             <span class="user-name">{{ $article->user->name }}</span>
                                         </a>
                                     </div>

@@ -311,13 +311,29 @@
         },
         series: [{
             name: 'In Progress',
-            data: [40, 28, 47, 22, 34, 25]
+
+            data: [
+                @forelse (getCountArticleByMonth() as $model)
+                 {{ $model["nbr"] }},
+                @empty
+                @endforelse
+            ]
+
+            // data: [30, 20, 37, 10, 28, 11]
         }, {
             name: 'Complete',
-            data: [30, 20, 37, 10, 28, 11]
+            // data: [30, 20, 37, 10, 28, 11]
         }],
         xaxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            categories: [
+                @forelse (getCountArticleByMonth() as $model)
+                 '{{ $model["month"] }}',
+                @empty
+                @endforelse
+            ],
+
+            // categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+
             labels: {
                 style: {
                     colors: ['#353535'],
@@ -377,7 +393,7 @@
     }
 
     var options6 = {
-        series: [73],
+        series: [{{ getRevueWithMostArticles()["percentage"] }}],
         chart: {
             height: 350,
             type: 'radialBar',
@@ -419,7 +435,7 @@
         stroke: {
             dashArray: 4
         },
-        labels: ['Achieve Goals'],
+        labels: ['{{ getRevueWithMostArticles()["revue"]->titre }}'],
     };
 
     var chart = new ApexCharts(document.querySelector("#chart"), options);

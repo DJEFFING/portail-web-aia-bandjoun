@@ -19,8 +19,10 @@ class DashboadController extends Controller
         $nbrArticle = Article::all()->count();
         $nbrArticleByMonth = $this->getCountArticleByMonth();
 
+        $articles = Article::latest()->take(5)->get();
 
-       return view('admin.index', compact('nbrUser','nbrEquipe','nbrProjet','nbrArticle','nbrArticleByMonth'));
+
+       return view('admin.index', compact('nbrUser','nbrEquipe','nbrProjet','nbrArticle','nbrArticleByMonth','articles'));
     }
 
     public function getCountArticleByMonth()

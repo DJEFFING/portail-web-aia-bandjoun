@@ -4,6 +4,7 @@
         <div class="pd-ltr-20">
 
             <div class="row">
+                <!-- count user -->
                 <div class="col-xl-3 mb-30">
                     <div class="card-box height-100-p widget-style1">
                         <div class="d-flex flex-wrap align-items-center">
@@ -17,6 +18,9 @@
                         </div>
                     </div>
                 </div>
+                <!--END count user -->
+
+                <!-- Count Equipe -->
                 <div class="col-xl-3 mb-30">
                     <div class="card-box height-100-p widget-style1">
                         <div class="d-flex flex-wrap align-items-center">
@@ -30,6 +34,9 @@
                         </div>
                     </div>
                 </div>
+                <!--END Count Equipe -->
+
+                <!-- Count Projet -->
                 <div class="col-xl-3 mb-30">
                     <div class="card-box height-100-p widget-style1">
                         <div class="d-flex flex-wrap align-items-center">
@@ -43,6 +50,9 @@
                         </div>
                     </div>
                 </div>
+                <!-- Count Projet -->
+
+                <!-- Count Article -->
                 <div class="col-xl-3 mb-30">
                     <div class="card-box height-100-p widget-style1">
                         <div class="d-flex flex-wrap align-items-center">
@@ -56,179 +66,89 @@
                         </div>
                     </div>
                 </div>
+                <!-- Count Article -->
             </div>
+
             <div class="row">
                 <div class="col-xl-8 mb-30">
                     <div class="card-box height-100-p pd-20">
-                        <h2 class="h4 mb-20">Fréquance de Publication d'article</h2>
+                        <h2 class="h4 mb-20">Fréquence de publication d'articles</h2>
                         <div id="chart5"></div>
                     </div>
                 </div>
+
                 <div class="col-xl-4 mb-30">
                     <div class="card-box height-100-p pd-20">
-                        <h2 class="h4 mb-20">Lead Target</h2>
+                        <h2 class="h4 mb-20">Revue ayant le plus d'articles</h2>
                         <div id="chart6"></div>
                     </div>
                 </div>
             </div>
+
             <div class="card-box mb-30">
-                <h2 class="h4 pd-20">Best Selling Products</h2>
-                <table class="data-table table nowrap">
+                <h2 class="h4 pd-20">Les articles les plus récents</h2>
+                
+                <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th class="table-plus datatable-nosort">Product</th>
-                            <th>Name</th>
-                            <th>Color</th>
-                            <th>Size</th>
-                            <th>Price</th>
-                            <th>Oty</th>
-                            <th class="datatable-nosort">Action</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Titre</th>
+                            {{-- <th scope="col">Desciption</th> --}}
+                            <th scope="col">Date Creation</th>
+                            <th scope="col">Responsable</th>
+                            <th scope="col">status</th>
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="table-plus">
-                                <img src="{{ asset('asset_admin/vendors/images/product-1.jpg') }} " width="70"
-                                    height="70" alt="">
-                            </td>
-                            <td>
-                                <h5 class="font-16">Shirt</h5>
-                                by John Doe
-                            </td>
-                            <td>Black</td>
-                            <td>M</td>
-                            <td>$1000</td>
-                            <td>1</td>
-                            <td>
-                                <div class="dropdown">
-                                    <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
-                                        href="#" role="button" data-toggle="dropdown">
-                                        <i class="dw dw-more"></i>
+
+                        @forelse ($articles as $article)
+                            <tr>
+                                <th scope="row">{{ $loop->iteration}}</th>
+                                <td>{{ Str::limit($article->titre, 20, '...') }}</td>
+                                {{-- <td>{{Str::limit($article->description_1, 20, '...') }}</td> --}}
+                                <td>{{ $article->created_at->format("d-M-Y") }}</td>
+
+                                <td>
+                                    @if ($article->user->profil_url)
+                                        <img src="{{ asset('storage/' . $article->user->profil_url) }}"
+                                        style="width: 50px; height: 50px;" alt=""><br>
+                                    @else
+                                        <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }}"
+                                            style="width: 50px; height: 50px;" alt=""><br>
+                                    @endif
+                                    <span>{{ $article->user->name }}</span>
+
+                                </td>
+
+                                <td>
+                                    <a href="{{ Auth::user()->getRole('admin') ? route('admin.article.isVisible', $article->id) : '#' }}"><span
+                                            class="{{ $article->status ? 'badge badge-success' : 'badge badge-danger' }}">{{ $article->status ? 'public' : 'non-public' }}
+                                        </span>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                        <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-                                        <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
-                                        <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="table-plus">
-                                <img src="{{ asset('asset_admin/vendors/images/product-2.jpg') }} " width="70"
-                                    height="70" alt="">
-                            </td>
-                            <td>
-                                <h5 class="font-16">Boots</h5>
-                                by Lea R. Frith
-                            </td>
-                            <td>brown</td>
-                            <td>9UK</td>
-                            <td>$900</td>
-                            <td>1</td>
-                            <td>
-                                <div class="dropdown">
-                                    <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
-                                        href="#" role="button" data-toggle="dropdown">
-                                        <i class="dw dw-more"></i>
+                                </td>
+
+                                <td> <a href="{{ route('admin.article.show',$article->id) }}" class="btn btn-sm btn-outline-info me-2">
+                                        <i class="dw dw-eye"></i>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                        <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-                                        <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
-                                        <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="table-plus">
-                                <img src="{{ asset('asset_admin/vendors/images/product-3.jpg') }} " width="70"
-                                    height="70" alt="">
-                            </td>
-                            <td>
-                                <h5 class="font-16">Hat</h5>
-                                by Erik L. Richards
-                            </td>
-                            <td>Orange</td>
-                            <td>M</td>
-                            <td>$100</td>
-                            <td>4</td>
-                            <td>
-                                <div class="dropdown">
-                                    <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
-                                        href="#" role="button" data-toggle="dropdown">
-                                        <i class="dw dw-more"></i>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                        <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-                                        <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
-                                        <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="table-plus">
-                                <img src="{{ asset('asset_admin/vendors/images/product-4.jpg') }} " width="70"
-                                    height="70" alt="">
-                            </td>
-                            <td>
-                                <h5 class="font-16">Long Dress</h5>
-                                by Renee I. Hansen
-                            </td>
-                            <td>Gray</td>
-                            <td>L</td>
-                            <td>$1000</td>
-                            <td>1</td>
-                            <td>
-                                <div class="dropdown">
-                                    <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
-                                        href="#" role="button" data-toggle="dropdown">
-                                        <i class="dw dw-more"></i>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                        <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-                                        <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
-                                        <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="table-plus">
-                                <img src="{{ asset('asset_admin/vendors/images/product-5.jpg') }} " width="70"
-                                    height="70" alt="">
-                            </td>
-                            <td>
-                                <h5 class="font-16">Blazer</h5>
-                                by Vicki M. Coleman
-                            </td>
-                            <td>Blue</td>
-                            <td>M</td>
-                            <td>$1000</td>
-                            <td>1</td>
-                            <td>
-                                <div class="dropdown">
-                                    <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
-                                        href="#" role="button" data-toggle="dropdown">
-                                        <i class="dw dw-more"></i>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                        <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-                                        <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
-                                        <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
+
+                                    @if (Auth::user()->id == $article->user->id)
+                                        <a href="{{ route('admin.article.showUpdate',$article->id) }}" class="btn btn-sm btn-outline-warning me-2">
+                                            <i class="dw dw-edit2"></i>
+                                        </a>
+                                    @endif
+                                </td>
+
+                            </tr>
+
+                        @empty
+                        @endforelse
                     </tbody>
                 </table>
             </div>
             <div class="footer-wrap pd-20 mb-20 card-box">
-                DeskApp - Bootstrap 4 Admin Template By <a href="https://github.com/dropways" target="_blank">Ankit
-                    Hingarajiya</a>
+                UR-AIA BANJOUN
             </div>
         </div>
     </div>
 @endsection
-
