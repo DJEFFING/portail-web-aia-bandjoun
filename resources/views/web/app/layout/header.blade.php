@@ -15,8 +15,20 @@
                 <li><a href="/" @if ($page == 0) class="active" @endif>Acceuil</a></li>
                 <li><a href="{{ route('web.apropos') }}" @if ($page == 1) class="active" @endif>À PROPOS</a></li>
                 <li><a href="{{ route('web.evernement') }}" @if ($page == 2) class="active" @endif>EVENEMENTS</a></li>
-                <li><a href="{{ route('web.pole-recherche') }}" @if ($page == 3) class="active" @endif>RECHERCHE</a></li>
-                <li><a href="{{ route('web.equipes') }}" @if ($page == 4) class="active" @endif>Equipes</a></li>
+
+                <!-- Pole Et Equipe de recherche -->
+                    <li class="dropdown">
+                        <a href="#" @if ($page == 3 || $page == 4) class="active" @endif>
+                            <span>RECHERCHE</span>
+                            <i class="bi bi-chevron-down dropdown-indicator"></i>
+                        </a>
+                        <ul>
+                            <li><a href="{{ route('web.pole-recherche') }}" @if ($page == 3) class="active" @endif>Pôles de Recherche</a></li>
+                            <li><a href="{{ route('web.equipes') }}" @if ($page == 4) class="active" @endif>Equipes</a></li>
+                        </ul>
+                    </li>
+                <!--END Pole Et Equipe de recherche -->
+
 
                 <li><a href=" {{ route('web.projets') }} " @if ($page == 5) class="active" @endif>PROJETS</a></li>
                 <li><a href=" {{ route('web.blogs') }} " @if ($page == 6) class="active" @endif>Blogs</a></li>
@@ -31,7 +43,7 @@
 
                     </ul>
                 </li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="{{ route('web.contact') }}" @if ($page == 9) class="active" @endif>Contact</a></li>
             </ul>
         </nav><!-- .navbar -->
 

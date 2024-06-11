@@ -1,7 +1,8 @@
 <div class="row gy-4 posts-list">
-    <center>
-        <h1>Article ({{ count($user->articles) }})</h1>
-    </center>
+    <div class="section-header">
+        <h2>Article ({{ count($user->articles) }})</h2>
+    </div>
+    
     @forelse ($user->articles as $article)
         <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="post-item position-relative h-100">

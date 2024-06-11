@@ -14,16 +14,22 @@
                 <a href="{{ $user->linkdin_url }}"><i class="bi bi-linkedin"></i></a>
             </div>
         </div>
+
         <div class="member-info text-center">
-            <h4>{{ $user->name }}</h4>
+            <a href="{{ route('web.show-profil', $user->id) }}">
+                <h4>{{ $user->name }}</h4>
+            </a>
             <h6>{{ $user->grade }}-{{ $user->lieu_travail }}</h6>
             <p style="background-color: rgb(20, 39, 218); color: white; text-align: center;">Equipe</p>
             <p><strong>resp : </strong>{{ $user->equipes[0]->titre }}</p>
             <span>{{ $user->fonction->nom }}</span>
             <p>{{ Str::limit($user->description, 30, '...') }}</p>
         </div>
+
     </div><!-- End Team Member -->
 @empty
-<center><p>Pas de Résultat</p></center>
+    <center>
+        <p>Pas de Résultat</p>
+    </center>
 @endforelse
 <br>

@@ -43,7 +43,12 @@
                                                 <h4 class="card-title">{{ $equipe->titre }} ({{ $equipe->code_equipe }})</h4>
                                                 <p><span
                                                         style="background-color: green; color:white; text-align: center; width: 200px; margin-right: 10px;">Reponsable
-                                                    </span> {{ $equipe->user->name }}</p>
+                                                    </span> {{ $equipe->user->name }}
+                                                </p>
+                                                <br><p><span
+                                                    style="background-color: rgb(102, 216, 236); color:white; text-align: center; width: 200px; margin-right: 10px;">Membre
+                                                </span> {{ count($equipe->menbres)+1 }}
+                                            </p>
                                                 <p></p><br>
                                                 <p>{{ Str::limit($equipe->description_1, 200, '...') }}</p>
                                             </div>

@@ -229,7 +229,7 @@
                                     </div>
                                 </div>
                                 <div class="member-info text-center">
-                                    <h4>{{ $user->name }}</h4>
+                                    <a href="{{ route('web.show-profil',$user->id) }}"><h4>{{ $user->name }}</h4></a>
                                     <h5>{{ $user->grade }}-{{ $user->lieu_travail }}</h5>
                                     <span>{{ $user->fonction->nom }}</span>
                                     <p>{{ $user->description }}
