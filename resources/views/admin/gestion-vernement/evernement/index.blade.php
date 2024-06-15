@@ -19,68 +19,67 @@
                      </div>
                  </div>
 
+                 <div class="form-group">
+                     <input type="text " class="form-control" id="searchBar" name="search"
+                         placeholder="Recherche: Titre, ville, Lieu, Date, Status ">
+                 </div>
+
                  <div class="row clearfix">
-                    @foreach ($listEvernement as $evernement )
-                    <div class="col-sm-12 col-md-12 col-lg-4 mb-30">
-                        <div class="card card-box">
-                            <img class="card-img-top" src="{{ asset('storage/'.$evernement->media_url) }}"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <small>
-                                    <span class="badge badge-info">{{ $evernement->date }}</span>,
-                                    <span class="badge badge-info">{{ $evernement->ville }}</span>,
-                                    <span class="badge badge-info">{{ $evernement->adress }}</span>
-                                    <a href="{{(Auth::user()->getRole("admin")) ? route('admin.evernement.isVisible', $evernement->id) : '#'}}">
-                                        @if ($evernement->status)
-                                            <span class="badge badge-success">
-                                                publier
-                                            </span>
-                                        @else
-                                            <span class="badge badge-danger">
-                                                non-public
-                                            </span>
-                                        @endif
+                     @foreach ($listEvernement as $evernement)
+                         <div class="col-sm-12 col-md-12 col-lg-4 mb-30 search-card">
+                             <div class="card card-box">
+                                 <img class="card-img-top" src="{{ asset('storage/' . $evernement->media_url) }}"
+                                     alt="Card image cap">
+                                 <div class="card-body">
+                                     <small>
+                                         <span class="badge badge-info">{{ $evernement->date }}</span>,
+                                         <span class="badge badge-info">{{ $evernement->ville }}</span>,
+                                         <span class="badge badge-info">{{ $evernement->adress }}</span>
+                                         <a
+                                             href="{{ Auth::user()->getRole('admin') ? route('admin.evernement.isVisible', $evernement->id) : '#' }}">
+                                             @if ($evernement->status)
+                                                 <span class="badge badge-success">
+                                                     publier
+                                                 </span>
+                                             @else
+                                                 <span class="badge badge-danger">
+                                                     non-public
+                                                 </span>
+                                             @endif
 
-                                    </a>
-                                </small>
-                                <h5 class="card-title weight-500">{{ $evernement->titre }}</h5>
-                                <p class="card-text">{{ $evernement->description_1 }}</p>
+                                         </a>
+                                     </small>
+                                     <h5 class="card-title weight-500">{{ $evernement->titre }}</h5>
+                                     <p class="card-text">{{ $evernement->description_1 }}</p>
 
-                                <div class="row">
+                                     <div class="row">
 
-                                    <a href="{{ route('admin.evernement.show', $evernement->id) }}"
-                                        class="btn btn-sm btn-outline-info me-2 col-md-4">
-                                        <i class="dw dw-eye"></i>
-                                    </a>
+                                         <a href="{{ route('admin.evernement.show', $evernement->id) }}"
+                                             class="btn btn-sm btn-outline-info me-2 col-md-4">
+                                             <i class="dw dw-eye"></i>
+                                         </a>
 
-                                    @if (Auth::user()->getRole('Admin'))
+                                         @if (Auth::user()->getRole('Admin'))
+                                             <a href="{{ route('admin.evernement.showUpdate', $evernement->id) }}"
+                                                 class="btn btn-sm btn-outline-warning me-2 col-md-4">
+                                                 <i class="dw dw-edit2"></i>
+                                             </a>
 
-                                        <a href="{{ route('admin.evernement.showUpdate', $evernement->id) }}"
-                                            class="btn btn-sm btn-outline-warning me-2 col-md-4">
-                                            <i class="dw dw-edit2"></i>
-                                        </a>
+                                             <button class="btn btn-sm btn-outline-danger col-md-4" data-toggle="modal"
+                                                 data-target= "{{ '#delete' . $evernement->id }}">
+                                                 <i class="dw dw-delete-3"></i>
+                                             </button>
 
-                                        <button class="btn btn-sm btn-outline-danger col-md-4"
-                                            data-toggle="modal"
-                                            data-target= "{{ '#delete' . $evernement->id }}">
-                                            <i class="dw dw-delete-3"></i>
-                                        </button>
-
-                                        @include(
-                                            'admin.global-modal.delete-modal',
-                                            [
-                                                'url' => route(
-                                                    'admin.evernement.delete',
-                                                    $evernement->id),
-                                                'id' => $evernement->id,
-                                            ]
-                                        )
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
+                                             @include('admin.global-modal.delete-modal', [
+                                                 'url' => route('admin.evernement.delete', $evernement->id),
+                                                 'id' => $evernement->id,
+                                             ])
+                                         @endif
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     @endforeach
 
                  </div>
 

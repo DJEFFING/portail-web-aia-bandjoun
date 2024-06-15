@@ -5,7 +5,7 @@
             <div class="min-height-200px">
                 <div class="page-header">
                     <div class="row">
-                        <div class="col-md-12 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="title">
                                 <h4>Liste Utilisateurs</h4>
                             </div>
@@ -16,14 +16,28 @@
                                 </ol>
                             </nav>
                         </div>
+
+                        <div class="col-md-6 col-sm-6">
+                            @if (Auth::user()->getRole('Admin'))
+                            <div class="pull-right">
+                                <a href="#striped-table" class="btn btn-primary btn-sm scroll-click" rel="content-y"
+                                    data-toggle="modal" data-target="#Ajouter" role="button"><i class="icon-copy fi-plus"></i></a>
+                            </div>
+                        @endif
+                        </div>
                     </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="text " class="form-control" id="searchBar" name="search"
+                    placeholder="Recherche: Nom, Prenom, Pôle de Recherche, Equipe....">
                 </div>
 
                 <!-- List Des Responssable de pole de Recherche -->
                 <div class="row clearfix">
                     <!-- List Des Responssable de pole de Recherche -->
                     @forelse ($listUserRespPole as $user)
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-30">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-30 search-card">
                             <div class="pd-20 card-box height-100-p">
                                 @if ($user->profil_url != null)
                                     <div class="profile-photo" style="margin-bottom: 50px;">
@@ -124,7 +138,7 @@
 
                     <!-- List Des Responssable d'equipe-->
                     @forelse ($listUserRespEquipe as $user)
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-30">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-30 search-card">
                             <div class="pd-20 card-box height-100-p">
                                 @if ($user->profil_url != null)
                                     <div class="profile-photo" style="margin-bottom: 50px;">
@@ -227,8 +241,8 @@
 
                     <!-- Liste Membres Equipe-->
                     @forelse ($listMenbreEquipeUser as $user)
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-30">
-                            <div class="pd-20 card-box height-100-p">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-30 search-card">
+                            <div class="pd-20 card-box height-100-p ">
 
                                 @if ($user->profil_url != null)
                                     <div class="profile-photo" style="margin-bottom: 50px;">
@@ -334,4 +348,5 @@
             </div>
         </div>
     </div>
+    @include('admin.user.gestion-user.create')
 @endsection

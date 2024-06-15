@@ -12,6 +12,12 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <input type="text " class="form-control" id="searchBar" name="search"
+                    placeholder="Recherche: Nom ">
+                </div>
+
                 <!-- Striped table start -->
                 <div class="pd-20 card-box mb-30">
                     <div class="clearfix mb-20">
@@ -27,6 +33,7 @@
                         @endif
 
                     </div>
+
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -40,7 +47,7 @@
                         <tbody>
 
                             @forelse ($listPartenaires as $partenaire)
-                                <tr>
+                                <tr class="search-card">
                                     <th scope="row">{{ $partenaire->id }}</th>
                                     <td>{{ $partenaire->nom }}</td>
                                     <td><img src="{{ asset('storage/'.$partenaire->logo_url) }}" style="width: 50px; height: 50px;" alt=""></td>
