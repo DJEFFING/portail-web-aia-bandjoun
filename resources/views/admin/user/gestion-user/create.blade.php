@@ -8,7 +8,7 @@
                     <span aria-hidden="true">X</span>
                 </button>
             </div>
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.user.store') }}" method="POST" enctype="multipart/form-data" >
                 @csrf
             <div class="modal-body text-center">
 
@@ -22,8 +22,25 @@
 
                     <div class="col-md-6">
                         <div class="form-group">
+                            <label>Prenom : </label><span class="text-danger">*</span>
+                            <input type="text" name="prenom" placeholder="Prenom du membre" class="form-control" required>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
                             <label>Email : </label><span class="text-danger">*</span>
-                            <input type="text" name="email" placeholder="Email du membre" class="form-control" required>
+                            <input type="email" name="email" placeholder="Email du membre" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Telephone : </label><span class="text-danger">*</span>
+                            <input type="text" name="telephone" placeholder="Telephone du membre" class="form-control" required>
                         </div>
                     </div>
 

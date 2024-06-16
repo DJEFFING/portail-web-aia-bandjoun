@@ -1,9 +1,17 @@
 <div class="header">
     <div class="header-left">
-        <div class="menu-icon dw dw-menu"></div>
-
+        <div class="menu-icon dw dw-menu" ></div>
+        @if(!empty(session('message')))
+            <div class="alert alert-primary" style="margin: 10px;" role="alert">
+                {{ session('message') }}
+            </div>
+        @endif
     </div>
+
+
+
     <div class="header-right">
+
 
 
         <div class="dashboard-setting user-notification">
