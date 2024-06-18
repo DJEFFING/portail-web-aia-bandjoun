@@ -1,8 +1,10 @@
 <div class="left-side-bar">
     <div class="brand-logo">
-        <a href="index.html">
-            <img src="{{ asset('asset_admin/vendors/images/deskapp-logo.svg') }} " alt="" class="dark-logo">
-            <img src="{{ asset('asset_admin/vendors/images/deskapp-logo-white.svg') }} " alt="" class="light-logo">
+        <a href="{{ route('admin.index')}}">
+            <img src="{{ asset('asset_web/assets/img/ur-aia.png') }}" style="height: 100px"  alt="" class="dark-logo">
+            <img src="{{ asset('asset_web/assets/img/ur-aia.png') }}" style="height: 100px"  alt="" class="light-logo">
+            <h1  class="dark-logo text-dark">AIA</h1>
+            <h1  class="light-logo text-white">AIA</h1>
         </a>
         <div class="close-sidebar" data-toggle="left-sidebar-close">
             <i class="ion-close-round"></i>
@@ -29,6 +31,7 @@
                         <ul class="submenu">
                             <li><a href="{{ route('admin.slide.index') }}">Slide Section</a></li>
                             <li><a href="{{ route('admin.apropos.index') }}">Appropos Section</a></li>
+                            <li><a href="{{ route('admin.contact.index') }}">Contact</a></li>
                         </ul>
                     </li>
 

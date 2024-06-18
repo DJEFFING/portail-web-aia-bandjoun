@@ -1,6 +1,10 @@
 <?php
 
 use App\Models\Article;
+use App\Models\Contact;
+use App\Models\Equipe;
+use App\Models\PoleRecherche;
+use App\Models\Projet;
 use App\Models\Revue;
 
 if (!function_exists('getCountArticleByMonth')) {
@@ -50,5 +54,37 @@ if (!function_exists("getRevueWithMostArticles")) {
             'revue' => $mostArticlesRevue,
             'percentage' => $percentage
         ];
+    }
+}
+
+if(!(function_exists("contactAll"))){
+    function  contactAll(){
+        return Contact::all()->first();
+    }
+}
+
+if(!function_exists("poleRecherches")){
+    function poleRecherches()
+    {
+        $poleRecherche = PoleRecherche::where("status",true)->get();
+        return $poleRecherche;
+    }
+}
+
+
+if(!function_exists("equipes")){
+    function equipes()
+    {
+        $equipe = Equipe::where("status",true)->get();
+        return $equipe;
+    }
+}
+
+if(!function_exists("projets"))
+{
+    function projets()
+    {
+        $projets = Projet::where("status",true)->latest()->take(3)->get();
+        return $projets;
     }
 }
