@@ -19,9 +19,15 @@
                     </div>
                 </div>
 
+                <div class="form-group">
+                    <input type="text " class="form-control" id="searchBar" name="search"
+                        placeholder="Recherche: Titre, Date Debut, Date Fin, Status ">
+                </div>
+
+
                 <div class="row clearfix">
                     @foreach ($listProjet as $projet)
-                        <div class="col-sm-12 col-md-12 col-lg-4 mb-30">
+                        <div class="col-sm-12 col-md-12 col-lg-4 mb-30 search-card">
                             <div class="card card-box">
                                 <img class="card-img-top" src="{{ asset('storage/' . $projet->media_url) }}"
                                     alt="Card image cap">

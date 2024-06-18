@@ -42,8 +42,11 @@
     <div class="login-header box-shadow">
         <div class="container-fluid d-flex justify-content-between align-items-center">
             <div class="brand-logo">
-                <a href="login.html">
-                    <img src=" {{ asset('asset_admin/vendors/images/deskapp-logo.svg') }} " alt="">
+                <a href="#">
+                    <img src="{{ asset('asset_web/assets/img/ur-aia.png') }}" style="height: 100px"  alt="" class="dark-logo">
+                    <img src="{{ asset('asset_web/assets/img/ur-aia.png') }}" style="height: 100px"  alt="" class="light-logo">
+                    <h1  class="dark-logo">AIA</h1>
+                    <h1  class="light-logo">AIA</h1>
                 </a>
             </div>
         </div>

@@ -66,7 +66,7 @@ class PoleRechercheController extends Controller
 
 
 
-        return redirect(route('admin.poleRecherche.index'))->with('message', ['le pole de recherche à été crée avec success !!']);
+        return redirect(route('admin.poleRecherche.index'))->with('message', 'Le pôle de recherche a été créé avec succès !!');
     }
 
 
@@ -101,7 +101,7 @@ class PoleRechercheController extends Controller
             'user_id' => $request->user_id,
         ]);
 
-        return redirect(route('admin.poleRecherche.index'))->with('message', ['le pole de recherche à été modifer avec avec success !!']);
+        return redirect(route('admin.poleRecherche.index'))->with('message','Le pôle de recherche a été modifié avec succès !!');
     }
 
     public function isVisble(PoleRecherche $poleRecherche)
@@ -116,7 +116,7 @@ class PoleRechercheController extends Controller
     {
         //suppression des images enregistrer
         $poleRecherche->delete();
-        return redirect()->back()->with('message','le pôle a été supprimé avec success !!');
+        return redirect()->back()->with('message','Le pôle a été supprimé avec succès !!');
     }
 
     public function getUser()

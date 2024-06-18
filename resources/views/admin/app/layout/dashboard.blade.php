@@ -435,7 +435,7 @@
         stroke: {
             dashArray: 4
         },
-        labels: ['{{ getRevueWithMostArticles()["revue"]->titre }}'],
+        labels: ['{{ (getRevueWithMostArticles()["revue"]) ? getRevueWithMostArticles()["revue"]->titre : "Aucun" }}'],
     };
 
     var chart = new ApexCharts(document.querySelector("#chart"), options);

@@ -17,33 +17,35 @@
         </div>
 
         <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-            @forelse (json_decode($slide->image_url) as $item => $image)
-                @if ($item == 0)
-                    <div class="carousel-item active" style="background-image: url({{ asset('storage/' . $image) }})">
-                    </div>
-                @else
-                    <div class="carousel-item" style="background-image: url({{ asset('storage/' . $image) }})">
-                    </div>
-                @endif
+            @if(json_decode($slide->image_url) )
+                @forelse (json_decode($slide->image_url) as $item => $image)
+                    @if ($item == 0)
+                        <div class="carousel-item active" style="background-image: url({{ asset('storage/' . $image) }})">
+                        </div>
+                    @else
+                        <div class="carousel-item" style="background-image: url({{ asset('storage/' . $image) }})">
+                        </div>
+                    @endif
 
 
-            @empty
-                <div class="carousel-item active"
-                    style="background-image: url({{ asset('asset_web/assets/img/hero-carousel/hero-carousel-1.jpg') }})">
-                </div>
-                <div class="carousel-item"
-                    style="background-image: url({{ asset('asset_web/assets/img/hero-carousel/hero-carousel-2.jpg') }})">
-                </div>
-                <div class="carousel-item"
-                    style="background-image: url({{ asset('asset_web/assets/img/hero-carousel/hero-carousel-3.jpg') }})">
-                </div>
-                <div class="carousel-item"
-                    style="background-image: url({{ asset('asset_web/assets/img/hero-carousel/hero-carousel-4.jpg') }})">
-                </div>
-                <div class="carousel-item"
-                    style="background-image: url({{ asset('asset_web/assets/img/hero-carousel/hero-carousel-5.jpg') }})">
-                </div>
-            @endforelse
+                @empty
+                    <div class="carousel-item active"
+                        style="background-image: url({{ asset('asset_web/assets/img/hero-carousel/hero-carousel-1.jpg') }})">
+                    </div>
+                    <div class="carousel-item"
+                        style="background-image: url({{ asset('asset_web/assets/img/hero-carousel/hero-carousel-2.jpg') }})">
+                    </div>
+                    <div class="carousel-item"
+                        style="background-image: url({{ asset('asset_web/assets/img/hero-carousel/hero-carousel-3.jpg') }})">
+                    </div>
+                    <div class="carousel-item"
+                        style="background-image: url({{ asset('asset_web/assets/img/hero-carousel/hero-carousel-4.jpg') }})">
+                    </div>
+                    <div class="carousel-item"
+                        style="background-image: url({{ asset('asset_web/assets/img/hero-carousel/hero-carousel-5.jpg') }})">
+                    </div>
+                @endforelse
+            @endif
 
 
             <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">

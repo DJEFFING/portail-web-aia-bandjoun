@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\SendMail;
 use App\Models\Equipe;
 use App\Models\Fonction;
 use App\Models\PoleRecherche;
@@ -13,6 +14,7 @@ use App\Models\User;
 use App\Models\UserRole;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class userController extends Controller
 {
@@ -34,13 +36,42 @@ class userController extends Controller
         //les utilisateur qui font partir des equipe
         $listMenbreEquipeUser = User::whereHas('equipe')->get();
 
+        // la liste des menmbres qui ne font partir d'aucun pole  et equipe de recherche
+        $userListe =  $this->getUser();
+
         $listRole = Role::all();
         $listFonction = Fonction::all();
-        return view('admin.user.gestion-user.index',compact('listUserRespPole','listUserRespEquipe','listMenbreEquipeUser','listRole','listFonction'));
+
+
+        return view('admin.user.gestion-user.index',compact('listUserRespPole','listUserRespEquipe','listMenbreEquipeUser','userListe','listRole','listFonction'));
     }
 
     public function store(Request $request)
     {
+        // dd($request);
+        $password = $request->name."".$this->generateCode();
+        $newUser = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            "prenom" => $request->prenom,
+            "lieu_travail" => $request->lieu_travail,
+            "grade" => $request->grade,
+            "fonction_id" => $request->fonction_id,
+
+            "telephone" => $request->telephone,
+            'password' => $password,
+            "description" => "Aucun",
+            "sexe" => "M",
+        ]);
+
+        UserRole::create([
+            "user_id" => $newUser->id,
+            "role_id" => $request->role_id
+        ]);
+
+        Mail::to($newUser->email)->send(new SendMail($newUser, $password));
+
+        return redirect()->back()->with('message',"Le membre a été ajouté avec succès et ses informations de connexion lui ont été envoyées par mail.");
 
     }
 
@@ -128,7 +159,11 @@ class userController extends Controller
         $listRespEquipe = Equipe::pluck('user_id')->toArray();
 
         // Récupérer les IDs des utilisateurs qui sont membres d'une équipe
-        $listEquipeUser = User::whereHas('equipe')->toArray();
+        $listEquipeUser = [];
+        if(User::whereHas('equipe')->exists()){
+            $listEquipeUser = User::whereHas('equipe')->toArray();
+        }
+
 
         // Combiner toutes les IDs dans un seul tableau pour vérifier l'exclusion
         $excludedUserIds = array_merge($listRespPole, $listRespEquipe, $listEquipeUser);
@@ -137,6 +172,20 @@ class userController extends Controller
         $listMembre = User::whereNotIn('id', $excludedUserIds)->get();
 
         return $listMembre;
+    }
+
+    public function generateCode()
+    {
+        $code = "";
+        $carratere = "0123456789";
+
+        do {
+            for ($i = 0; $i < 4; $i++) {
+                $code .= $carratere[random_int(0, strlen($carratere) - 1)];
+            }
+        } while (User::where("password", $code)->exists());
+
+        return $code;
     }
 
 

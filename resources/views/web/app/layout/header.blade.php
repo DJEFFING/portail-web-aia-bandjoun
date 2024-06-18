@@ -3,8 +3,8 @@
 
         <a href="/" class="logo d-flex align-items-center">
             <!-- Uncomment the line below if you also wish to use an image logo -->
-            <!-- <img src="assets/img/logo.png" alt=""> -->
-            <h1>UpConstruction<span>.</span></h1>
+           <img src="{{ asset('asset_web/assets/img/ur-aia.png') }}" alt="" style="width: 50px; height: 500px;">
+            <h1>UR-AIA BANDJOUN<span>.</span></h1>
         </a>
 
         <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>

@@ -18,6 +18,12 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <input type="text " class="form-control" id="searchBar" name="search"
+                    placeholder="Recherche: Titre, Responsable, Status ">
+                </div>
+
                 <div class="blog-wrap">
                     <div class="container pd-0">
                         <div class="row">
@@ -25,7 +31,7 @@
                                 <div class="blog-list">
                                     <ul>
                                         @forelse ($equipes as $equipe)
-                                            <li>
+                                            <li class="search-card">
                                                 <div class="row no-gutters">
                                                     <div class="col-lg-4 col-md-12 col-sm-12">
                                                         <div class="blog-img">

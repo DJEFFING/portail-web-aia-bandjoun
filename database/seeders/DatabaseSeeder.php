@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserRoleSeeder::class);
         $this->call(SlideSeeder::class);
         $this->call(AproposSeeder::class);
+        $this->call(ContactSideer::class);
 
         User::factory(10)->create();
     }
