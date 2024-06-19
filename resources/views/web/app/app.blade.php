@@ -37,7 +37,7 @@
 <body>
 
     <!-- ======= Header ======= -->
-    @include('web.app.layout.header',["page"=>$page])
+    @include('web.app.layout.header', ['page' => $page])
     <!-- End Header -->
 
 
@@ -51,6 +51,11 @@
             class="bi bi-arrow-up-short"></i></a>
 
     <div id="preloader"></div>
+
+    <!-- Chatbot -->
+    <script src="https://cdn.botpress.cloud/webchat/v2/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/ac055e80-ebd0-4cd9-8304-5b6b753c9208/webchat/v2/config.js"></script>
+    <!--END Chatbot  -->
 
     <!-- Vendor JS Files -->
     <script src=" {{ asset('asset_web/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }} "></script>
