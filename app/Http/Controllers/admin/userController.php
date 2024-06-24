@@ -106,6 +106,7 @@ class userController extends Controller
 
     }
 
+
     public function updateDroit(Request $request,User $user)
     {
         if((UserRole::where("user_id",$user->id)
@@ -116,13 +117,18 @@ class userController extends Controller
             ]);
 
         }else{
-            UserRole::where("user_id",$user->id)->delete();
+
 
             $user->update([
                     "fonction_id" => $request->fonction_id
             ]);
 
-            if(Auth::user()->id != $user->id){
+
+
+            $userConnect = User::where("id",Auth::user()->id)->get();
+
+            if((Auth::user()->id != $user->id)){
+                UserRole::where("user_id",$user->id)->delete();
                 UserRole::create([
                     "user_id" => $user->id,
                     "role_id" => $request->role_id
