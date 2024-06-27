@@ -97,7 +97,7 @@
                                         <li class="nav-item">
                                             @if ($user->poleRecherches()->exists())
                                                 <a class="nav-link active" data-toggle="tab" href="#pole_recherche"
-                                                    role="tab">POLE DE RECHERCHE
+                                                    role="tab">pôles de recherche
                                                 </a>
                                             @elseif ($user->equipes()->exists() || $user->equipe()->exists())
                                                 <a class="nav-link active" data-toggle="tab" href="#equipe"
@@ -125,14 +125,14 @@
                                         <!--END Article -->
 
 
-                                        <!-- Evénements -->
+                                        <!--  Evénements -->
                                             @if ($user->evernements()->exists())
                                                 <li class="nav-item">
                                                     <a class="nav-link" data-toggle="tab" href="#evenements" role="tab">
                                                         Événements</a>
                                                 </li>
                                             @endif
-                                        <!--END Evénements -->
+                                        <!--END  Evénements -->
 
                                         <!-- Projets -->
                                             @if (
@@ -207,13 +207,13 @@
                                             @endif
                                         <!--END Projet Tab -->
 
-                                        <!-- Evénements Tab -->
+                                        <!--  Evénements Tab -->
                                             @if ($user->evernements()->exists())
                                                 @include('admin.user.evernement', [
                                                     'evenements' => $user->evernements,
                                                 ])
                                             @endif
-                                        <!--END Evénements Tab -->
+                                        <!--END  Evénements Tab -->
 
                                         <!-- Pole Recherche projet Tab -->
                                             @if($user->poleRecherches->isNotEmpty() && $user->poleRecherches[0]->equipes->isNotEmpty())

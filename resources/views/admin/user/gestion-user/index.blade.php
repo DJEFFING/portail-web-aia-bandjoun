@@ -33,9 +33,9 @@
                     placeholder="Recherche: Nom, Prenom, Pôle de Recherche, Equipe....">
                 </div>
 
-                <!-- List Des Responssable de pole de Recherche -->
+                <!-- List Des Responssable de pôles de recherche -->
                 <div class="row clearfix">
-                    <!-- List Des Responssable de pole de Recherche -->
+                    <!-- List Des Responssable de pôles de recherche -->
                     @forelse ($listUserRespPole as $user)
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-30 search-card">
                             <div class="pd-20 card-box height-100-p">
@@ -133,7 +133,7 @@
                         @include('admin.user.gestion-user.update', ['id' => $user->id, 'item' => $user])
                     @empty
                     @endforelse
-                    <!-- List Des Responssable de pole de Recherche -->
+                    <!-- List Des Responssable de pôles de recherche -->
 
 
                     <!-- List Des Responssable d'equipe-->

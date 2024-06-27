@@ -6,10 +6,10 @@
             style="background-image: url(' {{ asset('asset_web/assets/img/breadcrumbs-bg.jpg') }} ');">
             <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-                <h2>Evénements</h2>
+                <h2> Evénements</h2>
                 <ol>
                     <li><a href="{{ route('web.acceuil') }}">Acceuil</a></li>
-                    <li>Evénements</li>
+                    <li> Evénements</li>
                 </ol>
 
             </div>
@@ -20,7 +20,7 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
-                    <h2>Nos Evénements</h2>
+                    <h2>Nos  Evénements</h2>
                     <p>Consultez ici la liste complète nos événements.</p>
                 </div>
 

@@ -124,7 +124,7 @@
                                         @empty
                                             <a href="#"
                                                 class="list-group-item d-flex align-items-center justify-content-between">Aucun
-                                                Pole de recherche<span class="badge badge-primary badge-pill">0</span></a>
+                                                pôles de recherche<span class="badge badge-primary badge-pill">0</span></a>
                                         @endforelse
 
                                     </div>

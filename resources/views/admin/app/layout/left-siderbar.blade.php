@@ -112,16 +112,16 @@
 
                 <li class="dropdown active">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-library"></span><span class="mtext">Evènements</span>
+                        <span class="micon dw dw-library"></span><span class="mtext">Evénements</span>
                     </a>
                     <ul class="submenu">
 
-                        <li><a href="{{ route('admin.typeEvernement.index') }}">Type Evènement</a></li>
-                        <li><a href="{{ route('admin.roleEvernement.index') }}">Role Evènement</a></li>
+                        <li><a href="{{ route('admin.typeEvernement.index') }}">Type Evénement</a></li>
+                        <li><a href="{{ route('admin.roleEvernement.index') }}">Role Evénement</a></li>
                         @if (Auth::user()->getRole('Admin'))
-                            <li><a href="{{ route('admin.evernement.showStore') }}">Ajouter une Evènement</a></li>
+                            <li><a href="{{ route('admin.evernement.showStore') }}">Ajouter un Evénement</a></li>
                         @endif
-                        <li><a href="{{ route('admin.evernement.index') }}">Liste Evènement</a></li>
+                        <li><a href="{{ route('admin.evernement.index') }}">Liste Evénement</a></li>
 
 
                     </ul>

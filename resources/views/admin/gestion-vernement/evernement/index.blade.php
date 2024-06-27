@@ -7,12 +7,12 @@
                      <div class="row">
                          <div class="col-md-12 col-sm-12">
                              <div class="title">
-                                 <h4>Liste Evènements</h4>
+                                 <h4>Liste Evénements</h4>
                              </div>
                              <nav aria-label="breadcrumb" role="navigation">
                                  <ol class="breadcrumb">
                                      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                     <li class="breadcrumb-item active" aria-current="page">Liste Evènements</li>
+                                     <li class="breadcrumb-item active" aria-current="page">Liste Evénements</li>
                                  </ol>
                              </nav>
                          </div>

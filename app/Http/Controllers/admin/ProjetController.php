@@ -37,7 +37,7 @@ class ProjetController extends Controller
             "user_id" => $request->user_id,
             "pole_recherche_id" => $request->pole_recherche_id,
         ]);
-        return redirect(route('admin.projet.index'))->with('message','le projet à été crée avec success!!');
+        return redirect(route('admin.projet.index'))->with('message','le projet à été crée avec succès!!');
     }
 
     public function showStore()
@@ -85,7 +85,7 @@ class ProjetController extends Controller
             "pole_recherche_id" => $request->pole_recherche_id,
         ]);
 
-        return redirect(route('admin.projet.index'))->with('message','le projet à été modifier avec success!!');
+        return redirect(route('admin.projet.index'))->with('message','le projet à été modifier avec succès!!');
 
     }
 
@@ -101,7 +101,7 @@ class ProjetController extends Controller
     {
         // dd($projet);
         $projet->delete();
-        return redirect()->back()->with('message',"le projet à été supprimer avec success!!");
+        return redirect()->back()->with('message',"le projet à été supprimer avec succès!!");
     }
 
     public function addEquipe(Request $request, Projet $projet)
@@ -112,7 +112,7 @@ class ProjetController extends Controller
             "equipe_id" => $request->equipe_id,
             "role_equipe_projet_id" => $request->role_equipe_projet_id
         ]);
-        return redirect()->back()->with('message',"l'equipe à été ajouter au projet avec success !!");
+        return redirect()->back()->with('message',"l'equipe à été ajouter au projet avec succès !!");
 
     }
 
@@ -123,10 +123,10 @@ class ProjetController extends Controller
             "partenaire_id" =>$request->partenaire_id,
             "projet_id" => $projet->id,
         ]);
-        return redirect()->back()->with('message',"la partenaire à été ajouter au projet avec success!!");
+        return redirect()->back()->with('message',"la partenaire à été ajouter au projet avec succès!!");
     }
 
-    //récupération de tous les équipes de recherches qui sont dans le meme pole de recherche que le projet
+    //récupération de tous les équipes de recherches qui sont dans le meme pôles de recherche que le projet
     public function getEquipe($projet)
     {
         $listEquipe = Equipe::where("pole_recherche_id",$projet->pole_recherche_id)->get();

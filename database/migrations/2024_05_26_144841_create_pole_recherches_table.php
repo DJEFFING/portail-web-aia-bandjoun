@@ -18,7 +18,7 @@ return new class extends Migration
             $table->longText("description_1");
             $table->longText("description_2");
             $table->string("media_url");
-            $table->unsignedBigInteger("user_id")->unique(); //responssable du pole de recherche
+            $table->unsignedBigInteger("user_id")->unique(); //responssable du pôles de recherche
             $table->boolean("status")->default(false);
 
             $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade");

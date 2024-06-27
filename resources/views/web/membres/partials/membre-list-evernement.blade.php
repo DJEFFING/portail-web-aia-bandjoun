@@ -3,7 +3,7 @@
      <div class="container" data-aos="fade-up">
 
          <div class="section-header">
-             <h2>Evénements</h2>
+             <h2> Evénements</h2>
          </div>
 
          <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"

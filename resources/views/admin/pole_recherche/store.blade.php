@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="title">
-                                <h4>Ajouter Un Pole De Recherche</h4>
+                                <h4>Ajouter Un pôles de recherche</h4>
                             </div>
                         </div>
                     </div>
@@ -15,7 +15,7 @@
 
 
                 <form class="html-editor pd-20 card-box mb-30" method="POST" action="{{ route('admin.poleRecherche.store') }}" enctype="multipart/form-data">
-                    <h4 class="h4 text-blue">Ce formulaire Permet D'ajouter un nouveau Pole De Recherche</h4>
+                    <h4 class="h4 text-blue">Ce formulaire Permet D'ajouter un nouveau pôles de recherche</h4>
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
@@ -58,7 +58,7 @@
                     <label>Contenue :</label> <span class="text-danger">*</span>
                     <textarea class="textarea_editor form-control border-radius-0" name="description_2" placeholder="Enter text ..." required></textarea><br>
 
-                    <!-- Responssable du pole de recherche -->
+                    <!-- Responssable du pôles de recherche -->
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Responssable : </label> <span class="text-danger">*</span>
@@ -75,7 +75,7 @@
                     </div>
 
                     <button class="btn btn-primary" type="submit">Valider</button>
-                    <!--END Responssable du pole de recherche -->
+                    <!--END Responssable du pôles de recherche -->
                 </form>
             </div>
             <div class="footer-wrap pd-20 mb-20 card-box">
