@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\AnneePublicationController;
 use App\Http\Controllers\admin\AproposController;
 use App\Http\Controllers\admin\ArticleController;
 use App\Http\Controllers\admin\authantification\LoginController;
@@ -215,6 +216,13 @@ Route::name('admin.')->prefix('admin/')->group(function () {
             Route::post('/','store')->name('store');
             Route::post('/{contact}','update')->name('update');
             Route::delete('/{contact}','delete')->name('delete');
+        });
+
+        Route::middleware(['role:Admin'])->controller(AnneePublicationController::class)->name("anneePublication.")->prefix('anneePublication/')->group(function(){
+            Route::get('/','index')->name('index')->withoutMiddleware(['role:Admin']);
+            Route::post('/','store')->name('store');
+            Route::post('/{anneePublication}','update')->name('update');
+            Route::delete('/{anneePublication}','delete')->name('delete');
         });
 
     });

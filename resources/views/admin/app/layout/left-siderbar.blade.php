@@ -166,6 +166,18 @@
                     </ul>
                 </li>
 
+                <li class="dropdown active">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon dw dw-library"></span><span class="mtext">Publication</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="{{ route('admin.anneePublication.index') }}">Annee</a></li>
+                        <li><a href="#">Types Publication</a></li>
+                        <li><a href="#">Ajouter Publication</a></li>
+                        <li><a href="#">Liste Publication</a></li>
+                    </ul>
+                </li>
+
 
 
                 {{-- <li class="dropdown-toggle no-arrow">

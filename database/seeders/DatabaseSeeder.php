@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
         $this->call(AproposSeeder::class);
         $this->call(ContactSideer::class);
 
+        $this->call(AnneePublicationSeeder::class);
+        $this->call(TypePublicationSeeder::class);
         User::factory(10)->create();
     }
 }
