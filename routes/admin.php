@@ -13,6 +13,7 @@ use App\Http\Controllers\admin\fonctionController;
 use App\Http\Controllers\admin\PartenaireController;
 use App\Http\Controllers\admin\PoleRechercheController;
 use App\Http\Controllers\admin\ProjetController;
+use App\Http\Controllers\admin\PublicationController;
 use App\Http\Controllers\admin\RevueController;
 use App\Http\Controllers\admin\RoleEquipeController;
 use App\Http\Controllers\admin\RoleEquipeProjetController;
@@ -46,8 +47,8 @@ Route::name('admin.')->prefix('admin/')->group(function () {
 
         Route::middleware(['role:Admin'])->controller(PoleRechercheController::class)->name('poleRecherche.')->prefix('poleRecherche')->group(function () {
             Route::get('/', 'index')->name('index')->withoutMiddleware(['role:Admin']);
-            Route::get('/showStore', 'showStore')->name('showStore');
-            Route::get('/{poleRecherche}-showUpdate', 'showUpdate')->name('showUpdate');
+            Route::get('/create', 'create')->name('create');
+            Route::get('/{poleRecherche}-edit', 'edit')->name('edit');
             Route::get('/{poleRecherche}-show', 'show')->name('show')->withoutMiddleware(['role:Admin']);
 
             Route::post('/', 'store')->name('store');
@@ -74,8 +75,8 @@ Route::name('admin.')->prefix('admin/')->group(function () {
 
         Route::middleware(['role:Admin'])->controller(equipeController::class)->name('equipe.')->prefix('equipe')->group(function () {
             Route::get('/', 'index')->name('index')->withoutMiddleware(['role:Admin']);
-            Route::get('/showStore', 'showStore')->name('showStore');
-            Route::get('/{equipe}-showUpdate', 'showUpdate')->name('showUpdate');
+            Route::get('/create', 'create')->name('create');
+            Route::get('/{equipe}-edit', 'edit')->name('edit');
             Route::get('/{equipe}-show', 'show')->name('show')->withoutMiddleware(['role:Admin']);
 
             Route::post('/', 'store')->name('store');
@@ -89,8 +90,8 @@ Route::name('admin.')->prefix('admin/')->group(function () {
 
         Route::middleware(['role:Admin'])->controller(AxeController::class)->name('axe.')->prefix('axe')->group(function () {
             Route::get('/', 'index')->name('index')->withoutMiddleware(['role:Admin']);
-            Route::get('/showStore', 'showStore')->name('showStore');
-            Route::get('/{axe}-showUpdate', 'showUpdate')->name('showUpdate');
+            Route::get('/create', 'create')->name('create');
+            Route::get('/{axe}-edit', 'edit')->name('edit');
             Route::get('/{axe}-show', 'show')->name('show')->withoutMiddleware(['role:Admin']);
 
             Route::post('/', 'store')->name('store');
@@ -128,8 +129,8 @@ Route::name('admin.')->prefix('admin/')->group(function () {
 
         Route::middleware(['role:Admin'])->controller(EvernementController::class)->name('evernement.')->prefix('evernement')->group(function () {
             Route::get('/', 'index')->name('index')->withoutMiddleware(['role:Admin']);
-            Route::get('/showStore', 'showStore')->name('showStore');
-            Route::get('/{evernement}-showUpdate', 'showUpdate')->name('showUpdate');
+            Route::get('/create', 'create')->name('create');
+            Route::get('/{evernement}-edit', 'edit')->name('edit');
             Route::get('/{evernement}-show', 'show')->name('show')->withoutMiddleware(['role:Admin']);
 
             Route::post('/', 'store')->name('store');
@@ -152,8 +153,8 @@ Route::name('admin.')->prefix('admin/')->group(function () {
 
         Route::middleware(['role:Admin'])->controller(ProjetController::class)->name('projet.')->prefix('projet')->group(function () {
             Route::get('/', 'index')->name('index')->withoutMiddleware(['role:Admin']);
-            Route::get('/showStore', 'showStore')->name('showStore');
-            Route::get('/{projet}-showUpdate', 'showUpdate')->name('showUpdate');
+            Route::get('/create', 'create')->name('create');
+            Route::get('/{projet}-edit', 'edit')->name('edit');
             Route::get('/{projet}-show', 'show')->name('show')->withoutMiddleware(['role:Admin']);
 
             Route::post('/', 'store')->name('store');
@@ -175,8 +176,8 @@ Route::name('admin.')->prefix('admin/')->group(function () {
 
         Route::middleware(['role:Admin'])->controller(ArticleController::class)->name('article.')->prefix('article')->group(function () {
             Route::get('/', 'index')->name('index')->withoutMiddleware(['role:Admin']);
-            Route::get('/showStore', 'showStore')->name('showStore')->withoutMiddleware(['role:Admin']);
-            Route::get('/{article}-showUpdate', 'showUpdate')->name('showUpdate')->withoutMiddleware(['role:Admin']);
+            Route::get('/create', 'create')->name('create')->withoutMiddleware(['role:Admin']);
+            Route::get('/{article}-edit', 'edit')->name('edit')->withoutMiddleware(['role:Admin']);
             Route::get('/{article}-show', 'show')->name('show')->withoutMiddleware(['role:Admin']);
             Route::get('/{article}-isVisible','isVisible')->name('isVisible');
 
@@ -232,6 +233,28 @@ Route::name('admin.')->prefix('admin/')->group(function () {
             Route::post('/','store')->name('store');
             Route::post('/{typePublication}','update')->name('update');
             Route::delete('/{typePublication}','delete')->name('delete');
+        });
+
+
+        Route::middleware(['role:Admin'])->controller(PublicationController::class)->name('publication.')->prefix('publication')->group(function () {
+            Route::get('/', 'index')->name('index')->withoutMiddleware(['role:Admin']);
+            Route::get('/create', 'create')->name('create')->withoutMiddleware(['role:Admin']);
+            Route::get('/{publication}-edit', 'edit')->name('edit')->withoutMiddleware(['role:Admin']);
+            Route::get('/{publication}-show', 'show')->name('show')->withoutMiddleware(['role:Admin']);
+            Route::get('/{publication}-isVisible','isVisible')->name('isVisible');
+
+            Route::post('/', 'store')->name('store')->withoutMiddleware(['role:Admin']);
+            Route::post('/{publication}-update', 'update')->name('update')->withoutMiddleware(['role:Admin']);
+
+            Route::get('/{publication}-isVisible', 'isVisible')->name('isVisible');
+            Route::delete('/{publication}', 'delete')->name('delete');
+            Route::get('/find-{anneePublication}','findByAnnee')->name('findByAnnee')->withoutMiddleware(['role:Admin']);
+
+            Route::post('/add-auteur-{publication}','addAuteur')->name('addAuteur')->withoutMiddleware(['role:Admin']);
+            Route::post('/add-document-{publication}','addDocument')->name('addDocument')->withoutMiddleware(['role:Admin']);
+
+            Route::get('/download-{document}','file_download')->name('file_download')->withoutMiddleware(['role:Admin']);
+
         });
 
     });

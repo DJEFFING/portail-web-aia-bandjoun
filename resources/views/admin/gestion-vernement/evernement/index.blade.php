@@ -60,7 +60,7 @@
                                          </a>
 
                                          @if (Auth::user()->getRole('Admin'))
-                                             <a href="{{ route('admin.evernement.showUpdate', $evernement->id) }}"
+                                             <a href="{{ route('admin.evernement.edit', $evernement->id) }}"
                                                  class="btn btn-sm btn-outline-warning me-2 col-md-4">
                                                  <i class="dw dw-edit2"></i>
                                              </a>

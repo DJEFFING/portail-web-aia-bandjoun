@@ -133,7 +133,7 @@
                                     </a>
 
                                     @if (Auth::user()->id == $article->user->id)
-                                        <a href="{{ route('admin.article.showUpdate',$article->id) }}" class="btn btn-sm btn-outline-warning me-2">
+                                        <a href="{{ route('admin.article.edit',$article->id) }}" class="btn btn-sm btn-outline-warning me-2">
                                             <i class="dw dw-edit2"></i>
                                         </a>
                                     @endif

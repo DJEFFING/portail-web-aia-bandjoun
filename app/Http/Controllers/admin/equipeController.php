@@ -52,7 +52,7 @@ class equipeController extends Controller
         return view('admin.gestion-equipe.equipes.show', compact('equipe', 'listUsers','listRoleEquipes'));
     }
 
-    public function showStore()
+    public function create()
     {
 
         $listPoles = PoleRecherche::all();
@@ -62,7 +62,7 @@ class equipeController extends Controller
     }
  
 
-    public function showUpdate(Equipe $equipe)
+    public function edit(Equipe $equipe)
     {
 
         $userList = $this->getUser();

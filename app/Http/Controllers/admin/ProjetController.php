@@ -40,7 +40,7 @@ class ProjetController extends Controller
         return redirect(route('admin.projet.index'))->with('message','le projet à été crée avec succès!!');
     }
 
-    public function showStore()
+    public function create()
     {
 
         $listUsers = User::latest()->get();
@@ -48,7 +48,7 @@ class ProjetController extends Controller
         return view('admin.gestion-projet.projet.create',compact('listUsers','listPoles'));
     }
 
-    public function showUpdate(Projet $projet)
+    public function edit(Projet $projet)
     {
 
         $listUsers = User::latest()->get();

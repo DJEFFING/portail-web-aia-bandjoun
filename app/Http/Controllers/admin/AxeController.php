@@ -20,7 +20,7 @@ class AxeController extends Controller
         return view('admin.gestion-axe.index', compact('axes', 'equipes'));
     }
 
-    public function showStore()
+    public function create()
     {
 
         $equipes = Equipe::all();
@@ -77,7 +77,7 @@ class AxeController extends Controller
     
 
 
-    public function showUpdate(Axe $axe)
+    public function edit(Axe $axe)
     {
 
 

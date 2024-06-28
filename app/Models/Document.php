@@ -9,4 +9,9 @@ class Document extends Model
 {
     use HasFactory;
     protected $guarded = ["_token"];
+
+    public function publication()
+    {
+        return $this->belongsTo(Publication::class);
+    }
 }

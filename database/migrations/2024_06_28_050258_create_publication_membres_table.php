@@ -14,7 +14,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('publication_membres', function (Blueprint $table) {
-            $table->primary('user_id','publication_id');
+            $table->primary(['user_id', 'publication_id']);
             $table->foreignIdFor(User::class);
             $table->foreignIdFor(Publication::class);
             $table->timestamps();

@@ -43,7 +43,7 @@
                                                     </a>
 
                                                     @if (Auth::user()->getRole('Admin'))
-                                                        <a href="{{ route('admin.projet.showUpdate', $projet->id) }}"
+                                                        <a href="{{ route('admin.projet.edit', $projet->id) }}"
                                                             class="btn btn-sm btn-outline-warning me-2">
                                                             <i class="dw dw-edit2"></i>
                                                         </a>

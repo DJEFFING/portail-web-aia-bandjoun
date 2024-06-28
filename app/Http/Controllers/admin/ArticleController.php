@@ -20,14 +20,14 @@ class ArticleController extends Controller
         return view('admin.blogs.articles.index',compact('listRevue','listArticle'));
     }
 
-    public function showStore()
+    public function create()
     {
 
         $listRevue = Revue::latest()->get();
         return view('admin.blogs.articles.create',compact('listRevue'));
     }
 
-    public function showUpdate(Article $article)
+    public function edit(Article $article)
     {
 
         $listRevue = Revue::latest()->get();

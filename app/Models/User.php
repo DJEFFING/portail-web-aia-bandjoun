@@ -175,6 +175,12 @@ class User extends Authenticatable
         return array_merge($projetResp, $projetPoleResp, $projetEquipeResp, $projetEquipe);
     }
 
+    // pour avoir la liste des publucation efectuer par un utilisateur
+    public function publications()
+    {
+        return $this->belongsToMany(Publication::class,'publication_membres');
+    }
+
     // public function getProjet(): Collection
     // {
     //     $projetResp = collect();

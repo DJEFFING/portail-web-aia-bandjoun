@@ -59,7 +59,7 @@
 
                                                                 @if (Auth::user()->getRole('Admin'))
 
-                                                                    <a href="{{ route('admin.axe.showUpdate', $axe->id) }}"
+                                                                    <a href="{{ route('admin.axe.edit', $axe->id) }}"
                                                                         class="btn btn-sm btn-outline-warning me-2">
                                                                         <i class="dw dw-edit2"></i>
                                                                     </a>

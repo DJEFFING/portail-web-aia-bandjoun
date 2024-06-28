@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(AnneePublicationSeeder::class);
         $this->call(TypePublicationSeeder::class);
+        $this->call(PublicationSeeder::class);
         User::factory(10)->create();
     }
 }

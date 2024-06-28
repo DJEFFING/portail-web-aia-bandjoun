@@ -20,7 +20,7 @@ return new class extends Migration
             $table->longText("description_1")->nullable();
             $table->longText("description_2")->nullable();
             $table->string("media_url")->nullable();
-            $table->string('lien_externe')->nullable();
+            $table->string("lien_externe")->nullable();
             $table->boolean("status")->default(false);
 
             

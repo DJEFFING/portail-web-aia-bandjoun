@@ -88,7 +88,7 @@
                     </a>
                     <ul class="submenu">
                         @if (Auth::user()->getRole('Admin'))
-                            <li><a href="{{ route('admin.poleRecherche.showStore') }}">Ajouter</a></li>
+                            <li><a href="{{ route('admin.poleRecherche.create') }}">Ajouter</a></li>
                         @endif
                         <li><a href="{{ route('admin.poleRecherche.index') }}">Liste</a></li>
                     </ul>
@@ -103,7 +103,7 @@
                         <li><a href="{{ route('admin.roleEquipe.index') }}">Role Equipe</a></li>
                         <li><a href="{{ route('admin.equipe.index') }} ">Liste Equipe</a></li>
                         @if (Auth::user()->getRole('Admin'))
-                            <li><a href="{{ route('admin.equipe.showStore') }}">Ajouter une Equipe</a></li>
+                            <li><a href="{{ route('admin.equipe.create') }}">Ajouter une Equipe</a></li>
                         @endif
 
 
@@ -118,7 +118,7 @@
 
                         <li><a href="{{ route('admin.axe.index') }} ">Liste des Axes</a></li>
                         @if (Auth::user()->getRole('Admin'))
-                            <li><a href="{{ route('admin.axe.showStore') }}">Ajouter un Axe</a></li>
+                            <li><a href="{{ route('admin.axe.create') }}">Ajouter un Axe</a></li>
                         @endif
 
 
@@ -134,7 +134,7 @@
                         <li><a href="{{ route('admin.typeEvernement.index') }}">Type Evénement</a></li>
                         <li><a href="{{ route('admin.roleEvernement.index') }}">Role Evénement</a></li>
                         @if (Auth::user()->getRole('Admin'))
-                            <li><a href="{{ route('admin.evernement.showStore') }}">Ajouter un Evénement</a></li>
+                            <li><a href="{{ route('admin.evernement.create') }}">Ajouter un Evénement</a></li>
                         @endif
                         <li><a href="{{ route('admin.evernement.index') }}">Liste Evénement</a></li>
 
@@ -149,7 +149,7 @@
                     <ul class="submenu">
                         <li><a href="{{ route('admin.roleEquipeProjet.index') }}">Role Projet</a></li>
                         @if (Auth::user()->getRole('Admin'))
-                            <li><a href="{{ route('admin.projet.showStore') }}">Ajouter Projet</a></li>
+                            <li><a href="{{ route('admin.projet.create') }}">Ajouter Projet</a></li>
                         @endif
                         <li><a href="{{ route('admin.projet.index') }}">Liste Projets</a></li>
                     </ul>
@@ -161,7 +161,7 @@
                     </a>
                     <ul class="submenu">
                         <li><a href="{{ route('admin.revue.index') }}">Revues</a></li>
-                        <li><a href="{{ route('admin.article.showStore') }}">Ajouter un Article</a></li>
+                        <li><a href="{{ route('admin.article.create') }}">Ajouter un Article</a></li>
                         <li><a href="{{ route('admin.article.index') }}">Articles</a></li>
                     </ul>
                 </li>
@@ -173,8 +173,8 @@
                     <ul class="submenu">
                         <li><a href="{{ route('admin.anneePublication.index') }}">Annee</a></li>
                         <li><a href="{{ route('admin.typePublication.index') }}">Types Publication</a></li>
-                        <li><a href="#">Ajouter Publication</a></li>
-                        <li><a href="#">Liste Publication</a></li>
+                        <li><a href="{{ route('admin.publication.create') }}">Ajouter Publication</a></li>
+                        <li><a href="{{ route('admin.publication.index') }}">Liste Publication</a></li>
                     </ul>
                 </li>
 

@@ -97,7 +97,7 @@
         </div>
     </div>
 
-    @include('admin.publications.annee-publication.create')
+    @include('admin.gestion-publications.annee-publication.create')
 @endsection
 
 

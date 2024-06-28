@@ -41,13 +41,13 @@ class EvernementController extends Controller
 
     }
 
-    public function showStore()
+    public function create()
     {
         $listTypeEvernement = Type::all();
         return view('admin.gestion-vernement.evernement.create',compact('listTypeEvernement'));
     }
 
-    public function showUpdate(Evernement $evernement)
+    public function edit(Evernement $evernement)
     {
 
         // dd($evernement);
