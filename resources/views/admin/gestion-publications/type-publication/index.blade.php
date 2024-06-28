@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="title">
-                                <h4>Gestion Des Années de publication</h4>
+                                <h4>Gestion Des types de publication</h4>
                             </div>
                         </div>
                     </div>
@@ -16,7 +16,7 @@
                 <div class="pd-20 card-box mb-30">
                     <div class="clearfix mb-20">
                         <div class="pull-left">
-                            <h4 class="text-blue h4">Liste Années</h4>
+                            <h4 class="text-blue h4">Liste types de publication</h4>
 
                         </div>
                         @if (Auth::user()->getRole('Admin'))
@@ -31,39 +31,47 @@
                         <thead>
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">Annee</th>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Description</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
 
-                            @forelse ($anneePublications as $anneePublications)
+                            @forelse ($typePublications as $typePublication)
                                 <tr>
-                                    <th scope="row">{{ $loop->iteration }}</th>
-                                    <td>{{ $anneePublications->annee_publication }}</td>
-                                    
+                                    <th scope="row">{{ $typePublication->id }}</th>
+                                    <td>{{ $typePublication->nom }}</td>
+                                    <td>{{ Str::limit($typePublication->description ?? "-", 15, '...') }}</td>
 
-                                    <td>
+                                    <td> <button href="" class="btn btn-sm btn-outline-info me-2" data-toggle="modal"
+                                            data-target="{{ '#show' . $typePublication->id }}">
+                                            <i class="dw dw-eye"></i>
+                                        </button>
                                         @if (Auth::user()->getRole('Admin'))
                                             <button href="" class="btn btn-sm btn-outline-warning me-2"
-                                                data-toggle="modal" data-target="{{ '#update' . $anneePublications->id }}">
+                                                data-toggle="modal" data-target="{{ '#update' . $typePublication->id }}">
                                                 <i class="dw dw-edit2"></i>
                                             </button>
                                             <button class="btn btn-sm btn-outline-danger" data-toggle="modal"
-                                                data-target="{{ '#delete' . $anneePublications->id }}">
+                                                data-target="{{ '#delete' . $typePublication->id }}">
                                                 <i class="dw dw-delete-3"></i>
                                             </button>
                                         @endif
                                     </td>
 
+                                    @include('admin.gestion-publications.type-publication.show', [
+                                        'id' => $typePublication->id,
+                                        'item' => $typePublication,
+                                    ])
 
-                                    @include('admin.publications.annee-publication.update', [
-                                        'id' => $anneePublications->id,
-                                        'item' => $anneePublications,
+                                    @include('admin.gestion-publications.type-publication.update', [
+                                        'id' => $typePublication->id,
+                                        'item' => $typePublication,
                                     ])
                                     @include('admin.global-modal.delete-modal', [
-                                        'id' => $anneePublications->id,
-                                        'url' => route('admin.anneePublication.delete', $anneePublications->id),
+                                        'id' => $typePublication->id,
+                                        'url' => route('admin.typePublication.delete', $typePublication->id),
                                     ])
 
                                 </tr>
@@ -97,7 +105,7 @@
         </div>
     </div>
 
-    @include('admin.publications.annee-publication.create')
+    @include('admin.gestion-publications.type-publication.create')
 @endsection
 
 

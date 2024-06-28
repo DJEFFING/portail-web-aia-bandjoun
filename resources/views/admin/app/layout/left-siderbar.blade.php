@@ -172,7 +172,7 @@
                     </a>
                     <ul class="submenu">
                         <li><a href="{{ route('admin.anneePublication.index') }}">Annee</a></li>
-                        <li><a href="#">Types Publication</a></li>
+                        <li><a href="{{ route('admin.typePublication.index') }}">Types Publication</a></li>
                         <li><a href="#">Ajouter Publication</a></li>
                         <li><a href="#">Liste Publication</a></li>
                     </ul>

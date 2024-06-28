@@ -11,7 +11,7 @@ class AnneePublicationController extends Controller
     public function index()
     {
         $anneePublications = AnneePublication::all();
-        return view('admin.publications.annee-publication.index',compact('anneePublications'));
+        return view('admin.gestion-publications.annee-publication.index',compact('anneePublications'));
     }
 
     public function store(Request $request)

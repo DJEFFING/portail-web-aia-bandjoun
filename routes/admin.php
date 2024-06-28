@@ -19,6 +19,7 @@ use App\Http\Controllers\admin\RoleEquipeProjetController;
 use App\Http\Controllers\admin\RoleEvernementController;
 use App\Http\Controllers\admin\SlideController;
 use App\Http\Controllers\admin\TypeEvernementController;
+use App\Http\Controllers\admin\TypePublicationController;
 use App\Http\Controllers\admin\userController;
 use Illuminate\Support\Facades\Route;
 
@@ -223,6 +224,14 @@ Route::name('admin.')->prefix('admin/')->group(function () {
             Route::post('/','store')->name('store');
             Route::post('/{anneePublication}','update')->name('update');
             Route::delete('/{anneePublication}','delete')->name('delete');
+        });
+
+
+        Route::middleware(['role:Admin'])->controller(TypePublicationController::class)->name("typePublication.")->prefix('typePublication/')->group(function(){
+            Route::get('/','index')->name('index')->withoutMiddleware(['role:Admin']);
+            Route::post('/','store')->name('store');
+            Route::post('/{typePublication}','update')->name('update');
+            Route::delete('/{typePublication}','delete')->name('delete');
         });
 
     });
