@@ -112,6 +112,21 @@
 
                 <li class="dropdown active">
                     <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon dw dw-library"></span><span class="mtext">Axes Recherche</span>
+                    </a>
+                    <ul class="submenu">
+
+                        <li><a href="{{ route('admin.axe.index') }} ">Liste des Axes</a></li>
+                        @if (Auth::user()->getRole('Admin'))
+                            <li><a href="{{ route('admin.axe.showStore') }}">Ajouter un Axe</a></li>
+                        @endif
+
+
+                    </ul>
+                </li>
+
+                <li class="dropdown active">
+                    <a href="javascript:;" class="dropdown-toggle">
                         <span class="micon dw dw-library"></span><span class="mtext">Evénements</span>
                     </a>
                     <ul class="submenu">

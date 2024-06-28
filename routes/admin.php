@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\AproposController;
 use App\Http\Controllers\admin\ArticleController;
 use App\Http\Controllers\admin\authantification\LoginController;
+use App\Http\Controllers\admin\AxeController;
 use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\DashboadController;
 use App\Http\Controllers\admin\equipeController;
@@ -82,6 +83,21 @@ Route::name('admin.')->prefix('admin/')->group(function () {
             Route::get('/{equipe}-isVisble', 'isVisble')->name('isVisble');
 
             Route::delete('/{equipe}', 'delete')->name('delete');
+        });
+
+        Route::middleware(['role:Admin'])->controller(AxeController::class)->name('axe.')->prefix('axe')->group(function () {
+            Route::get('/', 'index')->name('index')->withoutMiddleware(['role:Admin']);
+            Route::get('/showStore', 'showStore')->name('showStore');
+            Route::get('/{axe}-showUpdate', 'showUpdate')->name('showUpdate');
+            Route::get('/{axe}-show', 'show')->name('show')->withoutMiddleware(['role:Admin']);
+
+            Route::post('/', 'store')->name('store');
+            Route::post('/{axe}-update', 'update')->name('update');
+            Route::post('/{axe}-addMembre','addMembre')->name('addMembre');
+
+            Route::get('/{axe}-isVisble', 'isVisble')->name('isVisble');
+
+            Route::delete('/{axe}', 'delete')->name('delete');
         });
 
         Route::middleware(['role:Admin'])->controller(PartenaireController::class)->name("partenaire.")->prefix('partenaire/')->group(function(){

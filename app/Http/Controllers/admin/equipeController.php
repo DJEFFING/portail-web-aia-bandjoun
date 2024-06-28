@@ -60,7 +60,7 @@ class equipeController extends Controller
 
         return view('admin.gestion-equipe.equipes.create', compact('listUsers', 'listPoles'));
     }
-
+ 
 
     public function showUpdate(Equipe $equipe)
     {

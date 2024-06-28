@@ -107,6 +107,18 @@ class User extends Authenticatable
         ->withPivot("user_id", "evernement_id", "role_evernement_id");
     }
 
+    // pour avoir l'axe dont l'utilisateur fait partir
+    public function axe()
+    {
+        return $this->belongsToMany(Axe::class,'axe_users');
+    }
+
+    // pour avoir l'axe dont l'utilisateur est responsable
+    public function axes()
+    {
+        return $this->hasMany(Axe::class);
+    }
+
     //pour avoir la list des projets dont l'utilisateur est le responsable
     public function projet()
     {
