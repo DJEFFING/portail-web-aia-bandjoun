@@ -61,7 +61,7 @@ class User extends Authenticatable
         ];
     }
 
-    //pour avoir le pôles de recherche dont l'utilisateur est responssable
+    //pour avoir le Dommaine de Recherche dont l'utilisateur est responssable
     public function poleRecherches()
     {
         return $this->hasMany(PoleRecherche::class);
@@ -154,7 +154,7 @@ class User extends Authenticatable
             $projetResp = $this->projet->toArray();
         }
 
-        //les projet du pôles de recherche dont l'utilisateur est reponsable
+        //les projet du Dommaine de Recherche dont l'utilisateur est reponsable
         if($this->poleRecherches->isNotEmpty() && $this->poleRecherches[0]->projets->isNotEmpty()){
             $projetPoleResp = $this->poleRecherches[0]->projets->toArray();
         }

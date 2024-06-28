@@ -28,7 +28,7 @@ class userController extends Controller
     public function index()
     {
 
-        //les responsables des poles de recherche
+        //les responsables des Dommaine de Recherche
         $listUserRespPole = User::whereHas("poleRecherches")->get();
 
         // les responsables d'equipes

@@ -33,11 +33,11 @@
                     placeholder="Recherche: Nom, Prenom, Pôle de Recherche, Equipe....">
                 </div>
 
-                <!-- List Des Responssable de pôles de recherche -->
+                <!-- List Des Responssable de Dommaine de Recherche -->
                 <div class="row clearfix">
-                    <!-- List Des Responssable de pôles de recherche -->
+                    <!-- List Des Responssable de Dommaine de Recherche -->
                    @include('admin.user.gestion-user.layout.respPoleRecherche')
-                    <!-- List Des Responssable de pôles de recherche -->
+                    <!-- List Des Responssable de Dommaine de Recherche -->
 
 
                     <!-- List Des Responssable d'equipe-->

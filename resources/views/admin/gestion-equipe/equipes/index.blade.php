@@ -111,12 +111,12 @@
 
                             <div class="col-md-4 col-sm-12">
 								<div class="card-box mb-30">
-									<h5 class="pd-20 h5 mb-0">pôles de recherche</h5>
+									<h5 class="pd-20 h5 mb-0">Dommaine de Recherche</h5>
 									<div class="list-group">
                                         @forelse ($poleRecherches as $poleRecherche)
                                         <a href="#" class="list-group-item d-flex align-items-center justify-content-between">{{ $poleRecherche->titre }} <span class="badge badge-primary badge-pill">{{ count($poleRecherche->equipes) }}</span></a>
                                         @empty
-										<a href="#" class="list-group-item d-flex align-items-center justify-content-between">Aucun pôles de recherche<span class="badge badge-primary badge-pill">0</span></a>
+										<a href="#" class="list-group-item d-flex align-items-center justify-content-between">Aucun Dommaine de Recherche<span class="badge badge-primary badge-pill">0</span></a>
                                         @endforelse
 
 									</div>

@@ -126,7 +126,7 @@ class ProjetController extends Controller
         return redirect()->back()->with('message',"la partenaire à été ajouter au projet avec succès!!");
     }
 
-    //récupération de tous les équipes de recherches qui sont dans le meme pôles de recherche que le projet
+    //récupération de tous les équipes de recherches qui sont dans le meme Dommaine de Recherche que le projet
     public function getEquipe($projet)
     {
         $listEquipe = Equipe::where("pole_recherche_id",$projet->pole_recherche_id)->get();

@@ -103,7 +103,7 @@
                                         <li class="nav-item">
                                             @if ($user->poleRecherches()->exists())
                                                 <a class="nav-link active" data-toggle="tab" href="#pole_recherche"
-                                                    role="tab">pôles de recherche
+                                                    role="tab">Dommaine de Recherche
                                                 </a>
                                             @elseif ($user->equipes()->exists() || $user->equipe()->exists())
                                                 <a class="nav-link active" data-toggle="tab" href="#equipe"

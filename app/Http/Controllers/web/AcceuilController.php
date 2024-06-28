@@ -99,7 +99,7 @@ class AcceuilController extends Controller
 
     public function membres()
     {
-        //les responsables des poles de recherche
+        //les responsables des Dommaine de Recherche
         $listUserRespPole = User::whereHas("poleRecherches")->get();
 
         // les responsables d'equipes

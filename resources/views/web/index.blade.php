@@ -94,8 +94,8 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
-                    <h2>pôles de recherche</h2>
-                    <p>Découvrez nos pôles de recherche ci-dessous, où nous explorons et développons des solutions
+                    <h2>Dommaine de Recherche</h2>
+                    <p>Découvrez nos Dommaine de Recherche ci-dessous, où nous explorons et développons des solutions
                         innovantes pour un avenir agricole meilleur.</p>
                 </div>
 

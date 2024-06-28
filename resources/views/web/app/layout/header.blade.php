@@ -23,7 +23,7 @@
                             <i class="bi bi-chevron-down dropdown-indicator"></i>
                         </a>
                         <ul>
-                            <li><a href="{{ route('web.pole-recherche') }}" @if ($page == 3) class="active" @endif>Pôles de Recherche</a></li>
+                            <li><a href="{{ route('web.pole-recherche') }}" @if ($page == 3) class="active" @endif>Dommaine de Recherche</a></li>
                             <li><a href="{{ route('web.equipes') }}" @if ($page == 4) class="active" @endif>Equipes</a></li>
                         </ul>
                     </li>
