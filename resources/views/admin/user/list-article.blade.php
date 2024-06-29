@@ -9,7 +9,7 @@
                 </div>
                 @if(Auth::user()->id == $user->id)
                     <div class="col-md-4 col-sm-12 text-right">
-                        <a href="{{ route('admin.article.showStore') }}"
+                        <a href="{{ route('admin.article.create') }}"
                             class="bg-light-blue btn text-blue weight-500"><i
                                 class="ion-plus-round"></i> Add</a>
                     </div>
@@ -48,7 +48,7 @@
 
                                             @if (Auth::user()->id == $article->user_id)
 
-                                                <a href="{{ route('admin.article.showUpdate', $article->id) }}"
+                                                <a href="{{ route('admin.article.edit', $article->id) }}"
                                                     class="btn btn-sm btn-outline-warning me-2">
                                                     <i class="dw dw-edit2"></i>
                                                 </a>

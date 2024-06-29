@@ -42,7 +42,7 @@ class equipeController extends Controller
             dd($request);
         }
 
-        return redirect(route('admin.equipe.index'))->with('message', "l'equipe à été crée avec success !!");
+        return redirect(route('admin.equipe.index'))->with('message', "l'equipe à été crée avec succès !!");
     }
 
     public function show(Equipe $equipe)
@@ -52,7 +52,7 @@ class equipeController extends Controller
         return view('admin.gestion-equipe.equipes.show', compact('equipe', 'listUsers','listRoleEquipes'));
     }
 
-    public function showStore()
+    public function create()
     {
 
         $listPoles = PoleRecherche::all();
@@ -60,9 +60,9 @@ class equipeController extends Controller
 
         return view('admin.gestion-equipe.equipes.create', compact('listUsers', 'listPoles'));
     }
+ 
 
-
-    public function showUpdate(Equipe $equipe)
+    public function edit(Equipe $equipe)
     {
 
         $userList = $this->getUser();
@@ -84,7 +84,7 @@ class equipeController extends Controller
             "user_id" => $request->user_id,
         ]);
 
-        return redirect(route('admin.equipe.index'))->with('message', "l'equipe à été mise à jour avec success !!");
+        return redirect(route('admin.equipe.index'))->with('message', "l'equipe à été mise à jour avec succès !!");
     }
 
     public function isVisble(Equipe $equipe)
@@ -98,7 +98,7 @@ class equipeController extends Controller
     public function delete(Equipe $equipe)
     {
         $equipe->delete();
-        return redirect()->back()->with('message', "l'equipe à été supprimer avec success !!");
+        return redirect()->back()->with('message', "l'equipe à été supprimer avec succès !!");
     }
 
     public function addMembre(Request $request, Equipe $equipe)
@@ -109,7 +109,7 @@ class equipeController extends Controller
             "equipe_id" => $equipe->id,
             "role_equipe_id" => $request->role_equipe_id
         ]);
-        return redirect()->back()->with('message',"le membre à été ajouter avec success !!");
+        return redirect()->back()->with('message',"le membre à été ajouter avec succès !!");
     }
 
     public function getUser()

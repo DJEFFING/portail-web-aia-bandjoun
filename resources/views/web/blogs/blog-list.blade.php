@@ -1,4 +1,4 @@
-@extends('web.app.app', ['page' => 6])
+@extends('web.app.app', ['page' => 7])
 @section('content')
     <main id="main">
 
@@ -7,10 +7,10 @@
             style="background-image: url('{{ asset('asset_web/assets/img/breadcrumbs-bg.jpg') }}');">
             <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-                <h2>Blog</h2>
+                <h2>List Publication</h2>
                 <ol>
                     <li><a href="{{ route('web.acceuil') }}">Acceuil</a></li>
-                    <li>Blog</li>
+                    <li>List Publication</li>
                 </ol>
 
             </div>
@@ -19,6 +19,7 @@
         <!-- ======= Blog Section ======= -->
         <div class="container">
 
+         
 
             <section id="blog" class="blog">
                 <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -34,6 +35,20 @@
                                         <input type="text">
                                         <button type="submit"><i class="bi bi-search"></i></button>
                                     </form>
+                                </div>
+
+                                <div class="sidebar-item search-form search_select_box">
+                                    <h3 class="sidebar-title">Recherche</h3>
+                                    {{-- <form action="" class="mt-3">
+                                        <input type="text">
+                                        <button type="submit"><i class="bi bi-search"></i></button>
+                                    </form> --}}
+                                    <select name="" id="">
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                    </select>
                                 </div>
                                 <!-- End sidebar search formn-->
 

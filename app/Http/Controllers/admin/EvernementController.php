@@ -37,17 +37,17 @@ class EvernementController extends Controller
             ]);
             $this->creationTypeEvent($request->typeEvent_id,$newEvent->id);
         }
-        return redirect(route('admin.evernement.index'))->with('message',"evènement crée avec success!!");
+        return redirect(route('admin.evernement.index'))->with('message',"evènement crée avec succès!!");
 
     }
 
-    public function showStore()
+    public function create()
     {
         $listTypeEvernement = Type::all();
         return view('admin.gestion-vernement.evernement.create',compact('listTypeEvernement'));
     }
 
-    public function showUpdate(Evernement $evernement)
+    public function edit(Evernement $evernement)
     {
 
         // dd($evernement);
@@ -93,7 +93,7 @@ class EvernementController extends Controller
            $this->creationTypeEvent($request->typeEvent_id,$evernement->id);
         }
 
-        return redirect(route('admin.evernement.index'))->with('message',"evènement modifier avec success!!");
+        return redirect(route('admin.evernement.index'))->with('message',"evènement modifier avec succès!!");
 
     }
 
@@ -107,7 +107,7 @@ class EvernementController extends Controller
     public function delete(Evernement $evernement)
     {
         $evernement->delete();
-        return redirect()->back()->with('message', "l'Evènement à été supprimer avec success !!");
+        return redirect()->back()->with('message', "l'Evènement à été supprimer avec succès !!");
     }
 
     public function creationTypeEvent($listTypeEvernement_id, $evernement_id)
@@ -130,7 +130,7 @@ class EvernementController extends Controller
             "evernement_id" => $evernement->id,
             "role_evernement_id" => $request->role_evernement_id
         ]);
-        return redirect()->back()->with('message',"membre ajouter avec success!!");
+        return redirect()->back()->with('message',"membre ajouter avec succès!!");
     }
 
     public function addPartenaire(Request $request,Evernement $evernement)
@@ -141,7 +141,7 @@ class EvernementController extends Controller
             "partenaire_id" => $request->partenaire_id,
         ]);
 
-        return redirect()->back()->with('message',"partenaire ajouter avec success !!");
+        return redirect()->back()->with('message',"partenaire ajouter avec succès !!");
     }
 
     public function getUser($evernement_id)

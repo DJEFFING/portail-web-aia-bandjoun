@@ -22,7 +22,7 @@ class RoleEquipeProjetController extends Controller
             "nom" => $request->nom,
             "description" => $request->description
         ]);
-        return redirect()->back()->with('message',"le role d'equipe à été crée avec success !!");
+        return redirect()->back()->with('message',"le role d'equipe à été crée avec succès !!");
 
     }
 
@@ -34,7 +34,7 @@ class RoleEquipeProjetController extends Controller
             "description" => $request->description
         ]);
 
-        return redirect()->back()->with('message',"le role d'equipe à été modifier avec success !!");
+        return redirect()->back()->with('message',"le role d'equipe à été modifier avec succès !!");
 
     }
 
@@ -42,6 +42,6 @@ class RoleEquipeProjetController extends Controller
     {
         // dd($roleEquipeProjet);
         $roleEquipeProjet->delete();
-        return redirect()->back()->with('message',"le role d'equipe à été supprimer avec success !!");
+        return redirect()->back()->with('message',"le role d'equipe à été supprimer avec succès !!");
     }
 }

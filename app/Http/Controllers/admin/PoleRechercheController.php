@@ -16,13 +16,13 @@ class PoleRechercheController extends Controller
         return view('admin.pole_recherche.index', compact('listPoles'));
     }
 
-    public function showStore()
+    public function create()
     {
         $userList  = $this->getUser();
         return view('admin.pole_recherche.store', compact('userList'));
     }
 
-    public function showUpdate(PoleRecherche $poleRecherche)
+    public function edit(PoleRecherche $poleRecherche)
     {
 
         $userList  = User::latest()->get();

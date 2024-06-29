@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="title">
-                                <h4>Modifier Un Evènement</h4>
+                                <h4>Modifier Un Evénement</h4>
                             </div>
                         </div>
                     </div>
@@ -16,7 +16,7 @@
 
                 <form class="html-editor pd-20 card-box mb-30" method="POST" action="{{ route('admin.evernement.update',$evernement->id) }}"
                     enctype="multipart/form-data">
-                    <h4 class="h4 text-blue">Ce formulaire Permet De Modifier un Evènement </h4>
+                    <h4 class="h4 text-blue">Ce formulaire Permet De Modifier un Evénement </h4>
                     @csrf
                     <div class="col-md-12">
                         <div class="form-group">
@@ -75,9 +75,9 @@
 
                     	<div class="col-md-12">
                             <div class="form-group">
-                                <label>Type Evènement</label><span class="text-danger">*</span>
+                                <label>Type Evénement</label><span class="text-danger">*</span>
                                 <select class="custom-select2 form-control" name="typeEvent_id[]" multiple="multiple" style="width: 100%;">
-                                    <optgroup label="Type Evènement">
+                                    <optgroup label="Type Evénement">
                                         @forelse ($listTypeEvernement as $item=>$TypeEvernement)
                                         {{-- @if ( ($item+1) <= (count($evernement->types)) && $TypeEvernement->id == $evernement->types[$item]->id ) --}}
                                         @if (in_array( ($item+1), ($evernement->types->pluck("id")->toArray())  ))
@@ -93,7 +93,7 @@
                         </div>
 
                     <button class="btn btn-primary" type="submit">Valider</button>
-                    <!--END Responssable du pole de recherche -->
+                    <!--END Responssable du Dommaine de Recherche -->
                 </form>
             </div>
             <div class="footer-wrap pd-20 mb-20 card-box">

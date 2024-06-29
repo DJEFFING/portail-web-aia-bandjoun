@@ -74,7 +74,7 @@
                     </div>
 
                     <button class="btn btn-primary" type="submit">Valider</button>
-                    <!--END Responssable du pole de recherche -->
+                    <!--END Responssable du Dommaine de Recherche -->
                 </form>
             </div>
             <div class="footer-wrap pd-20 mb-20 card-box">

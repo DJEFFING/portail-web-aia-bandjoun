@@ -62,7 +62,7 @@
 
                                                                     @if (Auth::user()->id == $article->user_id)
 
-                                                                        <a href="{{ route('admin.article.showUpdate', $article->id) }}"
+                                                                        <a href="{{ route('admin.article.edit', $article->id) }}"
                                                                             class="btn btn-sm btn-outline-warning me-2">
                                                                             <i class="dw dw-edit2"></i>
                                                                         </a>
@@ -124,7 +124,7 @@
                                         @empty
                                             <a href="#"
                                                 class="list-group-item d-flex align-items-center justify-content-between">Aucun
-                                                Pole de recherche<span class="badge badge-primary badge-pill">0</span></a>
+                                                Dommaine de Recherche<span class="badge badge-primary badge-pill">0</span></a>
                                         @endforelse
 
                                     </div>

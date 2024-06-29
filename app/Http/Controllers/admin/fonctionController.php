@@ -20,7 +20,7 @@ class fonctionController extends Controller
             "nom" =>$request->nom,
             "description" => $request->description
         ]);
-        return redirect()->back()->with('message','la fonction a été crée avec success !!');
+        return redirect()->back()->with('message','la fonction a été crée avec succès !!');
     }
 
     public function update(Request $request, Fonction $fonction)
@@ -31,12 +31,12 @@ class fonctionController extends Controller
                 "description"=>$request->description
         ]);
 
-        return redirect()->back()->with('message',"la fonction a été modifier avec success !!");
+        return redirect()->back()->with('message',"la fonction a été modifier avec succès !!");
     }
 
     public function delete(Fonction $fonction)
     {
         $fonction->delete();
-        return redirect()->back()->with('message','la fonction a été supprimer avec success !!');
+        return redirect()->back()->with('message','la fonction a été supprimer avec succès !!');
     }
 }

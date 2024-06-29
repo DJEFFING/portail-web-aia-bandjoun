@@ -6,7 +6,7 @@
             style="background-image: url(' {{ asset('asset_web/assets/img/breadcrumbs-bg.jpg') }} ');">
             <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-                <h2>À propos de Nous</h2>
+                <h2>Unite de Recherche d'Automatique et d'Informatique Appliqée</h2>
                 <ol>
                     <li><a href="{{ route('web.acceuil') }}">Aceuil</a></li>
                     <li>À propos de Nous</li>
@@ -109,8 +109,8 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
-                    <h2> {{ count($poleRecherches) }} pôles de recherche</h2>
-                    {{-- <p>Découvrez nos pôles de recherche ci-dessous, où nous explorons et développons des solutions
+                    <h2> {{ count($poleRecherches) }} Dommaine de Recherche</h2>
+                    {{-- <p>Découvrez nos Dommaine de Recherche ci-dessous, où nous explorons et développons des solutions
                         innovantes pour un avenir agricole meilleur.</p> --}}
                 </div>
 

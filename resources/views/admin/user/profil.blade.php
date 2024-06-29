@@ -23,8 +23,14 @@
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-30">
                         <div class="pd-20 card-box height-100-p">
                             <div class="profile-photo" style="margin-bottom: 50px;">
+                                @if ($user->profil_url!=null)
                                 <img src=" {{ asset('storage/' . $user->profil_url) }} " alt=""
-                                    class="avatar-photo">
+                                class="avatar-photo">
+                                @else
+                                <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }}" alt=""
+                                class="avatar-photo">
+                                @endif
+                                
                             </div>
                             <h5 class="text-center h5 mb-0">{{ $user->name }}</h5>
                             <p class="text-center text-muted font-14">{{ $user->prenom }}</p>
@@ -97,72 +103,80 @@
                                         <li class="nav-item">
                                             @if ($user->poleRecherches()->exists())
                                                 <a class="nav-link active" data-toggle="tab" href="#pole_recherche"
-                                                    role="tab">POLE DE RECHERCHE
+                                                    role="tab">Dommaine de Recherche
                                                 </a>
                                             @elseif ($user->equipes()->exists() || $user->equipe()->exists())
                                                 <a class="nav-link active" data-toggle="tab" href="#equipe"
                                                     role="tab">EQUIPE
+                                                </a>
+                                            @elseif ($user->axes()->exists() || $user->axe()->exists())
+                                                <a class="nav-link active" data-toggle="tab" href="#axe_recherche"
+                                                    role="tab">Axe Recherche
                                                 </a>
                                             @endif
 
                                         </li>
 
                                         <!-- Equipe du pole -->
-                                            @if($user->poleRecherches->isNotEmpty() && $user->poleRecherches[0]->equipes->isNotEmpty())
+                                        @if ($user->poleRecherches->isNotEmpty() && $user->poleRecherches[0]->equipes->isNotEmpty())
                                             <li class="nav-item">
                                                 <a class="nav-link" data-toggle="tab" href="#Equipes_pole"
                                                     role="tab">Equipes du pôle
                                                 </a>
                                             </li>
-                                            @endif
+                                        @endif
                                         <!-- END Equipe du pole -->
 
+
+
                                         <!-- Article -->
-                                            <li class="nav-item">
-                                                <a class="nav-link" data-toggle="tab" href="#tasks" role="tab">
-                                                    {{ Auth::user()->id == $user->id ? 'Mes Articles' : 'Articles' }}</a>
-                                            </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#tasks" role="tab">
+                                                {{ Auth::user()->id == $user->id ? 'Mes Articles' : 'Articles' }}</a>
+                                        </li>
                                         <!--END Article -->
 
 
-                                        <!-- Evénements -->
-                                            @if ($user->evernements()->exists())
-                                                <li class="nav-item">
-                                                    <a class="nav-link" data-toggle="tab" href="#evenements" role="tab">
-                                                        Événements</a>
-                                                </li>
-                                            @endif
-                                        <!--END Evénements -->
+                                        <!--  Evénements -->
+                                        @if ($user->evernements()->exists())
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="tab" href="#evenements" role="tab">
+                                                    Événements</a>
+                                            </li>
+                                        @endif
+                                        <!--END  Evénements -->
 
                                         <!-- Projets -->
-                                            @if (
-                                                ($user->equipes->isNotEmpty() && $user->equipes[0]->projets()->exists()) ||
-                                                    ($user->equipe->isNotEmpty() && $user->equipe[0]->projets->isNotEmpty()))
-                                                <li class="nav-item">
-                                                    <a class="nav-link" data-toggle="tab" href="#projets"
-                                                        role="tab">Projets</a>
-                                                </li>
-                                            @elseif ($user->poleRecherches->isNotEmpty() && $user->poleRecherches[0]->projets->isNotEmpty())
-                                                <li class="nav-item">
-                                                    <a class="nav-link" data-toggle="tab" href="#projets"
-                                                        role="tab">Projets</a>
-                                                </li>
-                                            @endif
+                                        @if (
+                                            ($user->equipes->isNotEmpty() && $user->equipes[0]->projets()->exists()) ||
+                                                ($user->equipe->isNotEmpty() && $user->equipe[0]->projets->isNotEmpty()))
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="tab" href="#projets"
+                                                    role="tab">Projets</a>
+                                            </li>
+                                        @elseif ($user->poleRecherches->isNotEmpty() && $user->poleRecherches[0]->projets->isNotEmpty())
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="tab" href="#projets"
+                                                    role="tab">Projets</a>
+                                            </li>
+                                        @endif
                                         <!--END Projets -->
 
                                         <!-- Parametre -->
-                                            @if (Auth::user()->id == $user->id)
-                                                <li class="nav-item">
-                                                    <a class="nav-link" data-toggle="tab" href="#setting"
-                                                        role="tab">Paramètre</a>
-                                                </li>
-                                            @endif
+                                        @if (Auth::user()->id == $user->id)
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="tab" href="#setting"
+                                                    role="tab">Paramètre</a>
+                                            </li>
+                                        @endif
                                         <!--END Parametre -->
                                     </ul>
                                     <div class="tab-content">
+
                                         <!-- Pole ou Equipe Tab -->
                                         @if ($user->poleRecherches()->exists())
                                             @include('admin.user.pole-recherche')
+
                                         @elseif ($user->equipes()->exists() || $user->equipe()->exists())
                                             @include('admin.user.equipe', [
                                                 'equipes' => $user->equipes()->exists()
@@ -172,56 +186,64 @@
                                                     ? "Vous êtes responsable d'une Equipe"
                                                     : "Vous faites partie d'une Equipe",
                                             ])
+                                        @elseif ($user->axes()->exists() || $user->axe()->exists())
+                                            @include('admin.user.axe-recherche', [
+                                                'axes' => $user->axes()->exists()
+                                                    ? $user->axes
+                                                    : $user->axe,
+                                                'titre' => $user->axes()->exists()
+                                                    ? "Vous êtes responsable d'un axe recherche"
+                                                    : "Vous faites partie d'un axe recherche",
+                                            ])
                                         @endif
                                         <!--END Pole ou Equipe Tab -->
 
 
                                         <!-- Article Tab -->
-                                            @include('admin.user.list-article')
+                                        @include('admin.user.list-article')
                                         <!--END Article Tab -->
 
                                         <!-- Paramettre Tab -->
-                                            @if (Auth::user()->id == $user->id)
-                                                @include('admin.user.profil-setting')
-                                            @endif
+                                        @if (Auth::user()->id == $user->id)
+                                            @include('admin.user.profil-setting')
+                                        @endif
                                         <!--END Paramettre Tab -->
 
 
                                         <!-- Projet Tab -->
-                                            @if (
-                                                ($user->equipes->isNotEmpty() && $user->equipes[0]->projets()->exists()) ||
-                                                    ($user->equipe->isNotEmpty() && $user->equipe[0]->projets->isNotEmpty()))
-                                                @include('admin.user.projet', [
-                                                    'projets' =>
-                                                        $user->equipes->isNotEmpty() &&
-                                                        $user->equipes[0]->projets()->exists()
-                                                            ? $user->equipes[0]->projets
-                                                            : $user->equipe[0]->projets,
-                                                    'text' => null,
-                                                ])
-                                            @elseif ($user->poleRecherches->isNotEmpty() && $user->poleRecherches[0]->projets->isNotEmpty())
-                                                @include('admin.user.projet', [
-                                                    'projets' => $user->poleRecherches[0]->projets,
-                                                    'text' => 'les projets de votre Pôle de recherche',
-                                                ])
-                                            @endif
+                                        @if (
+                                            ($user->equipes->isNotEmpty() && $user->equipes[0]->projets()->exists()) ||
+                                                ($user->equipe->isNotEmpty() && $user->equipe[0]->projets->isNotEmpty()))
+                                            @include('admin.user.projet', [
+                                                'projets' =>
+                                                    $user->equipes->isNotEmpty() &&
+                                                    $user->equipes[0]->projets()->exists()
+                                                        ? $user->equipes[0]->projets
+                                                        : $user->equipe[0]->projets,
+                                                'text' => null,
+                                            ])
+                                        @elseif ($user->poleRecherches->isNotEmpty() && $user->poleRecherches[0]->projets->isNotEmpty())
+                                            @include('admin.user.projet', [
+                                                'projets' => $user->poleRecherches[0]->projets,
+                                                'text' => 'les projets de votre Pôle de recherche',
+                                            ])
+                                        @endif
                                         <!--END Projet Tab -->
 
-                                        <!-- Evénements Tab -->
-                                            @if ($user->evernements()->exists())
-                                                @include('admin.user.evernement', [
-                                                    'evenements' => $user->evernements,
-                                                ])
-                                            @endif
-                                        <!--END Evénements Tab -->
+                                        <!--  Evénements Tab -->
+                                        @if ($user->evernements()->exists())
+                                            @include('admin.user.evernement', [
+                                                'evenements' => $user->evernements,
+                                            ])
+                                        @endif
+                                        <!--END  Evénements Tab -->
 
                                         <!-- Pole Recherche projet Tab -->
-                                            @if($user->poleRecherches->isNotEmpty() && $user->poleRecherches[0]->equipes->isNotEmpty())
-                                                @include('admin.user.equipe_pole',
-                                                [
-                                                    "equipes" =>$user->poleRecherches[0]->equipes
-                                                ])
-                                            @endif
+                                        @if ($user->poleRecherches->isNotEmpty() && $user->poleRecherches[0]->equipes->isNotEmpty())
+                                            @include('admin.user.equipe_pole', [
+                                                'equipes' => $user->poleRecherches[0]->equipes,
+                                            ])
+                                        @endif
                                         <!--END Pole Recherche projet Tab -->
                                     </div>
                                 </div>

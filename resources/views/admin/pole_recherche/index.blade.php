@@ -7,12 +7,12 @@
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
                             <div class="title">
-                                <h4>Pole De Recherche</h4>
+                                <h4>Dommaine de Recherche</h4>
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">ACCEUIL</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Pole De Recherche</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Dommaine de Recherche</li>
                                 </ol>
                             </nav>
                         </div>
@@ -58,7 +58,7 @@
 
                                                                     @if (Auth::user()->getRole('Admin'))
 
-                                                                        <a href="{{ route('admin.poleRecherche.showUpdate', $listPole->id) }}"
+                                                                        <a href="{{ route('admin.poleRecherche.edit', $listPole->id) }}"
                                                                             class="btn btn-sm btn-outline-warning me-2">
                                                                             <i class="dw dw-edit2"></i>
                                                                         </a>

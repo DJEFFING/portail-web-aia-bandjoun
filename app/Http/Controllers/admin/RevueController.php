@@ -25,7 +25,7 @@ class RevueController extends Controller
             "titre" => $request->titre,
             "description" => $request->description,
         ]);
-        return Redirect()->back()->with('message','la revue à été crée avec success!!');
+        return Redirect()->back()->with('message','la revue à été crée avec succès!!');
     }
 
     public function update(Request $request, Revue $revue)
@@ -36,12 +36,12 @@ class RevueController extends Controller
             "titre" => $request->titre,
             "description" => $request->description,
         ]);
-        return Redirect()->back()->with('message','la revue à été modifier avec success!!');
+        return Redirect()->back()->with('message','la revue à été modifier avec succès!!');
     }
 
     public function delete(Revue $revue)
     {
         $revue->delete();
-        return Redirect()->back()->with('message','la revue à été supprimer avec success!!');
+        return Redirect()->back()->with('message','la revue à été supprimer avec succès!!');
     }
 }

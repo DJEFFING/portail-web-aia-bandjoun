@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="title">
-                                <h4>Rôles Evénement</h4>
+                                <h4>Rôles  Evénement</h4>
                             </div>
                         </div>
                     </div>
@@ -16,7 +16,7 @@
                 <div class="pd-20 card-box mb-30">
                     <div class="clearfix mb-20">
                         <div class="pull-left">
-                            <h4 class="text-blue h4">Liste des Rôles Evénement</h4>
+                            <h4 class="text-blue h4">Liste des Rôles  Evénement</h4>
 
                         </div>
                         @if (Auth::user()->getRole('Admin'))

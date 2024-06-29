@@ -4,9 +4,9 @@
             <div class="task-title row align-items-center">
                 <div class="col-md-8 col-sm-12">
                 @if(Auth::user()->id == $user->id)
-                    <h5>Les Evénements auxquels vous participez.({{ count($evenements) }})</h5>
+                    <h5>Les  Evénements auxquels vous participez.({{ count($evenements) }})</h5>
                 @else
-                <h5>Les Evénements.({{ count($evenements) }})</h5>
+                <h5>Les  Evénements.({{ count($evenements) }})</h5>
                 @endif
                 </div>
 
@@ -39,7 +39,7 @@
                                                     </a>
 
                                                     @if (Auth::user()->getRole('Admin'))
-                                                        <a href="{{ route('admin.evernement.showUpdate', $evenement->id) }}"
+                                                        <a href="{{ route('admin.evernement.edit', $evenement->id) }}"
                                                             class="btn btn-sm btn-outline-warning me-2">
                                                             <i class="dw dw-edit2"></i>
                                                         </a>

@@ -28,7 +28,7 @@ class PartenaireController extends Controller
                 "logo_url" => $media,
             ]);
         }
-        return redirect()->back()->with('message',"le partenaire à été ajouter avec success !!");
+        return redirect()->back()->with('message',"le partenaire à été ajouter avec succès !!");
     }
 
     public function update(Request $request, Partenaire $partenaire)
@@ -42,7 +42,7 @@ class PartenaireController extends Controller
             "nom" => $request->nom,
             "description" => $request->description,
         ]);
-        return redirect()->back()->with('message',"le partenaire à été mise à jour avec success !!");
+        return redirect()->back()->with('message',"le partenaire à été mise à jour avec succès !!");
     }
 
     public function isVisible(Partenaire $partenaire)
@@ -56,6 +56,6 @@ class PartenaireController extends Controller
     public function delete(Partenaire $partenaire)
     {
         $partenaire->delete();
-        return redirect()->back()->with('message',"le partenaire à été supprimer avec success !!");
+        return redirect()->back()->with('message',"le partenaire à été supprimer avec succès !!");
     }
 }

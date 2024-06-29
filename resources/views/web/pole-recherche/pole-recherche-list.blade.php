@@ -6,10 +6,10 @@
             style="background-image: url(' {{ asset('asset_web/assets/img/breadcrumbs-bg.jpg') }} ');">
             <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-                <h2>Pôles de recherche</h2>
+                <h2>Dommaine de Recherche</h2>
                 <ol>
                     <li><a href="{{ route('web.acceuil') }}">Aceuil</a></li>
-                    <li>pôles de recherche</li>
+                    <li>Dommaine de Recherche</li>
                 </ol>
 
             </div>
@@ -19,8 +19,8 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
-                    <h2> {{ count($poleRecherches) }} pôles de recherche</h2>
-                    <p>Découvrez ci-dessous, la liste complète de  nos pôles de recherche, où nous explorons et développons des solutions
+                    <h2> {{ count($poleRecherches) }} Dommaine de Recherche</h2>
+                    <p>Découvrez ci-dessous, la liste complète de  nos Dommaine de Recherche, où nous explorons et développons des solutions
                         innovantes pour un avenir agricole meilleur.</p>
                 </div>
 
