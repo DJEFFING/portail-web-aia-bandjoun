@@ -3,15 +3,18 @@
 namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
+use App\Models\AnneePublication;
 use App\Models\Apropos;
 use App\Models\Article;
 use App\Models\Commentaire;
+use App\Models\CommentairePublication;
 use App\Models\Equipe;
 use App\Models\Evernement;
 use App\Models\Fonction;
 use App\Models\Partenaire;
 use App\Models\PoleRecherche;
 use App\Models\Projet;
+use App\Models\Publication;
 use App\Models\Revue;
 use App\Models\Slide;
 use App\Models\Type;
@@ -93,8 +96,27 @@ class AcceuilController extends Controller
     public function blogs()
     {
         $revues = Revue::all();
+        $publications = Publication::where("status",true)->latest()->get();
+        $anneePublications = AnneePublication::whereHas("publications")->latest()->get();
+
+        $anneeActuelle = $anneePublications->first();
         $articles = Article::where("status",true)->latest()->get();
-        return view('web.blogs.blog-list',compact('revues','articles'));
+        return view('web.blogs.blog-list',compact('revues','articles', 'publications','anneePublications','anneeActuelle'));
+    }
+
+    public function findByAnnee(AnneePublication $anneePublication)
+    {
+        $publications = Publication::all();
+        $anneePublications = AnneePublication::whereHas("publications")->latest()->get();
+
+        $anneeActuelle = $anneePublication;
+        $revues = Revue::all();
+        $articles = Article::where("status",true)->latest()->get();
+        $typePublications = $anneeActuelle->publications()->with('typePublication')->with('typePublication')
+                                        ->select('type_publication_id', \DB::raw('count(*) as count'))
+                                        ->groupBy('type_publication_id')
+                                        ->get();
+        return view('web.blogs.blog-list',compact('revues','articles', 'publications','anneePublications','anneeActuelle'));
     }
 
     public function membres()
@@ -146,6 +168,13 @@ class AcceuilController extends Controller
         return view('web.blogs.blog-detail',compact('article'));
     }
 
+    public function showPublication(Publication $publication)
+    {
+        $annee = AnneePublication::findOrFail($publication->annee_publication_id);
+
+        return view('web.blogs.publication-detail',compact('publication','annee'));
+    }
+
     public function createCommentaire(Request $request, Article $article)
     {
 
@@ -155,6 +184,20 @@ class AcceuilController extends Controller
             "site_web" => $request->site_web,
             "text" => $request->text,
             "article_id" => $article->id,
+        ]);
+
+        return redirect()->back()->with('message',"votre commentaire à été bien reçu.");
+    }
+
+    public function createCommentairePublication(Request $request, Publication $publication)
+    {
+
+        CommentairePublication::create([
+            "nom" => $request->nom,
+            "email" => $request->email,
+            "site_web" => $request->site_web,
+            "text" => $request->text,
+            "publication_id" => $publication->id,
         ]);
 
         return redirect()->back()->with('message',"votre commentaire à été bien reçu.");

@@ -1,5 +1,5 @@
 <?php
- 
+
 use App\Http\Controllers\web\AcceuilController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,12 +19,15 @@ Route::controller(AcceuilController::class)->name("web.")->group(function(){
     Route::get('/{poleRecherche}-show-poleRecherche','showPoleRecherche')->name('show-poleRecherche');
     Route::get('/{equipe}-show-equipe','showEquipe')->name('show-equipe');
     Route::get('/{projet}-show-projet','showProjet')->name('show-projet');
+    Route::get('/{publication}-show-publication','showPublication')->name('show-publication');
     Route::get('/{evernement}-show-evernement','showEvernement')->name('show-evernement');
     Route::get('/{article}-show-article','showArticle')->name('show-article');
+    Route::get('/findByYear-{anneePublication}','findByAnnee')->name('findByAnnee');
 
 
 
     Route::post('/{article}-create-commentaire','createCommentaire')->name('create-commentaire');
+    Route::post('/{publication}-create-commentaire-publication','createCommentairePublication')->name('create-commentaire-publication');
 });
 
 

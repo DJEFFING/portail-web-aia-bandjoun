@@ -19,7 +19,7 @@
         <!-- ======= Blog Section ======= -->
         <div class="container">
 
-         
+
 
             <section id="blog" class="blog">
                 <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -72,44 +72,63 @@
                         </div>
 
 
-                        <div class="row gy-4 posts-list col-lg-9">
+                        <div class="col gy-4 posts-list ">
+                        <strong>{{$anneeActuelle->annee_publication}}</strong>
+<hr>
+                            @forelse ($anneeActuelle->publications as $publication)
+                                <br>
+                                <div class="col-xl-8 d-flex" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="card-item post-item position-relative h-100 ">
+                                        <div class="row">
+                                            <div class="col-xl-5">
+                                                <img src=" {{ asset('storage/' . $publication->media_url) }} " class="img-fluid"
+                                                    alt="">
 
-                            @forelse ($articles as $article)
-                                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                                    <div class="post-item position-relative h-100">
+                                            </div>
+                                            <div class="col-xl-7 d-flex align-items-center">
 
-                                        <div class="post-img position-relative overflow-hidden">
-                                            <img src=" {{ asset('storage/' . $article->media_url) }} " class="img-fluid"
-                                                alt="">
-                                            <span class="post-date">{{ $article->created_at->format('d-M-Y') }}</span>
-                                        </div>
+                                                <div class="card-body">
 
-                                        <div class="post-content d-flex flex-column">
+                                                    <h3 class="post-title">{{ $publication->titre }}</h3>
+                                                    {{-- <span
+                                                        class="post-date">{{ $publication->created_at->format('d-M-Y') }}</span> --}}
+                                                    <div class="meta d-flex align-items-center">
+                                                        <div class="d-flex align-items-center">
+                                                            <i class="bi bi-person"></i>
+                                                            @forelse ($publication->users as $user)
+                                                             <strong><span
+                                                                class="ps-2">{{$user->name }}</span></strong>,
+                                                            @empty
 
-                                            <h3 class="post-title">{{ Str::limit($article->titre, 20, '...') }}</h3>
+                                                            @endforelse
 
-                                            <div class="meta d-flex align-items-center">
-                                                <div class="d-flex align-items-center">
-                                                    <i class="bi bi-person"></i> <span
-                                                        class="ps-2">{{ $article->user->name }}</span>
-                                                </div>
-                                                <span class="px-3 text-black-50">/</span>
-                                                <div class="d-flex align-items-center">
-                                                    <i class="bi bi-folder2"></i> <span
-                                                        class="ps-2">{{ $article->revue->titre }}</span>
+                                                        </div>
+                                                        <span class="px-3 text-black-50">/</span>
+                                                        <div class="d-flex align-items-center">
+                                                            <i class="bi bi-folder2"></i> <span
+                                                                class="ps-2">{{ $publication->typePublication->titre }}</span>
+                                                        </div>
+
+
+                                                    </div>
+                                                    <p style="display-flex:auto;" class="px-3">
+                                                        {{ $publication->description_1 }}</p>
+
+                                                    <hr>
+
+                                                    <a href="{{ route('web.show-publication', $publication->id) }}"
+                                                        class="readmore stretched-link"><span>Read More</span><i
+                                                            class="bi bi-arrow-right"></i></a>
+
                                                 </div>
                                             </div>
-
-                                            <hr>
-
-                                            <a href="{{ route('web.show-article', $article->id) }}"
-                                                class="readmore stretched-link"><span>Read More</span><i
-                                                    class="bi bi-arrow-right"></i></a>
 
                                         </div>
 
                                     </div>
-                                </div>
+                                </div><br>
+
+
                             @empty
                                 <center>
                                     <p>Aucune Information</p>
@@ -126,9 +145,20 @@
 
                     <div class="blog-pagination">
                         <ul class="justify-content-center">
-                            <li><a href="#">1</a></li>
-                            <li class="active"><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
+                            @forelse ($anneePublications as $anneePublication)
+                            @if ($anneeActuelle->id ==  $anneePublication->id)
+                            <li class="active"><a href="{{route('web.findByAnnee',$anneePublication->id)}}" >{{ $anneePublication->annee_publication }}</a></li>
+                            @else
+                            <li><a href="{{route('web.findByAnnee',$anneePublication->id)}}" >{{ $anneePublication->annee_publication }}</a></li>
+
+                            @endif
+
+                            @empty
+
+                            @endforelse
+
+                            {{-- <li class="active"><a href="#">2022</a></li> --}}
+
                         </ul>
                     </div>
                     <!-- End blog pagination -->
