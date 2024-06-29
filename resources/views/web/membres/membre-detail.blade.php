@@ -1,4 +1,4 @@
-@extends('web.app.app', ['page' => 7])
+@extends('web.app.app', ['page' => 8])
 @section('content')
     <main id="main">
 

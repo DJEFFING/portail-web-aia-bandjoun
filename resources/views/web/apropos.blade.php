@@ -6,7 +6,7 @@
             style="background-image: url(' {{ asset('asset_web/assets/img/breadcrumbs-bg.jpg') }} ');">
             <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-                <h2>À propos de Nous</h2>
+                <h2>Unite de Recherche d'Automatique et d'Informatique Appliqée</h2>
                 <ol>
                     <li><a href="{{ route('web.acceuil') }}">Aceuil</a></li>
                     <li>À propos de Nous</li>

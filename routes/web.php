@@ -1,5 +1,5 @@
 <?php
-
+ 
 use App\Http\Controllers\web\AcceuilController;
 use Illuminate\Support\Facades\Route;
 
