@@ -14,6 +14,7 @@
     <link href=" {{ asset('asset_web/assets/img/ur-aia.png') }} " rel="icon">
     <link href=" {{ asset('asset_web/assets/img/apple-touch-icon.png') }} " rel="apple-touch-icon">
 
+    <link rel="stylesheet" type="text/css" href=" {{ asset('asset_admin/vendors/styles/core.css') }} ">
     <!-- Vendor CSS Files -->
 
     <link href=" {{ asset('asset_web/assets/vendor/bootstrap-icons/bootstrap-icons.css') }} " rel="stylesheet">
@@ -24,17 +25,39 @@
     <link href=" {{ asset('asset_web/bootstrap-5.0.2-dist/css/bootstrap.min.css') }} " rel="stylesheet">
 
 
-    <!-- Template Main CSS File -->
 
+    <!-- Template Main CSS File -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
     {{-- <link href=" {{ asset('asset_admin/src/styles/style.css') }} " rel="stylesheet"> --}}
     <link href=" {{ asset('asset_web/assets/css/main.css') }} " rel="stylesheet">
 
-    <!-- =======================================================
-  * Template Name: UpConstruction - v1.3.0
-  * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <style>
+        .search_select_box {
+            max-width: 400px;
+            margin: 50 auto;
+        }
+
+        .search_select_box select {
+            width: 100px;
+        }
+
+        .search_select_box button {
+            background-color: #fff !important;
+            padding: 15px 25px;
+            color: black !important;
+        }
+
+        .category-publication-menu {
+            height: 95%;
+            /* ou une hauteur spécifique */
+            max-height: 95%;
+            /*ou une valeur maximale de votre choix*/
+            overflow-y: auto;
+            /* Activer le défilement vertical si le contenu dépasse la hauteur */
+        }
+    </style>
 </head>
 
 <body>
@@ -68,7 +91,11 @@
     <script src=" {{ asset('asset_web/assets/vendor/swiper/swiper-bundle.min.js') }} "></script>
     <script src=" {{ asset('asset_web/assets/vendor/purecounter/purecounter_vanilla.js') }} "></script>
     <script src=" {{ asset('asset_web/assets/vendor/php-email-form/validate.js') }} "></script>
-   
+    <script src=" {{ asset('asset_web/selectpiker.js') }} "></script>
+
+
+
+
 
     <!-- Template Main JS File -->
     <script src=" {{ asset('asset_web/assets/js/main.js') }} "></script>
@@ -76,6 +103,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <script src=" {{ asset('asset_web/bootstrap-5.0.2-dist/js/bootstrap.min.js') }} "></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -85,6 +113,29 @@
             });
         });
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    {{-- <script>
+    $(document).ready(function(){
+        $('.search_select_box select').selectpicker();
+    });
+</script> --}}
+
+    <script src="{{ asset('asset_admin/vendors/scripts/core.js') }}"></script>
+    <script src="{{ asset('asset_admin/vendors/scripts/script.min.js') }}"></script>
+    <script src="{{ asset('asset_admin/vendors/scripts/process.js') }}"></script>
+    <script src="{{ asset('asset_admin/vendors/scripts/layout-settings.js') }}"></script>
+    <script src="{{ asset('asset_admin/src/plugins/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('asset_admin/src/plugins/datatables/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('asset_admin/src/plugins/datatables/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('asset_admin/src/plugins/datatables/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('asset_admin/src/plugins/datatables/js/responsive.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('asset_admin/vendors/scripts/search.min.js') }}"></script>
+
 
 </body>
 

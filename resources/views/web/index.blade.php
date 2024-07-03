@@ -321,38 +321,38 @@
 
 
                 <div class=" section-header">
-                    <h2>Recent Blog Posts</h2>
-                    <p>In commodi voluptatem excepturi quaerat nihil error autem voluptate ut et officia consequuntu</p>
+                    <h2>Dernière Publication</h2>
+                    <p>Découvrez nos dernières publications</p>
                 </div>
 
                 <div class="row gy-5">
-                    @forelse ($articles as $article)
+                    {{-- @forelse ($publications as $publication)
                         <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                             <div class="post-item position-relative h-100">
 
                                 <div class="post-img position-relative overflow-hidden">
-                                    <img src=" {{ asset('storage/'.$article->media_url) }} " class="img-fluid"
+                                    <img src=" {{ asset('storage/'.$publication->media_url) }} " class="img-fluid"
                                         alt="">
-                                    <span class="post-date">{{ $article->created_at->format("d-M-Y") }}</span>
+                                    <span class="post-date">{{ $publication->created_at->format("d-M-Y") }}</span>
                                 </div>
 
                                 <div class="post-content d-flex flex-column">
 
-                                    <h3 class="post-title">{{ $article->titre }}</h3>
+                                    <h3 class="post-title">{{ $publication->titre }}</h3>
 
                                     <div class="meta d-flex align-items-center">
                                         <div class="d-flex align-items-center">
-                                            <i class="bi bi-person"></i> <span class="ps-2">{{ $article->user->name }}</span>
+                                            <i class="bi bi-person"></i> <span class="ps-2">{{ $publication->user->name }}</span>
                                         </div>
                                         <span class="px-3 text-black-50">/</span>
                                         <div class="d-flex align-items-center">
-                                            <i class="bi bi-folder2"></i> <span class="ps-2">{{ $article->revue->titre }}</span>
+                                            <i class="bi bi-folder2"></i> <span class="ps-2">{{ $publication->revue->titre }}</span>
                                         </div>
                                     </div>
 
                                     <hr>
 
-                                    <a href="{{ route('web.show-article',$article->id) }}" class="readmore stretched-link"><span>Read More</span><i
+                                    <a href="{{ route('web.show-article',$publication->id) }}" class="readmore stretched-link"><span>Read More</span><i
                                             class="bi bi-arrow-right"></i></a>
 
                                 </div>
@@ -362,9 +362,9 @@
                         <!-- End post item -->
                     @empty
                         <center>
-                            <p>Pas d'article....</p>
+                            <p>Pas de publication....</p>
                         </center>
-                    @endforelse
+                    @endforelse --}}
 
                 </div>
 

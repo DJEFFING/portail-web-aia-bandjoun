@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Storage;
 
 class PublicationController extends Controller
 {
-   
+
     public function index()
     {
         $publications = Publication::all();
@@ -51,7 +51,7 @@ class PublicationController extends Controller
         return view('admin.gestion-publications.publication.create',compact('typePublications','anneePublications'));
     }
 
-  
+
     public function store(Request $request)
     {
 
@@ -71,7 +71,7 @@ class PublicationController extends Controller
             "lien_externe" => $request->lien_externe,
         ]);
 
-        
+
         PublicationMembre::create([
             "publication_id" => $newPublication->id,
             "user_id" => Auth::user()->id
@@ -84,15 +84,15 @@ class PublicationController extends Controller
     {
         $currentAnnee = AnneePublication::findOrFail($publication->annee_publication_id);
         $listUsers = [];
-    
+
         // Récupérer les utilisateurs qui ne sont dans aucune des listes
         $listeUtilisateurs = $publication->users()->pluck("id")->toArray();
         $listUsers = User::whereNotIn('id', $listeUtilisateurs)->get();
-        
+
         return view('admin.gestion-publications.publication.show',compact('publication','currentAnnee','listUsers'));
     }
 
-   
+
     public function edit(Publication $publication)
     {
         $typePublications  = TypePublication::all();
@@ -102,7 +102,7 @@ class PublicationController extends Controller
         return view('admin.gestion-publications.publication.update',compact('publication','typePublications','anneePublications','currentAnnee'));
     }
 
-  
+
     public function update(Request $request, Publication $publication)
     {
         // dd($request);
@@ -123,7 +123,7 @@ class PublicationController extends Controller
         ]);
 
         return redirect(route('admin.publication.findByAnnee',$request->annee_publication_id))->with("message","la publication à moidifié crée avec succès.");
-        
+
     }
 
     public function isVisible(Publication $publication)
@@ -171,12 +171,12 @@ class PublicationController extends Controller
 
          // Chemin du fichier dans le disque public
          $filePath = $document->document_url;
- 
+
          // Vérifier si le fichier existe
          if (!Storage::disk('public')->exists($filePath)) {
              return abort(404, 'Fichier non trouvé.');
          }
- 
+
          // Télécharger le fichier
          return Storage::disk('public')->download($filePath);
     }

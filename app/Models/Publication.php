@@ -21,10 +21,15 @@ class Publication extends Model
         return $this->belongsTo(AnneePublication::class);
     }
 
+    public function anneePublication()
+    {
+        return $this->belongsTo(AnneePublication::class);
+    }
+
     // la liste des auteurs (users) d'une publication
     public function users()
     {
-        return $this->BelongsToMany(User::class, 'publication_membres');
+        return $this->BelongsToMany(User::class, 'publication_membres','publication_id', 'user_id');
     }
 
     public function documents()

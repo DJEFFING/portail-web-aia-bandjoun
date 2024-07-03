@@ -73,19 +73,19 @@
 
 
                         <div class="col gy-4 posts-list ">
-                        <strong>{{$anneeActuelle->annee_publication}}</strong>
-<hr>
+                            <strong>{{ $anneeActuelle->annee_publication }}</strong>
+                            <hr>
                             @forelse ($anneeActuelle->publications as $publication)
                                 <br>
                                 <div class="col-xl-8 d-flex" data-aos="fade-up" data-aos-delay="100">
                                     <div class="card-item post-item position-relative h-100 ">
                                         <div class="row">
-                                            <div class="col-xl-5">
+                                            {{-- <div class="col-xl-5">
                                                 <img src=" {{ asset('storage/' . $publication->media_url) }} " class="img-fluid"
                                                     alt="">
 
-                                            </div>
-                                            <div class="col-xl-7 d-flex align-items-center">
+                                            </div> --}}
+                                            <div class="col-xl-12 d-flex align-items-center">
 
                                                 <div class="card-body">
 
@@ -96,10 +96,9 @@
                                                         <div class="d-flex align-items-center">
                                                             <i class="bi bi-person"></i>
                                                             @forelse ($publication->users as $user)
-                                                             <strong><span
-                                                                class="ps-2">{{$user->name }}</span></strong>,
+                                                                <strong><span
+                                                                        class="ps-2">{{ $user->name }}</span></strong>,
                                                             @empty
-
                                                             @endforelse
 
                                                         </div>
@@ -112,7 +111,7 @@
 
                                                     </div>
                                                     <p style="display-flex:auto;" class="px-3">
-                                                        {{ $publication->description_1 }}</p>
+                                                        {{ Str::limit($publication->description_1, 1000, '...') }}</p>
 
                                                     <hr>
 
@@ -146,15 +145,17 @@
                     <div class="blog-pagination">
                         <ul class="justify-content-center">
                             @forelse ($anneePublications as $anneePublication)
-                            @if ($anneeActuelle->id ==  $anneePublication->id)
-                            <li class="active"><a href="{{route('web.findByAnnee',$anneePublication->id)}}" >{{ $anneePublication->annee_publication }}</a></li>
-                            @else
-                            <li><a href="{{route('web.findByAnnee',$anneePublication->id)}}" >{{ $anneePublication->annee_publication }}</a></li>
-
-                            @endif
+                                @if ($anneeActuelle->id == $anneePublication->id)
+                                    <li class="active"><a
+                                            href="{{ route('web.findByAnnee', $anneePublication->id) }}">{{ $anneePublication->annee_publication }}</a>
+                                    </li>
+                                @else
+                                    <li><a
+                                            href="{{ route('web.findByAnnee', $anneePublication->id) }}">{{ $anneePublication->annee_publication }}</a>
+                                    </li>
+                                @endif
 
                             @empty
-
                             @endforelse
 
                             {{-- <li class="active"><a href="#">2022</a></li> --}}

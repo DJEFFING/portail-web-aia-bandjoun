@@ -28,42 +28,124 @@
                             capacité à faire avancer la science agricole.</p>
                     </div>
 
-                    <div class="row gy-5">
-
-                        <!-- zone de recherche -->
-                            <div class="col-lg-3">
-                                <div class="sidebar">
-
-                                    <div class="sidebar-item search-form">
-                                        <h3 class="sidebar-title">Recherche</h3>
-                                        <form action="" class="mt-3">
-                                            <input type="text">
-                                            <button type="submit"><i class="bi bi-search"></i></button>
-                                        </form>
+                    <div class="card">
+                        <!-- formulaire de recherche -->
+                        <form method="POST" action="" class="sidebar">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-6 sidebar-item search-form">
+                                    <h3 class="sidebar-title">Par Nom</h3>
+                                    <div class="search_select_box">
+                                        <select name="user_name" id="" class="form-control custom-select2"
+                                            style="width: 100%; height: 38px;" data-live-search="true">
+                                            <option value=""></option>
+                                            @forelse ($listNameUser as $listNameUse)
+                                                <option value="{{ $listNameUse }}">{{ $listNameUse }}</option>
+                                            @empty
+                                            @endforelse
+                                        </select>
                                     </div>
-                                    <!-- End sidebar search formn-->
 
                                 </div>
-                            </div>
-                        <!--END zone de recherche -->
+
+                                <div class="col-md-6 sidebar-item search-form ">
+                                    <h3 class="sidebar-title">Equipes</h3>
+                                    <div class="search_select_box">
+                                        <select class="custom-select2 form-control" name="type_id"
+                                            style="width: 100%; height: 38px;" required>
+                                            <optgroup label="Type de document">
+                                                <option value=""></option>
+                                                @forelse ($listequipes as $equipe)
+                                                    <option value="{{ $equipe->id }}">{{ $equipe->titre }}
+                                                    </option>
+                                                @empty
+                                                @endforelse
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div><br>
+
+                            <div class="row">
+                                <div class="col-md-6 sidebar-item search-form">
+                                    <h3 class="sidebar-title">Axe de recherche</h3>
+
+                                    <div class="search_select_box">
+                                        <select name="auteur_id" id="" style="width: 100%; height: 38px;"
+                                            class="form-control custom-select2" data-live-search="true">
+                                            <optgroup label="Auteurs">
+                                                <option value=""></option>
+                                                @forelse ($listAxes as $axe)
+                                                    <option value="{{ $axe->id }}">{{ $axe->titre }}
+                                                        ({{ $axe->code_axe }})
+                                                    </option>
+
+                                                @empty
+                                                @endforelse
+                                            </optgroup>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="col-md-6 sidebar-item search-form">
+                                    <h3 class="sidebar-title">Fonction</h3>
+                                    <select name="titre" id="" style="width: 100%; height: 38px;"
+                                        class="form-control custom-select2" data-live-search="true">
+                                        <optgroup label="titre">
+                                            <option value=""></option>
+                                            @forelse ($listFonction as $fonction)
+                                                <option value="{{ $fonction->id }}">{{ $fonction->nom }}</option>
+
+                                            @empty
+                                            @endforelse
+                                        </optgroup>
+                                    </select>
+
+                                </div>
+
+                            </div><br>
+
+
+                            <button type="submit" class="btn btn-primary">Recherche <i class="bi bi-search"></i></button>
+                            <!-- End sidebar search formn-->
+
+                            <!-- End sidebar categories-->
+
+                        </form>
+                        <!-- End Blog Sidebar -->
+
+
+                        <!--END formulaire de recherche -->
+                    </div>
+
+                    <div class="row gy-5">
+
+
 
                         <!-- Liste Des Membres -->
-                        <div class="row gy-4 posts-list col-lg-9">
+                        <div class="row  gy-5 posts-list col-lg-12">
 
                             <!-- Responsable pole Recherche -->
-                                @include('web.membres.partials.membre-list-responsable-pole')
+                            @include('web.membres.partials.membre-list-responsable-pole')
                             <!--END Responsable pole Recherche -->
 
                             <!-- Responsable Equipe -->
-                                @include('web.membres.partials.membre-list-responsable-equipe')
+                            @include('web.membres.partials.membre-list-responsable-equipe')
                             <!-- END Responsable Equipe -->
 
+                            <!-- Responsable Axe -->
+                            @include('web.membres.partials.membre-list-responsable-axe')
+                            <!-- END Responsable Axe -->
+
                             <!-- Membre Equipe -->
-                                @include('web.membres.partials.membre-list-membre-equipe')
+                            @include('web.membres.partials.membre-list-membre-equipe')
                             <!--END Membre Equipe -->
 
                             <!-- Autre Membres-->
-                                @include('web.membres.partials.membre-list-autre')
+                            @include('web.membres.partials.membre-list-autre')
                             <!--END Autre Membres   -->
 
                         </div>

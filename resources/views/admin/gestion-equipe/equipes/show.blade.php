@@ -51,7 +51,7 @@
                                 </div>
 
                                 <!-- Enregistrement d'un Nouveau Membre -->
-                                    {{-- @if (Auth::user()->getRole('admin'))
+                                    @if (Auth::user()->getRole('admin'))
                                         <form action="{{ route('admin.equipe.addMembre', $equipe->id) }}" method="POST"
                                             class="card-box mb-30">
 
@@ -97,12 +97,12 @@
                                                 </button>
                                             </div>
                                         </form>
-                                    @endif --}}
+                                    @endif
                                 <!--END Enregistrement d'un Nouveau Membre -->
 
 
                                 <!-- Liste Membre -->
-                                    {{-- <div class="card-box mb-30">
+                                    <div class="card-box mb-30">
                                         <h5 class="pd-20 h5 mb-0 col-10">Membres ({{ count($equipe->menbres) }})</h5>
                                         <div class="latest-post">
                                             <ul>
@@ -116,12 +116,12 @@
                                                 @empty
                                                     <li>
                                                         <h4>cette Equipe n'as pas de membre</h4>
-                                                    
+
                                                     </li>
                                                 @endforelse
                                             </ul>
                                         </div>
-                                    </div> --}}
+                                    </div>
                                 <!-- End Liste Membre -->
 
                                 <div class="card-box mb-30">

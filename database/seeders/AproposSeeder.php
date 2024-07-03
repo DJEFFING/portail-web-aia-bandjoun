@@ -14,8 +14,21 @@ class AproposSeeder extends Seeder
     public function run(): void
     {
         $apropos = [
-            "titre" =>"Consequatur eius et magnam",
-            "desription" => "EST 1988 Our Story Inventore aliquam beatae at et id alias. Ipsa dolores amet consequuntur minima quia maxime autem. Quidem id sed ratione. Tenetur provident autem in reiciendis rerum at dolor. Aliquam consectetur laudantium temporibus dicta minus dolor. Ullamco laboris nisi ut aliquip ex ea commo Duis aute irure dolor in reprehenderit in Ullamco laboris nisi ut aliquip ex ea Vitae autem velit excepturi fugit. Animi ad non. Eligendi et non nesciunt suscipit repellendus porro in quo eveniet. Molestias in maxime doloremque."
+            "titre" =>"Présentation et Missions du Laboratoire",
+
+            "desription" => "L’Unité de Recherche d’Automatique et d’Informatique Appliquée (UR.A.I.A) de
+            l’Institut Universitaire de Technologie Fotso Victor (IUT-FV) de l’Université de
+            Dschang à Bandjoun, est l’une des deux structures de recherche de l’IUT-FV.
+            Initialement composé de 17 membres, tous enseignants à l’IUT Fotso Victor (plus
+            particulièrement les enseignants des départements de Génie Electrique, Génie
+            Informatique et Génie des Télécommunications et Réseaux), dont les grades
+            académiques étaient les suivants : 1 Maître de Conférences, 3 Chargés de Cours et
+            13 Assistants, l’URAIA compte aujourd’hui plus de 25 membres permanents. Les
+            grades académiques ont évolué qualitativement de la façon suivante : 03
+            Professeurs titulaires ; 08 Maîtres de Conférences, 14 Chargés de Cours, 01
+            Assistant. Par ailleurs, à ce jour, l’UR-AIA compte 26 thèses de Doctorat/PhD
+            encadrées et soutenues et 114 Mémoires de Masters de Recherche encadrés et
+            soutenus."
         ];
 
         Apropos::create($apropos);
