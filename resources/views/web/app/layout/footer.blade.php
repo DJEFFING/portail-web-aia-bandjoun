@@ -41,7 +41,7 @@
                 </div><!-- End footer links column-->
 
                 <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Dommaine de Recherche</h4>
+                    <h4>Domaine de Recherche</h4>
                     <ul>
                         @forelse (poleRecherches() as $pole)
                             <li><a href="{{ route('web.show-poleRecherche', $pole->id) }}">{{ $pole->code_pole }}</a>

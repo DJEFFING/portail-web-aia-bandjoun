@@ -62,9 +62,9 @@ class PoleRechercheSeeder extends Seeder
 
 
         PoleRecherche::create($pole_4);
-        PoleRecherche::create($pole_1);
-        PoleRecherche::create($pole_2);
-        PoleRecherche::create($pole_3);
+        // PoleRecherche::create($pole_1);
+        // PoleRecherche::create($pole_2);
+        // PoleRecherche::create($pole_3);
 
     }
 }

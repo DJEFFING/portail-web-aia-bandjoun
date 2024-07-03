@@ -94,8 +94,8 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
-                    <h2>Dommaine de Recherche</h2>
-                    <p>Découvrez nos Dommaine de Recherche ci-dessous, où nous explorons et développons des solutions
+                    <h2>Domaine de Recherche</h2>
+                    <p>Découvrez nos Domaine de Recherche ci-dessous, où nous explorons et développons des solutions
                         innovantes pour un avenir agricole meilleur.</p>
                 </div>
 
@@ -144,7 +144,7 @@
                             <div>
                                 <span data-purecounter-start="0" data-purecounter-end="{{ $countSection['membre'] }}"
                                     data-purecounter-duration="1" class="purecounter"></span>
-                                <p>Membre</p>
+                                <p>Membres</p>
                             </div>
                         </div>
                     </div><!-- End Stats Item -->
@@ -156,7 +156,7 @@
                             <div>
                                 <span data-purecounter-start="0" data-purecounter-end="{{ $countSection['equipe'] }}"
                                     data-purecounter-duration="1" class="purecounter"></span>
-                                <p>Equipe</p>
+                                <p>Equipes</p>
                             </div>
                         </div>
                     </div><!-- End Stats Item -->
@@ -170,7 +170,7 @@
                             <div>
                                 <span data-purecounter-start="0" data-purecounter-end="{{ $countSection['projet'] }}"
                                     data-purecounter-duration="1" class="purecounter"></span>
-                                <p>Projet</p>
+                                <p>Projets</p>
                             </div>
                         </div>
                     </div><!-- End Stats Item -->
@@ -182,7 +182,7 @@
                             <div>
                                 <span data-purecounter-start="0" data-purecounter-end="{{ $countSection['article'] }}"
                                     data-purecounter-duration="1" class="purecounter"></span>
-                                <p>Publication</p>
+                                <p>Publications</p>
                             </div>
 
                         </div>
@@ -200,8 +200,7 @@
 
                 <div class="section-header">
                     <h2>Nos Projets</h2>
-                    <p>Découvrez nos Projet ci-dessous, où nous développons des solutions
-                        innovantes pour un avenir agricole meilleur.</p>
+                    <p>Découvrez nos Projet ci-dessous.</p>
                 </div>
 
                 <div class="row gy-4">

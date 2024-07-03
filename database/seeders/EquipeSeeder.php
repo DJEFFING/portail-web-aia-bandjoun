@@ -14,7 +14,7 @@ class EquipeSeeder extends Seeder
     public function run(): void
     {
         $equipe_1 = [
-            "titre" => "Automatique et Traitement du Signa",
+            "titre" => "Automatique et Traitement du Signal",
 
             "description_1" => "Nos recherches sont axées sur des problèmes de recherche et développement
             couvrant les domaines de l’Automatique des Systèmes non Linéaires et de Génie
@@ -26,7 +26,7 @@ class EquipeSeeder extends Seeder
 
             "media_url" => "media.png",
             "code_equipe" => "ATS",
-            "user_id" => 5,
+            "user_id" => 1,
             "pole_recherche_id" => 1,
         ];
 
@@ -42,7 +42,7 @@ class EquipeSeeder extends Seeder
 
             "media_url" => "media.png",
             "code_equipe" => "PDER",
-            "user_id" => 6,
+            "user_id" => 16,
             "pole_recherche_id" => 1,
         ];
 
@@ -63,7 +63,7 @@ class EquipeSeeder extends Seeder
 
             "media_url" => "media.png",
             "code_equipe" => "STIC",
-            "user_id" => 7,
+            "user_id" => 20,
             "pole_recherche_id" => 1,
         ];
 

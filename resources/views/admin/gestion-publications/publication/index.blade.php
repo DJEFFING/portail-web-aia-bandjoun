@@ -55,11 +55,11 @@
                                                             </span>
                                                             <div class="blog-by">
                                                                 <p>{{ $publication->description_1 }}</p><br>
-                                                                
+
 
                                                                 <span class="badge badge-success">Responsable</span> :
                                                                 @forelse ($publication->users as $user)
-                                                                    <label for="">{{ $user->name }}</label>, 
+                                                                    <label for="">{{ $user->name }}</label>,
                                                                 @empty
                                                                     <label for="">Pas de responsable</label>
                                                                 @endforelse
@@ -155,7 +155,7 @@
                                         @empty
                                             <a href="#"
                                                 class="list-group-item d-flex align-items-center justify-content-between">Aucun
-                                                Dommaine de Recherche<span class="badge badge-primary badge-pill">0</span></a>
+                                                Domaine de Recherche<span class="badge badge-primary badge-pill">0</span></a>
                                         @endforelse
 
                                     </div>

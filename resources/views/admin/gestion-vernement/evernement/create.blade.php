@@ -106,7 +106,7 @@
                         </div> --}}
 
                     <button class="btn btn-primary" type="submit">Valider</button>
-                    <!--END Responssable du Dommaine de Recherche -->
+                    <!--END Responssable du Domaine de Recherche -->
                 </form>
             </div>
             <div class="footer-wrap pd-20 mb-20 card-box">

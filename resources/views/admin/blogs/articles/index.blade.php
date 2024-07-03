@@ -124,7 +124,7 @@
                                         @empty
                                             <a href="#"
                                                 class="list-group-item d-flex align-items-center justify-content-between">Aucun
-                                                Dommaine de Recherche<span class="badge badge-primary badge-pill">0</span></a>
+                                                Domaine de Recherche<span class="badge badge-primary badge-pill">0</span></a>
                                         @endforelse
 
                                     </div>

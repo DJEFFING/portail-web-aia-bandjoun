@@ -29,7 +29,7 @@
         </h5>
         <br>
         <center>
-            <p><span class="badge badge-success">Dommaine de Recherche</span></p>
+            <p><span class="badge badge-success">Domaine de Recherche</span></p>
         </center>
 
         <p class="text-center text-muted font-14">

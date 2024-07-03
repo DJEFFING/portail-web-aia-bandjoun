@@ -48,7 +48,7 @@ class AxeSeeder extends Seeder
             ",
 
             "media_url" => "media.png",
-            "user_id" => 8,
+            "user_id" => 4,
             "equipe_id" => 1,
         ];
 
@@ -89,7 +89,7 @@ class AxeSeeder extends Seeder
             ",
 
             "media_url" => "media.png",
-            "user_id" => 9,
+            "user_id" => 2,
             "equipe_id" => 1,
         ];
 
@@ -134,7 +134,7 @@ class AxeSeeder extends Seeder
             ",
 
             "media_url" => "media.png",
-            "user_id" => 10,
+            "user_id" => 5,
             "equipe_id" => 1,
         ];
 
@@ -184,7 +184,7 @@ class AxeSeeder extends Seeder
             chaotique ",
 
             "media_url" => "",
-            "user_id" => 11,
+            "user_id" => 3,
             "equipe_id" => 1,
         ];
 
@@ -219,7 +219,7 @@ class AxeSeeder extends Seeder
             optimale, Réseaux Électriques.",
 
             "media_url" => "media.png",
-            "user_id" => 12,
+            "user_id" => 17,
             "equipe_id" => 2,
         ];
 
@@ -245,7 +245,7 @@ class AxeSeeder extends Seeder
 
 
             "media_url" => "media.pmg",
-            "user_id" => 13,
+            "user_id" => 18,
             "equipe_id" => 2,
         ];
 
@@ -265,7 +265,7 @@ class AxeSeeder extends Seeder
             est aussi d’un grand intérêt pour la gestion des centrales de production de l’énergie
             électrique et de la chaleur.",
             "media_url" => "",
-            "user_id" => 14,
+            "user_id" => 19,
             "equipe_id" => 3,
         ];
 
@@ -315,7 +315,7 @@ class AxeSeeder extends Seeder
 
 
             "media_url" => "media.png",
-            "user_id" => 15,
+            "user_id" => 22,
             "equipe_id" => 3,
         ];
 
@@ -386,7 +386,7 @@ class AxeSeeder extends Seeder
             Entrepreneurship
             ",
             "media_url" => "media.png",
-            "user_id" => 16,
+            "user_id" => 24,
             "equipe_id" => 3,
         ];
 
@@ -426,20 +426,11 @@ class AxeSeeder extends Seeder
             Mots clés : Faisceau laser, Analyse, Stabilisation, Bande de fréquence",
 
             "media_url" => "media.png",
-            "user_id" => 17,
+            "user_id" => 21,
             "equipe_id" => 3,
         ];
 
-        // //EQUIPE 3
-        // $axe_11 = [
-        //     "titre" => "",
-        //     "code_axe" => "",
-        //     "description_1" => "",
-        //     "description_2" => "",
-        //     "media_url" => "",
-        //     "user_id" => 18,
-        //     "equipe_id" => 3,
-        // ];
+
 
         Axe::create($axe_1);
         Axe::create($axe_2);
@@ -451,7 +442,7 @@ class AxeSeeder extends Seeder
         Axe::create($axe_8);
         Axe::create($axe_9);
         Axe::create($axe_10);
-        // Axe::create($axe_11);
+     
 
 
     }

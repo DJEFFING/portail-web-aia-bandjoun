@@ -237,7 +237,7 @@ class AcceuilController extends Controller
     // affichage de la liste des membres
     public function membres()
     {
-        //les responsables des Dommaine de Recherche
+        //les responsables des Domaine de Recherche
         $listUserRespPole = User::whereHas("poleRecherches")->get();
 
         // les responsables d'equipes

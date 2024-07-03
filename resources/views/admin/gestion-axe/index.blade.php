@@ -117,7 +117,7 @@
                                     @forelse ($equipes as $equipe)
                                     <a href="#" class="list-group-item d-flex align-items-center justify-content-between">{{ $equipe->titre }} <span class="badge badge-primary badge-pill">{{ count($equipe->axes) }}</span></a>
                                     @empty
-                                    <a href="#" class="list-group-item d-flex align-items-center justify-content-between">Aucun Dommaine de Recherche<span class="badge badge-primary badge-pill">0</span></a>
+                                    <a href="#" class="list-group-item d-flex align-items-center justify-content-between">Aucun Domaine de Recherche<span class="badge badge-primary badge-pill">0</span></a>
                                     @endforelse
 
                                 </div>

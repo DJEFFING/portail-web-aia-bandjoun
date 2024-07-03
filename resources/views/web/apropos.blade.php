@@ -109,8 +109,8 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
-                    <h2> {{ count($poleRecherches) }} Dommaine de Recherche</h2>
-                    {{-- <p>Découvrez nos Dommaine de Recherche ci-dessous, où nous explorons et développons des solutions
+                    <h2> {{ count($poleRecherches) }} Domaine de Recherche</h2>
+                    {{-- <p>Découvrez nos Domaine de Recherche ci-dessous, où nous explorons et développons des solutions
                         innovantes pour un avenir agricole meilleur.</p> --}}
                 </div>
 

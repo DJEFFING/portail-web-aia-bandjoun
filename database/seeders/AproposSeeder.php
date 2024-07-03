@@ -14,21 +14,17 @@ class AproposSeeder extends Seeder
     public function run(): void
     {
         $apropos = [
-            "titre" =>"Présentation et Missions du Laboratoire",
+            "titre" =>"Missions du laboratoire",
 
-            "desription" => "L’Unité de Recherche d’Automatique et d’Informatique Appliquée (UR.A.I.A) de
-            l’Institut Universitaire de Technologie Fotso Victor (IUT-FV) de l’Université de
-            Dschang à Bandjoun, est l’une des deux structures de recherche de l’IUT-FV.
-            Initialement composé de 17 membres, tous enseignants à l’IUT Fotso Victor (plus
-            particulièrement les enseignants des départements de Génie Electrique, Génie
-            Informatique et Génie des Télécommunications et Réseaux), dont les grades
-            académiques étaient les suivants : 1 Maître de Conférences, 3 Chargés de Cours et
-            13 Assistants, l’URAIA compte aujourd’hui plus de 25 membres permanents. Les
-            grades académiques ont évolué qualitativement de la façon suivante : 03
-            Professeurs titulaires ; 08 Maîtres de Conférences, 14 Chargés de Cours, 01
-            Assistant. Par ailleurs, à ce jour, l’UR-AIA compte 26 thèses de Doctorat/PhD
-            encadrées et soutenues et 114 Mémoires de Masters de Recherche encadrés et
-            soutenus."
+            "desription" => "L’UR.A.I.A. entend apporter sa contribution, en laissant bien sûr sa marque, au
+            développement de la science en général et de notre pays, le Cameroun, dans le
+            domaine des sciences de l’ingénieur. L’expertise de ce laboratoire s’étend, de
+            l’Automatique à l’Informatique, en passant par l’analyse et traitement des signaux
+            biomédicaux et les énergies renouvelables. Dans l’optique d’augmenter en
+            quantité et en qualité ses membres, l’UR.A.I.A. entend, par l’organisation
+            régulière de séminaires ou de journées scientifiques, encourager la recherche en
+            son sein et produire des résultats scientifiques publiés dans des journaux
+            scientifiques de renommée internationale et des résultats de recherchedéveloppement"
         ];
 
         Apropos::create($apropos);

@@ -7,12 +7,12 @@
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
                             <div class="title">
-                                <h4>Dommaine de Recherche</h4>
+                                <h4>Domaine de Recherche</h4>
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">ACCEUIL</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Dommaine de Recherche</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Domaine de Recherche</li>
                                 </ol>
                             </nav>
                         </div>

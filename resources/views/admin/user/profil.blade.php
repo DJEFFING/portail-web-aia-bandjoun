@@ -30,7 +30,7 @@
                                 <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }}" alt=""
                                 class="avatar-photo">
                                 @endif
-                                
+
                             </div>
                             <h5 class="text-center h5 mb-0">{{ $user->name }}</h5>
                             <p class="text-center text-muted font-14">{{ $user->prenom }}</p>
@@ -103,7 +103,7 @@
                                         <li class="nav-item">
                                             @if ($user->poleRecherches()->exists())
                                                 <a class="nav-link active" data-toggle="tab" href="#pole_recherche"
-                                                    role="tab">Dommaine de Recherche
+                                                    role="tab">Domaine de Recherche
                                                 </a>
                                             @elseif ($user->equipes()->exists() || $user->equipe()->exists())
                                                 <a class="nav-link active" data-toggle="tab" href="#equipe"

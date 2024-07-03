@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="title">
-                                <h4 class="text-warning">Modifer le Dommaine de Recherche</h4>
+                                <h4 class="text-warning">Modifer le Domaine de Recherche</h4>
                                 <h5 class="help-block form-text"  style="color:red;">{!! $errors->first('user_id', '<p class="help-block" style="color:red">:message</p>') !!}</h5>
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                     <label>Contenue :</label> <span class="text-danger">*</span>
                     <textarea class="textarea_editor form-control border-radius-0" name="description_2" placeholder="Enter text ..." required>{{ $poleRecherche->description_2 }}</textarea><br>
 
-                    <!-- Responssable du Dommaine de Recherche -->
+                    <!-- Responssable du Domaine de Recherche -->
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Responssable : </label> <span class="text-danger">*</span>
@@ -79,7 +79,7 @@
 
                     <button class="btn btn-white" type="reset">Retour</button>
                     <button class="btn btn-warning" type="submit">Modifier</button>
-                    <!--END Responssable du Dommaine de Recherche -->
+                    <!--END Responssable du Domaine de Recherche -->
                 </form>
             </div>
             <div class="footer-wrap pd-20 mb-20 card-box">
