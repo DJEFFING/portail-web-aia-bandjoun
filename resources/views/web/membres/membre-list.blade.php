@@ -3,7 +3,7 @@
     <main id="main">
         <!-- ======= Breadcrumbs ======= -->
         <div class="breadcrumbs d-flex align-items-center"
-            style="background-image: url(' {{ asset('asset_web/assets/img/breadcrumbs-bg.jpg') }} ');">
+            style="background-image: url(' {{ asset('asset_web/assets/img/footer_and_head.jpeg') }} ');">
             <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
                 <h2>Membres</h2>
@@ -129,23 +129,23 @@
                         <div class="row  gy-5 posts-list col-lg-12">
 
                             <!-- Responsable pole Recherche -->
-                            @include('web.membres.partials.membre-list-responsable-pole')
+                            @include('web.membres.membre-partials-list.membre-list-responsable-pole')
                             <!--END Responsable pole Recherche -->
 
                             <!-- Responsable Equipe -->
-                            @include('web.membres.partials.membre-list-responsable-equipe')
+                            @include('web.membres.membre-partials-list.membre-list-responsable-equipe')
                             <!-- END Responsable Equipe -->
 
                             <!-- Responsable Axe -->
-                            @include('web.membres.partials.membre-list-responsable-axe')
+                            @include('web.membres.membre-partials-list.membre-list-responsable-axe')
                             <!-- END Responsable Axe -->
 
                             <!-- Membre Equipe -->
-                            @include('web.membres.partials.membre-list-membre-equipe')
+                            @include('web.membres.membre-partials-list.membre-list-membre-equipe')
                             <!--END Membre Equipe -->
 
                             <!-- Autre Membres-->
-                            @include('web.membres.partials.membre-list-autre')
+                            @include('web.membres.membre-partials-list.membre-list-autre')
                             <!--END Autre Membres   -->
 
                         </div>

@@ -161,6 +161,7 @@ Route::name('admin.')->prefix('admin/')->group(function () {
             Route::post('/{projet}-update', 'update')->name('update');
             Route::post('/{projet}-addPartenaire','addPartenaire')->name('addPartenaire');
             Route::post('/{projet}-addEquipe','addEquipe')->name('addEquipe');
+            Route::post('/{projet}-addMemnbre','addMemnbre')->name('addMemnbre');
 
             Route::get('/{projet}-isVisible', 'isVisible')->name('isVisible');
 

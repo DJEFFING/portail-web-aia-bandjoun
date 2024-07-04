@@ -128,7 +128,7 @@ class EvernementController extends Controller
         UserEvernement::create([
             "user_id" => $request->user_id,
             "evernement_id" => $evernement->id,
-            "role_evernement_id" => $request->role_evernement_id
+            "role_evernement_id" => 1
         ]);
         return redirect()->back()->with('message',"membre ajouter avec succès!!");
     }

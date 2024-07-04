@@ -18,27 +18,30 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        // $this->call(FonctionSeeder::class);
-        // $this->call(UserSeeder::class);
-        // $this->call(RoleSeeder::class);
-        // $this->call(UserRoleSeeder::class);
+        $this->call(FonctionSeeder::class);
+        $this->call(UserSeeder::class);
+        $this->call(RoleSeeder::class);
+        $this->call(UserRoleSeeder::class);
 
-        // $this->call(PoleRechercheSeeder::class);
-        // $this->call(EquipeSeeder::class);
-        // $this->call(AxeSeeder::class);
+        $this->call(PoleRechercheSeeder::class);
+        $this->call(EquipeSeeder::class);
+        $this->call(AxeSeeder::class);
 
-        // $this->call(RoleEquipeSeeder::class);
+        $this->call(RoleEquipeSeeder::class);
         $this->call(MembreEquipeSeeder::class);
 
-        // $this->call(TypeEvenementSeeder::class);
+        $this->call(TypeEvenementSeeder::class);
+        $this->call(RoleEvenementSeeder::class);
 
-        // $this->call(AnneePublicationSeeder::class);
-        // $this->call(TypePublicationSeeder::class);
-        // $this->call(PublicationSeeder::class);
+        $this->call(RoleProjetSeeder::class);
 
-        // $this->call(SlideSeeder::class);
-        // $this->call(AproposSeeder::class);
-        // $this->call(ContactSideer::class);
+        $this->call(AnneePublicationSeeder::class);
+        $this->call(TypePublicationSeeder::class);
+        $this->call(PublicationSeeder::class);
+
+        $this->call(SlideSeeder::class);
+        $this->call(AproposSeeder::class);
+        $this->call(ContactSideer::class);
 
 
     }

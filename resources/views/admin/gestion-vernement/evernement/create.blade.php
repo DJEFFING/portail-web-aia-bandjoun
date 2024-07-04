@@ -89,21 +89,7 @@
                         </div>
 
 
-                    <!-- Pôle de recherche List -->
-                    {{-- <div class="col-md-12">
-                            <div class="form-group mb-200">
-                                <label>Pôle de Recherche : </label> <span class="text-danger">*</span>
-                                <select class="custom-select2 form-control" name="pole_recherche_id" style="width: 100%; height: 38px;" required>
-
-                                    <optgroup label="Pôle de Recherche">
-                                        @forelse ($listPoles as $pole)
-                                            <option value="{{ $pole->id }}">{{ $pole->titre }}</option>
-                                        @empty
-                                        @endforelse
-                                    </optgroup>
-                                </select>
-                            </div>
-                        </div> --}}
+ 
 
                     <button class="btn btn-primary" type="submit">Valider</button>
                     <!--END Responssable du Domaine de Recherche -->

@@ -9,8 +9,10 @@ use App\Models\Publication;
 use App\Models\PublicationMembre;
 use App\Models\TypePublication;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class PublicationController extends Controller
@@ -24,11 +26,11 @@ class PublicationController extends Controller
 
         $anneeActuel = $anneePublications[0];
         $typePublications = $anneeActuel->publications()->with('typePublication')->with('typePublication')
-                                        ->select('type_publication_id', \DB::raw('count(*) as count'))
-                                        ->groupBy('type_publication_id')
-                                        ->get();
+            ->select('type_publication_id', \DB::raw('count(*) as count'))
+            ->groupBy('type_publication_id')
+            ->get();
 
-        return view('admin.gestion-publications.publication.index',compact('publications','typePublications','anneePublications','anneeActuel'));
+        return view('admin.gestion-publications.publication.index', compact('publications', 'typePublications', 'anneePublications', 'anneeActuel'));
     }
 
     public function findByAnnee(AnneePublication $anneePublication)
@@ -38,45 +40,70 @@ class PublicationController extends Controller
 
         $anneeActuel = $anneePublication;
         $typePublications = $anneeActuel->publications()->with('typePublication')->with('typePublication')
-                                        ->select('type_publication_id', \DB::raw('count(*) as count'))
-                                        ->groupBy('type_publication_id')
-                                        ->get();
-        return view('admin.gestion-publications.publication.index',compact('publications','typePublications','anneePublications','anneeActuel'));
+            ->select('type_publication_id', \DB::raw('count(*) as count'))
+            ->groupBy('type_publication_id')
+            ->get();
+        return view('admin.gestion-publications.publication.index', compact('publications', 'typePublications', 'anneePublications', 'anneeActuel'));
     }
 
     public function create()
     {
         $typePublications  = TypePublication::all();
         $anneePublications = AnneePublication::latest()->get();
-        return view('admin.gestion-publications.publication.create',compact('typePublications','anneePublications'));
+        $users = User::all();
+        return view('admin.gestion-publications.publication.create', compact('typePublications', 'anneePublications', 'users'));
     }
 
 
     public function store(Request $request)
     {
 
-        // dd("")
-        $media = "";
-        if($request->hasFile("media_url")){
-            $media = $request->file('media_url')->store('publication','public');
+        // Commencer une transaction pour garantir l'intégrité des données
+        DB::beginTransaction();
+        try {
+            $media = "";
+            if ($request->hasFile("media_url")) {
+                $media = $request->file('media_url')->store('publication', 'public');
+            }
+
+
+
+            $newPublication =  Publication::create([
+                "type_publication_id" => $request->type_publication_id,
+                "annee_publication_id" => $request->annee_publication_id,
+                "titre" => $request->titre,
+                "description_1" => $request->description_1,
+                "description_2" => $request->description_2,
+                "media_url" => ($media != "") ? $media : null,
+                "lien_externe" => $request->lien_externe,
+            ]);
+
+            //ajouter le document a la publication
+            if ($request->hasFile("document_url")) {
+                $this->addDocument($request, $newPublication);
+            }
+
+
+            PublicationMembre::create([
+                "publication_id" => $newPublication->id,
+                "user_id" => Auth::user()->id
+            ]);
+
+            // pour ajouter d'autre auteur a la publication
+            if (count($request->auteur_id) != 0) {
+                for ($i = 0; $i < count($request->auteur_id); $i++) {
+
+                    PublicationMembre::create([
+                        "user_id" => $request->auteur_id[$i],
+                        "publication_id" => $newPublication->id
+                    ]);
+                }
+            }
+            DB::commit();
+            return redirect(route('admin.publication.index'))->with("message", "la publication à été crée avec succès.");
+        } catch (Exception $e) {
+            DB::rollBack();
         }
-
-       $newPublication =  Publication::create([
-            "type_publication_id" => $request->type_publication_id,
-            "annee_publication_id" => $request->annee_publication_id  ,
-            "titre" => $request->titre  ,
-            "description_1" => $request->description_1  ,
-            "description_2" => $request->description_2  ,
-            "media_url" => ($media != "") ? $media : null,
-            "lien_externe" => $request->lien_externe,
-        ]);
-
-
-        PublicationMembre::create([
-            "publication_id" => $newPublication->id,
-            "user_id" => Auth::user()->id
-        ]);
-        return redirect(route('admin.publication.index'))->with("message","la publication à été crée avec succès.");
     }
 
 
@@ -89,7 +116,7 @@ class PublicationController extends Controller
         $listeUtilisateurs = $publication->users()->pluck("id")->toArray();
         $listUsers = User::whereNotIn('id', $listeUtilisateurs)->get();
 
-        return view('admin.gestion-publications.publication.show',compact('publication','currentAnnee','listUsers'));
+        return view('admin.gestion-publications.publication.show', compact('publication', 'currentAnnee', 'listUsers'));
     }
 
 
@@ -99,7 +126,7 @@ class PublicationController extends Controller
         $anneePublications = AnneePublication::latest()->get();
         $currentAnnee = AnneePublication::findOrFail($publication->annee_publication_id);
 
-        return view('admin.gestion-publications.publication.update',compact('publication','typePublications','anneePublications','currentAnnee'));
+        return view('admin.gestion-publications.publication.update', compact('publication', 'typePublications', 'anneePublications', 'currentAnnee'));
     }
 
 
@@ -108,22 +135,21 @@ class PublicationController extends Controller
         // dd($request);
 
         $media = "";
-        if($request->hasFile("media_url")){
-            $media = $request->file('media_url')->store('publication','public');
-            $publication->update(["media_url"=>$media]);
+        if ($request->hasFile("media_url")) {
+            $media = $request->file('media_url')->store('publication', 'public');
+            $publication->update(["media_url" => $media]);
         }
 
         $publication->update([
             "type_publication_id" => $request->type_publication_id,
-            "annee_publication_id" => $request->annee_publication_id  ,
-            "titre" => $request->titre  ,
-            "description_1" => $request->description_1  ,
-            "description_2" => $request->description_2  ,
+            "annee_publication_id" => $request->annee_publication_id,
+            "titre" => $request->titre,
+            "description_1" => $request->description_1,
+            "description_2" => $request->description_2,
             "lien_externe" => $request->lien_externe,
         ]);
 
-        return redirect(route('admin.publication.findByAnnee',$request->annee_publication_id))->with("message","la publication à moidifié crée avec succès.");
-
+        return redirect(route('admin.publication.findByAnnee', $request->annee_publication_id))->with("message", "la publication à moidifié crée avec succès.");
     }
 
     public function isVisible(Publication $publication)
@@ -136,48 +162,65 @@ class PublicationController extends Controller
 
     public function delete(Publication $publication)
     {
+        if ($publication->documents()->exists()) {
+            foreach ($publication->documents as $document) {
+
+                // Obtenir le chemin du fichier
+                $filePath = 'public/' . $document->document_url;
+                
+                // Supprimer le fichier du stockage
+                if (Storage::exists($filePath)) {
+                    Storage::delete($filePath);
+                }
+
+                // Supprimer l'enregistrement de la base de données
+                $document->delete();
+            }
+        }
+
         $publication->delete();
         return redirect()->back()->with('message', "la publication à été supprimer avec succès !!");
     }
 
-    public function addAuteur(Request $request,Publication $publication)
+    public function addAuteur(Request $request, Publication $publication)
     {
         PublicationMembre::create([
             "user_id" => $request->user_id,
             "publication_id" => $publication->id
         ]);
 
-        return redirect()->back()->with("message", "Le membre à été ajoutée ");
+        return redirect()->back()->with("message", "Le membre à été ajoutée");
     }
 
 
     public function addDocument(Request $request, Publication $publication)
     {
+        // Obtenir le nom original du fichier
+        $originalName = $request->file('document_url')->getClientOriginalName();
+
         // dd($request);
         Document::create([
-            "titre" => $request->titre,
-            "description" => $request->description,
-            "document_url" => $request->file("document_url")->store("document_publication","public"),
+            "titre" => $originalName,
+            "description" => $originalName,
+            "document_url" => $request->file('document_url')->storeAs('document_publication', $originalName, 'public'),
             "publication_id" => $publication->id
         ]);
 
-        return redirect()->back()->with("message","le document à éte ajouter.");
+        return ($request->form == 1) ? redirect()->back()->with("message", "le document à éte ajouter.") : $originalName;
     }
 
     public function file_download(Document $document)
     {
-         // Chemin du fichier dans le disque public
-        //  $filePath = 'uploads/'. $document->document_url;
 
-         // Chemin du fichier dans le disque public
-         $filePath = $document->document_url;
+        // Chemin du fichier dans le disque public
+        $filePath = $document->document_url;
 
-         // Vérifier si le fichier existe
-         if (!Storage::disk('public')->exists($filePath)) {
-             return abort(404, 'Fichier non trouvé.');
-         }
+        // Vérifier si le fichier existe
+        if (!Storage::disk('public')->exists($filePath)) {
+            return abort(404, 'Fichier non trouvé.');
+        }
 
-         // Télécharger le fichier
-         return Storage::disk('public')->download($filePath);
+        // Télécharger le fichier
+        return Storage::disk('public')->download($filePath);
     }
 }

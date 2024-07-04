@@ -4,7 +4,7 @@
 
         <!-- ======= Breadcrumbs ======= -->
         <div class="breadcrumbs d-flex align-items-center"
-            style="background-image: url('{{ asset('asset_web/assets/img/breadcrumbs-bg.jpg') }}');">
+            style="background-image: url('{{ asset('asset_web/assets/img/footer_and_head.jpeg') }}');">
             <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
                 <h2>Contact</h2>
@@ -56,7 +56,7 @@
                             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
-                        
+
                     </div><!-- End Google Maps -->
 
                     <div class="col-lg-6">

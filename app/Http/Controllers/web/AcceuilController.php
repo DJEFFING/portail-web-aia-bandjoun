@@ -332,7 +332,13 @@ class AcceuilController extends Controller
     public function showProfil(User $user)
     {
         $typeEvenement = Type::whereHas("evernements")->get();
-        return view('web.membres.membre-detail', compact('user', 'typeEvenement'));
+        $publications = $user->publications()->where("status",true)
+
+        ->with('anneePublication') // Charger les années de publication
+        ->get()
+        ->groupBy('anneePublication.annee_publication'); // Grouper par année
+
+        return view('web.membres.membre-detail', compact('user', 'typeEvenement','publications'));
     }
 
     public function oderUser()

@@ -89,19 +89,23 @@
 
                     <div class="col-lg-8">
 
+                        <!-- List Publication -->
+                            @include('web.membres.membre-partials-detail.membre-list-publication')
+                        <!--END List Publication -->
+
                         <!-- List Arcticle -->
-                        @include('web.membres.partials.membre-list-article')
+                            @include('web.membres.membre-partials-detail.membre-list-article')
                         <!--END List Arcticle -->
 
                         @if ($user->evernements->isNotEmpty())
                             <!-- List Evernement -->
-                            @include('web.membres.partials.membre-list-evernement')
+                            @include('web.membres.membre-partials-detail.membre-list-evernement')
                             <!--END List Evernement -->
                         @endif
 
                         @if ($user->getProjet())
                             <!-- List Projet -->
-                            @include('web.membres.partials.membre-list-projet')
+                            @include('web.membres.membre-partials-detail.membre-list-projet')
                             <!--END List Projet -->
                         @endif
 

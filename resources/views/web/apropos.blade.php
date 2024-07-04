@@ -3,7 +3,7 @@
     <main id="main">
         <!-- ======= Breadcrumbs ======= -->
         <div class="breadcrumbs d-flex align-items-center"
-            style="background-image: url(' {{ asset('asset_web/assets/img/breadcrumbs-bg.jpg') }} ');">
+            style="background-image: url(' {{ asset('asset_web/assets/img/footer_and_head.jpeg') }} ');">
             <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
                 <h2>Unite de Recherche d'Automatique et d'Informatique Appliqée</h2>
@@ -168,8 +168,8 @@
                             <div class="card-item">
                                 <div class="row">
                                     <div class="col-xl-5">
-                                        <div class="card-bg"
-                                            style="background-image: url({{ asset('storage/' . $equipe->media_url) }});">
+                                        <div class="card-bg d-flex"
+                                            style="background-image: url({{ asset('storage/' . $equipe->media_url) }}); ">
                                         </div>
                                     </div>
                                     <div class="col-xl-7 d-flex align-items-center">

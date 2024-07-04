@@ -37,12 +37,12 @@
                                             <li class="search-card">
                                                 <div class="row no-gutters">
                                                     <div class="col-lg-4 col-md-12 col-sm-12">
-                                                        <div class="blog-img">
+                                                        {{-- <div class="blog-img">
                                                             <img src="{{ asset('storage/' . $publication->media_url) }}"
                                                                 alt="" class="bg_img">
-                                                        </div>
+                                                        </div> --}}
                                                     </div>
-                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12">
                                                         <div class="blog-caption">
                                                             <h4><a
                                                                     href="{{ route('admin.publication.show', $publication->id) }}">{{ $publication->titre }}</a>

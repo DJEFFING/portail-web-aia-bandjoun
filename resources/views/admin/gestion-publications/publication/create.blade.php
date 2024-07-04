@@ -91,9 +91,36 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Ajouter un lien externe : </label><span class="text-danger"></span>
-                            <input type="text" placeholder="https://www.youtube.com/" name="lien_externe" class="form-control">
+                            <input type="text" placeholder="https://www.youtube.com/" name="lien_externe"
+                                class="form-control">
                         </div>
                     </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group" style="margin: 10px">
+                            <label>Document (.pdf): </label> <span class="text-danger"></span>
+                            <input type="file" accept=".pdf" name="document_url" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Citez d'auteur en plus de vous</label><span class="text-danger"></span>
+                            <select class="custom-select2 form-control" name="auteur_id[]" multiple="multiple"
+                                style="width: 100%;">
+                                <optgroup label="Type Evénement">
+                                    @forelse ($users as $user)
+                                        @if (Auth::user()->id != $user->id)
+                                            <option value="{{ $user->id }}">{{ $user->name }} {{ $user->prenom }}
+                                            </option>
+                                        @endif
+                                    @empty
+                                    @endforelse
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+
 
 
                     <button class="btn btn-primary" type="submit">Valider</button>

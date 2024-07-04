@@ -140,7 +140,7 @@
                                                     </optgroup>
                                                 </select>
                                             </div>
-                                            
+
 
                                             <button class=" pd-20 mb-0 btn btn-primary " style="margin: 20px"
                                                 type="submit">
@@ -167,7 +167,7 @@
                                                 @empty
                                                     <li>
                                                         <h4>cette publication n'as pas de documents</h4>
-                                                    
+
                                                     </li>
                                                 @endforelse
                                             </ul>
@@ -177,27 +177,19 @@
 
                                 <!-- Enregistrement d'un document -->
                                 @if (Auth::user()->getRole('admin'))
-                                    <form action="{{ route('admin.publication.addDocument', $publication->id) }}" 
+                                    <form action="{{ route('admin.publication.addDocument', $publication->id) }}"
                                         method="POST" class="card-box mb-30" enctype="multipart/form-data">
 
                                         @csrf
                                         <h5 class="pd-20 h5 mb-0">Une Pièce jointe (Document)</h5>
-                                        <div class="list-group"> 
-                                            <div class="form-group" style="margin: 10px">
-                                                <label>Titre : </label> <span class="text-danger">*</span>
-                                                <input type="text" name="titre" class="form-control" required>
-                                            </div>
-
-                                            <div class="form-group" style="margin: 10px">
-                                                <label>description : </label> <span class="text-danger"></span>
-                                                <textarea name="description" class="form-control" cols="30" rows="10"></textarea>
-                                            </div>
+                                        <div class="list-group">
+                                            <input type="hidden" name="form" value="1" class="form-control" required>
 
                                             <div class="form-group" style="margin: 10px">
                                                 <label>Document (.pdf): </label> <span class="text-danger">*</span>
                                                 <input type="file" accept=".pdf" name="document_url" class="form-control" required>
                                             </div>
-                                            
+
 
                                             <button class=" pd-20 mb-0 btn btn-primary " style="margin: 20px"
                                                 type="submit">

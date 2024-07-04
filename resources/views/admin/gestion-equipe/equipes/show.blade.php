@@ -67,29 +67,13 @@
 
                                                         <optgroup label="Liste Des Menbres">
                                                             @forelse ($listUsers as $user)
-                                                                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                                                <option value="{{ $user->id }}">{{ $user->name }} {{ $user->prenom }}</option>
                                                             @empty
                                                             @endforelse
                                                         </optgroup>
                                                     </select>
                                                 </div>
 
-
-                                                <!--  Role du Membre dans l'equipe -->
-                                                <div class="form-group" style="margin: 20px">
-                                                    <label>Role : </label> <span class="text-danger">*</span>
-                                                    <select class="custom-select2 form-control" name="role_equipe_id"
-                                                        style="width: 100%; height: 38px;" required>
-
-                                                        <optgroup label="Liste Des roles">
-                                                            @forelse ($listRoleEquipes as $RoleEquipe)
-                                                                <option value="{{ $RoleEquipe->id }}">{{ $RoleEquipe->nom }}
-                                                                </option>
-                                                            @empty
-                                                            @endforelse
-                                                        </optgroup>
-                                                    </select>
-                                                </div>
 
                                                 <button class=" pd-20 mb-0 btn btn-primary " style="margin: 20px"
                                                     type="submit">
@@ -108,9 +92,9 @@
                                             <ul>
                                                 @forelse ($equipe->menbres as $menbre)
                                                     <li>
-                                                        <h4><a href="#">{{ $menbre->name }}</a></h4>
+                                                        <h4><a href="{{ route('admin.user.show',$menbre->id) }}">{{ $menbre->name }} {{ $menbre->prenom }}</a></h4>
                                                         <span
-                                                            class="badge badge-info text-white">{{ $menbre->roleEquipe[0]->nom }}</span>
+                                                            {{-- class="badge badge-info text-white">{{ $menbre->roleEquipe[0]->nom }}</span> --}}
                                                     </li>
 
                                                 @empty
@@ -130,9 +114,9 @@
                                         <ul>
                                             @forelse ($equipe->axes as $axe)
                                                 <li>
-                                                    <h4><a href="{{ route('admin.axe.show',$axe->id) }}">{{ $axe->code_axe }}</a></h4>
-                                                    <span
-                                                        class="badge badge-info text-white">({{ count($axe->membres) }}) Membre</span>
+                                                    <h4><a href="{{ route('admin.axe.show',$axe->id) }}">{{ $axe->titre }} ({{ $axe->code_axe }})</a></h4>
+                                                    {{-- <span
+                                                        class="badge badge-info text-white">({{ count($axe->membres) }}) Membre</span> --}}
                                                 </li>
 
                                             @empty

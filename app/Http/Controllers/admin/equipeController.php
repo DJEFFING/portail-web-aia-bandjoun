@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Axe;
 use App\Models\Equipe;
 use App\Models\EquipeUser;
 use App\Models\PoleRecherche;
@@ -60,7 +61,7 @@ class equipeController extends Controller
 
         return view('admin.gestion-equipe.equipes.create', compact('listUsers', 'listPoles'));
     }
- 
+
 
     public function edit(Equipe $equipe)
     {
@@ -107,22 +108,23 @@ class equipeController extends Controller
         EquipeUser::create([
             "user_id" => $request->user_id,
             "equipe_id" => $equipe->id,
-            "role_equipe_id" => $request->role_equipe_id
+            "role_equipe_id" => 1
         ]);
         return redirect()->back()->with('message',"le membre à été ajouter avec succès !!");
     }
 
     public function getUser()
     {
-        // Récupérer les IDs des responsables de pôle et d'équipe
+        // Récupérer les IDs des responsables de pôle, d'équipe et d'axes de recherche
         $listRespPole = PoleRecherche::pluck('user_id')->toArray();
         $listRespEquipe = Equipe::pluck('user_id')->toArray();
+        $listRespAxes = Axe::pluck("user_id")->toArray();
 
         // Récupérer les IDs des utilisateurs qui sont membres d'une équipe
         $listEquipeUser = User::whereHas('equipe')->pluck('id')->toArray();
 
         // Combiner toutes les IDs dans un seul tableau pour vérifier l'exclusion
-        $excludedUserIds = array_merge($listRespPole, $listRespEquipe, $listEquipeUser);
+        $excludedUserIds = array_merge($listRespPole, $listRespEquipe, $listEquipeUser,$listRespAxes);
 
         // Récupérer les utilisateurs qui ne sont dans aucune des listes
         $listMembre = User::whereNotIn('id', $excludedUserIds)->get();

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Equipe;
 use App\Models\EquipeProjet;
+use App\Models\EquipeUser;
 use App\Models\Partenaire;
 use App\Models\PoleRecherche;
 use App\Models\Projet;
@@ -12,6 +13,7 @@ use App\Models\ProjetPartenaire;
 use App\Models\RoleEquipe;
 use App\Models\RoleEquipeProjet;
 use App\Models\User;
+use App\Models\UserProjet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -62,7 +64,8 @@ class ProjetController extends Controller
         $listPartenaire = $this->getPartenaire($projet->id);
         $listEquipe = $this->getEquipe($projet);
         $listRoleEquipeProjet = RoleEquipeProjet::latest()->get();
-        return view('admin.gestion-projet.projet.show',compact('projet','listEquipe','listRoleEquipeProjet','listPartenaire'));
+        $listMembres = $this->getUser($projet->id);
+        return view('admin.gestion-projet.projet.show',compact('projet','listEquipe','listRoleEquipeProjet','listPartenaire','listMembres'));
 
     }
 
@@ -116,6 +119,16 @@ class ProjetController extends Controller
 
     }
 
+    public function addMemnbre(Request $request, Projet $projet){
+
+        UserProjet::create([
+            "user_id"  => $request->user_id,
+            "projet_id"  => $projet->id,
+            "role_projet_id" => 1
+        ]);
+        return redirect()->back()->with('message',"le membre a été ajouter au projet avec succès !!");
+    }
+
     public function addPartenaire(Request $request,Projet $projet)
     {
         // dd($request);
@@ -160,6 +173,22 @@ class ProjetController extends Controller
         }
 
         return $listPartenaire;
+    }
+
+
+    public function getUser($projet_id)
+    {
+        $users = User::all();
+        $listUser = [];
+        foreach($users as $user){
+            if(!( UserProjet::where("user_id",$user->id)
+                    ->where("projet_id",$projet_id)
+                    ->exists()
+                ) ){
+                $listUser [] =$user;
+            }
+        }
+        return $listUser;
     }
 }
 

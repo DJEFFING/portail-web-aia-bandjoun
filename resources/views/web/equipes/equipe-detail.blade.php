@@ -6,10 +6,10 @@
         <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/breadcrumbs-bg.jpg');">
             <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-                <h2>Equipe Détail</h2>
+                <h2>Equipe</h2>
                 <ol>
                     <li><a href="{{ route('web.acceuil') }}">Acceuil</a></li>
-                    <li>Equipe Détail</li>
+                    <li>Equipe | details</li>
                 </ol>
 
             </div>
@@ -47,7 +47,7 @@
                             </div>
 
                             <div class="card-body">
-                                <a href="{{ route('web.show-profil', $equipe->user->id) }}"><p><strong>Nom :</strong> {{ $equipe->user->name }}</p></a>
+                                <a href="{{ route('web.show-profil', $equipe->user->id) }}"><p><strong>Nom :</strong> {{ $equipe->user->name }} {{ $equipe->user->prenom }}</p></a>
                                 <p><strong>mail :</strong> {{ $equipe->user->email }}</p>
                                 <p><strong>telephone :</strong> {{ $equipe->user->telephone }}</p>
                                 <p><strong>address :</strong> {{ $equipe->user->adress }}</p>
@@ -59,8 +59,8 @@
                         <br><div class="services-list">
                             <h4>Membre ({{ count($equipe->menbres) }})</h4>
                             @forelse ($equipe->menbres as $menbre)
-                            <a href="{{ route('web.show-profil', $menbre->id) }}">{{ $menbre->name }}</a>
-                            <p style="background-color: blue; color:white; text-align: center; width: 150px;">{{ $menbre->roleEquipe[0]->nom }}</p><br><hr>
+                            <a href="{{ route('web.show-profil', $menbre->id) }}">{{ $menbre->name }} {{ $menbre->prenom }}</a><hr>
+                            {{-- <p style="background-color: blue; color:white; text-align: center; width: 150px;">{{ $menbre->roleEquipe[0]->nom }}</p><br><hr> --}}
                             @empty
                             <center>Pas de Membre</center>
                             @endforelse

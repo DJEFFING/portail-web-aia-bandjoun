@@ -41,4 +41,11 @@ class Publication extends Model
     {
         return $this->hasMany(CommentairePublication::class);
     }
+
+    public static function countByMonth($month)
+    {
+        return self::whereMonth("created_at", $month)
+        ->whereYear("created_at",now()->year)
+        ->count();
+    }
 }

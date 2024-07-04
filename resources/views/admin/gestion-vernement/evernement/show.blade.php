@@ -98,7 +98,7 @@
 
                                                     <optgroup label="Liste Des Menbres">
                                                         @forelse ($listUsers as $user)
-                                                            <option value="{{ $user->id }}">{{ $user->name }}
+                                                            <option value="{{ $user->id }}">{{ $user->name }} {{ $user->prenom }}
                                                             </option>
                                                         @empty
                                                         @endforelse
@@ -108,7 +108,7 @@
 
 
                                             <!--  Role du Membre dans l'equipe -->
-                                            <div class="form-group" style="margin: 20px">
+                                            {{-- <div class="form-group" style="margin: 20px">
                                                 <label>Role : </label> <span class="text-danger">*</span>
                                                 <select class="custom-select2 form-control" name="role_evernement_id"
                                                     style="width: 100%; height: 38px;" required>
@@ -122,7 +122,7 @@
                                                         @endforelse
                                                     </optgroup>
                                                 </select>
-                                            </div>
+                                            </div> --}}
 
                                             <button class=" pd-20 mb-0 btn btn-primary " style="margin: 20px"
                                                 type="submit">
@@ -140,9 +140,8 @@
                                         <ul>
                                             @forelse ($evernement->membres as $membre)
                                                 <li>
-                                                    <h4><a href="#">{{ $membre->name }}</a></h4>
-                                                    <span
-                                                        class="badge badge-info text-white">{{ app\Models\RoleEvernement::find($membre->pivot->role_evernement_id)->nom }}</span>
+                                                    <h4><a href="#">{{ $membre->name }} {{ $membre->prenom }}</a></h4>
+                                                    {{-- <span class="badge badge-info text-white">{{ app\Models\RoleEvernement::find($membre->pivot->role_evernement_id)->nom }}</span> --}}
                                                 </li>
 
                                             @empty
