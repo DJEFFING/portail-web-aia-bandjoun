@@ -1,5 +1,5 @@
-@forelse ($listMenbreEquipeUser as $user)
-    <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
+@forelse ($listUserRespPole as $user)
+    <div class="sidebar col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
         <div class="member-img">
             @if ($user->profil_url)
                 <img src=" {{ asset('storage/' . $user->profil_url) }} " class="img-fluid" alt="">
@@ -14,15 +14,23 @@
                 <a href="{{ $user->linkdin_url }}"><i class="bi bi-linkedin"></i></a>
             </div>
         </div>
+
+
         <div class="member-info text-center">
-            <a href="{{ route('web.show-profil',$user->id) }}"><h4>{{ $user->name }}</h4></a>
-            <h6>{{ $user->grade }}-{{ $user->lieu_travail }}</h6>
-            <p style="background-color: rgb(159, 216, 226); color: white; text-align: center;">Membre Equipe</p>
-            <p><strong>Membre : </strong>{{ $user->equipe[0]->titre }}</p>
+            <a href="{{ route('web.show-profil', $user->id) }}">
+                <h4>{{ $user->name }}  {{ $user->prenom }} , {{ $user->grade}}</h4>
+            </a>
+            <h6>{{ $user->lieu_travail }}</h6>
+            <p style="background-color: green; color: white; text-align: center;">Domaine de Recherche</p>
+            <p><strong>resp : </strong>{{ $user->poleRecherches[0]->titre }}</p>
             <span>{{ $user->fonction->nom }}</span>
             <p>{{ Str::limit($user->description, 30, '...') }}</p>
         </div>
+
     </div><!-- End Team Member -->
 @empty
-<center><p>Pas de Résultat</p></center>
+    <center>
+        <p>Pas de résultat...</p>
+    </center>
 @endforelse
+<br>

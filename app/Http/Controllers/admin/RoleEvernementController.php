@@ -22,7 +22,7 @@ class RoleEvernementController extends Controller
             "description" => $request->description,
         ]);
 
-        return redirect()->back()->with('message',"le role à été crée avec success!!");
+        return redirect()->back()->with('message',"le role à été crée avec succès!!");
     }
 
     public function update(Request $request, RoleEvernement $roleEvernement)
@@ -32,12 +32,12 @@ class RoleEvernementController extends Controller
             "description" => $request->description
         ]);
 
-        return redirect()->back()->with('message','role à été mise à jour avec success!!');
+        return redirect()->back()->with('message','role à été mise à jour avec succès!!');
     }
 
     public function delete(RoleEvernement $roleEvernement)
     {
         $roleEvernement->delete();
-        return redirect()->back()->with('message',"le role à été supprimer avec success!!");
+        return redirect()->back()->with('message',"le role à été supprimer avec succès!!");
     }
 }

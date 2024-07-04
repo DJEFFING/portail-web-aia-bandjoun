@@ -36,7 +36,7 @@
                                     <div class="list-group">
 
                                         <a class="list-group-item d-flex align-items-center justify-content-between"
-                                            href="#">
+                                            href="{{ route('admin.user.show',$equipe->user->id) }}">
                                             @if ($equipe->user->profil_url)
                                                 <img src="{{ asset(asset('storage/'.$equipe->user->profil_url)) }} "
                                                 class="avatar-photo" style="width: 70px; height: 70px;" alt="">
@@ -51,69 +51,77 @@
                                 </div>
 
                                 <!-- Enregistrement d'un Nouveau Membre -->
-                                @if (Auth::user()->getRole('admin'))
-                                    <form action="{{ route('admin.equipe.addMembre', $equipe->id) }}" method="POST"
-                                        class="card-box mb-30">
+                                    @if (Auth::user()->getRole('admin'))
+                                        <form action="{{ route('admin.equipe.addMembre', $equipe->id) }}" method="POST"
+                                            class="card-box mb-30">
 
-                                        @csrf
-                                        <h5 class="pd-20 h5 mb-0">Nouveau Membre</h5>
-                                        <div class="list-group">
+                                            @csrf
+                                            <h5 class="pd-20 h5 mb-0">Nouveau Membre</h5>
+                                            <div class="list-group">
 
-                                            <!--  Nouveau Du Membre -->
-                                            <div class="form-group" style="margin: 10px">
-                                                <label>Responssable : </label> <span class="text-danger">*</span>
-                                                <select class="custom-select2 form-control" name="user_id"
-                                                    style="width: 100%; height: 38px;" required>
+                                                <!--  Nouveau Du Membre -->
+                                                <div class="form-group" style="margin: 10px">
+                                                    <label>Responssable : </label> <span class="text-danger">*</span>
+                                                    <select class="custom-select2 form-control" name="user_id"
+                                                        style="width: 100%; height: 38px;" required>
 
-                                                    <optgroup label="Liste Des Menbres">
-                                                        @forelse ($listUsers as $user)
-                                                            <option value="{{ $user->id }}">{{ $user->name }}</option>
-                                                        @empty
-                                                        @endforelse
-                                                    </optgroup>
-                                                </select>
+                                                        <optgroup label="Liste Des Menbres">
+                                                            @forelse ($listUsers as $user)
+                                                                <option value="{{ $user->id }}">{{ $user->name }} {{ $user->prenom }}</option>
+                                                            @empty
+                                                            @endforelse
+                                                        </optgroup>
+                                                    </select>
+                                                </div>
+
+
+                                                <button class=" pd-20 mb-0 btn btn-primary " style="margin: 20px"
+                                                    type="submit">
+                                                    <i class="icon-copy fi-plus"></i>
+                                                </button>
                                             </div>
+                                        </form>
+                                    @endif
+                                <!--END Enregistrement d'un Nouveau Membre -->
 
 
-                                            <!--  Role du Membre dans l'equipe -->
-                                            <div class="form-group" style="margin: 20px">
-                                                <label>Role : </label> <span class="text-danger">*</span>
-                                                <select class="custom-select2 form-control" name="role_equipe_id"
-                                                    style="width: 100%; height: 38px;" required>
+                                <!-- Liste Membre -->
+                                    <div class="card-box mb-30">
+                                        <h5 class="pd-20 h5 mb-0 col-10">Membres ({{ count($equipe->menbres) }})</h5>
+                                        <div class="latest-post">
+                                            <ul>
+                                                @forelse ($equipe->menbres as $menbre)
+                                                    <li>
+                                                        <h4><a href="{{ route('admin.user.show',$menbre->id) }}">{{ $menbre->name }} {{ $menbre->prenom }}</a></h4>
+                                                        <span
+                                                            {{-- class="badge badge-info text-white">{{ $menbre->roleEquipe[0]->nom }}</span> --}}
+                                                    </li>
 
-                                                    <optgroup label="Liste Des roles">
-                                                        @forelse ($listRoleEquipes as $RoleEquipe)
-                                                            <option value="{{ $RoleEquipe->id }}">{{ $RoleEquipe->nom }}
-                                                            </option>
-                                                        @empty
-                                                        @endforelse
-                                                    </optgroup>
-                                                </select>
-                                            </div>
+                                                @empty
+                                                    <li>
+                                                        <h4>cette Equipe n'as pas de membre</h4>
 
-                                            <button class=" pd-20 mb-0 btn btn-primary " style="margin: 20px"
-                                                type="submit">
-                                                <i class="icon-copy fi-plus"></i>
-                                            </button>
+                                                    </li>
+                                                @endforelse
+                                            </ul>
                                         </div>
-                                    </form>
-                                @endif
-
+                                    </div>
+                                <!-- End Liste Membre -->
 
                                 <div class="card-box mb-30">
-                                    <h5 class="pd-20 h5 mb-0 col-10">Membres ({{ count($equipe->menbres) }})</h5>
+                                    <h5 class="pd-20 h5 mb-0 col-10">Axe de Recherche ({{ count($equipe->axes) }})</h5>
                                     <div class="latest-post">
                                         <ul>
-                                            @forelse ($equipe->menbres as $menbre)
+                                            @forelse ($equipe->axes as $axe)
                                                 <li>
-                                                    <h4><a href="#">{{ $menbre->name }}</a></h4>
-                                                    <span
-                                                        class="badge badge-info text-white">{{ $menbre->roleEquipe[0]->nom }}</span>
+                                                    <h4><a href="{{ route('admin.axe.show',$axe->id) }}">{{ $axe->titre }} ({{ $axe->code_axe }})</a></h4>
+                                                    {{-- <span
+                                                        class="badge badge-info text-white">({{ count($axe->membres) }}) Membre</span> --}}
                                                 </li>
 
                                             @empty
                                                 <li>
-                                                    <h4>cette Equipe n'as pas de membre</h4>
+                                                    <h4>cette Equipe n'as pas d'axe de Recherche</h4>
                                                     {{-- <span>HTML</span> --}}
                                                 </li>
                                             @endforelse

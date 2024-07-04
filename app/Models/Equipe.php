@@ -39,4 +39,7 @@ class Equipe extends Model
         ->withPivot("projet_id","equipe_id","role_equipe_projet_id");
     }
 
+    public function axes(){
+        return $this->hasMany(Axe::class);
+    }
 }

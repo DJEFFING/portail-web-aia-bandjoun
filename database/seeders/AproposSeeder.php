@@ -14,8 +14,17 @@ class AproposSeeder extends Seeder
     public function run(): void
     {
         $apropos = [
-            "titre" =>"Consequatur eius et magnam",
-            "desription" => "EST 1988 Our Story Inventore aliquam beatae at et id alias. Ipsa dolores amet consequuntur minima quia maxime autem. Quidem id sed ratione. Tenetur provident autem in reiciendis rerum at dolor. Aliquam consectetur laudantium temporibus dicta minus dolor. Ullamco laboris nisi ut aliquip ex ea commo Duis aute irure dolor in reprehenderit in Ullamco laboris nisi ut aliquip ex ea Vitae autem velit excepturi fugit. Animi ad non. Eligendi et non nesciunt suscipit repellendus porro in quo eveniet. Molestias in maxime doloremque."
+            "titre" =>"Missions du laboratoire",
+
+            "desription" => "L’UR.A.I.A. entend apporter sa contribution, en laissant bien sûr sa marque, au
+            développement de la science en général et de notre pays, le Cameroun, dans le
+            domaine des sciences de l’ingénieur. L’expertise de ce laboratoire s’étend, de
+            l’Automatique à l’Informatique, en passant par l’analyse et traitement des signaux
+            biomédicaux et les énergies renouvelables. Dans l’optique d’augmenter en
+            quantité et en qualité ses membres, l’UR.A.I.A. entend, par l’organisation
+            régulière de séminaires ou de journées scientifiques, encourager la recherche en
+            son sein et produire des résultats scientifiques publiés dans des journaux
+            scientifiques de renommée internationale et des résultats de recherchedéveloppement"
         ];
 
         Apropos::create($apropos);

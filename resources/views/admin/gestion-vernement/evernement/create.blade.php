@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="title">
-                                <h4>Ajouter Un Evènement</h4>
+                                <h4>Ajouter Un Evénement</h4>
                             </div>
                         </div>
                     </div>
@@ -16,7 +16,7 @@
 
                 <form class="html-editor pd-20 card-box mb-30" method="POST" action="{{ route('admin.evernement.store') }}"
                     enctype="multipart/form-data">
-                    <h4 class="h4 text-blue">Ce formulaire Permet D'ajouter un Evènement </h4>
+                    <h4 class="h4 text-blue">Ce formulaire Permet D'ajouter un Evénement </h4>
                     @csrf
                     <div class="col-md-12">
                         <div class="form-group">
@@ -75,9 +75,9 @@
 
                     	<div class="col-md-12">
                             <div class="form-group">
-                                <label>Type Evènement</label><span class="text-danger">*</span>
+                                <label>Type Evénement</label><span class="text-danger">*</span>
                                 <select class="custom-select2 form-control" name="typeEvent_id[]" multiple="multiple" style="width: 100%;">
-                                    <optgroup label="Type Evènement">
+                                    <optgroup label="Type Evénement">
                                         @forelse ($listTypeEvernement as $TypeEvernement)
                                         <option value="{{ $TypeEvernement->id }}">{{ $TypeEvernement->nom }}</option>
                                         @empty
@@ -89,24 +89,10 @@
                         </div>
 
 
-                    <!-- Pôle de recherche List -->
-                    {{-- <div class="col-md-12">
-                            <div class="form-group mb-200">
-                                <label>Pôle de Recherche : </label> <span class="text-danger">*</span>
-                                <select class="custom-select2 form-control" name="pole_recherche_id" style="width: 100%; height: 38px;" required>
-
-                                    <optgroup label="Pôle de Recherche">
-                                        @forelse ($listPoles as $pole)
-                                            <option value="{{ $pole->id }}">{{ $pole->titre }}</option>
-                                        @empty
-                                        @endforelse
-                                    </optgroup>
-                                </select>
-                            </div>
-                        </div> --}}
+ 
 
                     <button class="btn btn-primary" type="submit">Valider</button>
-                    <!--END Responssable du pole de recherche -->
+                    <!--END Responssable du Domaine de Recherche -->
                 </form>
             </div>
             <div class="footer-wrap pd-20 mb-20 card-box">

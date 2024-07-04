@@ -3,10 +3,10 @@
     <main id="main">
         <!-- ======= Breadcrumbs ======= -->
         <div class="breadcrumbs d-flex align-items-center"
-            style="background-image: url(' {{ asset('asset_web/assets/img/breadcrumbs-bg.jpg') }} ');">
+            style="background-image: url(' {{ asset('asset_web/assets/img/footer_and_head.jpeg') }} ');">
             <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-                <h2>À propos de Nous</h2>
+                <h2>Unite de Recherche d'Automatique et d'Informatique Appliqée</h2>
                 <ol>
                     <li><a href="{{ route('web.acceuil') }}">Aceuil</a></li>
                     <li>À propos de Nous</li>
@@ -109,8 +109,8 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
-                    <h2> {{ count($poleRecherches) }} pôles de recherche</h2>
-                    {{-- <p>Découvrez nos pôles de recherche ci-dessous, où nous explorons et développons des solutions
+                    <h2> {{ count($poleRecherches) }} Domaine de Recherche</h2>
+                    {{-- <p>Découvrez nos Domaine de Recherche ci-dessous, où nous explorons et développons des solutions
                         innovantes pour un avenir agricole meilleur.</p> --}}
                 </div>
 
@@ -168,8 +168,8 @@
                             <div class="card-item">
                                 <div class="row">
                                     <div class="col-xl-5">
-                                        <div class="card-bg"
-                                            style="background-image: url({{ asset('storage/' . $equipe->media_url) }});">
+                                        <div class="card-bg d-flex"
+                                            style="background-image: url({{ asset('storage/' . $equipe->media_url) }}); ">
                                         </div>
                                     </div>
                                     <div class="col-xl-7 d-flex align-items-center">

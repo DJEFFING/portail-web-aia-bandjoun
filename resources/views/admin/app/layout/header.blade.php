@@ -68,7 +68,12 @@
             <div class="dropdown">
                 <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                     <span class="user-icon">
+                        @if (Auth::user()->profil_url)
                         <img src="{{ asset('storage/' . Auth::user()->profil_url) }}" alt="">
+                        @else
+                        <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }}" alt="">
+                        @endif
+
                     </span>
                     <span class="user-name">{{ Auth::user()->name }}</span>
                 </a>

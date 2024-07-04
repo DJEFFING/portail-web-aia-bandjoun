@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
                             <div class="title">
-                                <h4>Detaill d'un Pole de recherche</h4>
+                                <h4>Detaill d'un Domaine de Recherche</h4>
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">

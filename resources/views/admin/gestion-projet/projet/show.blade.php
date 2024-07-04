@@ -83,22 +83,22 @@
 
                                 <!-- Enregistrement d'une Nouveau Equipe -->
                                 @if (Auth::user()->getRole('admin'))
-                                    <form action="{{ route('admin.projet.addEquipe', $projet->id) }}" method="POST"
+                                    <form action="{{ route('admin.projet.addMemnbre', $projet->id) }}" method="POST"
                                         class="card-box mb-30">
 
                                         @csrf
-                                        <h5 class="pd-20 h5 mb-0">Nouvelle Equipe</h5>
+                                        <h5 class="pd-20 h5 mb-0">Ajouter un autre participant au projet</h5>
                                         <div class="list-group">
 
-                                            <!--  Nouvelle  Equipe -->
+                                            <!--  Nouvelle  Participant -->
                                             <div class="form-group" style="margin: 10px">
-                                                <label>Equipe : </label> <span class="text-danger">*</span>
-                                                <select class="custom-select2 form-control" name="equipe_id"
+                                                <label>Membre : </label> <span class="text-danger">*</span>
+                                                <select class="custom-select2 form-control" name="user_id"
                                                     style="width: 100%; height: 38px;" required>
 
                                                     <optgroup label="Liste Des Equipes">
-                                                        @forelse ($listEquipe as $Equipe)
-                                                            <option value="{{ $Equipe->id }}">{{ $Equipe->titre }}
+                                                        @forelse ($listMembres as $membre)
+                                                            <option value="{{ $membre->id }}">{{ $membre->name }} {{ $membre->prenom }}
                                                             </option>
                                                         @empty
                                                         @endforelse
@@ -107,7 +107,7 @@
                                             </div>
 
 
-                                            <!--  Role de l'equipe dans le Projet -->
+                                            {{-- <!--  Role de l'equipe dans le Projet -->
                                             <div class="form-group" style="margin: 20px">
                                                 <label>Role : </label> <span class="text-danger">*</span>
                                                 <select class="custom-select2 form-control" name="role_equipe_projet_id"
@@ -122,7 +122,7 @@
                                                         @endforelse
                                                     </optgroup>
                                                 </select>
-                                            </div>
+                                            </div> --}}
 
                                             <button class=" pd-20 mb-0 btn btn-primary " style="margin: 20px"
                                                 type="submit">
@@ -134,19 +134,18 @@
 
                                 <!-- Liste Equipes -->
                                 <div class="card-box mb-30">
-                                    <h5 class="pd-20 h5 mb-0 col-10">Equipes ({{ count($projet->equipes) }})</h5>
+                                    <h5 class="pd-20 h5 mb-0 col-10">Participants ({{ count($projet->participants) }})</h5>
                                     <div class="latest-post">
                                         <ul>
-                                            @forelse ($projet->equipes as $equipe)
+                                            @forelse ($projet->participants as $participant)
                                                 <li>
-                                                    <h4><a href="#">{{ $equipe->titre }}</a></h4>
-                                                    <span
-                                                        class="badge badge-info text-white">{{ app\models\RoleEquipeProjet::find($equipe->pivot->role_equipe_projet_id)->nom }}</span>
+                                                    <h4><a href="{{ route('admin.user.show',$participant->id) }}">{{ $participant->name }}  {{ $participant->prenom }}</a></h4>
+                                                    {{-- <span class="badge badge-info text-white">{{ app\models\RoleEquipeProjet::find($equipe->pivot->role_equipe_projet_id)->nom }}</span> --}}
                                                 </li>
 
                                             @empty
                                                 <li>
-                                                    <h4>cette Projet n'as pas d 'Equipe</h4>
+                                                    <h4>ce Projet n'as d'autre participant</h4>
                                                     {{-- <span>HTML</span> --}}
                                                 </li>
                                             @endforelse

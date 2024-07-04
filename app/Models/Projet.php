@@ -42,5 +42,10 @@ class Projet extends Model
         return $this->belongsToMany(Partenaire::class,'projet_partenaires');
     }
 
+    public function participants()
+    {
+        return $this->belongsToMany(User::class,'user_projets');
+    }
+
 
 }

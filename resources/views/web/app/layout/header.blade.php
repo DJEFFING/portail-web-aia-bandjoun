@@ -13,27 +13,30 @@
             <ul>
 
                 <li><a href="/" @if ($page == 0) class="active" @endif>Acceuil</a></li>
-                <li><a href="{{ route('web.apropos') }}" @if ($page == 1) class="active" @endif>À PROPOS</a></li>
-                <li><a href="{{ route('web.evernement') }}" @if ($page == 2) class="active" @endif>EVENEMENTS</a></li>
+                <li><a href="{{ route('web.apropos') }}" @if ($page == 1) class="active" @endif>Présentation</a></li>
+
 
                 <!-- Pole Et Equipe de recherche -->
                     <li class="dropdown">
-                        <a href="#" @if ($page == 3 || $page == 4) class="active" @endif>
+                        <a href="#" @if ($page == 2 || $page == 3 || $page == 4 || $page == 5 || $page == 6) class="active" @endif>
                             <span>RECHERCHE</span>
                             <i class="bi bi-chevron-down dropdown-indicator"></i>
                         </a>
                         <ul>
-                            <li><a href="{{ route('web.pole-recherche') }}" @if ($page == 3) class="active" @endif>Pôles de Recherche</a></li>
+                            <li><a href="{{ route('web.pole-recherche') }}" @if ($page == 3) class="active" @endif>Domaine de Recherche</a></li>
                             <li><a href="{{ route('web.equipes') }}" @if ($page == 4) class="active" @endif>Equipes</a></li>
+                            <li><a href=" {{ route('web.projets') }} " @if ($page == 5) class="active" @endif>Projets</a></li>
+                            <li><a href="{{ route('web.publications') }}" @if ($page == 6) class="active" @endif>Publication</a></li>
+                            <li><a href="{{ route('web.evernement') }}" @if ($page == 2) class="active" @endif>Evenements</a></li>
                         </ul>
                     </li>
                 <!--END Pole Et Equipe de recherche -->
 
 
-                <li><a href=" {{ route('web.projets') }} " @if ($page == 5) class="active" @endif>PROJETS</a></li>
-                <li><a href=" {{ route('web.blogs') }} " @if ($page == 6) class="active" @endif>Blogs</a></li>
 
-                <li><a href="{{ route('web.membres') }}" @if ($page == 7) class="active" @endif>MENBRES</a></li>
+                {{-- <li><a href="  " @if ($page == 7) class="active" @endif>Blogs</a></li> --}}
+
+                <li><a href="{{ route('web.membres') }}" @if ($page == 8) class="active" @endif>MEMBRES</a></li>
                 <li class="dropdown"><a href="#"><span>AUTRES</span> <i
                             class="bi bi-chevron-down dropdown-indicator"></i></a>
                     <ul>

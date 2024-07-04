@@ -34,14 +34,15 @@
                     <ul>
                         <li><a href="{{ route('web.acceuil') }}">Acceuil</a></li>
                         <li><a href="{{ route('web.apropos') }}">À propos</a></li>
-                        <li><a href="{{ route('web.evernement') }}">Evénements</a></li>
+                        <li><a href="{{ route('web.evernement') }}">Evènements</a></li>
                         <li><a href="{{ route('web.equipes') }}">Equipes</a></li>
                         <li><a href="{{ route('web.membres') }}">Membres</a></li>
                     </ul>
-                </div><!-- End footer links column-->
+                </div>
+                <!-- End footer links column-->
 
                 <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Pole de Recherche</h4>
+                    <h4>Domaine de Recherche</h4>
                     <ul>
                         @forelse (poleRecherches() as $pole)
                             <li><a href="{{ route('web.show-poleRecherche', $pole->id) }}">{{ $pole->code_pole }}</a>
@@ -49,7 +50,8 @@
                         @empty
                         @endforelse
                     </ul>
-                </div><!-- End footer links column-->
+                </div>
+                <!-- End footer links column-->
 
                 <div class="col-lg-2 col-md-3 footer-links">
                     <h4>Equipes</h4>
@@ -60,7 +62,8 @@
                         @empty
                         @endforelse
                     </ul>
-                </div><!-- End footer links column-->
+                </div>
+                <!-- End footer links column-->
 
                 <div class="col-lg-2 col-md-3 footer-links">
                     <h4>Projets</h4>

@@ -60,8 +60,8 @@
                                 <div id="chart4"></div>
                             </div>
                             <div class="widget-data">
-                                <div class="h4 mb-0">{{ $nbrArticle }}</div>
-                                <div class="weight-600 font-14">Articles</div>
+                                <div class="h4 mb-0">{{ $nbrPublication }}</div>
+                                <div class="weight-600 font-14">publications</div>
                             </div>
                         </div>
                     </div>
@@ -72,22 +72,22 @@
             <div class="row">
                 <div class="col-xl-8 mb-30">
                     <div class="card-box height-100-p pd-20">
-                        <h2 class="h4 mb-20">Fréquence de publication d'articles</h2>
+                        <h2 class="h4 mb-20">Fréquence de publication</h2>
                         <div id="chart5"></div>
                     </div>
                 </div>
 
                 <div class="col-xl-4 mb-30">
                     <div class="card-box height-100-p pd-20">
-                        <h2 class="h4 mb-20">Revue ayant le plus d'articles</h2>
+                        <h2 class="h4 mb-20">Categorie ayant le plus de publications</h2>
                         <div id="chart6"></div>
                     </div>
                 </div>
             </div>
 
             <div class="card-box mb-30">
-                <h2 class="h4 pd-20">Les articles les plus récents</h2>
-                
+                <h2 class="h4 pd-20">Les publications les plus récents</h2>
+
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -102,38 +102,45 @@
                     </thead>
                     <tbody>
 
-                        @forelse ($articles as $article)
+                        @forelse ($publications as $publication)
                             <tr>
-                                <th scope="row">{{ $loop->iteration}}</th>
-                                <td>{{ Str::limit($article->titre, 20, '...') }}</td>
-                                {{-- <td>{{Str::limit($article->description_1, 20, '...') }}</td> --}}
-                                <td>{{ $article->created_at->format("d-M-Y") }}</td>
+                                <th scope="row">{{ $loop->iteration }}</th>
+                                <td>{{ Str::limit($publication->titre, 20, '...') }}</td>
+                                {{-- <td>{{Str::limit($publication->description_1, 20, '...') }}</td> --}}
+                                <td>{{ $publication->created_at->format('d-M-Y') }}</td>
 
                                 <td>
-                                    @if ($article->user->profil_url)
-                                        <img src="{{ asset('storage/' . $article->user->profil_url) }}"
-                                        style="width: 50px; height: 50px;" alt=""><br>
-                                    @else
-                                        <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }}"
-                                            style="width: 50px; height: 50px;" alt=""><br>
-                                    @endif
-                                    <span>{{ $article->user->name }}</span>
+                                    {{-- @forelse ($publication->users as $user) --}}
+                                        @if ($publication->users[0]->profil_url)
+                                            <img src="{{ asset('storage/' . $publication->users[0]->profil_url) }}"
+                                                style="width: 50px; height: 50px;" alt=""><br>
+                                        @else
+                                            <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }}"
+                                                style="width: 50px; height: 50px;" alt=""><br>
+                                        @endif
+                                        <span>{{ $publication->users[0]->name }} </span>
+                                        <span>{{ ( ($publication->users()->count()) >1 ) ? "et (".($publication->users()->count()-1).") autres" : ""}} </span>
+                                    {{-- @empty --}}
+                                    {{-- @endforelse --}}
+
 
                                 </td>
 
                                 <td>
-                                    <a href="{{ Auth::user()->getRole('admin') ? route('admin.article.isVisible', $article->id) : '#' }}"><span
-                                            class="{{ $article->status ? 'badge badge-success' : 'badge badge-danger' }}">{{ $article->status ? 'public' : 'non-public' }}
+                                    <a
+                                        href="{{ Auth::user()->getRole('admin') ? route('admin.publication.isVisible', $publication->id) : '#' }}"><span
+                                            class="{{ $publication->status ? 'badge badge-success' : 'badge badge-danger' }}">{{ $publication->status ? 'public' : 'non-public' }}
                                         </span>
                                     </a>
                                 </td>
 
-                                <td> <a href="{{ route('admin.article.show',$article->id) }}" class="btn btn-sm btn-outline-info me-2">
+                                <td> <a href="{{ route('admin.publication.show', $publication->id) }}"
+                                        class="btn btn-sm btn-outline-info me-2">
                                         <i class="dw dw-eye"></i>
                                     </a>
 
-                                    @if (Auth::user()->id == $article->user->id)
-                                        <a href="{{ route('admin.article.showUpdate',$article->id) }}" class="btn btn-sm btn-outline-warning me-2">
+                                    @if (Auth::user()->id == $publication->users[0]->id)
+                                        <a href="{{ route('admin.publication.edit',$publication->id) }}" class="btn btn-sm btn-outline-warning me-2">
                                             <i class="dw dw-edit2"></i>
                                         </a>
                                     @endif

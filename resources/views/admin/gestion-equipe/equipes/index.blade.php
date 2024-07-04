@@ -58,7 +58,7 @@
 
                                                                     @if (Auth::user()->getRole('Admin'))
 
-                                                                        <a href="{{ route('admin.equipe.showUpdate', $equipe->id) }}"
+                                                                        <a href="{{ route('admin.equipe.edit', $equipe->id) }}"
                                                                             class="btn btn-sm btn-outline-warning me-2">
                                                                             <i class="dw dw-edit2"></i>
                                                                         </a>
@@ -111,12 +111,12 @@
 
                             <div class="col-md-4 col-sm-12">
 								<div class="card-box mb-30">
-									<h5 class="pd-20 h5 mb-0">Pole De Recherche</h5>
+									<h5 class="pd-20 h5 mb-0">Domaine de Recherche</h5>
 									<div class="list-group">
                                         @forelse ($poleRecherches as $poleRecherche)
                                         <a href="#" class="list-group-item d-flex align-items-center justify-content-between">{{ $poleRecherche->titre }} <span class="badge badge-primary badge-pill">{{ count($poleRecherche->equipes) }}</span></a>
                                         @empty
-										<a href="#" class="list-group-item d-flex align-items-center justify-content-between">Aucun Pole de recherche<span class="badge badge-primary badge-pill">0</span></a>
+										<a href="#" class="list-group-item d-flex align-items-center justify-content-between">Aucun Domaine de Recherche<span class="badge badge-primary badge-pill">0</span></a>
                                         @endforelse
 
 									</div>

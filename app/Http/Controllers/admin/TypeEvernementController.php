@@ -21,7 +21,7 @@ class TypeEvernementController extends Controller
             "nom" => $request->nom
         ]);
 
-        return redirect()->back()->with('message',"le type d'evernement à été ajouter avec success!!");
+        return redirect()->back()->with('message',"le type d'evernement à été ajouter avec succès!!");
     }
 
     public function update(Request $request,Type $type)
@@ -30,12 +30,12 @@ class TypeEvernementController extends Controller
         $type->update([
             "nom"=>$request->nom
         ]);
-        return redirect()->back()->with('message',"le type à été modifier avec success!!");
+        return redirect()->back()->with('message',"le type à été modifier avec succès!!");
     }
 
     public function delete(Type $type)
     {
         $type->delete();
-        return redirect()->back()->with('message',"le type à été supprimer avec success avec success!!");
+        return redirect()->back()->with('message',"le type à été supprimer avec succès avec succès!!");
     }
 }

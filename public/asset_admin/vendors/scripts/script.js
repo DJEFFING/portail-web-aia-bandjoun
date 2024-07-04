@@ -14,6 +14,7 @@ jQuery(window).on("load resize", function () {
 		advanced: { autoExpandHorizontalScroll: true }
 	});
 });
+
 jQuery(document).ready(function(){
 	"use strict";
 	// Background Image

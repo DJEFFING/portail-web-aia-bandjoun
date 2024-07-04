@@ -1,4 +1,4 @@
-@extends('web.app.app', ['page' => 7])
+@extends('web.app.app', ['page' => 8])
 @section('content')
     <main id="main">
 
@@ -57,6 +57,11 @@
                                     <p style="background-color: rgb(159, 216, 226); color: white; text-align: center;">Membre Equipe</p>
                                     <p><strong>Equipe : </strong><a href="{{ route('web.show-equipe',$user->equipe[0]->id) }}">{{ $user->equipe[0]->titre }}</a></p>
                                 </div>
+                            @elseif($user->axes->isNotEmpty())
+                                <div class="card p-3">
+                                    <p style="background-color: rgb(41, 180, 204); color: white; text-align: center;">Responsable d'axe</p>
+                                    <p><strong>Axe de recherche : </strong><a href="{{ route('web.show-equipe',$user->axes[0]->id) }}">{{ $user->axes[0]->titre }}</a></p>
+                                </div>
                             @endif
 
                             <br>
@@ -84,19 +89,23 @@
 
                     <div class="col-lg-8">
 
+                        <!-- List Publication -->
+                            @include('web.membres.membre-partials-detail.membre-list-publication')
+                        <!--END List Publication -->
+
                         <!-- List Arcticle -->
-                        @include('web.membres.partials.membre-list-article')
+                            @include('web.membres.membre-partials-detail.membre-list-article')
                         <!--END List Arcticle -->
 
                         @if ($user->evernements->isNotEmpty())
                             <!-- List Evernement -->
-                            @include('web.membres.partials.membre-list-evernement')
+                            @include('web.membres.membre-partials-detail.membre-list-evernement')
                             <!--END List Evernement -->
                         @endif
 
                         @if ($user->getProjet())
                             <!-- List Projet -->
-                            @include('web.membres.partials.membre-list-projet')
+                            @include('web.membres.membre-partials-detail.membre-list-projet')
                             <!--END List Projet -->
                         @endif
 

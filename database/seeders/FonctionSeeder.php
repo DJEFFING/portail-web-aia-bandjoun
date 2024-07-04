@@ -13,14 +13,16 @@ class FonctionSeeder extends Seeder
      */
     public function run(): void
     {
+
+
         $fonction_1 = [
-            "nom" => "membre",
-            "description" => "il n'a pas de role dans l'administration de l'unité"
+            "nom" => "Responsable de l'ur-aia",
+            "description" => "il s'agit du responsable de l'ur-aia"
         ];
 
         $fonction_2 = [
-            "nom" => "directeur Genral",
-            "description" => "il charger de gérée la drection général"
+            "nom" => "membre",
+            "description" => "il n'a pas de role dans l'administration de l'unité"
         ];
 
         $fonction_3 = [

@@ -12,7 +12,7 @@
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Liste Evènements</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Liste Evénements</li>
                                 </ol>
                             </nav>
                         </div>
@@ -60,7 +60,7 @@
                                         </a>
 
                                         @if (Auth::user()->getRole('Admin'))
-                                            <a href="{{ route('admin.projet.showUpdate', $projet->id) }}"
+                                            <a href="{{ route('admin.projet.edit', $projet->id) }}"
                                                 class="btn btn-sm btn-outline-warning me-2 col-4 " >
                                                 <i class="dw dw-edit2"></i>
                                             </a>

@@ -20,7 +20,7 @@ class RoleEquipeController extends Controller
             "nom" => $request->nom,
             "description" => $request->description
         ]);
-        return redirect()->back()->with('message',"le role d'equipe à été crée avec success !!");
+        return redirect()->back()->with('message',"le role d'equipe à été crée avec succès !!");
 
     }
 
@@ -32,13 +32,13 @@ class RoleEquipeController extends Controller
             "description" => $request->description
         ]);
 
-        return redirect()->back()->with('message','le role à été mise à jour avec success !!');
+        return redirect()->back()->with('message','le role à été mise à jour avec succès !!');
     }
 
     public function delete(RoleEquipe $roleEquipe)
     {
         $roleEquipe->delete();
-        return redirect()->back()->with('message',"le role d'equipe à été supprimmer avec success !!");
+        return redirect()->back()->with('message',"le role d'equipe à été supprimmer avec succès !!");
 
     }
 }

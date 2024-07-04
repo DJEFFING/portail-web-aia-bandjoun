@@ -59,7 +59,7 @@
                     <label>Contenue :</label> <span class="text-danger">*</span>
                     <textarea class="textarea_editor form-control border-radius-0" name="description_2" placeholder="Enter text ..." required>{{ $equipe->description_2 }}</textarea><br>
 
-                    <!-- Responssable du pole de recherche -->
+                    <!-- Responssable du Domaine de Recherche -->
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Responssable : </label> <span class="text-danger">*</span>
@@ -80,7 +80,7 @@
 
                     <button class="btn btn-white" type="reset">Retour</button>
                     <button class="btn btn-warning" type="submit">Modifier</button>
-                    <!--END Responssable du pole de recherche -->
+                    <!--END Responssable du Domaine de Recherche -->
                 </form>
             </div>
             <div class="footer-wrap pd-20 mb-20 card-box">

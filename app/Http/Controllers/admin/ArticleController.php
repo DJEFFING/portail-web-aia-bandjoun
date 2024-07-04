@@ -20,14 +20,14 @@ class ArticleController extends Controller
         return view('admin.blogs.articles.index',compact('listRevue','listArticle'));
     }
 
-    public function showStore()
+    public function create()
     {
 
         $listRevue = Revue::latest()->get();
         return view('admin.blogs.articles.create',compact('listRevue'));
     }
 
-    public function showUpdate(Article $article)
+    public function edit(Article $article)
     {
 
         $listRevue = Revue::latest()->get();
@@ -54,7 +54,7 @@ class ArticleController extends Controller
 
         $this->notificationsUAdmin($newArticle);
 
-        return redirect(route('admin.article.index'))->with('message',"l'article à été crée avec success et est en attente de validation.");
+        return redirect(route('admin.article.index'))->with('message',"l'article à été crée avec succès et est en attente de validation.");
     }
 
     public function update(Request $request, Article $article)
@@ -73,7 +73,7 @@ class ArticleController extends Controller
             "description_2" => $request->description_2,
         ]);
 
-        return redirect(route('admin.article.index'))->with('message',"l'article à été modifier avec success.");
+        return redirect(route('admin.article.index'))->with('message',"l'article à été modifier avec succès.");
     }
 
     public function isVisible(Article $article)
@@ -88,7 +88,7 @@ class ArticleController extends Controller
     public function delete(Article $article)
     {
         $article->delete();
-        return redirect(route('admin.article.index'))->with('message',"l'article à été supprimmer avec success.");
+        return redirect(route('admin.article.index'))->with('message',"l'article à été supprimmer avec succès.");
     }
 
 

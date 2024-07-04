@@ -12,7 +12,7 @@
             <div class="modal-body text-center">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <span class="badge badge-success">Pole De Recherche</span>
+                        <span class="badge badge-success">Domaine de Recherche</span>
                         <h5>{{ $item->poleRecherche->titre }}</h5>
                     </div>
                 </div><hr>

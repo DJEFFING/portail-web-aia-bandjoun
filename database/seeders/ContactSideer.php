@@ -14,9 +14,9 @@ class ContactSideer extends Seeder
     public function run(): void
     {
         $contact = [
-            "adress" => "A108 Adam Street, New York, NY 535022",
-            "email" => "contact@example.com",
-            "telephone" => "+1 5589 55488 55",
+            "adress" => "IUT Fotso Victor, 123, Bandjoun",
+            "email" => "iut.fotsovictor@univ-dschang.org",
+            "telephone" => "237 677 59 52 19",
             "twitter_link" => "twitter.com",
             "facebook_link" => "https://facebook.com",
             "instagram_link" => "https://instagram.com",

@@ -61,7 +61,7 @@ class User extends Authenticatable
         ];
     }
 
-    //pour avoir le pole de recherche dont l'utilisateur est responssable
+    //pour avoir le Domaine de Recherche dont l'utilisateur est responssable
     public function poleRecherches()
     {
         return $this->hasMany(PoleRecherche::class);
@@ -107,6 +107,18 @@ class User extends Authenticatable
         ->withPivot("user_id", "evernement_id", "role_evernement_id");
     }
 
+    // pour avoir l'axe dont l'utilisateur fait partir
+    public function axe()
+    {
+        return $this->belongsToMany(Axe::class,'axe_users');
+    }
+
+    // pour avoir l'axe dont l'utilisateur est responsable
+    public function axes()
+    {
+        return $this->hasMany(Axe::class);
+    }
+
     //pour avoir la list des projets dont l'utilisateur est le responsable
     public function projet()
     {
@@ -142,7 +154,7 @@ class User extends Authenticatable
             $projetResp = $this->projet->toArray();
         }
 
-        //les projet du pole de recherche dont l'utilisateur est reponsable
+        //les projet du Domaine de Recherche dont l'utilisateur est reponsable
         if($this->poleRecherches->isNotEmpty() && $this->poleRecherches[0]->projets->isNotEmpty()){
             $projetPoleResp = $this->poleRecherches[0]->projets->toArray();
         }
@@ -161,6 +173,12 @@ class User extends Authenticatable
 
 
         return array_merge($projetResp, $projetPoleResp, $projetEquipeResp, $projetEquipe);
+    }
+
+    // pour avoir la liste des publucation efectuer par un utilisateur
+    public function publications()
+    {
+        return $this->belongsToMany(Publication::class,'publication_membres');
     }
 
     // public function getProjet(): Collection
