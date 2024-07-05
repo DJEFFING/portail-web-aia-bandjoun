@@ -46,7 +46,7 @@ class AcceuilController extends Controller
             // "membre" => 76,
             "equipe" => Equipe::where("status", true)->get()->count(),
             "projet" => Projet::where("status", true)->count(),
-            "article" => Article::where("status", true)->count()
+            "publication" => Publication::where("status", true)->count()
 
         ];
 
@@ -62,16 +62,17 @@ class AcceuilController extends Controller
             // "membre" => 76,
             "equipe" => Equipe::where("status", true)->get()->count(),
             "projet" => Projet::where("status", true)->count(),
-            "article" => Article::where("status", true)->count()
+            "publication" => Publication::where("status", true)->count()
         ];
         $poleRecherches =  PoleRecherche::where("status", true)->take(4)->get();
         $equipes = Equipe::where("status", true)->take(4)->get();
         $axes  = Axe::where("status", true)->take(4)->get();
+        $axes_total = Axe::all()->count();
         $fonctions = Fonction::all();
-        $administrationUser = User::whereHas("fonction")->get();
+        $administrationUser = User::whereHas("equipes")->get();
         $partenaires = Partenaire::where("status", true)->get();
 
-        return view('web.apropos', compact('apropos', 'countSection', 'poleRecherches', 'equipes', 'fonctions', 'administrationUser', 'partenaires'));
+        return view('web.apropos', compact('apropos','axes','axes_total','countSection', 'poleRecherches', 'equipes', 'fonctions', 'administrationUser', 'partenaires'));
     }
 
     // affchier la liste des évéments
@@ -96,6 +97,12 @@ class AcceuilController extends Controller
         $poleRecherches =  PoleRecherche::whereHas("equipes")->where("status", true)->get();
         $equipes = Equipe::where("status", true)->latest()->get();
         return view('web.equipes.equipe-list', compact('poleRecherches', 'equipes'));
+    }
+
+    public function axes()
+    {
+        $axes = Axe::where("status",true)->get();
+        return view('web.axes.axe-list',compact('axes'));
     }
 
     // affichier la list des projets
@@ -125,23 +132,26 @@ class AcceuilController extends Controller
         $typePublicationsAcuelle = $typePublications->first();
 
 
-
-
         //information pour le formulaire de rechercehe
         $anneePublications = AnneePublication::latest()->get();
         $titrepublications = Publication::all()->pluck("titre");
         $users = User::all();
 
-        // Récupérer les publications pour cette catégorie et les trier par année
+        // Récupérer les publications pour cette catégorie et les trier par année de manière décroissante
         $publications = Publication::where('type_publication_id', $typePublicationsAcuelle->id)
-            ->where("status", true)
+            ->where('status', true)
             ->with('anneePublication') // Charger les années de publication
             ->get()
-            ->groupBy('anneePublication.annee_publication'); // Grouper par année
+            ->sortByDesc(function ($publication) {
+                return $publication->anneePublication->annee_publication;
+            })
+            ->groupBy(function ($publication) {
+                return $publication->anneePublication->annee_publication;
+            });
 
         $revues = Revue::all();
         $articles = Article::where("status", true)->latest()->get();
-        return view('web.blogs.publication-list', compact('revues', 'articles', 'publications', 'anneePublications', 'typePublications', 'typePublicationsAcuelle','titrepublications','users'));
+        return view('web.blogs.publication-list', compact('revues', 'articles', 'publications', 'anneePublications', 'typePublications', 'typePublicationsAcuelle', 'titrepublications', 'users'));
     }
 
     // pour rechercher les publications en fonctions de l'annéé
@@ -177,16 +187,21 @@ class AcceuilController extends Controller
         $titrepublications = Publication::all()->pluck("titre");
         $users = User::all();
 
-        // Récupérer les publications pour cette catégorie et les trier par année
+       // Récupérer les publications pour cette catégorie et les trier par année de manière décroissante
         $publications = Publication::where('type_publication_id', $typePublicationsAcuelle->id)
-            ->where("status", true)
+            ->where('status', true)
             ->with('anneePublication') // Charger les années de publication
             ->get()
-            ->groupBy('anneePublication.annee_publication'); // Grouper par année
+            ->sortByDesc(function ($publication) {
+                return $publication->anneePublication->annee_publication;
+            })
+            ->groupBy(function ($publication) {
+                return $publication->anneePublication->annee_publication;
+            });
 
         $revues = Revue::all();
         $articles = Article::where("status", true)->latest()->get();
-        return view('web.blogs.publication-list', compact('revues', 'articles', 'publications', 'anneePublications', 'typePublications', 'typePublicationsAcuelle','titrepublications','users'));
+        return view('web.blogs.publication-list', compact('revues', 'articles', 'publications', 'anneePublications', 'typePublications', 'typePublicationsAcuelle', 'titrepublications', 'users'));
     }
 
     // pour rechercher les publications en fonction des critères
@@ -231,7 +246,7 @@ class AcceuilController extends Controller
         $publications = $query->get();
 
         // Retourner la vue avec les publications trouvées
-        return view('web.blogs.result-recherche-publication', compact('publications','anneePublications','titrepublications','typePublications','users','request'));
+        return view('web.blogs.result-recherche-publication', compact('publications', 'anneePublications', 'titrepublications', 'typePublications', 'users', 'request'));
     }
 
     // affichage de la liste des membres
@@ -257,7 +272,7 @@ class AcceuilController extends Controller
         $listAxes = Axe::all();
         $listFonction = Fonction::all();
 
-        return view('web.membres.membre-list', compact('listUserRespPole', 'listUserRespEquipe', 'listMenbreEquipeUser', 'autreUser','listNameUser','listequipes','listAxes','listFonction','listUserRespAxe'));
+        return view('web.membres.membre-list', compact('listUserRespPole', 'listUserRespEquipe', 'listMenbreEquipeUser', 'autreUser', 'listNameUser', 'listequipes', 'listAxes', 'listFonction', 'listUserRespAxe'));
     }
 
     // affichage de la page de contact
@@ -275,6 +290,11 @@ class AcceuilController extends Controller
     public function showEquipe(Equipe $equipe)
     {
         return view('web.equipes.equipe-detail', compact('equipe'));
+    }
+
+    public function showAxe(Axe $axe)
+    {
+        return view('web.axes.axe-detail',compact('axe'));
     }
 
     public function showProjet(Projet $projet)
@@ -332,13 +352,13 @@ class AcceuilController extends Controller
     public function showProfil(User $user)
     {
         $typeEvenement = Type::whereHas("evernements")->get();
-        $publications = $user->publications()->where("status",true)
+        $publications = $user->publications()->where("status", true)
 
-        ->with('anneePublication') // Charger les années de publication
-        ->get()
-        ->groupBy('anneePublication.annee_publication'); // Grouper par année
+            ->with('anneePublication') // Charger les années de publication
+            ->get()
+            ->groupBy('anneePublication.annee_publication'); // Grouper par année
 
-        return view('web.membres.membre-detail', compact('user', 'typeEvenement','publications'));
+        return view('web.membres.membre-detail', compact('user', 'typeEvenement', 'publications'));
     }
 
     public function oderUser()
@@ -353,7 +373,7 @@ class AcceuilController extends Controller
         $listEquipeUser = User::whereHas('equipe')->pluck('id')->toArray();
 
         // Combiner toutes les IDs dans un seul tableau pour vérifier l'exclusion
-        $excludedUserIds = array_merge($listRespPole, $listRespEquipe, $listEquipeUser,$lisRespAxe);
+        $excludedUserIds = array_merge($listRespPole, $listRespEquipe, $listEquipeUser, $lisRespAxe);
 
         // Récupérer les utilisateurs qui ne sont dans aucune des listes
         $listMembre = User::whereNotIn('id', $excludedUserIds)->get();

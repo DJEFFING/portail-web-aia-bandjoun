@@ -9,6 +9,7 @@ use App\Models\Publication;
 use App\Models\PublicationMembre;
 use App\Models\TypePublication;
 use App\Models\User;
+use DOMDocument;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -60,12 +61,12 @@ class PublicationController extends Controller
 
         // Commencer une transaction pour garantir l'intégrité des données
         DB::beginTransaction();
+
         try {
             $media = "";
             if ($request->hasFile("media_url")) {
                 $media = $request->file('media_url')->store('publication', 'public');
             }
-
 
 
             $newPublication =  Publication::create([
@@ -90,7 +91,7 @@ class PublicationController extends Controller
             ]);
 
             // pour ajouter d'autre auteur a la publication
-            if (count($request->auteur_id) != 0) {
+            if ( ($request->auteur_id!=null) && count($request->auteur_id) != 0) {
                 for ($i = 0; $i < count($request->auteur_id); $i++) {
 
                     PublicationMembre::create([
@@ -99,6 +100,7 @@ class PublicationController extends Controller
                     ]);
                 }
             }
+
             DB::commit();
             return redirect(route('admin.publication.index'))->with("message", "la publication à été crée avec succès.");
         } catch (Exception $e) {
@@ -167,7 +169,7 @@ class PublicationController extends Controller
 
                 // Obtenir le chemin du fichier
                 $filePath = 'public/' . $document->document_url;
-                
+
                 // Supprimer le fichier du stockage
                 if (Storage::exists($filePath)) {
                     Storage::delete($filePath);
@@ -223,4 +225,6 @@ class PublicationController extends Controller
         // Télécharger le fichier
         return Storage::disk('public')->download($filePath);
     }
+
+ 
 }

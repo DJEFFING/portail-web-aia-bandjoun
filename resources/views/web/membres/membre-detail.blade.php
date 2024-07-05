@@ -94,7 +94,7 @@
                         <!--END List Publication -->
 
                         <!-- List Arcticle -->
-                            @include('web.membres.membre-partials-detail.membre-list-article')
+                            {{-- @include('web.membres.membre-partials-detail.membre-list-article') --}}
                         <!--END List Arcticle -->
 
                         @if ($user->evernements->isNotEmpty())

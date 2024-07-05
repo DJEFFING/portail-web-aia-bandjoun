@@ -1,4 +1,4 @@
-@extends('web.app.app',["page"=>3])
+@extends('web.app.app', ['page' => 3])
 @section('content')
     <main id="main">
         <!-- ======= Breadcrumbs ======= -->
@@ -20,7 +20,8 @@
 
                 <div class="section-header">
                     <h2> {{ count($poleRecherches) }} Domaine de Recherche</h2>
-                    <p>Découvrez ci-dessous, la liste complète de  nos Domaine de Recherche, où nous explorons et développons des solutions
+                    <p>Découvrez ci-dessous, la liste complète de nos Domaine de Recherche, où nous explorons et développons
+                        des solutions
                         innovantes pour un avenir agricole meilleur.</p>
                 </div>
 
@@ -38,14 +39,27 @@
                                     </div>
                                     <div class="row-xl-7 d-flex align-items-center">
                                         <div class="card-body">
-                                            <p><span
-                                                    style="background-color: green; color:white; text-align: center; width: 200px; margin-right: 10px;">Reponsable
-                                                </span> {{ $poleRecherche->user->name }}
-                                            </p><br>
-                                            <p><span
-                                                style="background-color: rgb(69, 123, 240); color:white; text-align: center; width: 200px; margin-right: 10px;">Equipe :
-                                            </span> {{ count($poleRecherche->equipes)}}
-                                            </p>
+
+                                            <div class="row d-flex">
+                                                <div class="col-md-6">
+                                                    <p>
+                                                        <span style="background-color: #00aefe; color:white; text-align: center; width: 200px; margin-right: 10px; padding: 5px;">Reponsable </span>
+                                                        {{ $poleRecherche->user->name }} {{ $poleRecherche->user->prenom }}
+                                                    </p>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <p>
+                                                        <div class="d-flex align-items-center">
+                                                            <i class="bi bi-person"></i>
+                                                            <strong><span class="ps-2">{{ count($poleRecherche->equipes) }}</span> Equipes</strong>
+                                                        </div>
+                                                    </p>
+                                                </div>
+
+                                            </div>
+
+
                                             <p></p><br>
                                             <h4 class="card-title">{{ $poleRecherche->titre }}</h4>
                                             <p>{{ Str::limit($poleRecherche->description_1, 200, '...') }}</p>

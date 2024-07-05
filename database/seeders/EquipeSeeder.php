@@ -28,6 +28,7 @@ class EquipeSeeder extends Seeder
             "code_equipe" => "ATS",
             "user_id" => 1,
             "pole_recherche_id" => 1,
+            "status" => true
         ];
 
         $equipe_2 = [
@@ -44,6 +45,7 @@ class EquipeSeeder extends Seeder
             "code_equipe" => "PDER",
             "user_id" => 16,
             "pole_recherche_id" => 1,
+            "status" => true
         ];
 
         $equipe_3 = [
@@ -65,6 +67,7 @@ class EquipeSeeder extends Seeder
             "code_equipe" => "STIC",
             "user_id" => 20,
             "pole_recherche_id" => 1,
+            "status" => true
         ];
 
         Equipe::create($equipe_1);

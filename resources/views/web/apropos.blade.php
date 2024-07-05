@@ -54,7 +54,7 @@
                             <div>
                                 <span data-purecounter-start="0" data-purecounter-end="{{ $countSection['membre'] }}"
                                     data-purecounter-duration="1" class="purecounter"></span>
-                                <p>Membre</p>
+                                <p>Membres</p>
                             </div>
                         </div>
                     </div><!-- End Stats Item -->
@@ -66,7 +66,7 @@
                             <div>
                                 <span data-purecounter-start="0" data-purecounter-end="{{ $countSection['equipe'] }}"
                                     data-purecounter-duration="1" class="purecounter"></span>
-                                <p>Equipe</p>
+                                <p>Equipes</p>
                             </div>
                         </div>
                     </div><!-- End Stats Item -->
@@ -80,7 +80,7 @@
                             <div>
                                 <span data-purecounter-start="0" data-purecounter-end="{{ $countSection['projet'] }}"
                                     data-purecounter-duration="1" class="purecounter"></span>
-                                <p>Projet</p>
+                                <p>Projets</p>
                             </div>
                         </div>
                     </div><!-- End Stats Item -->
@@ -90,9 +90,9 @@
                             <i class="bi bi-journal-richtext color-orange flex-shrink-0"></i>
 
                             <div>
-                                <span data-purecounter-start="0" data-purecounter-end="{{ $countSection['article'] }}"
+                                <span data-purecounter-start="0" data-purecounter-end="{{ $countSection['publication'] }}"
                                     data-purecounter-duration="1" class="purecounter"></span>
-                                <p>Publication</p>
+                                <p>Publications</p>
                             </div>
 
                         </div>
@@ -111,7 +111,7 @@
                 <div class="section-header">
                     <h2> {{ count($poleRecherches) }} Domaine de Recherche</h2>
                     {{-- <p>Découvrez nos Domaine de Recherche ci-dessous, où nous explorons et développons des solutions
-                        innovantes pour un avenir agricole meilleur.</p> --}}
+                        innovantes pour un avenir meilleur.</p> --}}
                 </div>
 
                 <div class="row gy-4">
@@ -129,8 +129,9 @@
                                     <div class="row-xl-7 d-flex align-items-center">
                                         <div class="card-body">
                                             <p><span
-                                                    style="background-color: green; color:white; text-align: center; width: 200px; margin-right: 10px;">Reponsable
-                                                </span> {{ $poleRecherche->user->name }}</p>
+                                                    style="background-color: #00aefe; color:white; text-align: center; width: 200px; padding: 5px; margin-right: 10px;">Reponsable
+                                                </span> {{ $poleRecherche->user->name }}
+                                                {{ $poleRecherche->user->prenom }}</p>
                                             <p></p><br>
                                             <h4 class="card-title">{{ $poleRecherche->titre }}</h4>
                                             <p>{{ Str::limit($poleRecherche->description_1, 200, '...') }}</p>
@@ -176,8 +177,8 @@
                                         <div class="card-body">
                                             <h4 class="card-title">{{ $equipe->titre }}</h4>
                                             <p><span
-                                                    style="background-color: green; color:white; text-align: center; width: 200px; margin-right: 10px;">Reponsable
-                                                </span> {{ $equipe->user->name }}</p>
+                                                    style="background-color: #00aefe; padding: 5px; color:white; text-align: center; width: 200px; margin-right: 10px;">Reponsable
+                                                </span> {{ $equipe->user->name }} {{ $equipe->user->prenom }}</p>
                                             <p></p><br>
                                             <p>{{ Str::limit($equipe->description_1, 200, '...') }}</p>
                                         </div>
@@ -198,20 +199,66 @@
         </section>
         <!-- End Equipe Section -->
 
+        <!-- ======= Axe Recherche Section ======= -->
+        <section id="constructions" class="constructions ">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-header">
+                    <h2>{{ $axes_total }} Axes de rechereche</h2>
+                </div>
+
+                <div class="row gy-4">
+
+                    @forelse ($axes as $axe)
+                        <a href="{{ route('web.show-axe', $axe->id) }}" class="col-lg-6" data-aos="fade-up"
+                            data-aos-delay="100">
+                            <div class="card-item">
+                                <div class="row">
+                                    <div class="col-xl-5">
+                                        <div class="card-bg d-flex"
+                                            style="background-image: url({{ asset('storage/' . $axe->media_url) }}); ">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-7 d-flex align-items-center">
+                                        <div class="card-body">
+                                            <h4 class="card-title">{{ $axe->titre }}</h4>
+                                            <p><span
+                                                    style="background-color: #00aefe; padding: 5px; color:white; text-align: center; width: 200px; margin-right: 10px;">Reponsable
+                                                </span> {{ $axe->user->name }} {{ $axe->user->prenom }}</p>
+                                            <p></p><br>
+                                            <p>{{ Str::limit($axe->description_1, 200, '...') }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a><!-- End Card Item -->
+                    @empty
+                        <center>
+                            <p>Pas d'information.....</p>
+                        </center>
+                    @endforelse
+
+                    <center><a href="{{ route('web.axes') }}" class="btn btn-primary">Voir plus +</a></center>
+                </div>
+
+            </div>
+        </section>
+        <!-- End Axe Recherche Section -->
+
 
         <!-- ======= Our Team Section ======= -->
         <section id="team" class="team">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
-                    <h2>Les Membres De l'Administration</h2>
-                    <p>Vous avez ci-dessous les membres de l'administration</p>
+                    <h2>Quelques membres importants</h2>
+                    <p>Vous avez ci-dessous quelques membres importants de l'unité de recherche</p>
                 </div>
 
                 <div class="row gy-5">
 
                     @forelse ($administrationUser as $user)
-                        @if (!$user->fonction()->where('nom', 'membre')->exists())
+
                             <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
                                 <div class="member-img">
                                     @if ($user->profil_url)
@@ -229,14 +276,21 @@
                                     </div>
                                 </div>
                                 <div class="member-info text-center">
-                                    <a href="{{ route('web.show-profil',$user->id) }}"><h4>{{ $user->name }}</h4></a>
+                                    <a href="{{ route('web.show-profil', $user->id) }}">
+                                        <h4>{{ $user->name }} {{ $user->prenom }}</h4>
+                                    </a>
+                                    <center><span
+                                        style="background-color: #00aefe; padding: 5px; color:white; text-align: center; width: 200px; margin-right: 10px;"><strong style="font-weight: bold">Rep Equipe:</strong> {{ $user->equipes[0]->code_equipe }}
+                                    </span></center>
+
                                     <h5>{{ $user->grade }}-{{ $user->lieu_travail }}</h5>
-                                    <span>{{ $user->fonction->nom }}</span>
-                                    <p>{{ $user->description }}
+                                    <strong style="font-weight: bold">{{ $user->fonction->nom }}</strong>
+
+                                    {{-- <p>{{ $user->description }} --}}
                                     </p>
                                 </div>
                             </div><!-- End Team Member -->
-                        @endif
+
                     @empty
                         <p>Pas De Membre....</p>
                     @endforelse
@@ -264,7 +318,7 @@
                             <div class="swiper-slide">
                                 <div class="testimonial-wrap">
                                     <div class="testimonial-item">
-                                        <img src="{{ asset('storage/'.$partenaire->logo_url) }}" class="testimonial-img"
+                                        <img src="{{ asset('storage/' . $partenaire->logo_url) }}" class="testimonial-img"
                                             alt="">
                                         <h3>{{ $partenaire->nom }}</h3>
                                         <h4>Ceo &amp; Founder</h4>
@@ -282,7 +336,9 @@
                                 </div>
                             </div><!-- End testimonial item -->
                         @empty
-                            <center><p>Aucun Partenaire</p></center>
+                            <center>
+                                <p>Aucun Partenaire</p>
+                            </center>
                         @endforelse
 
 

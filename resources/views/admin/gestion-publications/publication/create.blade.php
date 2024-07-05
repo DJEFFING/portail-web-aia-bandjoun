@@ -99,7 +99,7 @@
                     <div class="col-md-12">
                         <div class="form-group" style="margin: 10px">
                             <label>Document (.pdf): </label> <span class="text-danger"></span>
-                            <input type="file" accept=".pdf" name="document_url" class="form-control" required>
+                            <input type="file" accept=".pdf" name="document_url" class="form-control" >
                         </div>
                     </div>
 
