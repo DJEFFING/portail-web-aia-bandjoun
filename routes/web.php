@@ -9,6 +9,7 @@ Route::controller(AcceuilController::class)->name("web.")->group(function(){
     Route::get('/evernements','evernement')->name('evernement');
     Route::get('/pole-recherche','poleRecherche')->name('pole-recherche');
     Route::get('/equipe','equipes')->name('equipes');
+    Route::get('/axe','axes')->name('axes');
     Route::get('/projets','projets')->name('projets');
     Route::get('/blogs','blogs')->name('blogs');
     Route::get('/publications','publications')->name('publications');
@@ -19,6 +20,7 @@ Route::controller(AcceuilController::class)->name("web.")->group(function(){
     Route::get('/{user}-show-profil','showProfil')->name('show-profil');
     Route::get('/{poleRecherche}-show-poleRecherche','showPoleRecherche')->name('show-poleRecherche');
     Route::get('/{equipe}-show-equipe','showEquipe')->name('show-equipe');
+    Route::get('/{axe}-show-axe','showAxe')->name('show-axe');
     Route::get('/{projet}-show-projet','showProjet')->name('show-projet');
     Route::get('/{publication}-show-publication','showPublication')->name('show-publication');
     Route::get('/{evernement}-show-evernement','showEvernement')->name('show-evernement');

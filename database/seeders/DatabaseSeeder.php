@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
         $this->call(RoleEvenementSeeder::class);
 
         $this->call(RoleProjetSeeder::class);
+        $this->call(ProjetSeeder::class);
 
         $this->call(AnneePublicationSeeder::class);
         $this->call(TypePublicationSeeder::class);

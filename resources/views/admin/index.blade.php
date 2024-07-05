@@ -111,14 +111,14 @@
 
                                 <td>
                                     {{-- @forelse ($publication->users as $user) --}}
-                                        @if ($publication->users[0]->profil_url)
+                                        {{-- @if ($publication->users[0]->profil_url)
                                             <img src="{{ asset('storage/' . $publication->users[0]->profil_url) }}"
                                                 style="width: 50px; height: 50px;" alt=""><br>
                                         @else
                                             <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }}"
                                                 style="width: 50px; height: 50px;" alt=""><br>
-                                        @endif
-                                        <span>{{ $publication->users[0]->name }} </span>
+                                        @endif --}}
+                                        {{-- <span>{{ $publication->users[0]->name }} </span> --}}
                                         <span>{{ ( ($publication->users()->count()) >1 ) ? "et (".($publication->users()->count()-1).") autres" : ""}} </span>
                                     {{-- @empty --}}
                                     {{-- @endforelse --}}
@@ -139,11 +139,11 @@
                                         <i class="dw dw-eye"></i>
                                     </a>
 
-                                    @if (Auth::user()->id == $publication->users[0]->id)
+                                    {{-- @if (Auth::user()->id == $publication->users[0]->id) --}}
                                         <a href="{{ route('admin.publication.edit',$publication->id) }}" class="btn btn-sm btn-outline-warning me-2">
                                             <i class="dw dw-edit2"></i>
                                         </a>
-                                    @endif
+                                    {{-- @endif --}}
                                 </td>
 
                             </tr>

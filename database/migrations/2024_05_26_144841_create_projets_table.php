@@ -19,8 +19,8 @@ return new class extends Migration
             $table->date("date_debut");
             $table->date("date_fin");
             $table->string("media_url");
-            $table->unsignedBigInteger("user_id")->unique(); // responssable du projet
-            $table->unsignedBigInteger("pole_recherche_id");
+            $table->unsignedBigInteger("user_id"); // responssable du projet
+            $table->unsignedBigInteger("pole_recherche_id")->nullable();
             $table->boolean("status")->default(false);
 
             $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade");

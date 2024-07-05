@@ -11,10 +11,10 @@
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item "><label for="" class="badge badge-info">Pole De
+                                    {{-- <li class="breadcrumb-item "><label for="" class="badge badge-info">Pole De
                                             Recheche :</label><a
                                             href="{{ route('admin.poleRecherche.show', $projet->poleRecherche->id) }}">{{ $projet->poleRecherche->titre }}</a>
-                                    </li>
+                                    </li> --}}
                                 </ol>
 
                                 <ol class="breadcrumb">

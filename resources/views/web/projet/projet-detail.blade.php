@@ -24,12 +24,17 @@
 
 
                     <div class="col-lg-8">
-                        <img src="{{ asset('storage/' . $projet->media_url) }}" alt="" class="img-fluid services-img">
+                        <img src="{{ asset('storage/' . $projet->media_url) }}" alt=""
+                            class="img-fluid services-img">
                         <h3>{{ $projet->titre }}</h3>
                         <div class="container mt-5">
                             <small>
-                                <p class="card-text w-5 h-5" style="background-color: rgb(17, 236, 65);color:white; text-align: center">Date Debut : {{ $projet->date_debut }}</p>,
-                                <p class="card-text w-5 h-5" style="background-color: rgb(12, 230, 30);color:white; text-align: center"> Date Fin  : {{ $projet->date_fin }}</p>
+                                <p class="card-text w-5 h-5"
+                                    style="background-color: #00aefe;color:white; text-align: center">Date Debut :
+                                    {{ $projet->date_debut }}</p>,
+                                <p class="card-text w-5 h-5"
+                                    style="background-color: #00aefe;color:white; text-align: center"> Date Fin :
+                                    {{ $projet->date_fin }}</p>
                                 <div id="article-content">
                                     <p class="text-justify">{!! $projet->description_2 !!}</p>
                                 </div>
@@ -38,52 +43,60 @@
                     </div>
 
                     <div class="col-lg-4">
-                        <div class="card">
+                        <a href="{{ route('web.show-profil', $projet->user->id) }}">
+                            <div class="card">
 
-                            <div class="row">
-                                @if ($projet->user->profil_url)
-                                    <img src="{{ asset('storage/' . $projet->user->profil_url) }}"
-                                        class="p-3 card-img-top rounded-circle img-fluid w-50 h-100" alt="...">
-                                @else
-                                    <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }} "
-                                        class="p-3 card-img-top rounded-circle img-fluid w-50 h-100" alt="...">
-                                @endif
-                            </div>
+                                <div class="row">
+                                    @if ($projet->user->profil_url)
+                                        <img src="{{ asset('storage/' . $projet->user->profil_url) }}"
+                                            class="p-3 card-img-top rounded-circle img-fluid w-50 h-100" alt="...">
+                                    @else
+                                        <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }} "
+                                            class="p-3 card-img-top rounded-circle img-fluid w-50 h-100" alt="...">
+                                    @endif
+                                </div>
 
-                            <div class="card-body">
-                                <p><strong>Nom :</strong> {{ $projet->user->name }}</p>
-                                <p><strong>mail :</strong> {{ $projet->user->email }}</p>
-                                <p><strong>telephone :</strong> {{ $projet->user->telephone }}</p>
-                                <p><strong>address :</strong> {{ $projet->user->adress }}</p>
-                                <p class="card-text text-blue w-50 h-50"
-                                    style="background-color: green;color:white; text-align: center">Responssable</p>
+                                <div class="card-body">
+                                    <p><strong>Nom :</strong> {{ $projet->user->name }} {{ $projet->user->prenom}} </p>
+                                    <p><strong>mail :</strong> {{ $projet->user->email }}</p>
+                                    <p><strong>telephone :</strong> {{ $projet->user->telephone }}</p>
+                                    <p><strong>address :</strong> {{ $projet->user->adress }}</p>
+                                    <p class="card-text text-blue w-50 h-50"
+                                        style="background-color: #00aefe;color:white; text-align: center">Responssable</p>
+                                </div>
                             </div>
-                        </div><br>
+                        </a><br>
 
                         <br>
-                        <div class="services-list">
-                            <h4>Equipe ({{ count($projet->equipes()->where('status', true)->get()) }})</h4>
-                            @forelse ($projet->equipes()->where("status",true)->get() as $equipe)
-                                <a href="{{ route('web.show-equipe',$equipe->id) }}">{{ $equipe->titre }} ({{ $equipe->code_equipe }})</a>
-                                <p class="card-text text-blue w-50 h-50"
-                                    style="background-color: rgb(18, 62, 209);color:white; text-align: center">
-                                    {{ app\models\RoleEquipeProjet::find($equipe->pivot->role_equipe_projet_id)->nom }}</p>
-                                <hr>
-                            @empty
-                                <center>Aucune Equipe...</center>
-                            @endforelse
-                        </div><br>
+                        @if ($projet->participants()->exists())
+                            <div class="services-list">
+                                <h4>Autre paricipants ({{ count($projet->participants) }})</h4>
+                                @forelse ($projet->participants as $participant)
+                                    <a href="{{ route('web.show-profil', $participant->id) }}">{{ $participant->name }},
+                                        {{ $participant->prenom }}
+
+                                    </a>
+                                    <hr>
+                                @empty
+                                    <center>Aucun autre participant...</center>
+                                @endforelse
+                            </div><br>
+                        @endif
+
 
                         <br>
-                        <div class="services-list">
-                            <h4>Partenaire : ({{ count($projet->partenaires) }})</h4>
-                            @forelse ($projet->partenaires as $partenaire)
-                                <a href="#">{{ $partenaire->titre }}</a>
-                                <hr>
-                            @empty
-                                <center>Aucun Partenaire...</center>
-                            @endforelse
-                        </div><br>
+                        @if ($projet->partenaires()->exists())
+                            <div class="services-list">
+                                <h4>Partenaire : ({{ count($projet->partenaires) }})</h4>
+                                @forelse ($projet->partenaires as $partenaire)
+                                    <a href="#">{{ $partenaire->titre }}</a>
+                                    <hr>
+                                @empty
+                                    <center>Aucun Partenaire...</center>
+                                @endforelse
+                            </div><br>
+                        @endif
+
 
 
                     </div>

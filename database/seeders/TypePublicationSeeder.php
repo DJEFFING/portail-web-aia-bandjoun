@@ -33,23 +33,20 @@ class TypePublicationSeeder extends Seeder
             "nom" => "Brevets"
         ];
 
-        $type_6 = [
-            "nom" => "Brevets"
-        ];
 
-        $type_7 = [
+        $type_6 = [
             "nom" => "Livres/Chapitres d'ouvrage"
         ];
 
-        $type_8 = [
+        $type_7 = [
             "nom" => "Articles publiés dans les revues indexées"
         ];
 
-        $type_9 = [
+        $type_8 = [
             "nom" => "Communications de Conférences"
         ];
 
-        $type_10 = [
+        $type_9 = [
             "nom" => "Autre"
         ];
 
@@ -62,6 +59,6 @@ class TypePublicationSeeder extends Seeder
         TypePublication::create($type_7);
         TypePublication::create($type_8);
         TypePublication::create($type_9);
-        TypePublication::create($type_10);
+
     }
 }

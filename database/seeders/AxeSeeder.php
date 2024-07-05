@@ -50,6 +50,7 @@ class AxeSeeder extends Seeder
             "media_url" => "media.png",
             "user_id" => 4,
             "equipe_id" => 1,
+            "status" => true,
         ];
 
         //équipe 1
@@ -91,6 +92,7 @@ class AxeSeeder extends Seeder
             "media_url" => "media.png",
             "user_id" => 2,
             "equipe_id" => 1,
+            "status" => true,
         ];
 
         // equipe 1
@@ -136,6 +138,7 @@ class AxeSeeder extends Seeder
             "media_url" => "media.png",
             "user_id" => 5,
             "equipe_id" => 1,
+            "status" => true,
         ];
 
         // equipe 1
@@ -186,6 +189,7 @@ class AxeSeeder extends Seeder
             "media_url" => "",
             "user_id" => 3,
             "equipe_id" => 1,
+            "status" => true,
         ];
 
 
@@ -221,6 +225,7 @@ class AxeSeeder extends Seeder
             "media_url" => "media.png",
             "user_id" => 17,
             "equipe_id" => 2,
+            "status" => true,
         ];
 
         // equipe 2
@@ -247,6 +252,7 @@ class AxeSeeder extends Seeder
             "media_url" => "media.pmg",
             "user_id" => 18,
             "equipe_id" => 2,
+            "status" => true,
         ];
 
         // equipe 2
@@ -267,6 +273,7 @@ class AxeSeeder extends Seeder
             "media_url" => "",
             "user_id" => 19,
             "equipe_id" => 3,
+            "status" => true,
         ];
 
         //EQUIPE 3
@@ -317,6 +324,7 @@ class AxeSeeder extends Seeder
             "media_url" => "media.png",
             "user_id" => 22,
             "equipe_id" => 3,
+            "status" => true,
         ];
 
         //EQUIPE 3
@@ -388,6 +396,7 @@ class AxeSeeder extends Seeder
             "media_url" => "media.png",
             "user_id" => 24,
             "equipe_id" => 3,
+            "status" => true,
         ];
 
         //EQUIPE 3
@@ -428,6 +437,7 @@ class AxeSeeder extends Seeder
             "media_url" => "media.png",
             "user_id" => 21,
             "equipe_id" => 3,
+            "status" => true,
         ];
 
 
@@ -442,7 +452,7 @@ class AxeSeeder extends Seeder
         Axe::create($axe_8);
         Axe::create($axe_9);
         Axe::create($axe_10);
-     
+
 
 
     }

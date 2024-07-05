@@ -1,4 +1,4 @@
-@extends('web.app.app',["page"=>4])
+@extends('web.app.app', ['page' => 4])
 @section('content')
     <main id="main">
         <!-- ======= Breadcrumbs ======= -->
@@ -40,17 +40,30 @@
                                         </div>
                                         <div class="col-xl-7 d-flex align-items-center">
                                             <div class="card-body">
-                                                <h4 class="card-title">{{ $equipe->titre }} ({{ $equipe->code_equipe }})</h4>
-                                                <p><span
-                                                        style="background-color: green; color:white; text-align: center; width: 200px; margin-right: 10px;">Reponsable
-                                                    </span> {{ $equipe->user->name }}
-                                                </p>
-                                                <br><p><span
-                                                    style="background-color: rgb(102, 216, 236); color:white; text-align: center; width: 200px; margin-right: 10px;">Membre
-                                                </span> {{ count($equipe->menbres)+1 }}
-                                            </p>
-                                                <p></p><br>
-                                                <p>{{ Str::limit($equipe->description_1, 200, '...') }}</p>
+                                                <h4 class="card-title">{{ $equipe->titre }} ({{ $equipe->code_equipe }})
+                                                </h4>
+
+                                                <div class="d-flex">
+                                                    <p>
+                                                        <span
+                                                            style="background-color: #00aefe; color:white; text-align: center; width: 200px; margin-right: 10px; padding: 5px;">Reponsable
+                                                        </span>
+                                                        {{ $equipe->user->name }} {{ $equipe->user->prenom }}
+                                                    </p>
+                                                </div><br>
+
+
+                                                <div>
+                                                    <p>
+                                                    <div class="d-flex align-items-center">
+                                                        <i class="bi bi-person"></i>
+                                                        <strong><span class="ps-2">{{ count($equipe->menbres) + 1 }}</span>
+                                                            Membres</strong>
+                                                    </div>
+                                                    </p>
+                                                </div><br>
+
+                                                <p>{{ Str::limit($equipe->description_1, 100, '...') }}</p>
                                             </div>
                                         </div>
                                     </div>

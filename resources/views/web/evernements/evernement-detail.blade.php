@@ -6,10 +6,10 @@
         <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/breadcrumbs-bg.jpg');">
             <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-                <h2> Evénement Detail</h2>
+                <h2> EVENEMENT</h2>
                 <ol>
                     <li><a href="{{ route('web.acceuil') }}">Acceuil</a></li>
-                    <li> Evénement Detail</li>
+                    <li> Evenement | Detail</li>
                 </ol>
 
             </div>
@@ -52,28 +52,29 @@
                         <div class="portfolio-info">
                             <h3>Information sur l'événement</h3>
                             <ul>
-                                <li><strong>Categories</strong>
+                                <li><strong style="color: black">Categories :</strong>
                                     @forelse ($evernement->types as $type)
-                                    <span style="background-color: blue; color:white; text-align: center; width: 100px;">{{ $type->nom }}</span><br>
+                                    <span class="bold-text" style="background-color: #00aefe; color:white; text-align: center; width: 100px;">{{ $type->nom }}</span><br>
                                     @empty
 
                                     @endforelse
 
                                 </li>
-                                <li><strong>Date</strong>
+                                <li><strong style="color: black">Date :</strong>
                                     @php
                                         $date = new DateTime($evernement->date);
                                     @endphp
-                                     <span>{{$date->format("y-m-d") }}</span>
+                                     <span class="bold-text" class="bold-text" style="font-weight: bold;">{{$date->format("Y-m-d") }}</span>
                                 </li>
 
-                                <li><strong>Lieu : </strong>
-                                     <span>{{ $evernement->ville }}, {{ $evernement->adress }}</span>
+                                <li><strong style="color: black">Lieu : </strong>
+                                     <span class="bold-text" style="font-weight: bold;">{{ $evernement->ville }}, {{ $evernement->adress }}</span>
                                 </li>
                             </ul>
 
                         </div>
 
+                        @if ($evernement->membres()->exists())
                         <div class="portfolio-info card p-3">
                             <h3>Participants ({{ count($evernement->membres) }})</h3>
                             <ul>
@@ -88,8 +89,10 @@
 
                             </ul>
                         </div>
+                        @endif
 
-                        <div class="portfolio-info card p-3">
+                        @if ($evernement->partenaires()->exists())
+                        <br><div class="portfolio-info card p-3">
                             <h3>Partenaire : ({{ count($evernement->partenaires) }})</h3>
                             <ul>
                                 @forelse ($evernement->partenaires as $partenaire)
@@ -102,6 +105,7 @@
 
                             </ul>
                         </div>
+                        @endif
                     </div>
 
                 </div>
