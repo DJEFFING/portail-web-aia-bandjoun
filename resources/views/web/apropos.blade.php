@@ -54,7 +54,7 @@
                             <div>
                                 <span data-purecounter-start="0" data-purecounter-end="{{ $countSection['membre'] }}"
                                     data-purecounter-duration="1" class="purecounter"></span>
-                                <p>Membre</p>
+                                <p>Membres</p>
                             </div>
                         </div>
                     </div><!-- End Stats Item -->
@@ -66,7 +66,7 @@
                             <div>
                                 <span data-purecounter-start="0" data-purecounter-end="{{ $countSection['equipe'] }}"
                                     data-purecounter-duration="1" class="purecounter"></span>
-                                <p>Equipe</p>
+                                <p>Equipes</p>
                             </div>
                         </div>
                     </div><!-- End Stats Item -->
@@ -80,7 +80,7 @@
                             <div>
                                 <span data-purecounter-start="0" data-purecounter-end="{{ $countSection['projet'] }}"
                                     data-purecounter-duration="1" class="purecounter"></span>
-                                <p>Projet</p>
+                                <p>Projets</p>
                             </div>
                         </div>
                     </div><!-- End Stats Item -->
@@ -90,9 +90,9 @@
                             <i class="bi bi-journal-richtext color-orange flex-shrink-0"></i>
 
                             <div>
-                                <span data-purecounter-start="0" data-purecounter-end="{{ $countSection['article'] }}"
+                                <span data-purecounter-start="0" data-purecounter-end="{{ $countSection['publication'] }}"
                                     data-purecounter-duration="1" class="purecounter"></span>
-                                <p>Publication</p>
+                                <p>Publications</p>
                             </div>
 
                         </div>
@@ -204,8 +204,8 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
-                    <h2>Les Membres De l'Administration</h2>
-                    <p>Vous avez ci-dessous les membres de l'administration</p>
+                    <h2>Quelques membres importants</h2>
+                    <p>Vous avez ci-dessous quelques membres importants de l'unité de recherche</p>
                 </div>
 
                 <div class="row gy-5">

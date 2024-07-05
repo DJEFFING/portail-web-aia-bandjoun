@@ -180,7 +180,7 @@
                             <i class="bi bi-journal-richtext color-orange flex-shrink-0"></i>
 
                             <div>
-                                <span data-purecounter-start="0" data-purecounter-end="{{ $countSection['article'] }}"
+                                <span data-purecounter-start="0" data-purecounter-end="{{ $countSection['publication'] }}"
                                     data-purecounter-duration="1" class="purecounter"></span>
                                 <p>Publications</p>
                             </div>

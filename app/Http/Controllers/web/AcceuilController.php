@@ -46,7 +46,7 @@ class AcceuilController extends Controller
             // "membre" => 76,
             "equipe" => Equipe::where("status", true)->get()->count(),
             "projet" => Projet::where("status", true)->count(),
-            "article" => Article::where("status", true)->count()
+            "publication" => Publication::where("status", true)->count()
 
         ];
 
@@ -62,7 +62,7 @@ class AcceuilController extends Controller
             // "membre" => 76,
             "equipe" => Equipe::where("status", true)->get()->count(),
             "projet" => Projet::where("status", true)->count(),
-            "article" => Article::where("status", true)->count()
+            "publication" => Publication::where("status", true)->count()
         ];
         $poleRecherches =  PoleRecherche::where("status", true)->take(4)->get();
         $equipes = Equipe::where("status", true)->take(4)->get();
