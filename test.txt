@@ -1,0 +1,7 @@
+mysql://b7cb20d2740eff:7ef979ca@us-cluster-east-01.k8s.cleardb.net/heroku_23e93633a9003c0?reconnect=true
+
+user =b7cb20d2740eff
+password=7ef979ca
+host=us-cluster-east-01.k8s.cleardb.net
+port=3306
+db=heroku_23e93633a9003c0
