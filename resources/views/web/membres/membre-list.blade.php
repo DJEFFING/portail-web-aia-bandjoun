@@ -33,6 +33,15 @@
                         <form method="POST" action="" class="sidebar">
                             @csrf
                             <div class="row">
+                                <div class="form-group col-md-12">
+                                    <h4>Formulaire de recherche</h4>
+                                    <input type="text" id="searchBar" class="form-control" name="recherche" placeholder="Recherche par : Nom, Prenom, Equipe de Recherche, Axe de Recherche, Fonction, etc.">
+                                </div>
+                                {{-- <div class="col-md-1">
+                                    <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i></button>
+                                </div> --}}
+                            </div>
+                            {{-- <div class="row">
                                 <div class="col-md-6 sidebar-item search-form">
                                     <h3 class="sidebar-title">Par Nom</h3>
                                     <div class="search_select_box">
@@ -106,10 +115,9 @@
 
                                 </div>
 
-                            </div><br>
+                            </div><br> --}}
 
 
-                            <button type="submit" class="btn btn-primary">Recherche <i class="bi bi-search"></i></button>
                             <!-- End sidebar search formn-->
 
                             <!-- End sidebar categories-->
@@ -129,7 +137,7 @@
                         <div class="row  gy-5 posts-list col-lg-12">
 
                             <!-- Responsable pole Recherche -->
-                            @include('web.membres.membre-partials-list.membre-list-responsable-pole')
+                            {{-- @include('web.membres.membre-partials-list.membre-list-responsable-pole') --}}
                             <!--END Responsable pole Recherche -->
 
                             <!-- Responsable Equipe -->

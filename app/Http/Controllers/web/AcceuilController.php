@@ -40,7 +40,12 @@ class AcceuilController extends Controller
         $evenements = Evernement::where("status", true)->get();
         $articles = Article::where("status", true)->latest()->take(3)->get();
 
-        $publications = Publication::where("status", true)->latest()->take(3)->get();
+        $publications = Publication::where("status", true)
+        ->where("annee_publication_id",22)
+        ->latest()
+        ->take(3)
+        ->get();
+        
         $countSection = [
             "membre" => User::latest()->get()->count(),
             // "membre" => 76,
@@ -239,7 +244,7 @@ class AcceuilController extends Controller
 
         // Ajouter la condition pour le titre si elle est présente
         if ($request->filled('titre')) {
-            $query->where('titre', 'like', '%' . $request->titre . '%');
+            $query->whereRaw('LOWER(titre) LIKE ?', ['%' . strtolower($request->titre) . '%']);
         }
 
         // Obtenir les résultats
@@ -281,6 +286,21 @@ class AcceuilController extends Controller
         return view('web.contact');
     }
 
+    //recherche des membres en fonction des critères certains critère
+    public function findMembreByCreteriad(Request $request)
+    {
+        // Commencer la requête de base
+        $query = Equipe::query();
+
+        $listUser = [];
+
+        //ajouter la conditions pour les responsable d'équipe de recherche
+        if ($request->filled('type_id')) {
+            $query->where('type_publication_id', $request->type_id);
+        }
+
+    }
+
 
     public function showPoleRecherche(PoleRecherche $poleRecherche)
     {
@@ -317,8 +337,12 @@ class AcceuilController extends Controller
     public function showPublication(Publication $publication)
     {
         $annee = AnneePublication::findOrFail($publication->annee_publication_id);
+        $publicationSimilaire = Publication::where('type_publication_id',$publication->type_publication_id)
+        ->where('annee_publication_id',$publication->annee_publication_id)
+        ->take(3)
+        ->get();
 
-        return view('web.blogs.publication-detail', compact('publication', 'annee'));
+        return view('web.blogs.publication-detail', compact('publication', 'annee','publicationSimilaire'));
     }
 
     public function createCommentaire(Request $request, Article $article)

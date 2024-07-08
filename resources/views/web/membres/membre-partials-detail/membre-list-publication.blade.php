@@ -5,7 +5,7 @@
 
      <!-- Liste des publication pas année -->
      <div class="col gy-8 posts-list ">
-      
+
         <hr>
         @forelse ($publications as $annee => $pubs)
             <br>
@@ -28,14 +28,13 @@
 
                                 <div class="card-body">
 
-                                    <h3 class="post-title">{{ $publication->titre }}</h3>
+                                    <h3 class="post-title">{{ Str::limit($publication->titre, 100, '...') }}</h3>
 
                                     <div class="meta d-flex align-items-center">
                                         <div class="d-flex align-items-center">
                                             <i class="bi bi-person"></i>
                                             @forelse ($publication->users as $user)
-                                                <strong><span
-                                                        class="ps-2">{{ $user->name }}</span></strong>,
+                                                <strong><span class="ps-2">{{ $user->name }}</span></strong>,
                                             @empty
                                             @endforelse
 
@@ -47,7 +46,16 @@
                                                 Documents</span>
                                         </div>
 
-
+                                    </div><br>
+                                    {{-- <span class="px-3 text-black-50">/</span> --}}
+                                    <div class="d-flex align-items-center">
+                                        <span
+                                            style="background-color: #8fceec; color:white; text-align: center; width: 80px; margin-right: 10px; padding: 5px;">Categ
+                                            :
+                                        </span>
+                                        <span class="ps-2">
+                                            {{ $publication->typePublication->nom }}
+                                        </span>
                                     </div>
                                     <p style="display-flex:auto;" class="px-3">
                                         {{ Str::limit($publication->description_1, 1000, '...') }}</p>
