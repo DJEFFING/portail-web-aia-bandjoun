@@ -6,7 +6,7 @@
             style="background-image: url(' {{ asset('asset_web/assets/img/footer_and_head.jpeg') }} ');">
             <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-                <h2>PROJET</h2>
+                <h2>PROJETS</h2>
                 <ol>
                     <li><a href="{{ route('web.acceuil') }}">Aceuil</a></li>
                     <li>Projets</li>
@@ -17,7 +17,7 @@
         <!-- End Breadcrumbs -->
 
         <br><div class="section-header">
-            <h2>Nos Projet</h2>
+            <h2>Nos Projets</h2>
             <p>Découvrez nos Projet ci-dessous, où nous développons des solutions
                 innovantes pour un avenir meilleur.</p>
         </div>

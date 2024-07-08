@@ -24,7 +24,7 @@
                     <div class="col-lg-6">
                         <div class="info-item  d-flex flex-column justify-content-center align-items-center">
                             <i class="bi bi-map"></i>
-                            <h3>Notre Address</h3>
+                            <h3>Adresse</h3>
                             <p>{{ contactAll()->adress }}</p>
                         </div>
                     </div><!-- End Info Item -->
@@ -32,7 +32,7 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="info-item d-flex flex-column justify-content-center align-items-center">
                             <i class="bi bi-envelope"></i>
-                            <h3>Email Us</h3>
+                            <h3>Email </h3>
                             <p>{{ contactAll()->email }}</p>
                         </div>
                     </div><!-- End Info Item -->
