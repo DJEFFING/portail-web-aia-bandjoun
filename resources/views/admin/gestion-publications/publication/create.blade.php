@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="title">
-                                <h4>Creation d'une publication</h4>
+                                <h4>Ajout d'une publication</h4>
                             </div>
                         </div>
                     </div>
@@ -16,7 +16,7 @@
 
                 <form class="html-editor pd-20 card-box mb-30" method="POST" action="{{ route('admin.publication.store') }}"
                     enctype="multipart/form-data">
-                    <h4 class="h4 text-blue">Ce formulaire Permet de crée une Publication</h4>
+                    <h4 class="h4 text-blue">Ce formulaire Permet d'ajouter une Publication</h4>
                     @csrf
                     <div class="col-md-12">
                         <div class="form-group">

@@ -13,7 +13,7 @@
                             </div>
                             <div class="widget-data">
                                 <div class="h4 mb-0">{{ $nbrUser }}</div>
-                                <div class="weight-600 font-14">Utilisateurs</div>
+                                <div class="weight-600 font-14">Membres</div>
                             </div>
                         </div>
                     </div>
