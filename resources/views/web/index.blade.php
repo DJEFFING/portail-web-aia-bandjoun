@@ -17,7 +17,7 @@
         </div>
 
         <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-            @if(json_decode($slide->image_url) )
+            @if (json_decode($slide->image_url))
                 @forelse (json_decode($slide->image_url) as $item => $image)
                     @if ($item == 0)
                         <div class="carousel-item active" style="background-image: url({{ asset('storage/' . $image) }})">
@@ -102,7 +102,8 @@
                 <div class="row gy-4">
 
                     @forelse ($poleRecherches as $poleRecherche)
-                        <a href="{{ route('web.show-poleRecherche',$poleRecherche->id) }}" class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <a href="{{ route('web.show-poleRecherche', $poleRecherche->id) }}" class="col-lg-6"
+                            data-aos="fade-up" data-aos-delay="100">
                             <div class="card-item">
                                 <div class="row">
                                     <div class="col-xl-5">
@@ -180,7 +181,8 @@
                             <i class="bi bi-journal-richtext color-orange flex-shrink-0"></i>
 
                             <div>
-                                <span data-purecounter-start="0" data-purecounter-end="{{ $countSection['publication'] }}"
+                                <span data-purecounter-start="0"
+                                    data-purecounter-end="{{ $countSection['publication'] }}"
                                     data-purecounter-duration="1" class="purecounter"></span>
                                 <p>Publications</p>
                             </div>
@@ -214,8 +216,9 @@
                                 </div>
                                 <h3>{{ $projet->titre }}</h3>
                                 <p>{{ $projet->description_1 }}</p>
-                                <a href="{{ route('web.show-projet',$projet->id) }}" class="readmore stretched-link">Learn more <i
-                                        class="bi bi-arrow-right"></i></a>
+                                <a href="{{ route('web.show-projet', $projet->id) }}" class="btn btn-primary">
+                                    consulter
+                                    <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
                         <!-- End Service Item -->
@@ -236,7 +239,7 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
-                    <h2>Nos  Evénements</h2>
+                    <h2>Nos Evénements</h2>
                     <p>Consultez ici quelque une de nos événements</p>
                 </div>
 
@@ -272,7 +275,8 @@
                                             <a href=" {{ asset('storage/' . $evernement->media_url) }}"
                                                 title="Remodeling 1" data-gallery="portfolio-gallery-remodeling"
                                                 class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                            <a href="{{ route('web.show-evernement',$evernement->id) }}" title="More Details" class="details-link"><i
+                                            <a href="{{ route('web.show-evernement', $evernement->id) }}"
+                                                title="More Details" class="details-link"><i
                                                     class="bi bi-link-45deg"></i></a>
                                         </div>
                                     </div>
@@ -290,7 +294,8 @@
                                             <a href="  {{ asset('storage/' . $evernement->media_url) }} "
                                                 title="Remodeling 1" data-gallery="portfolio-gallery-remodeling"
                                                 class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                            <a href="{{ route('web.show-evernement',$evernement->id) }}" title="More Details" class="details-link"><i
+                                            <a href="{{ route('web.show-evernement', $evernement->id) }}"
+                                                title="More Details" class="details-link"><i
                                                     class="bi bi-link-45deg"></i></a>
                                         </div>
                                     </div>
@@ -320,39 +325,74 @@
 
 
                 <div class=" section-header">
-                    <h2>Dernière Publication</h2>
-                    <p>Découvrez nos dernières publications</p>
+                    <h2>Publications récentes.</h2>
+                    <p>Découvrez nos récentes publications</p>
                 </div>
 
                 <div class="row gy-5">
-                    {{-- @forelse ($publications as $publication)
-                        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    @forelse ($publications as $publication)
+                        <div class="col-xl-12 col-md-12" data-aos="fade-up" data-aos-delay="100">
                             <div class="post-item position-relative h-100">
 
-                                <div class="post-img position-relative overflow-hidden">
-                                    <img src=" {{ asset('storage/'.$publication->media_url) }} " class="img-fluid"
-                                        alt="">
-                                    <span class="post-date">{{ $publication->created_at->format("d-M-Y") }}</span>
-                                </div>
+                                <div class="post-content d-flex flex-column card">
+                                    <div class="row">
+                                        {{-- <div class="col-xl-4">
+                                            <img src=" {{ asset('storage/' . $publication->media_url) }} "
+                                                class="img-fluid" alt="">
 
-                                <div class="post-content d-flex flex-column">
+                                        </div> --}}
+                                        <div class="col-xl-12 d-flex align-items-center">
 
-                                    <h3 class="post-title">{{ $publication->titre }}</h3>
+                                            <div class="card-body">
 
-                                    <div class="meta d-flex align-items-center">
-                                        <div class="d-flex align-items-center">
-                                            <i class="bi bi-person"></i> <span class="ps-2">{{ $publication->user->name }}</span>
+                                                <h3 class="post-title ">{{ Str::limit($publication->titre, 100, '...') }}
+                                                </h3>
+                                                <span
+                                                    class="post-date">{{ $publication->anneePublication->annee_publication }}
+                                                </span>
+
+                                                <div class="meta d-flex align-items-center">
+                                                    <div class="d-flex align-items-center">
+                                                        <i class="bi bi-person"></i>
+                                                        @forelse ($publication->users as $user)
+                                                            <strong><span
+                                                                    class="ps-2">{{ $user->name }}</span></strong>,
+                                                        @empty
+                                                        @endforelse
+
+                                                    </div>
+                                                    <span class="px-3 text-black-50">/</span>
+                                                    <div class="d-flex align-items-center">
+                                                        <i class="bi bi-folder2"></i> <span
+                                                            class="ps-2">{{ count($publication->documents) }}
+                                                            Documents</span>
+                                                    </div>
+                                                </div>
+
+                                                {{-- <span class="px-3 text-black-50">/</span> --}}
+                                                <br><div class="d-flex align-items-center">
+                                                    <span
+                                                        style="background-color: #83c7e6; color:white; text-align: center; width: 80px; margin-right: 10px; padding: 5px;">Categ
+                                                        :
+                                                    </span>
+                                                    <span class="ps-2">
+                                                        {{ $publication->typePublication->nom }}
+                                                    </span>
+                                                </div><br>
+
+                                                <p style="display-flex:auto;" class="px-3">
+                                                    {{ Str::limit($publication->description_1, 1000, '...') }}</p>
+
+                                                <hr>
+
+                                                <a href="{{ route('web.show-publication', $publication->id) }}"
+                                                    class="readmore stretched-link "><span class="btn btn-primary">
+                                                        consluter </span><i class="bi bi-arrow-right"></i></a>
+
+                                            </div>
                                         </div>
-                                        <span class="px-3 text-black-50">/</span>
-                                        <div class="d-flex align-items-center">
-                                            <i class="bi bi-folder2"></i> <span class="ps-2">{{ $publication->revue->titre }}</span>
-                                        </div>
+
                                     </div>
-
-                                    <hr>
-
-                                    <a href="{{ route('web.show-article',$publication->id) }}" class="readmore stretched-link"><span>Read More</span><i
-                                            class="bi bi-arrow-right"></i></a>
 
                                 </div>
 
@@ -363,7 +403,7 @@
                         <center>
                             <p>Pas de publication....</p>
                         </center>
-                    @endforelse --}}
+                    @endforelse
 
                 </div>
 

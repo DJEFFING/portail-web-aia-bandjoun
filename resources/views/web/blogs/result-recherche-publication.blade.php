@@ -116,14 +116,16 @@
 
                                 <div class="sidebar-item search-form">
                                     <h3 class="sidebar-title">Recherche dans le titre</h3>
-                                    <select name="titre" id="" style="width: 100%; height: 38px;"
+                                    <input type="text" name="titre" value="{{ $request->titre }}" class="form-control">
+                                    {{-- <select name="titre" id="" style="width: 100%; height: 38px;"
                                         class="form-control custom-select2" data-live-search="true">
                                         <optgroup label="titre">
                                             <option value=""></option>
 
                                             @forelse ($titrepublications as $titrepublication)
                                                 @if ($request->titre != null && $request->titre == $titrepublication)
-                                                    <option value="{{ $titrepublication }}" selected>{{ $titrepublication }}
+                                                    <option value="{{ $titrepublication }}" selected>
+                                                        {{ $titrepublication }}
                                                     </option>
                                                 @else
                                                     <option value="{{ $titrepublication }}">{{ $titrepublication }}
@@ -134,7 +136,7 @@
                                             @endforelse
 
                                         </optgroup>
-                                    </select>
+                                    </select> --}}
 
                                 </div> <br>
 
@@ -174,7 +176,8 @@
 
                                                     <h3 class="post-title">{{ $publication->titre }}</h3>
                                                     <span
-                                                        class="post-date">{{ $publication->anneePublication->annee_publication }}</span>
+                                                        class="post-date">{{ $publication->anneePublication->annee_publication }}
+                                                    </span>
 
                                                     <div class="meta d-flex align-items-center">
                                                         <div class="d-flex align-items-center">
@@ -188,20 +191,24 @@
                                                         </div>
                                                         <span class="px-3 text-black-50">/</span>
                                                         <div class="d-flex align-items-center">
+
                                                             <i class="bi bi-folder2"></i> <span
                                                                 class="ps-2">{{ count($publication->documents) }}
                                                                 Documents</span>
                                                         </div>
 
-                                                        <span class="px-3 text-black-50">/</span>
-                                                        <div class="d-flex align-items-center">
-                                                            <i class="bi bi-folder2"></i> <span
-                                                                class="ps-2">{{ $publication->typePublication->nom }}
-                                                            </span>
-                                                        </div>
-
-
                                                     </div>
+                                                    <span class="px-3 text-black-50">/</span>
+                                                    <div class="d-flex align-items-center">
+                                                        <span
+                                                            style="background-color: #00aefe; color:white; text-align: center; width: 80px; margin-right: 10px; padding: 5px;">Categ
+                                                            :
+                                                        </span>
+                                                        <span class="ps-2">
+                                                            {{ $publication->typePublication->nom }}
+                                                        </span>
+                                                    </div>
+
                                                     <p style="display-flex:auto;" class="px-3">
                                                         {{ Str::limit($publication->description_1, 1000, '...') }}</p>
 

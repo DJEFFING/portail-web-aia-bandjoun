@@ -91,6 +91,7 @@
     <script src=" {{ asset('asset_web/assets/vendor/swiper/swiper-bundle.min.js') }} "></script>
     <script src=" {{ asset('asset_web/assets/vendor/purecounter/purecounter_vanilla.js') }} "></script>
     <script src=" {{ asset('asset_web/assets/vendor/php-email-form/validate.js') }} "></script>
+	<script src="{{ asset('asset_admin/vendors/scripts/search.min.js') }}"></script>
     <script src=" {{ asset('asset_web/selectpiker.js') }} "></script>
 
 

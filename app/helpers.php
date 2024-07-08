@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Axe;
 use App\Models\Publication;
 use App\Models\Contact;
 use App\Models\Equipe;
@@ -90,3 +91,14 @@ if(!function_exists("projets"))
         return $projets;
     }
 }
+
+
+if(!function_exists("axes"))
+{
+    function axes()
+    {
+        $axes = Axe::where("status",true)->latest()->take(4)->get();
+        return $axes;
+    }
+}
+

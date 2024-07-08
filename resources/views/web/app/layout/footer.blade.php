@@ -12,7 +12,7 @@
                             <strong>Phone: </strong>{{ contactAll()->telephone }}<br>
                             <strong>Email: </strong>{{ contactAll()->email }}<br>
                         </p>
-                        <div class="social-links d-flex mt-3">
+                        {{-- <div class="social-links d-flex mt-3">
                             <a href="{{ contactAll()->twitter_link }}"
                                 class="d-flex align-items-center justify-content-center"><i
                                     class="bi bi-twitter"></i></a>
@@ -25,7 +25,7 @@
                             <a href="{{ contactAll()->linkedin_link }}"
                                 class="d-flex align-items-center justify-content-center"><i
                                     class="bi bi-linkedin"></i></a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div><!-- End footer info column-->
 
@@ -35,7 +35,7 @@
                         <li><a href="{{ route('web.acceuil') }}">Acceuil</a></li>
                         <li><a href="{{ route('web.apropos') }}">À propos</a></li>
                         <li><a href="{{ route('web.evernement') }}">Evènements</a></li>
-                        <li><a href="{{ route('web.equipes') }}">Equipes</a></li>
+                        <li><a href="{{ route('web.publications') }}">Publications</a></li>
                         <li><a href="{{ route('web.membres') }}">Membres</a></li>
                     </ul>
                 </div>
@@ -66,10 +66,10 @@
                 <!-- End footer links column-->
 
                 <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Projets</h4>
+                    <h4>Axes de recherche</h4>
                     <ul>
-                        @forelse (projets() as $projet)
-                            <li><a href="{{ route('web.show-equipe', $projet->id) }}">{{ $projet->titre }}</a>
+                        @forelse (axes() as $axe)
+                            <li><a href="{{ route('web.show-axe', $axe->id) }}">{{ $axe->titre }} ({{ $axe->code_axe }})</a>
                             </li>
                         @empty
                         @endforelse
@@ -81,13 +81,13 @@
     </div>
 
     <div class="footer-legal text-center position-relative">
-        <div class="container">
+        {{-- <div class="container">
             <div class="copyright">
                 &copy; Copyright <strong><span>UR-AIA Bandjoun</span></strong>. All Rights Reserved
             </div>
             <div class="credits">
             </div>
-        </div>
+        </div> --}}
     </div>
 
 </footer>

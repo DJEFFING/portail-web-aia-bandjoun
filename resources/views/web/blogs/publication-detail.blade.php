@@ -195,31 +195,6 @@
 
                         <div class="sidebar">
                             <!-- Information Responsable -->
-                            {{-- @forelse ($publication->users as $user)
-                                <div class="card">
-
-                                    <div class="row">
-
-                                        @if ($user->profil_url)
-                                            <img src="{{ asset('storage/' . $user->profil_url) }}"
-                                                class="p-3 card-img-top rounded-circle img-fluid w-50 h-100" alt="...">
-                                        @else
-                                            <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }} "
-                                                class="p-3 card-img-top rounded-circle img-fluid w-50 h-100" alt="...">
-                                        @endif
-                                    </div>
-
-                                    <div class="card-body">
-                                        <p><strong>Nom :</strong> {{ $user->name }}</p>
-                                        <p><strong>mail :</strong> {{ $user->email }}</p>
-                                        <p><strong>telephone :</strong> {{ $user->telephone }}</p>
-                                        <p><strong>address :</strong> {{ $user->adress }}</p>
-                                        <p class="card-text text-blue w-50 h-50"
-                                            style="background-color: green;color:white; text-align: center">Responssable</p>
-                                    </div>
-                                </div><br>
-                            @empty
-                            @endforelse --}}
 
                             <!--END Information Responsable -->
 
@@ -228,17 +203,17 @@
                                 <h3 class="sidebar-title">Publication Similaire</h3>
 
                                 <div class="mt-3">
-                                    @forelse ($publication->typePublication->publications as $publicationItem)
+                                    @forelse ($publicationSimilaire as $publicationItem)
                                         @if (!($publication->id == $publicationItem->id))
                                             <div class="post-item mt-3">
                                                 <img src="{{ asset('storage/' . $publicationItem->media_url) }}"
                                                     alt="">
                                                 <div>
                                                     <h4><a
-                                                            href="{{ route('web.show-publication', $publicationItem->id) }}">{{ $publicationItem->titre }}</a>
+                                                            href="{{ route('web.show-publication', $publicationItem->id) }}">{{ Str::limit($publicationItem->titre, 100, '...') }}</a>
                                                     </h4>
                                                     <time
-                                                        datetime="2020-01-01">{{ $publicationItem->created_at->format('y-M-Y') }}</time>
+                                                        datetime="2020-01-01">{{ $publicationItem->anneePublication->annee_publication }}</time>
                                                 </div>
                                             </div><!-- End recent post item-->
                                         @else
