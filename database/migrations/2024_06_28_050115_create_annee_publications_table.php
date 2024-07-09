@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('annee_publications', function (Blueprint $table) {
             $table->id();
-            $table->integer("annee_publication");
+            $table->integer("annee_publication")->nullable();
             $table->string("description")->nullable();
             $table->timestamps();
         });

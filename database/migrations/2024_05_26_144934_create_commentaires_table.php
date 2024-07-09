@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('commentaires', function (Blueprint $table) {
             $table->id();
-            $table->string("nom");
-            $table->string("email");
+            $table->string("nom")->nullable();
+            $table->string("email")->nullable();
             $table->string("site_web")->nullable();
-            $table->string("text");
-            $table->unsignedBigInteger("article_id");
+            $table->string("text")->nullable();
+            $table->unsignedBigInteger("article_id")->nullable();
             $table->boolean("status")->default(false);
 
             $table->foreign("article_id")->references("id")->on("articles")->onDelete("cascade");

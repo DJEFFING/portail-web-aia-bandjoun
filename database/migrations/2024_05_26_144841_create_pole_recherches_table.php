@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string("titre");
             $table->string("code_pole")->nullable();
-            $table->longText("description_1");
-            $table->longText("description_2");
-            $table->string("media_url");
+            $table->longText("description_1")->nullable();
+            $table->longText("description_2")->nullable();
+            $table->string("media_url")->nullable();
             $table->unsignedBigInteger("user_id")->unique(); //responssable du Domaine de Recherche
             $table->boolean("status")->default(false);
 

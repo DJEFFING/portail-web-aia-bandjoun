@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('evernement_partenaires', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("evernement_id");
-            $table->unsignedBigInteger("partenaire_id");
+            $table->unsignedBigInteger("evernement_id")->nullable();
+            $table->unsignedBigInteger("partenaire_id")->nullable();
             $table->boolean("status")->default(false);
 
 

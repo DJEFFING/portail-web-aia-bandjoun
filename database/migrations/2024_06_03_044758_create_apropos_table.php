@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('apropos', function (Blueprint $table) {
             $table->id();
-            $table->string("titre");
-            $table->longText("desription");
+            $table->string("titre")->nullable();
+            $table->longText("desription")->nullable();
             $table->string("image_url")->nullable();
             $table->timestamps();
         });
