@@ -47,7 +47,6 @@ class AxeSeeder extends Seeder
             électromécaniques et télécommunications.
             ",
 
-            "media_url" => "media.png",
             "user_id" => 4,
             "equipe_id" => 1,
             "status" => true,
@@ -89,7 +88,6 @@ class AxeSeeder extends Seeder
             systèmes intelligents en diagnostic médical automatique.
             ",
 
-            "media_url" => "media.png",
             "user_id" => 2,
             "equipe_id" => 1,
             "status" => true,
@@ -135,7 +133,6 @@ class AxeSeeder extends Seeder
             nouvelles formes de production d'énergie électrique (éolienne, solaire, biomasse).
             ",
 
-            "media_url" => "media.png",
             "user_id" => 5,
             "equipe_id" => 1,
             "status" => true,
@@ -222,7 +219,6 @@ class AxeSeeder extends Seeder
             Mots Clés : Énergie électrique, Hydroélectricité, Planification de la Production, Gestion
             optimale, Réseaux Électriques.",
 
-            "media_url" => "media.png",
             "user_id" => 17,
             "equipe_id" => 2,
             "status" => true,
@@ -321,7 +317,6 @@ class AxeSeeder extends Seeder
             Mots Clés : SIG, Cartographie, Géoréférencement, Base de Données",
 
 
-            "media_url" => "media.png",
             "user_id" => 22,
             "equipe_id" => 3,
             "status" => true,
@@ -393,7 +388,6 @@ class AxeSeeder extends Seeder
             Mots Clés : TIC, Technologies Mobiles, Pépinière d’entreprises, Zone rurale,
             Entrepreneurship
             ",
-            "media_url" => "media.png",
             "user_id" => 24,
             "equipe_id" => 3,
             "status" => true,
@@ -434,7 +428,6 @@ class AxeSeeder extends Seeder
 
             Mots clés : Faisceau laser, Analyse, Stabilisation, Bande de fréquence",
 
-            "media_url" => "media.png",
             "user_id" => 21,
             "equipe_id" => 3,
             "status" => true,
