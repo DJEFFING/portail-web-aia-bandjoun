@@ -188,7 +188,7 @@
 
                                                             </div>
                                                             <p style="display-flex:auto;" class="px-3">
-                                                                {{ Str::limit($publication->description_1, 1000, '...') }}</p>
+                                                                {{ Str::limit($publication->description_1, 500, '...') }}</p>
 
                                                             <hr>
 

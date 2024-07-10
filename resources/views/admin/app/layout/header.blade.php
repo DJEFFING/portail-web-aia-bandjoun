@@ -5,6 +5,10 @@
             <div class="alert alert-primary" style="margin: 10px;" role="alert">
                 {{ session('message') }}
             </div>
+        @elseif(!empty(session('error')))
+            <div class="alert alert-danger" style="margin: 10px;" role="alert">
+                {{ session('error') }}
+            </div>
         @endif
     </div>
 

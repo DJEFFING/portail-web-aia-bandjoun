@@ -15,7 +15,10 @@ use App\Models\User;
 use App\Models\UserRole;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+
+use function Laravel\Prompts\password;
 
 class userController extends Controller
 {
@@ -220,4 +223,39 @@ class userController extends Controller
 
         return $code;
     }
+
+
+    public function changePassword(Request $request)
+    {
+        // Valider les champs de mot de passe
+        $request->validate([
+            'current_password' => 'required|min:5',
+            'password' => 'required|min:5|confirmed',
+            'password_confirmation' => 'required|min:5'
+        ], [
+            'current_password.required' => 'Le mot de passe actuel est obligatoire',
+            'password.required' => 'Le nouveau mot de passe est obligatoire',
+            'password_confirmation.required' => 'Confirmez votre nouveau mot de passe',
+            'current_password.min' => 'Le mot de passe actuel doit contenir au moins 5 caractères',
+            'password.min' => 'Le nouveau mot de passe doit contenir au moins 5 caractères',
+            'password.confirmed' => 'Les mots de passe ne correspondent pas',
+            'password_confirmation.min' => 'La confirmation du mot de passe doit contenir au moins 5 caractères'
+        ]);
+    
+        // Récupérer l'utilisateur actuel
+        $user = Auth::user();
+    
+        // Vérifier si le mot de passe actuel est correct
+        if (!Hash::check($request->current_password, $user->password)) {
+            return redirect()->back()->with('error', 'Le mot de passe actuel est incorrect.');
+        }
+    
+        // Mettre à jour le mot de passe de l'utilisateur
+        $user->update([
+            'password' => bcrypt($request->password)
+        ]);
+    
+        return redirect()->back()->with('message', 'Votre mot de passe a été modifié.');
+    }
+    
 }

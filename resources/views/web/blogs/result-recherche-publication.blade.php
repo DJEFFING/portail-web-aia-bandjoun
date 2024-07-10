@@ -174,7 +174,7 @@
 
                                                 <div class="card-body">
 
-                                                    <h3 class="post-title">{{ $publication->titre }}</h3>
+                                                    <h3 class="post-title">{{ Str::limit($publication->titre, 100, '...') }}</h3>
                                                     <span
                                                         class="post-date">{{ $publication->anneePublication->annee_publication }}
                                                     </span>
@@ -210,7 +210,7 @@
                                                     </div>
 
                                                     <p style="display-flex:auto;" class="px-3">
-                                                        {{ Str::limit($publication->description_1, 1000, '...') }}</p>
+                                                        {{ Str::limit($publication->description_1, 500, '...') }}</p>
 
                                                     <hr>
 
