@@ -69,6 +69,7 @@
                                     @if ($user->id == $poleRecherche->user_id)
                                     <option value="{{ $user->id }}" selected>{{ $user->name }}</option>
                                     @endif
+                                        <option value="{{ $poleRecherche->id }}" selected>{{ $poleRecherche->user->name }}</option>
                                         <option value="{{ $user->id }}">{{ $user->name }}</option>
                                     @empty
                                     @endforelse

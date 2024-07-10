@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Axe;
 use App\Models\Equipe;
 use App\Models\PoleRecherche;
 use App\Models\User;
@@ -25,7 +26,7 @@ class PoleRechercheController extends Controller
     public function edit(PoleRecherche $poleRecherche)
     {
 
-        $userList  = User::latest()->get();
+        $userList  = $this->getUser();
         return view('admin.pole_recherche.update', compact('poleRecherche', 'userList'));
     }
 
@@ -137,17 +138,36 @@ class PoleRechercheController extends Controller
         return redirect()->back()->with('message', 'Le pôle a été supprimé avec succès !!');
     }
 
-    public function getUser()
+    // public function getUser()
+    // {
+    //     // Récupérer les IDs des responsables de pôle et d'équipe
+    //     $listRespPole = PoleRecherche::pluck('user_id')->toArray();
+    //     $listRespEquipe = Equipe::pluck('user_id')->toArray();
+
+    //     // Récupérer les IDs des utilisateurs qui sont membres d'une équipe
+    //     $listEquipeUser = User::whereHas('equipe')->pluck('id')->toArray();
+
+    //     // Combiner toutes les IDs dans un seul tableau pour vérifier l'exclusion
+    //     $excludedUserIds = array_merge($listRespPole, $listRespEquipe, $listEquipeUser);
+
+    //     // Récupérer les utilisateurs qui ne sont dans aucune des listes
+    //     $listMembre = User::whereNotIn('id', $excludedUserIds)->get();
+
+    //     return $listMembre;
+    // }
+
+       public function getUser()
     {
-        // Récupérer les IDs des responsables de pôle et d'équipe
+        // Récupérer les IDs des responsables de pôle, d'équipe et d'axes de recherche
         $listRespPole = PoleRecherche::pluck('user_id')->toArray();
         $listRespEquipe = Equipe::pluck('user_id')->toArray();
+        $listRespAxes = Axe::pluck("user_id")->toArray();
 
         // Récupérer les IDs des utilisateurs qui sont membres d'une équipe
         $listEquipeUser = User::whereHas('equipe')->pluck('id')->toArray();
 
         // Combiner toutes les IDs dans un seul tableau pour vérifier l'exclusion
-        $excludedUserIds = array_merge($listRespPole, $listRespEquipe, $listEquipeUser);
+        $excludedUserIds = array_merge($listRespPole, $listRespEquipe, $listEquipeUser, $listRespAxes);
 
         // Récupérer les utilisateurs qui ne sont dans aucune des listes
         $listMembre = User::whereNotIn('id', $excludedUserIds)->get();
