@@ -119,25 +119,7 @@
                                         @empty
                                         @endforelse
 
-                                        <div class="blog-pagination">
-                                            <div class="btn-toolbar justify-content-center mb-15">
-                                                <div class="btn-group">
-                                                    <a href="#" class="btn btn-outline-primary prev"><i
-                                                            class="fa fa-angle-double-left"></i></a>
-                                                    @forelse ($anneePublications as $annee)
-                                                        @if ($anneeActuel->annee_publication == $annee->annee_publication)
-                                                            <a href="{{ route('admin.publication.findByAnnee',$annee->id) }}"
-                                                                class="btn btn-primary current">{{ $annee->annee_publication }}</a>
-                                                        @else
-                                                        <a href="{{ route('admin.publication.findByAnnee',$annee->id) }}"
-                                                                class="btn btn-outline-primary">{{ $annee->annee_publication }}</a>
-                                                        @endif
 
-                                                    @empty
-                                                    @endforelse
-                                                </div>
-                                            </div>
-                                        </div>
                                     </ul>
                                 </div>
 
@@ -147,15 +129,16 @@
                                 <div class="card-box mb-30">
                                     <h5 class="pd-20 h5 mb-0">Typee de publication</h5>
                                     <div class="list-group">
-                                        @forelse ($typePublications as $typePublication)
-                                            <a href="#"
-                                                class="list-group-item d-flex align-items-center justify-content-between">{{ $typePublication->typePublication->nom }}
-                                                <span
-                                                    class="badge badge-primary badge-pill">{{ $typePublication->count  }}</span></a>
+                                        @forelse ($anneePublications as $annee)
+                                            @if ($anneeActuel->annee_publication == $annee->annee_publication)
+                                                <a href="{{ route('admin.publication.findByAnnee', $annee->id) }}"
+                                                    class="btn btn-primary current">{{ $annee->annee_publication }}</a>
+                                            @else
+                                                <a href="{{ route('admin.publication.findByAnnee', $annee->id) }}"
+                                                    class="btn btn-outline-primary">{{ $annee->annee_publication }}</a>
+                                            @endif
+
                                         @empty
-                                            <a href="#"
-                                                class="list-group-item d-flex align-items-center justify-content-between">Aucun
-                                                Domaine de Recherche<span class="badge badge-primary badge-pill">0</span></a>
                                         @endforelse
 
                                     </div>

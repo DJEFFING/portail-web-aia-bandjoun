@@ -22,7 +22,10 @@ class PublicationController extends Controller
     public function index()
     {
         $publications = Publication::all();
-        $anneePublications = AnneePublication::whereHas("publications")->latest()->get();
+        $anneePublications = AnneePublication::whereHas('publications')
+        ->orderBy('annee_publication', 'desc')
+        ->distinct()
+        ->get();
 
 
         $anneeActuel = $anneePublications[0];
@@ -37,7 +40,10 @@ class PublicationController extends Controller
     public function findByAnnee(AnneePublication $anneePublication)
     {
         $publications = Publication::all();
-        $anneePublications = AnneePublication::whereHas("publications")->latest()->get();
+        $anneePublications = AnneePublication::whereHas('publications')
+        ->orderBy('annee_publication', 'desc')//pour trier les année par ordre décroissant
+        ->distinct()
+        ->get();
 
         $anneeActuel = $anneePublication;
         $typePublications = $anneeActuel->publications()->with('typePublication')->with('typePublication')
