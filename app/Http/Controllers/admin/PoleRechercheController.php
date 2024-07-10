@@ -50,7 +50,8 @@ class PoleRechercheController extends Controller
         // $media = $request->store->media_url->public('pole_recherhe');
 
         if ($request->hasFile('media_url')) {
-            $media = $request->file('media_url')->store('pole_recherche','public');
+            $media = $request->file('media_url')->store('pole_recherche','s3');
+
             $newPoleRecherche = [
                 'code_pole' => $request->code_pole,
                 'titre' => $request->titre,
@@ -90,7 +91,16 @@ class PoleRechercheController extends Controller
 
         $media = $request->media_url;
         if ($request->hasFile('media_url')) {
-            $media = $request->file('media_url')->store('pole_recherche','public');
+            $originalName = $request->file('media_url')->getClientOriginalName();
+
+            // pour sauvegader les fichiers en fonction de l'environement
+            if(app()->environment(['local'])){
+                $media = $request->file('media_url')->storeAs('pole_recherche',$originalName,'public');
+            }else{
+            $media = $request->file('media_url')->storeAs('pole_recherche',$originalName,'s3');
+
+            }
+            // dd($media);
             $poleRecherche->update(["media_url"=>$media]);
         }
         $poleRecherche->update([

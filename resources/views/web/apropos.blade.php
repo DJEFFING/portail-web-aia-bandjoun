@@ -21,8 +21,13 @@
 
                 <div class="row position-relative">
 
+                    @if ($apropos->image_url)
                     <div class="col-lg-7 about-img"
                         style="background-image: url( {{ asset('storage/' . $apropos->image_url) }} );"></div>
+                    @else
+                    <div class="col-lg-7 about-img"
+                        style="background-image: url( {{ asset('asset_web/ur-aia-img/img_4.jpg') }} );"></div>
+                    @endif
 
                     <div class="col-lg-7">
                         <h2>{{ $apropos->titre }}</h2>

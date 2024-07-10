@@ -35,8 +35,10 @@
                                                 <div class="row no-gutters">
                                                     <div class="col-lg-4 col-md-12 col-sm-12">
                                                         <div class="blog-img">
-                                                            <img src="{{ asset('storage/'.$listPole->media_url )}}" alt=""
+                                                            <img src="{{ config('global.S3_url').$listPole->media_url }}" alt=""
                                                                 class="bg_img">
+                                                                {{-- <img src="{{ asset('storage/'.$listPole->media_url)}}" alt=""
+                                                                class="bg_img"> --}}
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-8 col-md-12 col-sm-12">
