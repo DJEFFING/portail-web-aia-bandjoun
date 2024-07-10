@@ -323,7 +323,7 @@
                             <div class="swiper-slide">
                                 <div class="testimonial-wrap">
                                     <div class="testimonial-item">
-                                        <img src="{{ config('global.S3_url'). $partenaire->logo_url }}" class="testimonial-img"
+                                        <img src="{{ config('global.S3_url').$partenaire->media }}" class="testimonial-img"
                                             alt="">
                                         <h3>{{ $partenaire->nom }}</h3>
                                         <h4>Ceo &amp; Founder</h4>
