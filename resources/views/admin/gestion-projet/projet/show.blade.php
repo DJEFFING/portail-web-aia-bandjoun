@@ -69,7 +69,7 @@
                                         <a href="{{ route('admin.user.show',$projet->user->id) }}" class="list-group-item d-flex align-items-center justify-content-between"
                                             href="#">
                                             @if ($projet->user->profil_url)
-                                                <img src="{{ asset('storage/'.$projet->user->profil_url) }}"
+                                                <img src="{{config('global.S3_url').$projet->user->profil_url }}"
                                                 style="width: 70px; height: 70px;" alt="">
                                             @else
                                                 <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }}"

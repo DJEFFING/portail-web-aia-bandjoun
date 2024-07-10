@@ -12,7 +12,7 @@
             <div class="modal-body text-center">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <img src="{{ asset('storage/'.$partenaire->logo_url) }}" style="width: 200px; height: 200px;" alt=""><br>
+                        <img src="{{config('global.S3_url').$partenaire->logo_url }}" style="width: 200px; height: 200px;" alt=""><br>
                         <label for="">Logo</label>
                     </div>
                 </div><hr>

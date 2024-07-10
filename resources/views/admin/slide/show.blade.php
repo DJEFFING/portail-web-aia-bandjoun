@@ -25,7 +25,7 @@
                 <hr>
                 <div class="col-md-12">
                 @forelse (json_decode($item->image_url) as $image)
-                <img src="{{ asset('storage/'.$image) }}" alt=""><br>
+                <img src="{{config('global.S3_url').$image }}" alt=""><br>
                 @empty
 
                 @endforelse
