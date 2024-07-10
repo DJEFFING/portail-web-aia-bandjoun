@@ -38,7 +38,7 @@
                                         <a class="list-group-item d-flex align-items-center justify-content-between"
                                             href="#">
                                             @if ($axe->user->profil_url)
-                                                <img src="{{ asset(asset('storage/'.$axe->user->profil_url)) }} "
+                                                <img src="{{ config('global.S3_url').$axe->user->profil_url }} "
                                                 class="avatar-photo" style="width: 70px; height: 70px;" alt="">
                                             @else
                                                 <img src="{{ asset(asset('asset_admin/vendors/images/photo-avatar-profil.png')) }} "

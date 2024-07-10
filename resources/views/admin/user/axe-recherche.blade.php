@@ -15,7 +15,7 @@
                         <div class="row no-gutters">
                             <div class="col-lg-4 col-md-12 col-sm-12">
                                 <div class="blog-img">
-                                    <img src="{{asset('storage/'.$axe->media_url)}}" alt="" class="bg_img">
+                                    <img src="{{config('global.S3_url').$axe->media_url}}" alt="" class="bg_img">
                                 </div>
                             </div>
                             <div class="col-lg-8 col-md-12 col-sm-12">
