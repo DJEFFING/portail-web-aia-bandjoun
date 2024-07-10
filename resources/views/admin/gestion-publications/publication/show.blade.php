@@ -133,7 +133,7 @@
 
                                                     <optgroup label="Liste Des Menbres">
                                                         @forelse ($listUsers as $user)
-                                                            <option value="{{ $user->id }}">{{ $user->name }}
+                                                            <option value="{{ $user->id }}">{{ $user->name }} {{ $user->prenom }}
                                                             </option>
                                                         @empty
                                                         @endforelse
