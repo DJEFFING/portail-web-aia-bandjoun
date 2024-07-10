@@ -73,7 +73,7 @@
                 <div class="row position-relative">
                     @if ($apropos->image_url)
                     <div class="col-lg-7 about-img"
-                        style="background-image: url( {{ config('global.S3_url'). $apropos->image_url }} );"></div>
+                        style="background-image: url( {{ config('global.S3_url'). $apropos->media }} );"></div>
                     @else
                     <div class="col-lg-7 about-img"
                         style="background-image: url( {{ asset('asset_web/ur-aia-img/img_4.jpg') }} );"></div>
