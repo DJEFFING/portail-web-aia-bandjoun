@@ -7,7 +7,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">
-                        <h2 data-aos="fade-down">{{ $slide->titre }}</h2>
+                        <br><h2 data-aos="fade-down">{{ $slide->titre }}</h2>
                         <p data-aos="fade-up">{{ $slide->desription }}</p>
                         <a data-aos="fade-up" data-aos-delay="200" href="#get-started" class="btn-get-started">Get
                             Started</a>
@@ -20,10 +20,11 @@
             @if (json_decode($slide->image_url))
                 @forelse (json_decode($slide->image_url) as $item => $image)
                     @if ($item == 0)
-                        <div class="carousel-item active" style="background-image: url({{ config('global.S3_url'). $image }})">
+                        <div class="carousel-item active"
+                            style="background-image: url({{ config('global.S3_url') . $image }})">
                         </div>
                     @else
-                        <div class="carousel-item" style="background-image: url({{ config('global.S3_url'). $image }})">
+                        <div class="carousel-item" style="background-image: url({{ config('global.S3_url') . $image }})">
                         </div>
                     @endif
 
@@ -46,10 +47,12 @@
                     </div>
                 @endforelse
             @else
-            <div class="carousel-item active" style="background-image: url({{ asset('asset_web/ur-aia-img/img_1.jpg') }})">
-            </div>
-            <div class="carousel-item active" style="background-image: url({{ asset('asset_web/ur-aia-img/img_3.jpg') }})">
-            </div>
+                <div class="carousel-item active"
+                    style="background-image: url({{ asset('asset_web/ur-aia-img/img_1.jpg') }})">
+                </div>
+                <div class="carousel-item active"
+                    style="background-image: url({{ asset('asset_web/ur-aia-img/img_3.jpg') }})">
+                </div>
             @endif
 
 
@@ -72,11 +75,13 @@
 
                 <div class="row position-relative">
                     @if ($apropos->image_url)
-                    <div class="col-lg-7 about-img"
-                        style="background-image: url( {{ config('global.S3_url'). $apropos->media }} );"></div>
+                        <div class="col-lg-7 about-img"
+                            style="background-image: url({{ config('global.S3_url').$apropos->image_url }});">
+                        </div>
                     @else
-                    <div class="col-lg-7 about-img"
-                        style="background-image: url( {{ asset('asset_web/ur-aia-img/img_4.jpg') }} );"></div>
+                        <div class="col-lg-7 about-img"
+                            style="background-image: url( {{ asset('asset_web/ur-aia-img/img_4.jpg') }} );">
+                        </div>
                     @endif
 
 
@@ -84,11 +89,11 @@
                         <h2>{{ $apropos->titre }}</h2>
                         <div class="our-story">
                             {!! $apropos->desription !!}
-                            <div class="watch-video d-flex align-items-center position-relative">
+                            {{-- <div class="watch-video d-flex align-items-center position-relative">
                                 <i class="bi bi-play-circle"></i>
                                 <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox stretched-link">Watch
                                     Video</a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 
@@ -118,7 +123,7 @@
                                 <div class="row">
                                     <div class="col-xl-5">
                                         <div class="card-bg"
-                                            style="background-image: url({{ config('global.S3_url'). $poleRecherche->media_url }});">
+                                            style="background-image: url({{ config('global.S3_url') . $poleRecherche->media_url }});">
                                         </div>
                                     </div>
                                     <div class="col-xl-7 d-flex align-items-center">
@@ -275,14 +280,14 @@
                                 <div
                                     class="col-lg-4 col-md-6 portfolio-item @foreach ($evernement->types as $type) filter-{{ $type->nom }} @endforeach ">
                                     <div class="portfolio-content h-100">
-                                        <img src=" {{ config('global.S3_url'). $evernement->media_url }} " class="img-fluid"
-                                            alt="">
+                                        <img src=" {{ config('global.S3_url') . $evernement->media_url }} "
+                                            class="img-fluid" alt="">
 
                                         <div class="portfolio-info">
                                             <h4>{{ $evernement->date }}</h4>
                                             <h4>{{ $evernement->ville }}</h4>
                                             <p>{{ $evernement->titre }}</p>
-                                            <a href=" {{ config('global.S3_url'). $evernement->media_url }}"
+                                            <a href=" {{ config('global.S3_url') . $evernement->media_url }}"
                                                 title="Remodeling 1" data-gallery="portfolio-gallery-remodeling"
                                                 class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                             <a href="{{ route('web.show-evernement', $evernement->id) }}"
@@ -295,13 +300,13 @@
                             @else
                                 <div class="col-lg-4 col-md-6 portfolio-item filter-{{ $evernement->types[0]->nom }} ">
                                     <div class="portfolio-content h-100">
-                                        <img src="  {{ config('global.S3_url'). $evernement->media_url }} " class="img-fluid"
-                                            alt="">
+                                        <img src="  {{ config('global.S3_url') . $evernement->media_url }} "
+                                            class="img-fluid" alt="">
                                         <div class="portfolio-info">
                                             <h4>{{ $evernement->date }}</h4>
                                             <h4>{{ $evernement->ville }}</h4>
                                             <p>{{ $evernement->titre }}</p>
-                                            <a href="  {{ config('global.S3_url'). $evernement->media_url }} "
+                                            <a href="  {{ config('global.S3_url') . $evernement->media_url }} "
                                                 title="Remodeling 1" data-gallery="portfolio-gallery-remodeling"
                                                 class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                             <a href="{{ route('web.show-evernement', $evernement->id) }}"
@@ -380,7 +385,8 @@
                                                 </div>
 
                                                 {{-- <span class="px-3 text-black-50">/</span> --}}
-                                                <br><div class="d-flex align-items-center">
+                                                <br>
+                                                <div class="d-flex align-items-center">
                                                     <span
                                                         style="background-color: #83c7e6; color:white; text-align: center; width: 80px; margin-right: 10px; padding: 5px;">Categ
                                                         :

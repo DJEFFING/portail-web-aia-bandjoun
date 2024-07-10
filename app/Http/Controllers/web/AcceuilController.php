@@ -40,6 +40,7 @@ class AcceuilController extends Controller
         $evenements = Evernement::where("status", true)->get();
         $articles = Article::where("status", true)->latest()->take(3)->get();
 
+       
         $publications = Publication::where("status", true)
         ->where("annee_publication_id",22)
         ->latest()

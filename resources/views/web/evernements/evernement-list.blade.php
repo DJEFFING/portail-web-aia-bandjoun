@@ -6,10 +6,10 @@
             style="background-image: url(' {{ asset('asset_web/assets/img/footer_and_head.jpeg') }} ');">
             <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-                <h2> Evénements</h2>
+                <h2> EVENEMENT</h2>
                 <ol>
                     <li><a href="{{ route('web.acceuil') }}">Acceuil</a></li>
-                    <li> Evénements</li>
+                    <li> EVENEMENT</li>
                 </ol>
 
             </div>
@@ -20,8 +20,8 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
-                    <h2>Nos  Evénements</h2>
-                    <p>Consultez ici la liste complète nos événements.</p>
+                    <h2>Nos  Evènements</h2>
+                    <p>Consultez ici la liste complète nos évènements passé et futur.</p>
                 </div>
 
                 <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"
@@ -33,7 +33,7 @@
                             <li data-filter=".filter-{{ $type->nom }}">{{ $type->nom }}</li>
                         @empty
                             <center>
-                                <p>Pas d'Événement</p>
+                                <p>Pas d'Evènement</p>
                             </center>
                         @endforelse
 

@@ -163,7 +163,7 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
-                    <h2>{{ count($equipes) }} Equipe</h2>
+                    <h2>{{ count($equipes) }} Equipes</h2>
                 </div>
 
                 <div class="row gy-4">
@@ -312,7 +312,7 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
-                    <h2>Nos Partenaire</h2>
+                    <h2>Nos Partenaires</h2>
                     <p>Decouvrez ici Nos Partenaires</p>
                 </div>
 

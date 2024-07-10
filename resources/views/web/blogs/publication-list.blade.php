@@ -127,7 +127,7 @@
 
                                     </div> <br>
 
-                                    <button type="submit" class="btn btn-primary">Recherche <i
+                                    <button type="submit" class="btn btn-primary">Rechercher <i
                                             class="bi bi-search"></i></button>
                                     <!-- End sidebar search formn-->
 
