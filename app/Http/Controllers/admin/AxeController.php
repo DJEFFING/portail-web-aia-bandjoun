@@ -36,7 +36,16 @@ class AxeController extends Controller
         //
         if ($request->hasFile('media_url')) {
 
-            $media = $request->file('media_url')->store('axes', 'public');
+            $originalName = $request->file('media_url')->getClientOriginalName();
+
+            // pour sauvegader les fichiers en fonction de l'environement
+            if (app()->environment(['local'])) {
+                $media = $request->file('media_url')->storeAs('axes', $originalName, 'public');
+            } else {
+                $media = $request->file('media_url')->storeAs('axes', $originalName, 's3');
+            }
+
+
 
             Axe::create(
                 [
@@ -89,7 +98,15 @@ class AxeController extends Controller
     public function update(Request $request, Axe $axe)
     {
         if ($request->hasFile('media_url')) {
-            $media = $request->file('media_url')->store('axes', 'public');
+            $originalName = $request->file('media_url')->getClientOriginalName();
+
+            // pour sauvegader les fichiers en fonction de l'environement
+            if (app()->environment(['local'])) {
+                $media = $request->file('media_url')->storeAs('axes', $originalName, 'public');
+            } else {
+                $media = $request->file('media_url')->storeAs('axes', $originalName, 's3');
+            }
+
             $axe->update(["media_url" => $media]);
         }
 

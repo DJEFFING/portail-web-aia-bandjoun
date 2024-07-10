@@ -38,7 +38,7 @@
                                                 <div class="row no-gutters">
                                                     <div class="col-lg-4 col-md-12 col-sm-12">
                                                         {{-- <div class="blog-img">
-                                                            <img src="{{ asset('storage/' . $publication->media_url) }}"
+                                                            <img src="{{ config('global.S3_url'). $publication->media_url) }}"
                                                                 alt="" class="bg_img">
                                                         </div> --}}
                                                     </div>

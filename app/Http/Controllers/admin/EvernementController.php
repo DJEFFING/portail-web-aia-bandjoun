@@ -26,11 +26,20 @@ class EvernementController extends Controller
     {
         // dd($request);
         if($request->hasFile("media_url")){
+            $originalName = $request->file('media_url')->getClientOriginalName();
+
+            // pour sauvegader les fichiers en fonction de l'environement
+            if (app()->environment(['local'])) {
+                $media = $request->file('media_url')->storeAs('evernement', $originalName, 'public');
+            } else {
+                $media = $request->file('media_url')->storeAs('evernement', $originalName, 's3');
+            }
+
             $newEvent =  Evernement::create([
                 "titre" => $request->titre,
                 "description_1"=> $request->description_1,
                 "description_2" => $request->description_2,
-                "media_url" => $request->file("media_url")->store("evernement","public"),
+                "media_url" => $media,
                 "date" => $request->date,
                 "ville" => $request->ville,
                 "adress" => $request->adress,
@@ -69,8 +78,18 @@ class EvernementController extends Controller
     {
         // dd($evernement);
         if($request->hasFile("media_url")){
+
+            $originalName = $request->file('media_url')->getClientOriginalName();
+
+            // pour sauvegader les fichiers en fonction de l'environement
+            if (app()->environment(['local'])) {
+                $media = $request->file('media_url')->storeAs('evernement', $originalName, 'public');
+            } else {
+                $media = $request->file('media_url')->storeAs('evernement', $originalName, 's3');
+            }
+
             $evernement->update([
-                "media_url" => $request->file("media_url")->store("evernement","public")
+                "media_url" => $media
             ]);
         }
 

@@ -24,7 +24,7 @@
                         <div class="pd-20 card-box height-100-p">
                             <div class="profile-photo" style="margin-bottom: 50px;">
                                 @if ($user->profil_url!=null)
-                                <img src=" {{ asset('storage/' . $user->profil_url) }} " alt=""
+                                <img src=" {{ config('global.S3_url'). $user->profil_url }} " alt=""
                                 class="avatar-photo">
                                 @else
                                 <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }}" alt=""

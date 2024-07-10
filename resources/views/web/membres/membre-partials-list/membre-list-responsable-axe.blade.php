@@ -2,7 +2,7 @@
     <div class="sidebar search-card col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
         <div class="member-img">
             @if ($user->profil_url)
-                <img src=" {{ asset('storage/' . $user->profil_url) }} " class="img-fluid" alt="">
+                <img src=" {{ config('global.S3_url'). $user->profil_url }} " class="img-fluid" alt="">
             @else
                 <img src=" {{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }} " class="img-fluid"
                     alt="">

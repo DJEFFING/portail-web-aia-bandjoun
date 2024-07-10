@@ -7,7 +7,7 @@
                         <a href="modal" data-toggle="modal" data-target="#{{ 'update' . $user->id }}"
                             class="edit-avatar"><i class="fa fa-pencil"></i></a>
                     @endif
-                    <img src="{{ asset('storage/' . $user->profil_url) }}" alt="" class="avatar-photo">
+                    <img src="{{ config('global.S3_url'). $user->profil_url }}" alt="" class="avatar-photo">
                 </div>
             @else
                 <div class="profile-photo">

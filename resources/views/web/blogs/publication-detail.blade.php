@@ -28,7 +28,7 @@
                         <article class="blog-details">
 
                             <div class="post-img">
-                                <img src="{{ asset('storage/' . $publication->media_url) }}" alt=""
+                                <img src="{{ config('global.S3_url'). $publication->media_url }}" alt=""
                                     class="img-fluid">
                             </div>
 
@@ -92,7 +92,7 @@
                             <div class="post-author d-flex align-items-center">
 
                                 @if ($user->profil_url)
-                                    <img src="{{ asset('storage/' . $user->profil_url) }}"
+                                    <img src="{{ config('global.S3_url'). $user->profil_url }}"
                                         class="p-3 card-img-top rounded-circle img-fluid w-50 h-100" alt="...">
                                 @else
                                     <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }} "
@@ -206,7 +206,7 @@
                                     @forelse ($publicationSimilaire as $publicationItem)
                                         @if (!($publication->id == $publicationItem->id))
                                             <div class="post-item mt-3">
-                                                <img src="{{ asset('storage/' . $publicationItem->media_url) }}"
+                                                <img src="{{ config('global.S3_url'). $publicationItem->media_url }}"
                                                     alt="">
                                                 <div>
                                                     <h4><a

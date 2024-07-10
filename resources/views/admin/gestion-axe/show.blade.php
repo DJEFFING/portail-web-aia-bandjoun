@@ -21,7 +21,7 @@
                             <div class="col-md-8 col-sm-12">
                                 <div class="blog-detail card-box overflow-hidden mb-30">
                                     <div class="blog-img">
-                                        <img src="{{ asset('storage/' . $axe->media_url) }}" alt="">
+                                        <img src="{{config('global.S3_url').$axe->media_url }}" alt="">
                                     </div>
                                     <div class="blog-caption">
                                         <h4>{{ $axe->titre }}</h4>
@@ -75,7 +75,7 @@
                                             </div>
 
 
-                                        
+
                                             <button class=" pd-20 mb-0 btn btn-primary " style="margin: 20px"
                                                 type="submit">
                                                 <i class="icon-copy fi-plus"></i>

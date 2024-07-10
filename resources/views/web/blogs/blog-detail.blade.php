@@ -28,7 +28,7 @@
                         <article class="blog-details">
 
                             <div class="post-img">
-                                <img src="{{ asset('storage/' . $article->media_url) }}" alt="" class="img-fluid">
+                                <img src="{{ config('global.S3_url'). $article->media_url }}" alt="" class="img-fluid">
                             </div>
 
                             <h2 class="title">{{ $article->titre }}
@@ -67,7 +67,7 @@
                         <div class="post-author d-flex align-items-center">
 
                             @if ($article->user->profil_url)
-                                <img src="{{ asset('storage/' . $article->user->profil_url) }}"
+                                <img src="{{ config('global.S3_url'). $article->user->profil_url }}"
                                     class="p-3 card-img-top rounded-circle img-fluid w-50 h-100" alt="...">
                             @else
                                 <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }} "
@@ -166,7 +166,7 @@
 
                                 <div class="row">
                                     @if ($article->user->profil_url)
-                                        <img src="{{ asset('storage/' . $article->user->profil_url) }}"
+                                        <img src="{{ config('global.S3_url'). $article->user->profil_url }}"
                                             class="p-3 card-img-top rounded-circle img-fluid w-50 h-100" alt="...">
                                     @else
                                         <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }} "
@@ -193,7 +193,7 @@
                                     @forelse ($article->revue->articles as $articleItem)
                                         @if (!($article->id == $articleItem->id))
                                             <div class="post-item mt-3">
-                                                <img src="{{ asset('storage/' . $articleItem->media_url) }}"
+                                                <img src="{{ config('global.S3_url'). $articleItem->media_url }}"
                                                     alt="">
                                                 <div>
                                                     <h4><a

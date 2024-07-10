@@ -35,7 +35,7 @@
                                 <div class="row">
                                     <div class="col-xl-5">
                                         <div class="card-bg"
-                                            style="background-image: url({{ asset('storage/' . $axe->media_url) }});">
+                                            style="background-image: url({{ config('global.S3_url'). $axe->media_url }});">
                                         </div>
                                     </div>
                                     <div class="col-xl-7 d-flex align-items-center">

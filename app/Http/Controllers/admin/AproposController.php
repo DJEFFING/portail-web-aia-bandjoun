@@ -23,7 +23,16 @@ class AproposController extends Controller
     {
         // dd($request);
         if($request->hasFile("media")){
-            $data_image=$request->file('media')->store('apropos','public');
+
+            $originalName = $request->file('media')->getClientOriginalName();
+
+            // pour sauvegader les fichiers en fonction de l'environement
+            if (app()->environment(['local'])) {
+                $data_image = $request->file('media')->storeAs('apropos', $originalName, 'public');
+            } else {
+                $data_image = $request->file('media')->storeAs('apropos', $originalName, 's3');
+            }
+
             $apropos->update(["image_url" => $data_image ]);
         }
 

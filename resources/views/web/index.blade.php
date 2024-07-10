@@ -20,10 +20,10 @@
             @if (json_decode($slide->image_url))
                 @forelse (json_decode($slide->image_url) as $item => $image)
                     @if ($item == 0)
-                        <div class="carousel-item active" style="background-image: url({{ asset('storage/' . $image) }})">
+                        <div class="carousel-item active" style="background-image: url({{ config('global.S3_url'). $image }})">
                         </div>
                     @else
-                        <div class="carousel-item" style="background-image: url({{ asset('storage/' . $image) }})">
+                        <div class="carousel-item" style="background-image: url({{ config('global.S3_url'). $image }})">
                         </div>
                     @endif
 
@@ -73,7 +73,7 @@
                 <div class="row position-relative">
                     @if ($apropos->image_url)
                     <div class="col-lg-7 about-img"
-                        style="background-image: url( {{ asset('storage/' . $apropos->image_url) }} );"></div>
+                        style="background-image: url( {{ config('global.S3_url'). $apropos->image_url }} );"></div>
                     @else
                     <div class="col-lg-7 about-img"
                         style="background-image: url( {{ asset('asset_web/ur-aia-img/img_4.jpg') }} );"></div>
@@ -118,7 +118,7 @@
                                 <div class="row">
                                     <div class="col-xl-5">
                                         <div class="card-bg"
-                                            style="background-image: url({{ asset('storage/' . $poleRecherche->media_url) }});">
+                                            style="background-image: url({{ config('global.S3_url'). $poleRecherche->media_url }});">
                                         </div>
                                     </div>
                                     <div class="col-xl-7 d-flex align-items-center">
@@ -275,14 +275,14 @@
                                 <div
                                     class="col-lg-4 col-md-6 portfolio-item @foreach ($evernement->types as $type) filter-{{ $type->nom }} @endforeach ">
                                     <div class="portfolio-content h-100">
-                                        <img src=" {{ asset('storage/' . $evernement->media_url) }} " class="img-fluid"
+                                        <img src=" {{ config('global.S3_url'). $evernement->media_url }} " class="img-fluid"
                                             alt="">
 
                                         <div class="portfolio-info">
                                             <h4>{{ $evernement->date }}</h4>
                                             <h4>{{ $evernement->ville }}</h4>
                                             <p>{{ $evernement->titre }}</p>
-                                            <a href=" {{ asset('storage/' . $evernement->media_url) }}"
+                                            <a href=" {{ config('global.S3_url'). $evernement->media_url }}"
                                                 title="Remodeling 1" data-gallery="portfolio-gallery-remodeling"
                                                 class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                             <a href="{{ route('web.show-evernement', $evernement->id) }}"
@@ -295,13 +295,13 @@
                             @else
                                 <div class="col-lg-4 col-md-6 portfolio-item filter-{{ $evernement->types[0]->nom }} ">
                                     <div class="portfolio-content h-100">
-                                        <img src="  {{ asset('storage/' . $evernement->media_url) }} " class="img-fluid"
+                                        <img src="  {{ config('global.S3_url'). $evernement->media_url }} " class="img-fluid"
                                             alt="">
                                         <div class="portfolio-info">
                                             <h4>{{ $evernement->date }}</h4>
                                             <h4>{{ $evernement->ville }}</h4>
                                             <p>{{ $evernement->titre }}</p>
-                                            <a href="  {{ asset('storage/' . $evernement->media_url) }} "
+                                            <a href="  {{ config('global.S3_url'). $evernement->media_url }} "
                                                 title="Remodeling 1" data-gallery="portfolio-gallery-remodeling"
                                                 class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                             <a href="{{ route('web.show-evernement', $evernement->id) }}"
@@ -347,7 +347,7 @@
                                 <div class="post-content d-flex flex-column card">
                                     <div class="row">
                                         {{-- <div class="col-xl-4">
-                                            <img src=" {{ asset('storage/' . $publication->media_url) }} "
+                                            <img src=" {{ config('global.S3_url'). $publication->media_url }} "
                                                 class="img-fluid" alt="">
 
                                         </div> --}}

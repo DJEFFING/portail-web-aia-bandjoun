@@ -13,7 +13,7 @@
 
                 @if ($item->image_url != null)
                     <div class="col-md-12">
-                        <img src="{{ asset('storage/' . $item->image_url) }}" alt=""><br>
+                        <img src="{{ config('global.S3_url').$item->image_url }}" alt=""><br>
                     </div>
                     <hr>
                 @endif

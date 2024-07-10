@@ -81,7 +81,7 @@
                                     <div class="card-item post-item position-relative h-100 ">
                                         <div class="row">
                                             {{-- <div class="col-xl-5">
-                                                <img src=" {{ asset('storage/' . $publication->media_url) }} " class="img-fluid"
+                                                <img src=" {{ config('global.S3_url'). $publication->media_url }} " class="img-fluid"
                                                     alt="">
 
                                             </div> --}}

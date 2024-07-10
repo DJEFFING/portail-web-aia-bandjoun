@@ -34,7 +34,7 @@
                                 <div class="col">
                                     <div class="row-xl-5">
                                         <div class="card-bg"
-                                            style="background-image: url({{ asset('storage/' . $poleRecherche->media_url) }});">
+                                            style="background-image: url({{ config('global.S3_url'). $poleRecherche->media_url }});">
                                         </div>
                                     </div>
                                     <div class="row-xl-7 d-flex align-items-center">

@@ -43,13 +43,22 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         // dd($request);
+        $originalName = $request->file('media_url')->getClientOriginalName();
+
+        // pour sauvegader les fichiers en fonction de l'environement
+        if (app()->environment(['local'])) {
+            $media = $request->file('media_url')->storeAs('articles', $originalName, 'public');
+        } else {
+            $media = $request->file('media_url')->storeAs('articles', $originalName, 's3');
+        }
+
        $newArticle = Article::create([
             "user_id" =>Auth::user()->id,
             "revue_id" =>$request->revue_id,
             "titre"  =>$request->titre,
             "description_1" => $request->description_1,
             "description_2" => $request->description_2,
-            "media_url" => $request->file('media_url')->store('articles','public'),
+            "media_url" => $media,
         ]);
 
         $this->notificationsUAdmin($newArticle);
@@ -61,8 +70,17 @@ class ArticleController extends Controller
     {
         // dd($request);
         if($request->hasFile('media_url')){
+            $originalName = $request->file('media_url')->getClientOriginalName();
+
+            // pour sauvegader les fichiers en fonction de l'environement
+            if (app()->environment(['local'])) {
+                $media = $request->file('media_url')->storeAs('articles', $originalName, 'public');
+            } else {
+                $media = $request->file('media_url')->storeAs('articles', $originalName, 's3');
+            }
+
             $article->update([
-                "media_url" => $request->file('media_url')->store('articles','public')
+                "media_url" => $media
             ]);
         }
 

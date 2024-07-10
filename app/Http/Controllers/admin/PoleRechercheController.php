@@ -50,7 +50,17 @@ class PoleRechercheController extends Controller
         // $media = $request->store->media_url->public('pole_recherhe');
 
         if ($request->hasFile('media_url')) {
-            $media = $request->file('media_url')->store('pole_recherche','s3');
+
+            $originalName = $request->file('media_url')->getClientOriginalName();
+
+            // pour sauvegader les fichiers en fonction de l'environement
+            if (app()->environment(['local'])) {
+                $media = $request->file('media_url')->storeAs('pole_recherche', $originalName, 'public');
+            } else {
+                $media = $request->file('media_url')->storeAs('pole_recherche', $originalName, 's3');
+            }
+
+
 
             $newPoleRecherche = [
                 'code_pole' => $request->code_pole,
@@ -75,8 +85,7 @@ class PoleRechercheController extends Controller
     public function update(Request $request, PoleRecherche $poleRecherche)
     {
         // dd($request);
-        if($request->user_id != $poleRecherche->user_id)
-        {
+        if ($request->user_id != $poleRecherche->user_id) {
             $request->validate(
                 [
                     "user_id" => 'required|unique:pole_recherches'
@@ -94,39 +103,38 @@ class PoleRechercheController extends Controller
             $originalName = $request->file('media_url')->getClientOriginalName();
 
             // pour sauvegader les fichiers en fonction de l'environement
-            if(app()->environment(['local'])){
-                $media = $request->file('media_url')->storeAs('pole_recherche',$originalName,'public');
-            }else{
-            $media = $request->file('media_url')->storeAs('pole_recherche',$originalName,'s3');
-
+            if (app()->environment(['local'])) {
+                $media = $request->file('media_url')->storeAs('pole_recherche', $originalName, 'public');
+            } else {
+                $media = $request->file('media_url')->storeAs('pole_recherche', $originalName, 's3');
             }
             // dd($media);
-            $poleRecherche->update(["media_url"=>$media]);
+            $poleRecherche->update(["media_url" => $media]);
         }
         $poleRecherche->update([
-            'code_pole'=>$request->code_pole,
+            'code_pole' => $request->code_pole,
             'titre' => $request->titre,
             'description_1' => $request->description_1,
             'description_2' => $request->description_2,
             'user_id' => $request->user_id,
         ]);
 
-        return redirect(route('admin.poleRecherche.index'))->with('message','Le pôle de recherche a été modifié avec succès !!');
+        return redirect(route('admin.poleRecherche.index'))->with('message', 'Le pôle de recherche a été modifié avec succès !!');
     }
 
     public function isVisble(PoleRecherche $poleRecherche)
     {
 
-        $poleRecherche->update(["status"=>!($poleRecherche->status)]);
+        $poleRecherche->update(["status" => !($poleRecherche->status)]);
         $message = ($poleRecherche->status == true) ? "le pôle est maintenant public" : "le pôle est n'est plus public !!";
-        return redirect()->back()->with('message',$message);
+        return redirect()->back()->with('message', $message);
     }
 
     public function delete(PoleRecherche $poleRecherche)
     {
         //suppression des images enregistrer
         $poleRecherche->delete();
-        return redirect()->back()->with('message','Le pôle a été supprimé avec succès !!');
+        return redirect()->back()->with('message', 'Le pôle a été supprimé avec succès !!');
     }
 
     public function getUser()

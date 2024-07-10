@@ -29,7 +29,7 @@
                     @foreach ($listProjet as $projet)
                         <div class="col-sm-12 col-md-12 col-lg-4 mb-30 search-card">
                             <div class="card card-box">
-                                <img class="card-img-top" src="{{ asset('storage/' . $projet->media_url) }}"
+                                <img class="card-img-top" src="{{ config('global.S3_url'). $projet->media_url }}"
                                     alt="Card image cap">
                                 <div class="card-body">
                                     <small>

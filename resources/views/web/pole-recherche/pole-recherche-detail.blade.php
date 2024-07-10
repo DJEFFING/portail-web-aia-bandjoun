@@ -24,7 +24,7 @@
 
 
                     <div class="col-lg-8">
-                        <img src="{{ asset('storage/' . $poleRecherche->media_url) }}" alt=""
+                        <img src="{{ config('global.S3_url'). $poleRecherche->media_url }}" alt=""
                             class="img-fluid services-img">
                         <h3>{{ $poleRecherche->titre }}</h3>
                         <div class="container mt-5">
@@ -41,7 +41,7 @@
 
                             <div class="row">
                                 @if ($poleRecherche->user->profil_url)
-                                    <img src="{{ asset('storage/' . $poleRecherche->user->profil_url) }}"
+                                    <img src="{{ config('global.S3_url'). $poleRecherche->user->profil_url }}"
                                         class="p-3 card-img-top rounded-circle img-fluid w-50 h-100" alt="...">
                                 @else
                                     <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }} "

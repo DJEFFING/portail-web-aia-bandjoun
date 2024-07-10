@@ -65,7 +65,15 @@ class PublicationController extends Controller
         try {
             $media = "";
             if ($request->hasFile("media_url")) {
-                $media = $request->file('media_url')->store('publication', 'public');
+                $originalName = $request->file('media_url')->getClientOriginalName();
+
+                // pour sauvegader les fichiers en fonction de l'environement
+                if (app()->environment(['local'])) {
+                    $media = $request->file('media_url')->storeAs('publication', $originalName, 'public');
+                } else {
+                    $media = $request->file('media_url')->storeAs('publication', $originalName, 's3');
+                }
+
             }
 
 
@@ -138,7 +146,16 @@ class PublicationController extends Controller
 
         $media = "";
         if ($request->hasFile("media_url")) {
-            $media = $request->file('media_url')->store('publication', 'public');
+           
+            $originalName = $request->file('media_url')->getClientOriginalName();
+
+            // pour sauvegader les fichiers en fonction de l'environement
+            if (app()->environment(['local'])) {
+                $media = $request->file('media_url')->storeAs('publication', $originalName, 'public');
+            } else {
+                $media = $request->file('media_url')->storeAs('publication', $originalName, 's3');
+            }
+
             $publication->update(["media_url" => $media]);
         }
 
@@ -200,11 +217,18 @@ class PublicationController extends Controller
         // Obtenir le nom original du fichier
         $originalName = $request->file('document_url')->getClientOriginalName();
 
+        // pour sauvegader les fichiers en fonction de l'environement
+        if (app()->environment(['local'])) {
+            $document = $request->file('document_url')->storeAs('document_publication', $originalName, 'public');
+        } else {
+            $document = $request->file('document_url')->storeAs('document_publication', $originalName, 's3');
+        }
+
         // dd($request);
         Document::create([
             "titre" => $originalName,
             "description" => $originalName,
-            "document_url" => $request->file('document_url')->storeAs('document_publication', $originalName, 'public'),
+            "document_url" => $document,
             "publication_id" => $publication->id
         ]);
 
@@ -218,12 +242,19 @@ class PublicationController extends Controller
         $filePath = $document->document_url;
 
         // Vérifier si le fichier existe
-        if (!Storage::disk('public')->exists($filePath)) {
-            return abort(404, 'Fichier non trouvé.');
+        if (app()->environment(['local'])) {
+            if (!Storage::disk('public')->exists($filePath)) {
+                return abort(404, 'Fichier non trouvé.');
+            }
+        }else{
+            if (!Storage::disk('s3')->exists($filePath)) {
+                return abort(404, 'Fichier non trouvé.');
+            }
         }
 
+
         // Télécharger le fichier
-        return Storage::disk('public')->download($filePath);
+        return (app()->environment(['local'])) ? Storage::disk('public')->download($filePath) : Storage::disk('s3')->download($filePath);
     }
 
  

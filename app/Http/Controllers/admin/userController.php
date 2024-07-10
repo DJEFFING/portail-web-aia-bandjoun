@@ -102,8 +102,18 @@ class userController extends Controller
     {
         // dd($request->description);
         if ($request->hasFile('profil_url')) {
+
+            $originalName = $request->file('profil_url')->getClientOriginalName();
+
+            // pour sauvegader les fichiers en fonction de l'environement
+            if (app()->environment(['local'])) {
+                $media = $request->file('profil_url')->storeAs('profil', $originalName, 'public');
+            } else {
+                $media = $request->file('profil_url')->storeAs('profil', $originalName, 's3');
+            }
+
             $user->update([
-                "profil_url" => $request->file('profil_url')->store('profil', 'public')
+                "profil_url" => $media
             ]);
         }
         $user->update([

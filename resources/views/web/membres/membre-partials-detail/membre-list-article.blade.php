@@ -8,7 +8,7 @@
             <div class="post-item position-relative h-100">
 
                 <div class="post-img position-relative overflow-hidden">
-                    <img src=" {{ asset('storage/' . $article->media_url) }} " class="img-fluid" alt="">
+                    <img src=" {{ config('global.S3_url'). $article->media_url }} " class="img-fluid" alt="">
                     <span class="post-date">{{ $article->created_at->format('d-M-Y') }}</span>
                 </div>
 

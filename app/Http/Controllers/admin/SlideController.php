@@ -36,7 +36,15 @@ class SlideController extends Controller
             $data_image = [];
             foreach($request->media as $media)
             {
-                $data_image [] = $media->store('slide','public');
+
+                $originalName = $request->file('media_url')->getClientOriginalName();
+
+                // pour sauvegader les fichiers en fonction de l'environement
+                if (app()->environment(['local'])) {
+                    $data_image [ ]= $request->file('media_url')->storeAs('slide', $originalName, 'public');
+                } else {
+                    $data_image [] = $request->file('media_url')->storeAs('slide', $originalName, 's3');
+                }
 
             }
 

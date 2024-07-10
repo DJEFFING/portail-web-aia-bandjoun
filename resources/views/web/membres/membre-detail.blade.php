@@ -25,7 +25,7 @@
 
                             <div class="row gy-4">
                                 @if ($user->profil_url)
-                                    <img src="{{ asset('storage/' . $user->profil_url) }}"
+                                    <img src="{{ config('global.S3_url'). $user->profil_url }}"
                                         class="p-3 card-img-top rounded-circle img-fluid w-50 h-100 col-md-6"
                                         alt="...">
                                 @else
