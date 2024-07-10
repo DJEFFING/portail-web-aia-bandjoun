@@ -65,11 +65,11 @@
                             <select class="custom-select2 form-control" name="user_id" style="width: 100%; height: 38px;" required>
 
                                 <optgroup label="Liste Des Menbres">
+                                    <option value="{{ $poleRecherche->id }}" selected>{{ $poleRecherche->user->name }}</option>
                                     @forelse ($userList as $user)
                                     @if ($user->id == $poleRecherche->user_id)
                                     <option value="{{ $user->id }}" selected>{{ $user->name }}</option>
                                     @endif
-                                        <option value="{{ $poleRecherche->id }}" selected>{{ $poleRecherche->user->name }}</option>
                                         <option value="{{ $user->id }}">{{ $user->name }}</option>
                                     @empty
                                     @endforelse
