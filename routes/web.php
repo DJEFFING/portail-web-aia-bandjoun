@@ -35,6 +35,9 @@ Route::controller(AcceuilController::class)->name("web.")->group(function(){
 
     Route::post('/{article}-create-commentaire','createCommentaire')->name('create-commentaire');
     Route::post('/{publication}-create-commentaire-publication','createCommentairePublication')->name('create-commentaire-publication');
+
+    //pour telecharger une plublication
+    Route::get("/{document}-donwload-file","file_download")->name('file_download');
 });
 
 

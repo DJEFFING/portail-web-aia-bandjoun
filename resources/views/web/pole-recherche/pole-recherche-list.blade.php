@@ -43,7 +43,7 @@
                                             <div class="row d-flex">
                                                 <div class="col-md-6">
                                                     <p>
-                                                        <span style="background-color: #00aefe; color:white; text-align: center; width: 200px; margin-right: 10px; padding: 5px;">Reponsable </span>
+                                                        <span style="background-color: #00aefe; color:white; text-align: center; width: 200px; margin-right: 10px; padding: 5px;">Responsable </span>
                                                         {{ $poleRecherche->user->name }} {{ $poleRecherche->user->prenom }}
                                                     </p>
                                                 </div>

@@ -110,8 +110,7 @@
 
                 <div class="section-header">
                     <h2>Domaine de Recherche</h2>
-                    <p>Découvrez nos Domaine de Recherche ci-dessous, où nous explorons et développons des solutions
-                        innovantes pour un avenir agricole meilleur.</p>
+                    <p>Découvrez nos Domaine de Recherche ci-dessous.</p>
                 </div>
 
                 <div class="row gy-4">

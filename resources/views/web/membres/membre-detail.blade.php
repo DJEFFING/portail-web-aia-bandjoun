@@ -6,10 +6,10 @@
         <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/breadcrumbs-bg.jpg');">
             <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-                <h2>Membre Détail</h2>
+                <h2>Membre</h2>
                 <ol>
                     <li><a href="{{ route('web.acceuil') }}">Acceuil</a></li>
-                    <li>Membre Détail</li>
+                    <li>Membre | Détail</li>
                 </ol>
 
             </div>
@@ -60,7 +60,7 @@
                             @elseif($user->axes->isNotEmpty())
                                 <div class="card p-3">
                                     <p style="background-color: rgb(41, 180, 204); color: white; text-align: center;">Responsable d'axe</p>
-                                    <p><strong>Axe de recherche : </strong><a href="{{ route('web.show-equipe',$user->axes[0]->id) }}">{{ $user->axes[0]->titre }}</a></p>
+                                    <p><strong>Axe de recherche : </strong><a href="{{ route('web.show-axe',$user->axes[0]->id) }}">{{ $user->axes[0]->titre }}</a></p>
                                 </div>
                             @endif
 

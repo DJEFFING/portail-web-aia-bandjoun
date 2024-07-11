@@ -134,7 +134,7 @@
                                     <div class="row-xl-7 d-flex align-items-center">
                                         <div class="card-body">
                                             <p><span
-                                                    style="background-color: #00aefe; color:white; text-align: center; width: 200px; padding: 5px; margin-right: 10px;">Reponsable
+                                                    style="background-color: #00aefe; color:white; text-align: center; width: 200px; padding: 5px; margin-right: 10px;">Responsable
                                                 </span> {{ $poleRecherche->user->name }}
                                                 {{ $poleRecherche->user->prenom }}</p>
                                             <p></p><br>
@@ -182,7 +182,7 @@
                                         <div class="card-body">
                                             <h4 class="card-title">{{ $equipe->titre }}</h4>
                                             <p><span
-                                                    style="background-color: #00aefe; padding: 5px; color:white; text-align: center; width: 200px; margin-right: 10px;">Reponsable
+                                                    style="background-color: #00aefe; padding: 5px; color:white; text-align: center; width: 200px; margin-right: 10px;">Responsable
                                                 </span> {{ $equipe->user->name }} {{ $equipe->user->prenom }}</p>
                                             <p></p><br>
                                             <p>{{ Str::limit($equipe->description_1, 200, '...') }}</p>
@@ -228,7 +228,7 @@
                                         <div class="card-body">
                                             <h4 class="card-title">{{ $axe->titre }}</h4>
                                             <p><span
-                                                    style="background-color: #00aefe; padding: 5px; color:white; text-align: center; width: 200px; margin-right: 10px;">Reponsable
+                                                    style="background-color: #00aefe; padding: 5px; color:white; text-align: center; width: 200px; margin-right: 10px;">Responsable
                                                 </span> {{ $axe->user->name }} {{ $axe->user->prenom }}</p>
                                             <p></p><br>
                                             <p>{{ Str::limit($axe->description_1, 200, '...') }}</p>

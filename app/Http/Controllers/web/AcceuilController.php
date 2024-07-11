@@ -9,6 +9,7 @@ use App\Models\Article;
 use App\Models\Axe;
 use App\Models\Commentaire;
 use App\Models\CommentairePublication;
+use App\Models\Document;
 use App\Models\Equipe;
 use App\Models\Evernement;
 use App\Models\Fonction;
@@ -25,6 +26,7 @@ use App\Models\RoleEvernement;
 use App\Models\TypePublication;
 use GuzzleHttp\Psr7\PumpStream;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use PhpParser\Node\Expr\FuncCall;
 
 class AcceuilController extends Controller
@@ -406,9 +408,25 @@ class AcceuilController extends Controller
         return $listMembre;
     }
 
-
-    public function sheckTypePublication($listTypePublication)
+    public function file_download(Document $document)
     {
-        // for
+
+        // Chemin du fichier dans le disque public
+        $filePath = $document->document_url;
+
+        // Vérifier si le fichier existe
+        if (app()->environment(['local'])) {
+            if (!Storage::disk('public')->exists($filePath)) {
+                return abort(404, 'Fichier non trouvé.');
+            }
+        }else{
+            if (!Storage::disk('s3')->exists($filePath)) {
+                return abort(404, 'Fichier non trouvé.');
+            }
+        }
+
+
+        // Télécharger le fichier
+        return (app()->environment(['local'])) ? Storage::disk('public')->download($filePath) : Storage::disk('s3')->download($filePath);
     }
 }

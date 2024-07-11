@@ -116,7 +116,8 @@
 
                                 <div class="sidebar-item search-form">
                                     <h3 class="sidebar-title">Recherche dans le titre</h3>
-                                    <input type="text" name="titre" value="{{ $request->titre }}" class="form-control">
+                                    <input type="text" name="titre" value="{{ $request->titre }}"
+                                        class="form-control">
                                     {{-- <select name="titre" id="" style="width: 100%; height: 38px;"
                                         class="form-control custom-select2" data-live-search="true">
                                         <optgroup label="titre">
@@ -174,7 +175,8 @@
 
                                                 <div class="card-body">
 
-                                                    <h3 class="post-title">{{ Str::limit($publication->titre, 100, '...') }}</h3>
+                                                    <h3 class="post-title">
+                                                        {{ Str::limit($publication->titre, 100, '...') }}</h3>
                                                     <span
                                                         class="post-date">{{ $publication->anneePublication->annee_publication }}
                                                     </span>
@@ -197,8 +199,8 @@
                                                                 Documents</span>
                                                         </div>
 
-                                                    </div>
-                                                    <span class="px-3 text-black-50">/</span>
+                                                    </div><br>
+                                                    {{-- <span class="px-3 text-black-50">/</span> --}}
                                                     <div class="d-flex align-items-center">
                                                         <span
                                                             style="background-color: #00aefe; color:white; text-align: center; width: 80px; margin-right: 10px; padding: 5px;">Categ
@@ -210,13 +212,39 @@
                                                     </div>
 
                                                     <p style="display-flex:auto;" class="px-3">
-                                                        {{ Str::limit($publication->description_1, 500, '...') }}</p>
+                                                        {{ Str::limit($publication->description_1, 500, '...') }} <a
+                                                            href="{{ route('web.show-publication', $publication->id) }}"
+                                                            class="">voir+
+                                                        </a>
+                                                    </p>
+
 
                                                     <hr>
 
-                                                    <a href="{{ route('web.show-publication', $publication->id) }}"
-                                                        class="readmore stretched-link "><span class="btn btn-primary">
-                                                            consluter </span><i class="bi bi-arrow-right"></i></a>
+                                                    <div class="row">
+                                                        @if ($publication->documents->isNotEmpty())
+                                                            <div class="col-md-6">
+                                                                <a href="{{ route('web.file_download', $publication->documents[0]) }}"
+                                                                    class="readmore stretched-link "><span
+                                                                        class="btn btn-primary">
+                                                                        Telecharger </span><i
+                                                                        class="bi bi-download"></i>
+                                                                </a>
+                                                            </div>
+                                                        @endif
+
+                                                        @if ($publication->lien_externe)
+                                                            <div class="col-md-6">
+                                                                <a href="{{ $publication->lien_externe }}"
+                                                                    class="readmore stretched-link "><span
+                                                                        class="btn btn-primary">
+                                                                        consluter </span><i
+                                                                        class="bi bi-arrow-right"></i>
+                                                                </a>
+                                                            </div>
+                                                        @endif
+
+                                                    </div>
 
                                                 </div>
                                             </div>
