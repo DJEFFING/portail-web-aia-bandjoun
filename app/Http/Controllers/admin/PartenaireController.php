@@ -20,7 +20,14 @@ class PartenaireController extends Controller
     {
         // dd($request);
         if($request->hasFile("logo_url")){
-            $media = $request->file('logo_url')->store('partenaire','public');
+            $originalName = $request->file('logo_url')->getClientOriginalName();
+
+            // pour sauvegader les fichiers en fonction de l'environement
+            if (app()->environment(['local'])) {
+                $media = $request->file('logo_url')->storeAs('partenaire', $originalName, 'public');
+            } else {
+                $media = $request->file('logo_url')->storeAs('partenaire', $originalName, 's3');
+            }
 
             Partenaire::create([
                 "nom" => $request->nom,
@@ -35,7 +42,15 @@ class PartenaireController extends Controller
     {
         // dd($request);
         if($request->hasFile('logo_url')){
-            $media = $request->file('logo_url')->store('partenaire','public');
+            $originalName = $request->file('logo_url')->getClientOriginalName();
+
+            // pour sauvegader les fichiers en fonction de l'environement
+            if (app()->environment(['local'])) {
+                $media = $request->file('logo_url')->storeAs('partenaire', $originalName, 'public');
+            } else {
+                $media = $request->file('logo_url')->storeAs('partenaire', $originalName, 's3');
+            }
+
             $partenaire->update(['logo_url'=>$media]);
         }
         $partenaire->update([

@@ -50,7 +50,7 @@
                                 <tr class="search-card">
                                     <th scope="row">{{ $partenaire->id }}</th>
                                     <td>{{ $partenaire->nom }}</td>
-                                    <td><img src="{{ asset('storage/'.$partenaire->logo_url) }}" style="width: 50px; height: 50px;" alt=""></td>
+                                    <td><img src="{{config('global.S3_url').$partenaire->logo_url }}" style="width: 50px; height: 50px;" alt=""></td>
                                     <td><a href="{{ ( Auth::user()->getRole("admin") ) ? route('admin.partenaire.isVisible',$partenaire->id) : '#' }}"><span class="{{($partenaire->status) ?  'badge badge-success' : 'badge badge-danger' }}">{{ ($partenaire->status) ? 'public' : 'non-public' }} </span></a></td>
 
                                     <td> <button href="" class="btn btn-sm btn-outline-info me-2" data-toggle="modal"

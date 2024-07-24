@@ -34,7 +34,7 @@
                                 <div class="col">
                                     <div class="row-xl-5">
                                         <div class="card-bg"
-                                            style="background-image: url({{ asset('storage/' . $poleRecherche->media_url) }});">
+                                            style="background-image: url({{ config('global.S3_url'). $poleRecherche->media_url }});">
                                         </div>
                                     </div>
                                     <div class="row-xl-7 d-flex align-items-center">
@@ -43,7 +43,7 @@
                                             <div class="row d-flex">
                                                 <div class="col-md-6">
                                                     <p>
-                                                        <span style="background-color: #00aefe; color:white; text-align: center; width: 200px; margin-right: 10px; padding: 5px;">Reponsable </span>
+                                                        <span style="background-color: #00aefe; color:white; text-align: center; width: 200px; margin-right: 10px; padding: 5px;">Responsable </span>
                                                         {{ $poleRecherche->user->name }} {{ $poleRecherche->user->prenom }}
                                                     </p>
                                                 </div>

@@ -23,12 +23,12 @@
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-30">
                         <div class="pd-20 card-box height-100-p">
                             <div class="profile-photo" style="margin-bottom: 50px;">
-                                @if ($user->profil_url!=null)
-                                <img src=" {{ asset('storage/' . $user->profil_url) }} " alt=""
-                                class="avatar-photo">
+                                @if ($user->profil_url != null)
+                                    <img src=" {{ config('global.S3_url') . $user->profil_url }} " alt=""
+                                        class="avatar-photo">
                                 @else
-                                <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }}" alt=""
-                                class="avatar-photo">
+                                    <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }}"
+                                        alt="" class="avatar-photo">
                                 @endif
 
                             </div>
@@ -131,8 +131,8 @@
 
                                         <!-- Article -->
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#tasks" role="tab">
-                                                {{ Auth::user()->id == $user->id ? 'Mes Articles' : 'Articles' }}</a>
+                                            <a class="nav-link" data-toggle="tab" href="#publication" role="tab">
+                                                {{ Auth::user()->id == $user->id ? 'Mes Publications' : 'Publication' }}</a>
                                         </li>
                                         <!--END Article -->
 
@@ -170,15 +170,23 @@
                                             </li>
                                         @endif
                                         <!--END Parametre -->
+
+                                        <!-- Change password -->
+                                        @if (Auth::user()->id == $user->id)
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="tab" href="#change_password"
+                                                    role="tab">Changer le mot de passe</a>
+                                            </li>
+                                        @endif
+                                        <!--END Change password -->
                                     </ul>
                                     <div class="tab-content">
 
                                         <!-- Pole ou Equipe Tab -->
                                         @if ($user->poleRecherches()->exists())
-                                            @include('admin.user.pole-recherche')
-
+                                            @include('admin.user.patials.pole-recherche')
                                         @elseif ($user->equipes()->exists() || $user->equipe()->exists())
-                                            @include('admin.user.equipe', [
+                                            @include('admin.user.patials.equipe', [
                                                 'equipes' => $user->equipes()->exists()
                                                     ? $user->equipes
                                                     : $user->equipe,
@@ -187,10 +195,8 @@
                                                     : "Vous faites partie d'une Equipe",
                                             ])
                                         @elseif ($user->axes()->exists() || $user->axe()->exists())
-                                            @include('admin.user.axe-recherche', [
-                                                'axes' => $user->axes()->exists()
-                                                    ? $user->axes
-                                                    : $user->axe,
+                                            @include('admin.user.patials.axe-recherche', [
+                                                'axes' => $user->axes()->exists() ? $user->axes : $user->axe,
                                                 'titre' => $user->axes()->exists()
                                                     ? "Vous êtes responsable d'un axe recherche"
                                                     : "Vous faites partie d'un axe recherche",
@@ -200,21 +206,31 @@
 
 
                                         <!-- Article Tab -->
-                                        @include('admin.user.list-article')
+                                        @include('admin.user.patials.list-article')
                                         <!--END Article Tab -->
+
+                                        <!-- Publication Tab -->
+                                        @include('admin.user.patials.list-publication')
+                                        <!--END Publication Tab -->
 
                                         <!-- Paramettre Tab -->
                                         @if (Auth::user()->id == $user->id)
-                                            @include('admin.user.profil-setting')
+                                            @include('admin.user.patials.profil-setting')
                                         @endif
                                         <!--END Paramettre Tab -->
+
+                                        <!-- Change password Tab -->
+                                        @if (Auth::user()->id == $user->id)
+                                            @include('admin.user.patials.change-password')
+                                        @endif
+                                        <!--END Change password Tab -->
 
 
                                         <!-- Projet Tab -->
                                         @if (
                                             ($user->equipes->isNotEmpty() && $user->equipes[0]->projets()->exists()) ||
                                                 ($user->equipe->isNotEmpty() && $user->equipe[0]->projets->isNotEmpty()))
-                                            @include('admin.user.projet', [
+                                            @include('admin.user.patials.projet', [
                                                 'projets' =>
                                                     $user->equipes->isNotEmpty() &&
                                                     $user->equipes[0]->projets()->exists()
@@ -223,7 +239,7 @@
                                                 'text' => null,
                                             ])
                                         @elseif ($user->poleRecherches->isNotEmpty() && $user->poleRecherches[0]->projets->isNotEmpty())
-                                            @include('admin.user.projet', [
+                                            @include('admin.user.patials.projet', [
                                                 'projets' => $user->poleRecherches[0]->projets,
                                                 'text' => 'les projets de votre Pôle de recherche',
                                             ])
@@ -232,7 +248,7 @@
 
                                         <!--  Evénements Tab -->
                                         @if ($user->evernements()->exists())
-                                            @include('admin.user.evernement', [
+                                            @include('admin.user.patials.evernement', [
                                                 'evenements' => $user->evernements,
                                             ])
                                         @endif
@@ -240,7 +256,7 @@
 
                                         <!-- Pole Recherche projet Tab -->
                                         @if ($user->poleRecherches->isNotEmpty() && $user->poleRecherches[0]->equipes->isNotEmpty())
-                                            @include('admin.user.equipe_pole', [
+                                            @include('admin.user.patials.equipe_pole', [
                                                 'equipes' => $user->poleRecherches[0]->equipes,
                                             ])
                                         @endif

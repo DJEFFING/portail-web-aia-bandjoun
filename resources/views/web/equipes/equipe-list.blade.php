@@ -23,7 +23,7 @@
 
                     <div class="section-header">
                         <h2>{{ $poleRecherche->titre }}</h2>
-                        <p>{{ count($poleRecherche->equipes) }} Equipe</p>
+                        <p>{{ count($poleRecherche->equipes) }} Equipes</p>
                     </div>
 
                     <div class="row gy-4">
@@ -35,7 +35,7 @@
                                     <div class="row">
                                         <div class="col-xl-5">
                                             <div class="card-bg"
-                                                style="background-image: url({{ asset('storage/' . $equipe->media_url) }});">
+                                                style="background-image: url({{ config('global.S3_url'). $equipe->media_url }});">
                                             </div>
                                         </div>
                                         <div class="col-xl-7 d-flex align-items-center">
@@ -46,7 +46,7 @@
                                                 <div class="d-flex">
                                                     <p>
                                                         <span
-                                                            style="background-color: #00aefe; color:white; text-align: center; width: 200px; margin-right: 10px; padding: 5px;">Reponsable
+                                                            style="background-color: #00aefe; color:white; text-align: center; width: 200px; margin-right: 10px; padding: 5px;">Responsable
                                                         </span>
                                                         {{ $equipe->user->name }} {{ $equipe->user->prenom }}
                                                     </p>

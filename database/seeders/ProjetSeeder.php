@@ -19,7 +19,7 @@ class ProjetSeeder extends Seeder
             "description_2" => "Etude de faisabilité et d’opportunité d’implantation des moteurs à cogénération dans les villages camerounais",
             "date_debut" => "2011-04-12",
             "date_fin" => "2013-04-12",
-            "media_url" => "media.png",
+            
             "user_id" => 16,
             "status" => true
 
@@ -31,7 +31,7 @@ class ProjetSeeder extends Seeder
             "description_2" => "Télédiagnostic en cardiologie dans l’environnement tropical",
             "date_debut" => "2006-01-05",
             "date_fin" => "2008-01-05",
-            "media_url" => "media.png",
+
             "user_id" => 2,
             "status" => true
 
@@ -44,7 +44,7 @@ class ProjetSeeder extends Seeder
             "description_2" => "« ICT for Education » : Développement et déploiement d’une Plateforme de Modernisation d’Enseignement de l’Informatique à l’aide des TIC dans les Lycées",
             "date_debut" => "2016-01-05",
             "date_fin" => "2016-12-05",
-            "media_url" => "media.png",
+
             "user_id" => 20,
             "status" => true
         ];
@@ -55,7 +55,7 @@ class ProjetSeeder extends Seeder
             "description_2" => "Les Tic au Service au Développement : Traduction Automatique des Appels Téléphoniques Inter Linguistiques Pour l’Essor des Langues et Cultures Nationales",
             "date_debut" => "2016-01-05",
             "date_fin" => "2020-12-05",
-            "media_url" => "media.png",
+
             "user_id" => 20,
             "status" => true
         ];
@@ -66,7 +66,7 @@ class ProjetSeeder extends Seeder
             "description_2" => "Plateforme de partage de ressources pédagogiques (cours, documents multimédia, outils de travaux pratiques, salle de formation, etc.) afin de pallier à la faiblesse des offres de formation.",
             "date_debut" => "2016-01-05",
             "date_fin" => "2017-12-05",
-            "media_url" => "media.png",
+
             "user_id" => 24,
             "status" => true
         ];
@@ -77,7 +77,7 @@ class ProjetSeeder extends Seeder
             "description_2" => "Modèle Générique de Plateforme d’Automatisation de la Gestion des Examens (PAGES) : algorithmes de Gestion Sécurisés par biométrie des Evaluations en Ligne.",
             "date_debut" => "2019-01-05",
             "date_fin" => "2021-01-05",
-            "media_url" => "media.png",
+
             "user_id" => 20,
             "status" => true
         ];
@@ -88,7 +88,7 @@ class ProjetSeeder extends Seeder
             "description_2" => "ICT for Education : ITE integration in Schools",
             "date_debut" => "2019-01-05",
             "date_fin" => "2021-01-05",
-            "media_url" => "media.png",
+
             "user_id" => 20,
             "status" => true
         ];

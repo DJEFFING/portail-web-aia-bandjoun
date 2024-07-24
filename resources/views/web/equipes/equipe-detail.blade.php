@@ -24,7 +24,7 @@
 
 
                     <div class="col-lg-8">
-                        <img src="{{ asset('storage/'.$equipe->media_url) }}" alt="" class="img-fluid services-img">
+                        <img src="{{config('global.S3_url').$equipe->media_url }}" alt="" class="img-fluid services-img">
                         <h3>{{ $equipe->titre }}</h3>
                         <div class="container mt-5">
                             <div id="article-content">
@@ -40,7 +40,7 @@
 
                             <div class="row">
                                 @if ($equipe->user->profil_url)
-                                <img src="{{ asset('storage/'.$equipe->user->profil_url) }}" class="p-3 card-img-top rounded-circle img-fluid w-50 h-100" alt="...">
+                                <img src="{{config('global.S3_url').$equipe->user->profil_url }}" class="p-3 card-img-top rounded-circle img-fluid w-50 h-100" alt="...">
                                 @else
                                 <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }} " class="p-3 card-img-top rounded-circle img-fluid w-50 h-100" alt="...">
                                 @endif

@@ -24,7 +24,7 @@
                         <div class="swiper-wrapper align-items-center">
 
                             <div class="swiper-slide">
-                                <img src="{{ asset('storage/'.$evernement->media_url) }}" alt="">
+                                <img src="{{config('global.S3_url').$evernement->media_url }}" alt="">
                             </div>
 
                         </div>

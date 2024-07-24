@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('evernements', function (Blueprint $table) {
             $table->id();
-            $table->string("titre");
-            $table->date("date");
-            $table->string("ville");
-            $table->string("adress");
-            $table->longText("description_1");
-            $table->string("media_url");
-            $table->longText("description_2");
+            $table->string("titre")->nullable();
+            $table->date("date")->nullable();
+            $table->string("ville")->nullable();
+            $table->string("adress")->nullable();
+            $table->longText("description_1")->nullable();
+            $table->string("media_url")->nullable();
+            $table->longText("description_2")->nullable();
             $table->boolean("status")->default(false);
 
             $table->timestamps();

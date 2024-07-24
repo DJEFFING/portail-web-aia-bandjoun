@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header" style="background-color: rgb(26, 230, 77)">
-                <h3 class="modal-title" id="largeModalLabel">Info Slide</h3>
+                <h3 class="modal-title" id="largeModalLabel">Info Présentation</h3>
                 <button type="button" style="float: right" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">X</span>
                 </button>
@@ -13,7 +13,7 @@
 
                 @if ($item->image_url != null)
                     <div class="col-md-12">
-                        <img src="{{ asset('storage/' . $item->image_url) }}" alt=""><br>
+                        <img src="{{ config('global.S3_url').$item->image_url }}" alt=""><br>
                     </div>
                     <hr>
                 @endif

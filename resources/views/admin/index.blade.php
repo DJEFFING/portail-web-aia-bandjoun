@@ -112,7 +112,7 @@
                                 <td>
                                     {{-- @forelse ($publication->users as $user) --}}
                                         {{-- @if ($publication->users[0]->profil_url)
-                                            <img src="{{ asset('storage/' . $publication->users[0]->profil_url) }}"
+                                            <img src="{{ config('global.S3_url'). $publication->users[0]->profil_url }}"
                                                 style="width: 50px; height: 50px;" alt=""><br>
                                         @else
                                             <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }}"

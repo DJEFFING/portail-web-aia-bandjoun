@@ -27,7 +27,16 @@ class equipeController extends Controller
 
         //
         if ($request->hasFile('media_url')) {
-            $media = $request->file('media_url')->store('equipe', 'public');
+
+            $originalName = $request->file('media_url')->getClientOriginalName();
+
+            // pour sauvegader les fichiers en fonction de l'environement
+            if (app()->environment(['local'])) {
+                $media = $request->file('media_url')->storeAs('equipe', $originalName, 'public');
+            } else {
+                $media = $request->file('media_url')->storeAs('equipe', $originalName, 's3');
+            }
+
             Equipe::create(
                 [
                     "code_equipe" => $request->code_equipe,
@@ -50,7 +59,7 @@ class equipeController extends Controller
     {
         $listRoleEquipes = RoleEquipe::all();
         $listUsers = $this->getUser();
-        return view('admin.gestion-equipe.equipes.show', compact('equipe', 'listUsers','listRoleEquipes'));
+        return view('admin.gestion-equipe.equipes.show', compact('equipe', 'listUsers', 'listRoleEquipes'));
     }
 
     public function create()
@@ -73,7 +82,15 @@ class equipeController extends Controller
     public function update(Request $request, Equipe $equipe)
     {
         if ($request->hasFile('media_url')) {
-            $media = $request->file('media_url')->store('equipe', 'public');
+
+            $originalName = $request->file('media_url')->getClientOriginalName();
+
+            // pour sauvegader les fichiers en fonction de l'environement
+            if (app()->environment(['local'])) {
+                $media = $request->file('media_url')->storeAs('equipe', $originalName, 'public');
+            } else {
+                $media = $request->file('media_url')->storeAs('equipe', $originalName, 's3');
+            }
             $equipe->update(["media_url" => $media]);
         }
 
@@ -84,6 +101,8 @@ class equipeController extends Controller
             "description_2" => $request->description_2,
             "user_id" => $request->user_id,
         ]);
+
+
 
         return redirect(route('admin.equipe.index'))->with('message', "l'equipe à été mise à jour avec succès !!");
     }
@@ -110,7 +129,7 @@ class equipeController extends Controller
             "equipe_id" => $equipe->id,
             "role_equipe_id" => 1
         ]);
-        return redirect()->back()->with('message',"le membre à été ajouter avec succès !!");
+        return redirect()->back()->with('message', "le membre à été ajouter avec succès !!");
     }
 
     public function getUser()
@@ -124,7 +143,7 @@ class equipeController extends Controller
         $listEquipeUser = User::whereHas('equipe')->pluck('id')->toArray();
 
         // Combiner toutes les IDs dans un seul tableau pour vérifier l'exclusion
-        $excludedUserIds = array_merge($listRespPole, $listRespEquipe, $listEquipeUser,$listRespAxes);
+        $excludedUserIds = array_merge($listRespPole, $listRespEquipe, $listEquipeUser, $listRespAxes);
 
         // Récupérer les utilisateurs qui ne sont dans aucune des listes
         $listMembre = User::whereNotIn('id', $excludedUserIds)->get();

@@ -30,101 +30,16 @@
 
                     <div class="card">
                         <!-- formulaire de recherche -->
-                        <form method="POST" action="" class="sidebar">
-                            @csrf
-                            <div class="row">
-                                <div class="form-group col-md-12">
-                                    <h4>Formulaire de recherche</h4>
-                                    <input type="text" id="searchBar" class="form-control" name="recherche" placeholder="Recherche par : Nom, Prenom, Equipe de Recherche, Axe de Recherche, Fonction, etc.">
+
+                            <div class="sidebar">
+                                <div class="row">
+                                    <div class="form-group col-md-12">
+                                        <h4>Formulaire de recherche</h4>
+                                        <input type="text" id="searchBar" class="form-control" name="recherche" placeholder="Recherche par : Nom, Prenom, Equipe de Recherche, Axe de Recherche, Fonction, etc.">
+                                    </div>
+    
                                 </div>
-                                {{-- <div class="col-md-1">
-                                    <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i></button>
-                                </div> --}}
                             </div>
-                            {{-- <div class="row">
-                                <div class="col-md-6 sidebar-item search-form">
-                                    <h3 class="sidebar-title">Par Nom</h3>
-                                    <div class="search_select_box">
-                                        <select name="user_name" id="" class="form-control custom-select2"
-                                            style="width: 100%; height: 38px;" data-live-search="true">
-                                            <option value=""></option>
-                                            @forelse ($listNameUser as $listNameUse)
-                                                <option value="{{ $listNameUse }}">{{ $listNameUse }}</option>
-                                            @empty
-                                            @endforelse
-                                        </select>
-                                    </div>
-
-                                </div>
-
-                                <div class="col-md-6 sidebar-item search-form ">
-                                    <h3 class="sidebar-title">Equipes</h3>
-                                    <div class="search_select_box">
-                                        <select class="custom-select2 form-control" name="type_id"
-                                            style="width: 100%; height: 38px;" required>
-                                            <optgroup label="Type de document">
-                                                <option value=""></option>
-                                                @forelse ($listequipes as $equipe)
-                                                    <option value="{{ $equipe->id }}">{{ $equipe->titre }}
-                                                    </option>
-                                                @empty
-                                                @endforelse
-                                            </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div><br>
-
-                            <div class="row">
-                                <div class="col-md-6 sidebar-item search-form">
-                                    <h3 class="sidebar-title">Axe de recherche</h3>
-
-                                    <div class="search_select_box">
-                                        <select name="auteur_id" id="" style="width: 100%; height: 38px;"
-                                            class="form-control custom-select2" data-live-search="true">
-                                            <optgroup label="Auteurs">
-                                                <option value=""></option>
-                                                @forelse ($listAxes as $axe)
-                                                    <option value="{{ $axe->id }}">{{ $axe->titre }}
-                                                        ({{ $axe->code_axe }})
-                                                    </option>
-
-                                                @empty
-                                                @endforelse
-                                            </optgroup>
-                                        </select>
-                                    </div>
-
-                                </div>
-
-
-
-                                <div class="col-md-6 sidebar-item search-form">
-                                    <h3 class="sidebar-title">Fonction</h3>
-                                    <select name="titre" id="" style="width: 100%; height: 38px;"
-                                        class="form-control custom-select2" data-live-search="true">
-                                        <optgroup label="titre">
-                                            <option value=""></option>
-                                            @forelse ($listFonction as $fonction)
-                                                <option value="{{ $fonction->id }}">{{ $fonction->nom }}</option>
-
-                                            @empty
-                                            @endforelse
-                                        </optgroup>
-                                    </select>
-
-                                </div>
-
-                            </div><br> --}}
-
-
-                            <!-- End sidebar search formn-->
-
-                            <!-- End sidebar categories-->
-
-                        </form>
-                        <!-- End Blog Sidebar -->
-
 
                         <!--END formulaire de recherche -->
                     </div>

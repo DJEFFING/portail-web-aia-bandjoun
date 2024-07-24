@@ -5637,5 +5637,2275 @@ class PublicationSeeder extends Seeder
         Publication::create($publication_5_101);
         Publication::create($publication_5_102);
         Publication::create($publication_5_103);
+
+
+        // publication de type :Communications de Conférences => id = 8
+        // annee 2006 => id = 6
+
+        $publication_6_1 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 6,
+
+            "titre" => "G. Kenne, T. Ahmed-Ali, F. Lamnabhi-Lagarrigue, and A. Arzande, “Time-varying parameter identification of a class of nonlinear systems with application to online rotor resistance estimation of induction motors”, in Proc. of IEEE International Symposium on Industry Electronics-ISIE 2006, Montréal, Québec, Canada, vol.1, pp. 301-306, July 2006.",
+
+            "description_1" => "G. Kenne, T. Ahmed-Ali, F. Lamnabhi-Lagarrigue, and A. Arzande, “Time-varying parameter identification of a class of nonlinear systems with application to online rotor resistance estimation of induction motors”, in Proc. of IEEE International Symposium on Industry Electronics-ISIE 2006, Montréal, Québec, Canada, vol.1, pp. 301-306, July 2006.",
+
+            "description_1" => "G. Kenne, T. Ahmed-Ali, F. Lamnabhi-Lagarrigue, and A. Arzande, “Time-varying parameter identification of a class of nonlinear systems with application to online rotor resistance estimation of induction motors”, in Proc. of IEEE International Symposium on Industry Electronics-ISIE 2006, Montréal, Québec, Canada, vol.1, pp. 301-306, July 2006.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_2 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 6,
+
+            "titre" => "G. Kenne, T. Ahmed-Ali, F. Lamnabhi-Lagarrigue, and A. Arzande, “Real-time implementation of rotor flux and speed control of induction motors using on-line rotor resistance and load torque adaptation”, in Joint CTS-HYCON Workshop, Paris, France, July 2006.",
+
+            "description_1" => "G. Kenne, T. Ahmed-Ali, F. Lamnabhi-Lagarrigue, and A. Arzande, “Real-time implementation of rotor flux and speed control of induction motors using on-line rotor resistance and load torque adaptation”, in Joint CTS-HYCON Workshop, Paris, France, July 2006.",
+
+            "description_1" => "G. Kenne, T. Ahmed-Ali, F. Lamnabhi-Lagarrigue, and A. Arzande, “Real-time implementation of rotor flux and speed control of induction motors using on-line rotor resistance and load torque adaptation”, in Joint CTS-HYCON Workshop, Paris, France, July 2006.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_3 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 6,
+
+            "titre" => "A. Tiedeu, H. G. Kom, M. Kom, Computerized detection of masses on mammograms: A comparative study of   two algorithms, in The Abdus Salam International Centre for Theoretical Physics,  IC/2007/011, Available at: http://www.ictp.it/~pub_off.",
+
+            "description_1" => "A. Tiedeu, H. G. Kom, M. Kom, Computerized detection of masses on mammograms: A comparative study of   two algorithms, in The Abdus Salam International Centre for Theoretical Physics,  IC/2007/011, Available at: http://www.ictp.it/~pub_off.",
+
+            "description_1" => "A. Tiedeu, H. G. Kom, M. Kom, Computerized detection of masses on mammograms: A comparative study of   two algorithms, in The Abdus Salam International Centre for Theoretical Physics,  IC/2007/011, Available at: http://www.ictp.it/~pub_off.",
+
+            "lien_externe" => "http://www.ictp.it/~pub_off.",
+
+            "status" => true,
+        ];
+
+        $publication_6_4 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 6,
+
+            "titre" => "M. NKENLIFACK, T. NOULAMO & R. NANGUE, “Contribution des TIC au Développement de la Formation Ouverte à Distance à l’IUT Fotso Victor de l’UDS : Déploiement de SIEL (Système Intégré d’Enseignement en Ligne basé sur Internet)”, Proc Int. Conf. on Sustainable Engineering Development In Africa - African Solutions for African Problems (ASAP2006) -, June 4-8, 06, Yaounde, Cameroon.",
+
+            "description_1" => "M. NKENLIFACK, T. NOULAMO & R. NANGUE, “Contribution des TIC au Développement de la Formation Ouverte à Distance à l’IUT Fotso Victor de l’UDS : Déploiement de SIEL (Système Intégré d’Enseignement en Ligne basé sur Internet)”, Proc Int. Conf. on Sustainable Engineering Development In Africa - African Solutions for African Problems (ASAP2006) -, June 4-8, 06, Yaounde, Cameroon.",
+
+            "description_1" => "M. NKENLIFACK, T. NOULAMO & R. NANGUE, “Contribution des TIC au Développement de la Formation Ouverte à Distance à l’IUT Fotso Victor de l’UDS : Déploiement de SIEL (Système Intégré d’Enseignement en Ligne basé sur Internet)”, Proc Int. Conf. on Sustainable Engineering Development In Africa - African Solutions for African Problems (ASAP2006) -, June 4-8, 06, Yaounde, Cameroon.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_5 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 6,
+
+            "titre" => "Medard FOGUE & Marcellin Julius NKENLIFACK, Formation Ouverte à Distance : Nouvelle façon d’apprendre et d’enseigner, ETUDE DE CAS SUR LA DIVERSIFICATION DE L'ENSEIGNEMENT SUPÉRIEUR ET L'ADAPTATION AU MARCHÉ, Conf. Int., Thème « L'enseignement Supérieur au coeur des Stratégies de Développement en Afrique Francophone. Mieux Comprendre les Clefs du Succès », 13-15 Juin 2006, Ouagadougou, Burkina Faso, http://siteresources.worldbank.org/EDUCATION/Resources/278200-1121703274255/1439264-1137083592502/Presentation_IUT_Dschang.ppt",
+
+            "description_1" => "Medard FOGUE & Marcellin Julius NKENLIFACK, Formation Ouverte à Distance : Nouvelle façon d’apprendre et d’enseigner, ETUDE DE CAS SUR LA DIVERSIFICATION DE L'ENSEIGNEMENT SUPÉRIEUR ET L'ADAPTATION AU MARCHÉ, Conf. Int., Thème « L'enseignement Supérieur au coeur des Stratégies de Développement en Afrique Francophone. Mieux Comprendre les Clefs du Succès », 13-15 Juin 2006, Ouagadougou, Burkina Faso, http://siteresources.worldbank.org/EDUCATION/Resources/278200-1121703274255/1439264-1137083592502/Presentation_IUT_Dschang.ppt",
+
+            "description_1" => "Medard FOGUE & Marcellin Julius NKENLIFACK, Formation Ouverte à Distance : Nouvelle façon d’apprendre et d’enseigner, ETUDE DE CAS SUR LA DIVERSIFICATION DE L'ENSEIGNEMENT SUPÉRIEUR ET L'ADAPTATION AU MARCHÉ, Conf. Int., Thème « L'enseignement Supérieur au coeur des Stratégies de Développement en Afrique Francophone. Mieux Comprendre les Clefs du Succès », 13-15 Juin 2006, Ouagadougou, Burkina Faso, http://siteresources.worldbank.org/EDUCATION/Resources/278200-1121703274255/1439264-1137083592502/Presentation_IUT_Dschang.ppt",
+
+            "lien_externe" => " http://siteresources.worldbank.org/EDUCATION/Resources/278200-1121703274255/1439264-1137083592502/Presentation_IUT_Dschang.ppt",
+
+            "status" => true,
+        ];
+
+        $publication_6_6 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 6,
+
+            "titre" => "6.	 M. NKENLIFACK, T. NOULAMO & R. NANGUE, “Système Intégré d’Enseignement en Ligne basé sur Internet au service de la Formation Ouverte à Distance à l’Univ. de Dschang”, Actes Conf. Int. Euro Graduation @ccess, Yde-Cameroun, 23-24 mai 2006. http://www.euro-graduation-access.org.",
+
+            "description_1" => "6.	 M. NKENLIFACK, T. NOULAMO & R. NANGUE, “Système Intégré d’Enseignement en Ligne basé sur Internet au service de la Formation Ouverte à Distance à l’Univ. de Dschang”, Actes Conf. Int. Euro Graduation @ccess, Yde-Cameroun, 23-24 mai 2006. http://www.euro-graduation-access.org.",
+
+            "description_1" => "6.	 M. NKENLIFACK, T. NOULAMO & R. NANGUE, “Système Intégré d’Enseignement en Ligne basé sur Internet au service de la Formation Ouverte à Distance à l’Univ. de Dschang”, Actes Conf. Int. Euro Graduation @ccess, Yde-Cameroun, 23-24 mai 2006. http://www.euro-graduation-access.org.",
+
+            "lien_externe" => " http://www.euro-graduation-access.org.",
+
+            "status" => true,
+        ];
+
+
+        $publication_6_7 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 6,
+
+            "titre" => "Fotsing E., Cheylan J-P., and Verburg P.H, 2006. From images to patterns: a step toward the identification and modelling of land change processes in a savannah landscape. Proceedings of the 6th AARSE International Conference on Earth Observation & GeoInformation Sciences for Africa’s Development, Cairo-Egypt, 30 October - 2 November 2006.",
+
+            "description_1" => "Fotsing E., Cheylan J-P., and Verburg P.H, 2006. From images to patterns: a step toward the identification and modelling of land change processes in a savannah landscape. Proceedings of the 6th AARSE International Conference on Earth Observation & GeoInformation Sciences for Africa’s Development, Cairo-Egypt, 30 October - 2 November 2006.",
+
+            "description_1" => "Fotsing E., Cheylan J-P., and Verburg P.H, 2006. From images to patterns: a step toward the identification and modelling of land change processes in a savannah landscape. Proceedings of the 6th AARSE International Conference on Earth Observation & GeoInformation Sciences for Africa’s Development, Cairo-Egypt, 30 October - 2 November 2006.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_8 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 6,
+
+            "titre" => "Mayaka T.B., Fotsing E., Hans de Iongh and Paul Loth  (eds.), 2006. Community-Based Conservation of Natural Resources in Dry and Sub-humid Savannas. Proceedings of the 2nd RNSCC International Seminar. Centre for Environment and Development Studies in Cameroon, Maroua, Cameroon.",
+
+            "description_1" => "Mayaka T.B., Fotsing E., Hans de Iongh and Paul Loth  (eds.), 2006. Community-Based Conservation of Natural Resources in Dry and Sub-humid Savannas. Proceedings of the 2nd RNSCC International Seminar. Centre for Environment and Development Studies in Cameroon, Maroua, Cameroon.",
+
+            "description_1" => "Mayaka T.B., Fotsing E., Hans de Iongh and Paul Loth  (eds.), 2006. Community-Based Conservation of Natural Resources in Dry and Sub-humid Savannas. Proceedings of the 2nd RNSCC International Seminar. Centre for Environment and Development Studies in Cameroon, Maroua, Cameroon.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_9 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 6,
+
+            "titre" => "N. Talla Tankam, A. Dipanda, E. Tonyé, A. Akono, 2006, New Formulation of Textural Parameters of Order n>1, Signal and Image Technologies, Internet Based Systems (IEEE-SITIS 2006), Hammamet, Tunisie.",
+
+            "description_1" => "N. Talla Tankam, A. Dipanda, E. Tonyé, A. Akono, 2006, New Formulation of Textural Parameters of Order n>1, Signal and Image Technologies, Internet Based Systems (IEEE-SITIS 2006), Hammamet, Tunisie.",
+
+            "description_1" => "N. Talla Tankam, A. Dipanda, E. Tonyé, A. Akono, 2006, New Formulation of Textural Parameters of Order n>1, Signal and Image Technologies, Internet Based Systems (IEEE-SITIS 2006), Hammamet, Tunisie.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_10 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 6,
+
+            "titre" => "N. Talla Tankam, E. Tonyé, A. Dipanda, A. Akono, 2006, Classification d’images satellitaires radars RSO par valeurs propres de texture. Application à la mangrove littorale Camerounaise, Colloque Africain sur la Recherche en Informatique CARI 2006, Cotonou, Benin.",
+
+            "description_1" => "N. Talla Tankam, E. Tonyé, A. Dipanda, A. Akono, 2006, Classification d’images satellitaires radars RSO par valeurs propres de texture. Application à la mangrove littorale Camerounaise, Colloque Africain sur la Recherche en Informatique CARI 2006, Cotonou, Benin.",
+
+            "description_1" => "N. Talla Tankam, E. Tonyé, A. Dipanda, A. Akono, 2006, Classification d’images satellitaires radars RSO par valeurs propres de texture. Application à la mangrove littorale Camerounaise, Colloque Africain sur la Recherche en Informatique CARI 2006, Cotonou, Benin.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_11 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 6,
+
+            "titre" => "E. Tonyé, N. Talla Tankam,  A. Dipanda,  A.Akono, 2006, Classification of satellite SAR images using “texture eigenvalues” : Application to the Cameroonian littoral mangrove,",
+
+            "description_1" => "E. Tonyé, N. Talla Tankam,  A. Dipanda,  A.Akono, 2006, Classification of satellite SAR images using “texture eigenvalues” : Application to the Cameroonian littoral mangrove,",
+
+            "description_1" => "E. Tonyé, N. Talla Tankam,  A. Dipanda,  A.Akono, 2006, Classification of satellite SAR images using “texture eigenvalues” : Application to the Cameroonian littoral mangrove,",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_12 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 6,
+
+            "titre" => "12.	Committee on Space Research (COSPAR), 36th Scientific Assembly, Beijing, China, 16 – 23 July 2006.",
+
+            "description_1" => "12.	Committee on Space Research (COSPAR), 36th Scientific Assembly, Beijing, China, 16 – 23 July 2006.",
+
+            "description_1" => "12.	Committee on Space Research (COSPAR), 36th Scientific Assembly, Beijing, China, 16 – 23 July 2006.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        // publication de type :Communications de Conférences => id = 8
+        // annee 2007 => id = 7
+
+        $publication_6_13 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 7,
+
+            "titre" => "M. NKENLIFACK, R. C. NANGUE, “Plateforme d'Elearning : SIEL - Système Intégré d’Enseignement en Ligne basé sur Internet”, Séminaire International sur Les Technologies de l’Information et de la Communication : Afrique TIC et Développement, 28 - 30 mai 2007, Hôtel Hilton, Yaoundé – Cameroun.   http://www.sudetic.org/seminaire2007/.",
+
+            "description_1" => "M. NKENLIFACK, R. C. NANGUE, “Plateforme d'Elearning : SIEL - Système Intégré d’Enseignement en Ligne basé sur Internet”, Séminaire International sur Les Technologies de l’Information et de la Communication : Afrique TIC et Développement, 28 - 30 mai 2007, Hôtel Hilton, Yaoundé – Cameroun.   http://www.sudetic.org/seminaire2007/.",
+
+            "description_1" => "M. NKENLIFACK, R. C. NANGUE, “Plateforme d'Elearning : SIEL - Système Intégré d’Enseignement en Ligne basé sur Internet”, Séminaire International sur Les Technologies de l’Information et de la Communication : Afrique TIC et Développement, 28 - 30 mai 2007, Hôtel Hilton, Yaoundé – Cameroun.   http://www.sudetic.org/seminaire2007/.",
+
+            "lien_externe" => "http://www.sudetic.org/seminaire2007/",
+
+            "status" => true,
+        ];
+
+
+        $publication_6_14 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 7,
+
+            "titre" => "D. Tchiotsop, D. Wolf, V. Louis-Dorr, R. Husson, “ECG data compression using Jacobi polynomials”, proceedings IEEE EMBS Lyon 2007, pp. 1863-1867",
+
+            "description_1" => "D. Tchiotsop, D. Wolf, V. Louis-Dorr, R. Husson, “ECG data compression using Jacobi polynomials”, proceedings IEEE EMBS Lyon 2007, pp. 1863-1867",
+
+            "description_1" => "D. Tchiotsop, D. Wolf, V. Louis-Dorr, R. Husson, “ECG data compression using Jacobi polynomials”, proceedings IEEE EMBS Lyon 2007, pp. 1863-1867",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_15 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 7,
+
+            "titre" => "15.	Thierry NOULAMO, Marcellin NKENLIFACK et Emmanuel TANYI, 2007. Conception d'un Simulateur de Systèmes Dynamiques Modélisés dans l'Espace d'Etat, Actes du Séminaire du LAIA (Laboratoire d’Automatique et d’Informatique Appliquée) sur la Modélisation et le Traitement du Signal, 15 - 16 Juin 2007, IUTFV de Banjoun, Université de Dschang, Cameroun pp.15-19.",
+
+            "description_1" => "15.	Thierry NOULAMO, Marcellin NKENLIFACK et Emmanuel TANYI, 2007. Conception d'un Simulateur de Systèmes Dynamiques Modélisés dans l'Espace d'Etat, Actes du Séminaire du LAIA (Laboratoire d’Automatique et d’Informatique Appliquée) sur la Modélisation et le Traitement du Signal, 15 - 16 Juin 2007, IUTFV de Banjoun, Université de Dschang, Cameroun pp.15-19.",
+
+            "description_1" => "15.	Thierry NOULAMO, Marcellin NKENLIFACK et Emmanuel TANYI, 2007. Conception d'un Simulateur de Systèmes Dynamiques Modélisés dans l'Espace d'Etat, Actes du Séminaire du LAIA (Laboratoire d’Automatique et d’Informatique Appliquée) sur la Modélisation et le Traitement du Signal, 15 - 16 Juin 2007, IUTFV de Banjoun, Université de Dschang, Cameroun pp.15-19.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_16 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 7,
+
+            "titre" => "16.	Jean-Pierre LIENOU et Marcellin NKENLIFACK, 2007. Gestion du Non Déterminisme dans les Systèmes d’Exploitation de la Nouvelle Génération des Systèmes Embarqués, Actes du Séminaire du LAIA (Laboratoire d’Automatique et d’Informatique Appliquée) sur la Modélisation et le Traitement du Signal, 15 - 16 Juin 2007, IUTFV de Banjoun, Université de Dschang, Cameroun, pp.27-32.",
+
+            "description_1" => "16.	Jean-Pierre LIENOU et Marcellin NKENLIFACK, 2007. Gestion du Non Déterminisme dans les Systèmes d’Exploitation de la Nouvelle Génération des Systèmes Embarqués, Actes du Séminaire du LAIA (Laboratoire d’Automatique et d’Informatique Appliquée) sur la Modélisation et le Traitement du Signal, 15 - 16 Juin 2007, IUTFV de Banjoun, Université de Dschang, Cameroun, pp.27-32.",
+
+            "description_1" => "16.	Jean-Pierre LIENOU et Marcellin NKENLIFACK, 2007. Gestion du Non Déterminisme dans les Systèmes d’Exploitation de la Nouvelle Génération des Systèmes Embarqués, Actes du Séminaire du LAIA (Laboratoire d’Automatique et d’Informatique Appliquée) sur la Modélisation et le Traitement du Signal, 15 - 16 Juin 2007, IUTFV de Banjoun, Université de Dschang, Cameroun, pp.27-32.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        // publication de type :Communications de Conférences => id = 8
+        // annee 2008 => id = 8
+
+        $publication_6_17 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 8,
+
+            "titre" => "J. Fotsing, E. Tonyé, N. Talla Tankam, 2008, Analyse de texture et classification d’image RSO pour la detection et l’estimation des classes catégorielles de la mangrove littorale camerounaise. XIème Journées Scientifiques du Réseau Télédétection à Antananarivo (Madagascar). 3-7 Novembre 2008.",
+
+            "description_1" => "J. Fotsing, E. Tonyé, N. Talla Tankam, 2008, Analyse de texture et classification d’image RSO pour la detection et l’estimation des classes catégorielles de la mangrove littorale camerounaise. XIème Journées Scientifiques du Réseau Télédétection à Antananarivo (Madagascar). 3-7 Novembre 2008.",
+
+            "description_1" => "J. Fotsing, E. Tonyé, N. Talla Tankam, 2008, Analyse de texture et classification d’image RSO pour la detection et l’estimation des classes catégorielles de la mangrove littorale camerounaise. XIème Journées Scientifiques du Réseau Télédétection à Antananarivo (Madagascar). 3-7 Novembre 2008.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_18 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 8,
+
+            "titre" => "J. Fotsing, E. Tonyé, N. Talla Tankam, 2008, Méthodes optimisées de classification des images RSO: Application à une image RSO de la mangrove littorale camerounaise. Conférence internationale de Géomatique et Analyse Spatiale SAGEO'08 (Spatial Analysis and GEOmatics 2008) : Montpellier, 25-26 juin, Pp.1-4, 2008  France",
+
+            "description_1" => "J. Fotsing, E. Tonyé, N. Talla Tankam, 2008, Méthodes optimisées de classification des images RSO: Application à une image RSO de la mangrove littorale camerounaise. Conférence internationale de Géomatique et Analyse Spatiale SAGEO'08 (Spatial Analysis and GEOmatics 2008) : Montpellier, 25-26 juin, Pp.1-4, 2008  France",
+
+            "description_1" => "J. Fotsing, E. Tonyé, N. Talla Tankam, 2008, Méthodes optimisées de classification des images RSO: Application à une image RSO de la mangrove littorale camerounaise. Conférence internationale de Géomatique et Analyse Spatiale SAGEO'08 (Spatial Analysis and GEOmatics 2008) : Montpellier, 25-26 juin, Pp.1-4, 2008  France",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_19 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 8,
+
+            "titre" => "N. Talla Tankam, E. Tonyé, A. Dipanda, L. Ewoussoua, 2008, A model of Information and Telecommunication Technologies (ICT) in learning of technologies for developping countries: The example of Master in Telecommunications at the National Advance School of Engineering (ENSP) of Yaoundé, Cameroon, ICT Africa’08, 19-21st,2008, Yaoundé, Cameroon..",
+
+            "description_1" => "N. Talla Tankam, E. Tonyé, A. Dipanda, L. Ewoussoua, 2008, A model of Information and Telecommunication Technologies (ICT) in learning of technologies for developping countries: The example of Master in Telecommunications at the National Advance School of Engineering (ENSP) of Yaoundé, Cameroon, ICT Africa’08, 19-21st,2008, Yaoundé, Cameroon..",
+
+            "description_1" => "N. Talla Tankam, E. Tonyé, A. Dipanda, L. Ewoussoua, 2008, A model of Information and Telecommunication Technologies (ICT) in learning of technologies for developping countries: The example of Master in Telecommunications at the National Advance School of Engineering (ENSP) of Yaoundé, Cameroon, ICT Africa’08, 19-21st,2008, Yaoundé, Cameroon..",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_20 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 8,
+
+            "titre" => "N. Talla Tankam, E. Tonyé, L. Ewoussoua, 2008, Les technologies de l’information et de la communication dans l’enseignement (TICE) des technologies : cas du Master en télécommunications de l’Ecole Nationale Supérieure Polytechnique de Yaoundé, Cameroun, AIPU’08, 19-22 mai 2008, Montpellier, France.",
+
+            "description_1" => "N. Talla Tankam, E. Tonyé, L. Ewoussoua, 2008, Les technologies de l’information et de la communication dans l’enseignement (TICE) des technologies : cas du Master en télécommunications de l’Ecole Nationale Supérieure Polytechnique de Yaoundé, Cameroun, AIPU’08, 19-22 mai 2008, Montpellier, France.",
+
+            "description_1" => "N. Talla Tankam, E. Tonyé, L. Ewoussoua, 2008, Les technologies de l’information et de la communication dans l’enseignement (TICE) des technologies : cas du Master en télécommunications de l’Ecole Nationale Supérieure Polytechnique de Yaoundé, Cameroun, AIPU’08, 19-22 mai 2008, Montpellier, France.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_21 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 8,
+
+            "titre" => "E. Tonyé, N. Talla Tankam, L. Ewoussoua, 2008, Pertinence de l’Utilisation des TIC dans l’enseignement des Technologies. Réseau Ouest et Centre-Africain pour la Recherche dans l’Enseignement (ROCARE’08), 2-3 juin 2008, Yaoundé, Cameroun.",
+
+            "description_1" => "E. Tonyé, N. Talla Tankam, L. Ewoussoua, 2008, Pertinence de l’Utilisation des TIC dans l’enseignement des Technologies. Réseau Ouest et Centre-Africain pour la Recherche dans l’Enseignement (ROCARE’08), 2-3 juin 2008, Yaoundé, Cameroun.",
+
+            "description_1" => "E. Tonyé, N. Talla Tankam, L. Ewoussoua, 2008, Pertinence de l’Utilisation des TIC dans l’enseignement des Technologies. Réseau Ouest et Centre-Africain pour la Recherche dans l’Enseignement (ROCARE’08), 2-3 juin 2008, Yaoundé, Cameroun.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_22 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 8,
+
+            "titre" => "B. FotsingTalla. Interactive editing of tree-structured data, In Marc KokouAssogba, E. Badouel, A. Sbihi, editor. Proceedings of the 9th African Conference on Research in Computer Science and Applied Mathematics (CARI’08), pages 771 – 718 – Rabat (Maroc) - October 2008.",
+
+            "description_1" => "B. FotsingTalla. Interactive editing of tree-structured data, In Marc KokouAssogba, E. Badouel, A. Sbihi, editor. Proceedings of the 9th African Conference on Research in Computer Science and Applied Mathematics (CARI’08), pages 771 – 718 – Rabat (Maroc) - October 2008.",
+
+            "description_1" => "B. FotsingTalla. Interactive editing of tree-structured data, In Marc KokouAssogba, E. Badouel, A. Sbihi, editor. Proceedings of the 9th African Conference on Research in Computer Science and Applied Mathematics (CARI’08), pages 771 – 718 – Rabat (Maroc) - October 2008.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_23 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 8,
+
+            "titre" => "Eric Badouel, Bernard Fotsing, and RodrigueTchougong. Attribute grammars as recursion schemes over cyclic representations of zippers. MSFP - Mathematically Structured Functional Programming, Reykjavik, Iceland, August 2008. ",
+
+            "description_1" => "Eric Badouel, Bernard Fotsing, and RodrigueTchougong. Attribute grammars as recursion schemes over cyclic representations of zippers. MSFP - Mathematically Structured Functional Programming, Reykjavik, Iceland, August 2008. ",
+
+            "description_1" => "Eric Badouel, Bernard Fotsing, and RodrigueTchougong. Attribute grammars as recursion schemes over cyclic representations of zippers. MSFP - Mathematically Structured Functional Programming, Reykjavik, Iceland, August 2008. ",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        // publication de type :Communications de Conférences => id = 8
+        // annee 2009 => id = 9
+
+        $publication_6_24 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 9,
+
+            "titre" => "D. Wissam, G. Kenne, F. Lamnabhi-Lagarrigue. An application of immersion and invariance to transient stability and voltage regulation of power systems with unknown mechanical power, Proceedings of the IEEE Conference on Decision and Control 28th Chinese Control Conference, Shanghai, P.R. China, December 16-18, 2009, pp. 7837–7842, 2009.",
+
+            "description_1" => "D. Wissam, G. Kenne, F. Lamnabhi-Lagarrigue. An application of immersion and invariance to transient stability and voltage regulation of power systems with unknown mechanical power, Proceedings of the IEEE Conference on Decision and Control 28th Chinese Control Conference, Shanghai, P.R. China, December 16-18, 2009, pp. 7837–7842, 2009.",
+
+            "description_1" => "D. Wissam, G. Kenne, F. Lamnabhi-Lagarrigue. An application of immersion and invariance to transient stability and voltage regulation of power systems with unknown mechanical power, Proceedings of the IEEE Conference on Decision and Control 28th Chinese Control Conference, Shanghai, P.R. China, December 16-18, 2009, pp. 7837–7842, 2009.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_25 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 9,
+
+            "titre" => "G. Kenne, T. Ahmed-Ali, F. Lamnabhi-Lagarrigue, A. Arzande, J. C. Vannier. An improved rotor resistance estimator for induction motors, in Proc. of 15th IFAC Symposium on System Identification, SYSID 2009, July 6-8, Saint-Malo, France, Vol.15, Part 1, pp. 308–313, 2009.",
+
+            "description_1" => "G. Kenne, T. Ahmed-Ali, F. Lamnabhi-Lagarrigue, A. Arzande, J. C. Vannier. An improved rotor resistance estimator for induction motors, in Proc. of 15th IFAC Symposium on System Identification, SYSID 2009, July 6-8, Saint-Malo, France, Vol.15, Part 1, pp. 308–313, 2009.",
+
+            "description_1" => "G. Kenne, T. Ahmed-Ali, F. Lamnabhi-Lagarrigue, A. Arzande, J. C. Vannier. An improved rotor resistance estimator for induction motors, in Proc. of 15th IFAC Symposium on System Identification, SYSID 2009, July 6-8, Saint-Malo, France, Vol.15, Part 1, pp. 308–313, 2009.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_26 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 9,
+
+            "titre" => "G. Kenne, H. Nkwawo, R. Goma, T. Ahmed-Ali, F. Lamnabhi-Lagarrigue, J. C. Vannier. Transient stabilization and voltage regulation of power generators with parameters adaptation, in Proc. of 15th IFAC Symposium on System Identification, SYSID 2009, July 6-8, Saint-Malo, France, Vol. 15, Part 1, pp. 1068–1073, 2009.",
+
+            "description_1" => "G. Kenne, H. Nkwawo, R. Goma, T. Ahmed-Ali, F. Lamnabhi-Lagarrigue, J. C. Vannier. Transient stabilization and voltage regulation of power generators with parameters adaptation, in Proc. of 15th IFAC Symposium on System Identification, SYSID 2009, July 6-8, Saint-Malo, France, Vol. 15, Part 1, pp. 1068–1073, 2009.",
+
+            "description_1" => "G. Kenne, H. Nkwawo, R. Goma, T. Ahmed-Ali, F. Lamnabhi-Lagarrigue, J. C. Vannier. Transient stabilization and voltage regulation of power generators with parameters adaptation, in Proc. of 15th IFAC Symposium on System Identification, SYSID 2009, July 6-8, Saint-Malo, France, Vol. 15, Part 1, pp. 1068–1073, 2009.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_27 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 9,
+
+            "titre" => "E. M. Nfah, J. M. Ngundam, G. Kenne, “PV hybrid technology and economics for remote electrification in Far North Cameroon”, in Proc. of the International Workshop on Water Supply and Renewable Energy Systems and management, National Advanced School of Engineering, University of Yaoundé I, Cameroon, 27-29 April 2009, pp. 75-85.",
+
+            "description_1" => "E. M. Nfah, J. M. Ngundam, G. Kenne, “PV hybrid technology and economics for remote electrification in Far North Cameroon”, in Proc. of the International Workshop on Water Supply and Renewable Energy Systems and management, National Advanced School of Engineering, University of Yaoundé I, Cameroon, 27-29 April 2009, pp. 75-85.",
+
+            "description_1" => "E. M. Nfah, J. M. Ngundam, G. Kenne, “PV hybrid technology and economics for remote electrification in Far North Cameroon”, in Proc. of the International Workshop on Water Supply and Renewable Energy Systems and management, National Advanced School of Engineering, University of Yaoundé I, Cameroon, 27-29 April 2009, pp. 75-85.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_28 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 9,
+
+            "titre" => "J. Kengne, J. C. Chedjou and K. Kyamakya, “Stability and bifurcation analysis in electronic oscillators: Theory and some experiments”, Proceedings of the XV International Symposium on Theoretical Electrical Engineering (ISTET’09), Lueberg, Germany 22-24 June 2009, pp. 173-177.",
+
+            "description_1" => "J. Kengne, J. C. Chedjou and K. Kyamakya, “Stability and bifurcation analysis in electronic oscillators: Theory and some experiments”, Proceedings of the XV International Symposium on Theoretical Electrical Engineering (ISTET’09), Lueberg, Germany 22-24 June 2009, pp. 173-177.",
+
+            "description_1" => "J. Kengne, J. C. Chedjou and K. Kyamakya, “Stability and bifurcation analysis in electronic oscillators: Theory and some experiments”, Proceedings of the XV International Symposium on Theoretical Electrical Engineering (ISTET’09), Lueberg, Germany 22-24 June 2009, pp. 173-177.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_29 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 9,
+
+            "titre" => "J. Kengne, J. C. Chedjou, K. Kyamakya, and I. Moussa, “Stability and bifurcation analysis in transformer-coupled oscillators”, IEEE Xplore: Nonlinear Dynamics and Synchronization (INDS’09), July 2009, pp. 30-39.",
+
+            "description_1" => "J. Kengne, J. C. Chedjou, K. Kyamakya, and I. Moussa, “Stability and bifurcation analysis in transformer-coupled oscillators”, IEEE Xplore: Nonlinear Dynamics and Synchronization (INDS’09), July 2009, pp. 30-39.",
+
+            "description_1" => "J. Kengne, J. C. Chedjou, K. Kyamakya, and I. Moussa, “Stability and bifurcation analysis in transformer-coupled oscillators”, IEEE Xplore: Nonlinear Dynamics and Synchronization (INDS’09), July 2009, pp. 30-39.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_30 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 9,
+
+            "titre" => "Marcellin NKENLIFACK, Raoul NANGUE and Maurice TCHOKOMAKOUA, « Projet TICLAC : TIC pour la Modernisation de l’Enseignement des Langues et Cultures nationales dans les établissements », Conférence internationale : ASAP 2009 sur la « Diversité culturelle et Internet multilingue en Afrique », 2 au 5 décembre 2009, Hôtel Hilton, Yaoundé-Cameroun",
+
+            "description_1" => "Marcellin NKENLIFACK, Raoul NANGUE and Maurice TCHOKOMAKOUA, « Projet TICLAC : TIC pour la Modernisation de l’Enseignement des Langues et Cultures nationales dans les établissements », Conférence internationale : ASAP 2009 sur la « Diversité culturelle et Internet multilingue en Afrique », 2 au 5 décembre 2009, Hôtel Hilton, Yaoundé-Cameroun",
+
+            "description_1" => "Marcellin NKENLIFACK, Raoul NANGUE and Maurice TCHOKOMAKOUA, « Projet TICLAC : TIC pour la Modernisation de l’Enseignement des Langues et Cultures nationales dans les établissements », Conférence internationale : ASAP 2009 sur la « Diversité culturelle et Internet multilingue en Afrique », 2 au 5 décembre 2009, Hôtel Hilton, Yaoundé-Cameroun",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_31 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 9,
+
+            "titre" => "J. Fotsing, E. Tonye, N. Talla Tankam, J. P. Rudant, 2009. Modélisation de la Texture des Images par le Biais de l’Analyse Variographique. IEEE/ SETIT, International Conference: Sciences of Electronic, Technologies of Information and Telecommunications, March 22-26, 2009 – TUNISIA, CD-Room.",
+
+            "description_1" => "J. Fotsing, E. Tonye, N. Talla Tankam, J. P. Rudant, 2009. Modélisation de la Texture des Images par le Biais de l’Analyse Variographique. IEEE/ SETIT, International Conference: Sciences of Electronic, Technologies of Information and Telecommunications, March 22-26, 2009 – TUNISIA, CD-Room.",
+
+            "description_1" => "J. Fotsing, E. Tonye, N. Talla Tankam, J. P. Rudant, 2009. Modélisation de la Texture des Images par le Biais de l’Analyse Variographique. IEEE/ SETIT, International Conference: Sciences of Electronic, Technologies of Information and Telecommunications, March 22-26, 2009 – TUNISIA, CD-Room.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_32 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 9,
+
+            "titre" => "J. Fotsing, E. Tonyé, B. EssimbiZobo, N. Talla Tankam, J.-P. Rudant, 2010, Texture analysis using geostatistic. First Buea International Conference on the Mathematical Sciences (2009).",
+
+            "description_1" => "J. Fotsing, E. Tonyé, B. EssimbiZobo, N. Talla Tankam, J.-P. Rudant, 2010, Texture analysis using geostatistic. First Buea International Conference on the Mathematical Sciences (2009).",
+
+            "description_1" => "J. Fotsing, E. Tonyé, B. EssimbiZobo, N. Talla Tankam, J.-P. Rudant, 2010, Texture analysis using geostatistic. First Buea International Conference on the Mathematical Sciences (2009).",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_33 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 9,
+
+            "titre" => "J. Fotsing, E. Tonyé, J.-P. Rudant, N. Talla Tankam, T.F.N. Kanaa, 2009. Classification d’images satellitaires radar RSO par détection de modes et de vallées d’histogrammes : Application à la mangrove littorale camerounaise et à la région post éruptive du Mont Cameroun. JSA-Alger, 2009.",
+
+            "description_1" => "J. Fotsing, E. Tonyé, J.-P. Rudant, N. Talla Tankam, T.F.N. Kanaa, 2009. Classification d’images satellitaires radar RSO par détection de modes et de vallées d’histogrammes : Application à la mangrove littorale camerounaise et à la région post éruptive du Mont Cameroun. JSA-Alger, 2009.",
+
+            "description_1" => "J. Fotsing, E. Tonyé, J.-P. Rudant, N. Talla Tankam, T.F.N. Kanaa, 2009. Classification d’images satellitaires radar RSO par détection de modes et de vallées d’histogrammes : Application à la mangrove littorale camerounaise et à la région post éruptive du Mont Cameroun. JSA-Alger, 2009.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_34 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 9,
+
+            "titre" => "J. Fotsing, E. Tonye, N. Talla Tankam, J. P. Rudant, 2009, Modélisation de la Texture des Images par le Biais de l’Analyse Variographique, International Conference: Sciences of Electronic, Technologies of Information and Telecommunications,  March 22-26, 2009 – TUNISIA.",
+
+            "description_1" => "J. Fotsing, E. Tonye, N. Talla Tankam, J. P. Rudant, 2009, Modélisation de la Texture des Images par le Biais de l’Analyse Variographique, International Conference: Sciences of Electronic, Technologies of Information and Telecommunications,  March 22-26, 2009 – TUNISIA.",
+
+            "description_1" => "J. Fotsing, E. Tonye, N. Talla Tankam, J. P. Rudant, 2009, Modélisation de la Texture des Images par le Biais de l’Analyse Variographique, International Conference: Sciences of Electronic, Technologies of Information and Telecommunications,  March 22-26, 2009 – TUNISIA.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        // publication de type : Communications de Conférences => id = 8
+        // annee 2010 => id = 10
+
+        $publication_6_35 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 10,
+
+            "titre" => "M. Nkenlifack, « Modèle de fonctionnement d’une Académie Régionale Internet : Business Plan et Actions, cas de l’IUTFV de l’UDS », Conférence Internat. Cisco Networking Academy African Safari, 4-5 Mai 2010, Abuja, Nigéria;",
+
+            "description_1" => "M. Nkenlifack, « Modèle de fonctionnement d’une Académie Régionale Internet : Business Plan et Actions, cas de l’IUTFV de l’UDS », Conférence Internat. Cisco Networking Academy African Safari, 4-5 Mai 2010, Abuja, Nigéria;",
+
+            "description_1" => "M. Nkenlifack, « Modèle de fonctionnement d’une Académie Régionale Internet : Business Plan et Actions, cas de l’IUTFV de l’UDS », Conférence Internat. Cisco Networking Academy African Safari, 4-5 Mai 2010, Abuja, Nigéria;",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_36 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 10,
+
+            "titre" => "36.	 Fotsing E., Verburg P.H, DeGroot W.T., Tchuente M. and Cheylan J-P., 2010. Une méthode d’exploration spatiale pour analyser les facteurs déterminant les changements d’utilisation de l’espace appliquée à une région du Nord Cameroun. In Maurice Tsalefac, Jean-Marc Zaninetti, Guillaume Giroir, Roger Ngoufo (coord.), 2010. Actes du colloque Internationale « L'Afrique Centrale, le Cameroun et les changements globaux », IGBP Cameroun, du 6-8 Juin 2007 à Yaoundé, Presses Universitaires d'Orléans, 2010. 293-309 pp.",
+
+            "description_1" => "36.	 Fotsing E., Verburg P.H, DeGroot W.T., Tchuente M. and Cheylan J-P., 2010. Une méthode d’exploration spatiale pour analyser les facteurs déterminant les changements d’utilisation de l’espace appliquée à une région du Nord Cameroun. In Maurice Tsalefac, Jean-Marc Zaninetti, Guillaume Giroir, Roger Ngoufo (coord.), 2010. Actes du colloque Internationale « L'Afrique Centrale, le Cameroun et les changements globaux », IGBP Cameroun, du 6-8 Juin 2007 à Yaoundé, Presses Universitaires d'Orléans, 2010. 293-309 pp.",
+
+            "description_1" => "36.	 Fotsing E., Verburg P.H, DeGroot W.T., Tchuente M. and Cheylan J-P., 2010. Une méthode d’exploration spatiale pour analyser les facteurs déterminant les changements d’utilisation de l’espace appliquée à une région du Nord Cameroun. In Maurice Tsalefac, Jean-Marc Zaninetti, Guillaume Giroir, Roger Ngoufo (coord.), 2010. Actes du colloque Internationale « L'Afrique Centrale, le Cameroun et les changements globaux », IGBP Cameroun, du 6-8 Juin 2007 à Yaoundé, Presses Universitaires d'Orléans, 2010. 293-309 pp.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_37 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 10,
+
+            "titre" => "H. G. Kom, A. Tiedeu, C. Feudjio and  J. M. Ngundam, Computerized detection of masses on mammograms by entropy maximisation thresholding, in The Abdus Salam International Centre for Theoretical Physics, IC/2010/009, Available at: http://www.ictp.it/~pub_off, 2010.",
+
+            "description_1" => "H. G. Kom, A. Tiedeu, C. Feudjio and  J. M. Ngundam, Computerized detection of masses on mammograms by entropy maximisation thresholding, in The Abdus Salam International Centre for Theoretical Physics, IC/2010/009, Available at: http://www.ictp.it/~pub_off, 2010.",
+
+            "description_1" => "H. G. Kom, A. Tiedeu, C. Feudjio and  J. M. Ngundam, Computerized detection of masses on mammograms by entropy maximisation thresholding, in The Abdus Salam International Centre for Theoretical Physics, IC/2010/009, Available at: http://www.ictp.it/~pub_off, 2010.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_38 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 10,
+
+            "titre" => "J. R. Mboupda Pone, M. Kom, Commande codée des ultrasons et contribution à l’exploration d’imagerie échographique par FPGA, 17ième conférence annuelle du Cameroon Biosciences and Society, Université des Montagnes Bangangté-Cameroon: November 30th-4th  December 2010.",
+
+            "description_1" => "J. R. Mboupda Pone, M. Kom, Commande codée des ultrasons et contribution à l’exploration d’imagerie échographique par FPGA, 17ième conférence annuelle du Cameroon Biosciences and Society, Université des Montagnes Bangangté-Cameroon: November 30th-4th  December 2010.",
+
+            "description_1" => "J. R. Mboupda Pone, M. Kom, Commande codée des ultrasons et contribution à l’exploration d’imagerie échographique par FPGA, 17ième conférence annuelle du Cameroon Biosciences and Society, Université des Montagnes Bangangté-Cameroon: November 30th-4th  December 2010.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_39 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 10,
+
+            "titre" => "Fotsing E., Verburg P.H, DeGroot W.T., Cheylan J-P. et Tchuente M, 2010. Un modèle intégré pour explorer les trajectoires d’utilisation de l’espace en zone de savanes sèches du Cameroun. Actes du colloque International sur le thème “savanes Africaines en développement, innover pour durer», organisé par le CIRAD, Montpellier, France et tenu du 21-24 avril 2009, à Garoua au Cameroun, http://hal.cirad.fr/",
+
+            "description_1" => "Fotsing E., Verburg P.H, DeGroot W.T., Cheylan J-P. et Tchuente M, 2010. Un modèle intégré pour explorer les trajectoires d’utilisation de l’espace en zone de savanes sèches du Cameroun. Actes du colloque International sur le thème “savanes Africaines en développement, innover pour durer», organisé par le CIRAD, Montpellier, France et tenu du 21-24 avril 2009, à Garoua au Cameroun, http://hal.cirad.fr/",
+
+            "description_1" => "Fotsing E., Verburg P.H, DeGroot W.T., Cheylan J-P. et Tchuente M, 2010. Un modèle intégré pour explorer les trajectoires d’utilisation de l’espace en zone de savanes sèches du Cameroun. Actes du colloque International sur le thème “savanes Africaines en développement, innover pour durer», organisé par le CIRAD, Montpellier, France et tenu du 21-24 avril 2009, à Garoua au Cameroun, http://hal.cirad.fr/",
+
+            "lien_externe" => "http://hal.cirad.fr/",
+
+            "status" => true,
+        ];
+
+        $publication_6_40 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 10,
+
+            "titre" => "J. Fotsing, E. Tonyé, B. ZoboEssimbi, N. Talla Tankam, T.F.N. Kanaa, J.-P. Rudant, 2010, Analyse texturale par approche variographique pour la détection et le suivi du trait de côte : cas du littoral camerounais. XIIèmes Journées Scientifiques du Réseau Télédétection de l’AUF, Monastir, Tunisie, 23-25 novembre 2010.",
+
+            "description_1" => "J. Fotsing, E. Tonyé, B. ZoboEssimbi, N. Talla Tankam, T.F.N. Kanaa, J.-P. Rudant, 2010, Analyse texturale par approche variographique pour la détection et le suivi du trait de côte : cas du littoral camerounais. XIIèmes Journées Scientifiques du Réseau Télédétection de l’AUF, Monastir, Tunisie, 23-25 novembre 2010.",
+
+            "description_1" => "J. Fotsing, E. Tonyé, B. ZoboEssimbi, N. Talla Tankam, T.F.N. Kanaa, J.-P. Rudant, 2010, Analyse texturale par approche variographique pour la détection et le suivi du trait de côte : cas du littoral camerounais. XIIèmes Journées Scientifiques du Réseau Télédétection de l’AUF, Monastir, Tunisie, 23-25 novembre 2010.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_41 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 10,
+
+            "titre" => "N. Talla Tankam, J. Fotsing, A. Dipanda, E. Tonyé, 2010, Apport du variogramme dans l’analyse de texture d’images satellitaires radar RSO. XIIèmes Journées Scientifiques du Réseau Télédétection de l’AUF, Monastir, Tunisie, 23-25 novembre 2010.",
+
+            "description_1" => "N. Talla Tankam, J. Fotsing, A. Dipanda, E. Tonyé, 2010, Apport du variogramme dans l’analyse de texture d’images satellitaires radar RSO. XIIèmes Journées Scientifiques du Réseau Télédétection de l’AUF, Monastir, Tunisie, 23-25 novembre 2010.",
+
+            "description_1" => "N. Talla Tankam, J. Fotsing, A. Dipanda, E. Tonyé, 2010, Apport du variogramme dans l’analyse de texture d’images satellitaires radar RSO. XIIèmes Journées Scientifiques du Réseau Télédétection de l’AUF, Monastir, Tunisie, 23-25 novembre 2010.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_42 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 10,
+
+            "titre" => "J. Fotsing, E. Tonyé, B. EssimbiZobo, N. Talla Tankam, T.F.N. Kanaa, J.-P. Rudant, 2010, A New Imagery Classification Method Using Spatial Covariance Information: An Application to the SAR Image of the Coastline of Cameroon. ASPRS/ CaGIS, USA",
+
+            "description_1" => "J. Fotsing, E. Tonyé, B. EssimbiZobo, N. Talla Tankam, T.F.N. Kanaa, J.-P. Rudant, 2010, A New Imagery Classification Method Using Spatial Covariance Information: An Application to the SAR Image of the Coastline of Cameroon. ASPRS/ CaGIS, USA",
+
+            "description_1" => "J. Fotsing, E. Tonyé, B. EssimbiZobo, N. Talla Tankam, T.F.N. Kanaa, J.-P. Rudant, 2010, A New Imagery Classification Method Using Spatial Covariance Information: An Application to the SAR Image of the Coastline of Cameroon. ASPRS/ CaGIS, USA",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_43 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 10,
+
+            "titre" => "N. Talla Tankam, E. Tonyé, A. Dipanda, L. Ewoussoua, 2010, A model of Distance Learning of Technologies for Developing countries: Case of the Master (M2) in Telecommunications at the National Advanced School of Engineering in Cameroon, Accepté pour présentation au ColloqueAfricain sur la RechercheenInformatique et MathématiqueAppliquée (CARI’2010).",
+
+            "description_1" => "N. Talla Tankam, E. Tonyé, A. Dipanda, L. Ewoussoua, 2010, A model of Distance Learning of Technologies for Developing countries: Case of the Master (M2) in Telecommunications at the National Advanced School of Engineering in Cameroon, Accepté pour présentation au ColloqueAfricain sur la RechercheenInformatique et MathématiqueAppliquée (CARI’2010).",
+
+            "description_1" => "N. Talla Tankam, E. Tonyé, A. Dipanda, L. Ewoussoua, 2010, A model of Distance Learning of Technologies for Developing countries: Case of the Master (M2) in Telecommunications at the National Advanced School of Engineering in Cameroon, Accepté pour présentation au ColloqueAfricain sur la RechercheenInformatique et MathématiqueAppliquée (CARI’2010).",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_44 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 10,
+
+            "titre" => "J. R. Mboupda Pone, M. Kom, A. Tiedeu, G. Kenne, 2010. Sur l'exploration de l'image échographique des organes internes par la méthode des émissions codées complémentaires Golay (ECCG), in Proc. of Cameroon Biosciences Society (CBS), 17th Annual Conference Nov. 30 -Dec. 04, 2010, Université des Montagnes, Bangangté, Cameroon, www.udesmontagnes.org.",
+
+            "description_1" => "J. R. Mboupda Pone, M. Kom, A. Tiedeu, G. Kenne, 2010. Sur l'exploration de l'image échographique des organes internes par la méthode des émissions codées complémentaires Golay (ECCG), in Proc. of Cameroon Biosciences Society (CBS), 17th Annual Conference Nov. 30 -Dec. 04, 2010, Université des Montagnes, Bangangté, Cameroon, www.udesmontagnes.org.",
+
+            "description_1" => "J. R. Mboupda Pone, M. Kom, A. Tiedeu, G. Kenne, 2010. Sur l'exploration de l'image échographique des organes internes par la méthode des émissions codées complémentaires Golay (ECCG), in Proc. of Cameroon Biosciences Society (CBS), 17th Annual Conference Nov. 30 -Dec. 04, 2010, Université des Montagnes, Bangangté, Cameroon, www.udesmontagnes.org.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_45 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 10,
+
+            "titre" => "G. H. Kom, A. Tiedeu, M. Kom, 2010. Etude comparative de 2 méthodes de détection des masses dans les mammographies, Journée scientifique LAIA 2010 du 08 janvier 2010 à l’IUT-FV de Bandjoun, Université de Dschang.",
+
+            "description_1" => "G. H. Kom, A. Tiedeu, M. Kom, 2010. Etude comparative de 2 méthodes de détection des masses dans les mammographies, Journée scientifique LAIA 2010 du 08 janvier 2010 à l’IUT-FV de Bandjoun, Université de Dschang.",
+
+            "description_1" => "G. H. Kom, A. Tiedeu, M. Kom, 2010. Etude comparative de 2 méthodes de détection des masses dans les mammographies, Journée scientifique LAIA 2010 du 08 janvier 2010 à l’IUT-FV de Bandjoun, Université de Dschang.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_46 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 10,
+
+            "titre" => "Jules Tsochounie, Emmanuel Tanyi, 2010. Commande Multivariable du Réseau Intercennecté Sud du Cameroun dans l’Espace d’Etat, Journée Scientifique du LAIA, IUT FOTSO Victor de l’Université de Dschang, Cameroun, 08 Janvier 2010.",
+
+            "description_1" => "Jules Tsochounie, Emmanuel Tanyi, 2010. Commande Multivariable du Réseau Intercennecté Sud du Cameroun dans l’Espace d’Etat, Journée Scientifique du LAIA, IUT FOTSO Victor de l’Université de Dschang, Cameroun, 08 Janvier 2010.",
+
+            "description_1" => "Jules Tsochounie, Emmanuel Tanyi, 2010. Commande Multivariable du Réseau Intercennecté Sud du Cameroun dans l’Espace d’Etat, Journée Scientifique du LAIA, IUT FOTSO Victor de l’Université de Dschang, Cameroun, 08 Janvier 2010.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_47 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 10,
+
+            "titre" => "NKENLIFACK Marcellin, 2010. Intégration et Appropriation des Logiciels Libre à l’Université de Dschang, Séminaire national sur les Logiciels libres, organisé par l’ANTIC (Agence Nationale des TIC), Palais de Congrès, Yaoundé le 23 septembre 2010.",
+
+            "description_1" => "NKENLIFACK Marcellin, 2010. Intégration et Appropriation des Logiciels Libre à l’Université de Dschang, Séminaire national sur les Logiciels libres, organisé par l’ANTIC (Agence Nationale des TIC), Palais de Congrès, Yaoundé le 23 septembre 2010.",
+
+            "description_1" => "NKENLIFACK Marcellin, 2010. Intégration et Appropriation des Logiciels Libre à l’Université de Dschang, Séminaire national sur les Logiciels libres, organisé par l’ANTIC (Agence Nationale des TIC), Palais de Congrès, Yaoundé le 23 septembre 2010.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_49 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 10,
+
+            "titre" => "M. Nkenlifack, 2010. Le Système LMD dans SIGES 2 (Système Intégré de Gestion des Etablissements du Supérieur), Séminaire d’Echange sur les « systèmes de Gestion des Scolarités des Universités Camerounaises et Présentation du Système d’Information SCOLARIX », organisé par le MINESUP en partenariat avec l’AUF, 10 - 14 juin 2010.",
+
+            "description_1" => "M. Nkenlifack, 2010. Le Système LMD dans SIGES 2 (Système Intégré de Gestion des Etablissements du Supérieur), Séminaire d’Echange sur les « systèmes de Gestion des Scolarités des Universités Camerounaises et Présentation du Système d’Information SCOLARIX », organisé par le MINESUP en partenariat avec l’AUF, 10 - 14 juin 2010.",
+
+            "description_1" => "M. Nkenlifack, 2010. Le Système LMD dans SIGES 2 (Système Intégré de Gestion des Etablissements du Supérieur), Séminaire d’Echange sur les « systèmes de Gestion des Scolarités des Universités Camerounaises et Présentation du Système d’Information SCOLARIX », organisé par le MINESUP en partenariat avec l’AUF, 10 - 14 juin 2010.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_50 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 10,
+
+            "titre" => "T. NOULAMO,  E. TANYI, M. NKENLIFACK et J.P. LIENOU, 2010. Modèle Métier et Architectures Génériques pour la Commande et la Surveillance des Systèmes Dynamiques, session Informatique Appliquée, Journées Scientifiques 2010 du Laboratoire d’Automatique et d’Informatique Appliquée (LAIA), 8 janvier 2010 à l’IUTFV de Banjoun de l’Univ de Dschang.",
+
+            "description_1" => "T. NOULAMO,  E. TANYI, M. NKENLIFACK et J.P. LIENOU, 2010. Modèle Métier et Architectures Génériques pour la Commande et la Surveillance des Systèmes Dynamiques, session Informatique Appliquée, Journées Scientifiques 2010 du Laboratoire d’Automatique et d’Informatique Appliquée (LAIA), 8 janvier 2010 à l’IUTFV de Banjoun de l’Univ de Dschang.",
+
+            "description_1" => "T. NOULAMO,  E. TANYI, M. NKENLIFACK et J.P. LIENOU, 2010. Modèle Métier et Architectures Génériques pour la Commande et la Surveillance des Systèmes Dynamiques, session Informatique Appliquée, Journées Scientifiques 2010 du Laboratoire d’Automatique et d’Informatique Appliquée (LAIA), 8 janvier 2010 à l’IUTFV de Banjoun de l’Univ de Dschang.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_51 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 10,
+
+            "titre" => "J.P. LIENOU, M. NKENLIFACK, M. TCHUENTE, E. TANYI et T. NOULAMO, 2010. Systèmes Multi agents pour le Diagnostic on-line des transformateurs par DGA, Journées Scientifiques 2010 du Laboratoire d’Automatique et d’Informatique Appliquée (LAIA), session Informatique Appliquée, 8 janvier 2010 à l’IUTFV de Banjoun de l’Univ de Dschang.",
+
+            "description_1" => "J.P. LIENOU, M. NKENLIFACK, M. TCHUENTE, E. TANYI et T. NOULAMO, 2010. Systèmes Multi agents pour le Diagnostic on-line des transformateurs par DGA, Journées Scientifiques 2010 du Laboratoire d’Automatique et d’Informatique Appliquée (LAIA), session Informatique Appliquée, 8 janvier 2010 à l’IUTFV de Banjoun de l’Univ de Dschang.",
+
+            "description_1" => "J.P. LIENOU, M. NKENLIFACK, M. TCHUENTE, E. TANYI et T. NOULAMO, 2010. Systèmes Multi agents pour le Diagnostic on-line des transformateurs par DGA, Journées Scientifiques 2010 du Laboratoire d’Automatique et d’Informatique Appliquée (LAIA), session Informatique Appliquée, 8 janvier 2010 à l’IUTFV de Banjoun de l’Univ de Dschang.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        // publication de type : Communications de Conférences => id = 8
+        // annee 2011 => id = 11
+
+        $publication_6_52 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 11,
+
+            "titre" => "H. G. Kom, A. Tiedeu, J. M. Ngundam, Computerized mass detection on mammograms using wavelets enhancement and entropy maximization thresholding methods, Poster presented during the second edition of  the CPS International Conference on Low Cost High Physics and Appropriate  Solutions to Real Life Problems in Developing Countries,  from 6 to 8 december 2011, Yaoundé (Cameroon), www.scp-web.org.",
+
+            "description_1" => "H. G. Kom, A. Tiedeu, J. M. Ngundam, Computerized mass detection on mammograms using wavelets enhancement and entropy maximization thresholding methods, Poster presented during the second edition of  the CPS International Conference on Low Cost High Physics and Appropriate  Solutions to Real Life Problems in Developing Countries,  from 6 to 8 december 2011, Yaoundé (Cameroon), www.scp-web.org.",
+
+            "description_1" => "H. G. Kom, A. Tiedeu, J. M. Ngundam, Computerized mass detection on mammograms using wavelets enhancement and entropy maximization thresholding methods, Poster presented during the second edition of  the CPS International Conference on Low Cost High Physics and Appropriate  Solutions to Real Life Problems in Developing Countries,  from 6 to 8 december 2011, Yaoundé (Cameroon), www.scp-web.org.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_53 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 11,
+
+            "titre" => "Tonye, E.  Fotsing, J.  EssimbiZobo, B.  Talla Tankam, N.  Kanaa, T.F.N., Rudant, J.P., 2011, Contribution of Variogram and Feature Vector of Texture for the Classification of Big Size SAR Images. Signal-Image Technology and Internet-Based Systems (SITIS), 2011 Seventh International Conference on. Print ISBN: 978-1-4673-0431-3, Pp. 382 – 389",
+
+            "description_1" => "Tonye, E.  Fotsing, J.  EssimbiZobo, B.  Talla Tankam, N.  Kanaa, T.F.N., Rudant, J.P., 2011, Contribution of Variogram and Feature Vector of Texture for the Classification of Big Size SAR Images. Signal-Image Technology and Internet-Based Systems (SITIS), 2011 Seventh International Conference on. Print ISBN: 978-1-4673-0431-3, Pp. 382 – 389",
+
+            "description_1" => "Tonye, E.  Fotsing, J.  EssimbiZobo, B.  Talla Tankam, N.  Kanaa, T.F.N., Rudant, J.P., 2011, Contribution of Variogram and Feature Vector of Texture for the Classification of Big Size SAR Images. Signal-Image Technology and Internet-Based Systems (SITIS), 2011 Seventh International Conference on. Print ISBN: 978-1-4673-0431-3, Pp. 382 – 389",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_54 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 11,
+
+            "titre" => "Narcisse Talla Tankam, Albert Dipanda,  JanvierFotsing, Emanuel Tonye, 2011, SAR Image Classification Combining Structural and Statistical Methods, Signal-Image Technology and Internet-Based Systems (SITIS), 2011 Seventh International Conference. Print ISBN: 978-1-4673-0431-3, Pp. 468 – 475, Nov. 28 2011-Dec. 1 2011.",
+
+            "description_1" => "Narcisse Talla Tankam, Albert Dipanda,  JanvierFotsing, Emanuel Tonye, 2011, SAR Image Classification Combining Structural and Statistical Methods, Signal-Image Technology and Internet-Based Systems (SITIS), 2011 Seventh International Conference. Print ISBN: 978-1-4673-0431-3, Pp. 468 – 475, Nov. 28 2011-Dec. 1 2011.",
+
+            "description_1" => "Narcisse Talla Tankam, Albert Dipanda,  JanvierFotsing, Emanuel Tonye, 2011, SAR Image Classification Combining Structural and Statistical Methods, Signal-Image Technology and Internet-Based Systems (SITIS), 2011 Seventh International Conference. Print ISBN: 978-1-4673-0431-3, Pp. 468 – 475, Nov. 28 2011-Dec. 1 2011.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_55 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 11,
+
+            "titre" => "Narcisse Talla Tankam, C. Bobda, E. Tonyé, J. Fotsing, and A. Dipanda, 2011. “SAR Image Classification Combining Structural and Statistical Methods”, in Proceedings of the IASTED International Conference Signal and Image Processing (SIP 2011). December 14 - 16, 2011 Dallas, USA",
+
+            "description_1" => "Narcisse Talla Tankam, C. Bobda, E. Tonyé, J. Fotsing, and A. Dipanda, 2011. “SAR Image Classification Combining Structural and Statistical Methods”, in Proceedings of the IASTED International Conference Signal and Image Processing (SIP 2011). December 14 - 16, 2011 Dallas, USA",
+
+            "description_1" => "Narcisse Talla Tankam, C. Bobda, E. Tonyé, J. Fotsing, and A. Dipanda, 2011. “SAR Image Classification Combining Structural and Statistical Methods”, in Proceedings of the IASTED International Conference Signal and Image Processing (SIP 2011). December 14 - 16, 2011 Dallas, USA",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_56 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 11,
+
+            "titre" => "J. R. Mboupda Pone, A. Tiedeu, M. Kom, G. Kenné, 2011. Modeling improvement of probes capabilities using Golay coding, Journées Scientifiques LAIA, 15-16 Juin 2011, IUT-FOTSO Victor, Bandjoun, Université de Dschang, Cameroun.",
+
+            "description_1" => "J. R. Mboupda Pone, A. Tiedeu, M. Kom, G. Kenné, 2011. Modeling improvement of probes capabilities using Golay coding, Journées Scientifiques LAIA, 15-16 Juin 2011, IUT-FOTSO Victor, Bandjoun, Université de Dschang, Cameroun.",
+
+            "description_1" => "J. R. Mboupda Pone, A. Tiedeu, M. Kom, G. Kenné, 2011. Modeling improvement of probes capabilities using Golay coding, Journées Scientifiques LAIA, 15-16 Juin 2011, IUT-FOTSO Victor, Bandjoun, Université de Dschang, Cameroun.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_57 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 11,
+
+            "titre" => "R. M. Douanla, G. Kenné, H. B. Fotsin, 2011. Etude comparative des régulateurs de vitesse basés sur les modes glissants des moteurs synchrones à aimants permanents, Journées Scientifiques LAIA, 15-16 Juin 2011, IUT-FOTSO Victor, Bandjoun,Université de Dschang, Cameroun.",
+
+            "description_1" => "R. M. Douanla, G. Kenné, H. B. Fotsin, 2011. Etude comparative des régulateurs de vitesse basés sur les modes glissants des moteurs synchrones à aimants permanents, Journées Scientifiques LAIA, 15-16 Juin 2011, IUT-FOTSO Victor, Bandjoun,Université de Dschang, Cameroun.",
+
+            "description_1" => "R. M. Douanla, G. Kenné, H. B. Fotsin, 2011. Etude comparative des régulateurs de vitesse basés sur les modes glissants des moteurs synchrones à aimants permanents, Journées Scientifiques LAIA, 15-16 Juin 2011, IUT-FOTSO Victor, Bandjoun,Université de Dschang, Cameroun.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_58 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 11,
+
+            "titre" => "R. F. Kuaté, G. Kenné, A. Cheukem, H. B. Fotsin, 2011. Application de la méthode Watt-Var découplée dans le contrôle du réseau électrique par STATCOM, Journées Scientifiques LAIA, 15-16 Juin 2011, IUT-FOTSO Victor, Bandjoun, Université de Dschang, Cameroun",
+
+            "description_1" => "R. F. Kuaté, G. Kenné, A. Cheukem, H. B. Fotsin, 2011. Application de la méthode Watt-Var découplée dans le contrôle du réseau électrique par STATCOM, Journées Scientifiques LAIA, 15-16 Juin 2011, IUT-FOTSO Victor, Bandjoun, Université de Dschang, Cameroun",
+
+            "description_1" => "R. F. Kuaté, G. Kenné, A. Cheukem, H. B. Fotsin, 2011. Application de la méthode Watt-Var découplée dans le contrôle du réseau électrique par STATCOM, Journées Scientifiques LAIA, 15-16 Juin 2011, IUT-FOTSO Victor, Bandjoun, Université de Dschang, Cameroun",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_59 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 11,
+
+            "titre" => "J. D. D. Nguimfack, G. Kenné, A. Cheukem, H. B. Fotsin, 2011. Contrôleur non linéaire simplifié du SSSC pour l'amélioration de la stabilité transitoire des systèmes de puissance, Journées Scientifiques LAIA, 15-16 Juin 2011, IUT-FOTSO Victor, Bandjoun, Université de Dschang, Cameroun.",
+
+            "description_1" => "J. D. D. Nguimfack, G. Kenné, A. Cheukem, H. B. Fotsin, 2011. Contrôleur non linéaire simplifié du SSSC pour l'amélioration de la stabilité transitoire des systèmes de puissance, Journées Scientifiques LAIA, 15-16 Juin 2011, IUT-FOTSO Victor, Bandjoun, Université de Dschang, Cameroun.",
+
+            "description_1" => "J. D. D. Nguimfack, G. Kenné, A. Cheukem, H. B. Fotsin, 2011. Contrôleur non linéaire simplifié du SSSC pour l'amélioration de la stabilité transitoire des systèmes de puissance, Journées Scientifiques LAIA, 15-16 Juin 2011, IUT-FOTSO Victor, Bandjoun, Université de Dschang, Cameroun.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_60 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 11,
+
+            "titre" => "A. Cheukem, J. M. Ngundam, G. Kenné, 2011. Amélioration de la stabilité des réseaux électriques par les dispositifs FACTS : Cas du réseau interconnecté Sud du Cameroun, Journées Scientifiques LAIA, 15-16 Juin 2011, IUT-FOTSO Victor, Bandjoun, Université de Dschang, Cameroun.",
+
+            "description_1" => "A. Cheukem, J. M. Ngundam, G. Kenné, 2011. Amélioration de la stabilité des réseaux électriques par les dispositifs FACTS : Cas du réseau interconnecté Sud du Cameroun, Journées Scientifiques LAIA, 15-16 Juin 2011, IUT-FOTSO Victor, Bandjoun, Université de Dschang, Cameroun.",
+
+            "description_1" => "A. Cheukem, J. M. Ngundam, G. Kenné, 2011. Amélioration de la stabilité des réseaux électriques par les dispositifs FACTS : Cas du réseau interconnecté Sud du Cameroun, Journées Scientifiques LAIA, 15-16 Juin 2011, IUT-FOTSO Victor, Bandjoun, Université de Dschang, Cameroun.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_61 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 11,
+
+            "titre" => "G. H. Kom, A. Tiedeu, J. M. Ngundam, 2011. Analyse morphologique des clichés mammographiques en vue des applications biomédicales, Journées scientifiques LAIA 2011, 15-16 juin 2011 à l’IUT-FV de Bandjoun, Université de Dschang.",
+
+            "description_1" => "G. H. Kom, A. Tiedeu, J. M. Ngundam, 2011. Analyse morphologique des clichés mammographiques en vue des applications biomédicales, Journées scientifiques LAIA 2011, 15-16 juin 2011 à l’IUT-FV de Bandjoun, Université de Dschang.",
+
+            "description_1" => "G. H. Kom, A. Tiedeu, J. M. Ngundam, 2011. Analyse morphologique des clichés mammographiques en vue des applications biomédicales, Journées scientifiques LAIA 2011, 15-16 juin 2011 à l’IUT-FV de Bandjoun, Université de Dschang.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_62 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 11,
+
+            "titre" => "Jules Tsochounie, Emmanuel Tanyi, 2011. State Space Modelling and Simulation of the Cameroon Power System, Séminaire LAIA, IUT FOTSO Victor de l’Université de Dschang, Cameroun, 15-16 Juin 2011.",
+
+            "description_1" => "Jules Tsochounie, Emmanuel Tanyi, 2011. State Space Modelling and Simulation of the Cameroon Power System, Séminaire LAIA, IUT FOTSO Victor de l’Université de Dschang, Cameroun, 15-16 Juin 2011.",
+
+            "description_1" => "Jules Tsochounie, Emmanuel Tanyi, 2011. State Space Modelling and Simulation of the Cameroon Power System, Séminaire LAIA, IUT FOTSO Victor de l’Université de Dschang, Cameroun, 15-16 Juin 2011.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_63 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 11,
+
+            "titre" => "Marcellin Nkenlifack, Emmanuel Tanyi et Janvier Nzeutchap, 2011. Réalisation d’un Algorithme de Construction Dynamique et Vérification des Grafcets , Journées Scientifiques 2011 du Laboratoire d’Automatique et d’Informatique Appliquée (LAIA), 15 – 16 juin 2011 à l’IUTFV de Bandjoun de l’Univ de Dschang.",
+
+            "description_1" => "Marcellin Nkenlifack, Emmanuel Tanyi et Janvier Nzeutchap, 2011. Réalisation d’un Algorithme de Construction Dynamique et Vérification des Grafcets , Journées Scientifiques 2011 du Laboratoire d’Automatique et d’Informatique Appliquée (LAIA), 15 – 16 juin 2011 à l’IUTFV de Bandjoun de l’Univ de Dschang.",
+
+            "description_1" => "Marcellin Nkenlifack, Emmanuel Tanyi et Janvier Nzeutchap, 2011. Réalisation d’un Algorithme de Construction Dynamique et Vérification des Grafcets , Journées Scientifiques 2011 du Laboratoire d’Automatique et d’Informatique Appliquée (LAIA), 15 – 16 juin 2011 à l’IUTFV de Bandjoun de l’Univ de Dschang.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_64 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 11,
+
+            "titre" => "FAI Cornelus, TAYOU Clemetin, NKENLIFACK Marcellin, 2011. Activités, Projets de Recherche et attentes relatifs aux TIC à l’Université de Dschang, Séminaire de réflexion et d’échanges sur le montage et le financement de projets de recherche par l’organisme « IST-Africa », organisé par l’ANTIC le 21 mars 2011, Ydé.",
+
+            "description_1" => "FAI Cornelus, TAYOU Clemetin, NKENLIFACK Marcellin, 2011. Activités, Projets de Recherche et attentes relatifs aux TIC à l’Université de Dschang, Séminaire de réflexion et d’échanges sur le montage et le financement de projets de recherche par l’organisme « IST-Africa », organisé par l’ANTIC le 21 mars 2011, Ydé.",
+
+            "description_1" => "FAI Cornelus, TAYOU Clemetin, NKENLIFACK Marcellin, 2011. Activités, Projets de Recherche et attentes relatifs aux TIC à l’Université de Dschang, Séminaire de réflexion et d’échanges sur le montage et le financement de projets de recherche par l’organisme « IST-Africa », organisé par l’ANTIC le 21 mars 2011, Ydé.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        // publication de type : Communications de Conférences => id = 8
+        // annee 2012 => id = 12
+
+        $publication_6_65 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 12,
+
+            "titre" => "G. Kenne, F. Lamnabhi-Lagarrigue. Comparative study of two robust online rotor resistance estimators for induction machine adaptive control, 2012 IEEE International Conference on Industrial Technology, ICIT 2012, Proceedings, pp. 426–431, 2012.",
+
+            "description_1" => "G. Kenne, F. Lamnabhi-Lagarrigue. Comparative study of two robust online rotor resistance estimators for induction machine adaptive control, 2012 IEEE International Conference on Industrial Technology, ICIT 2012, Proceedings, pp. 426–431, 2012.",
+
+            "description_1" => "G. Kenne, F. Lamnabhi-Lagarrigue. Comparative study of two robust online rotor resistance estimators for induction machine adaptive control, 2012 IEEE International Conference on Industrial Technology, ICIT 2012, Proceedings, pp. 426–431, 2012.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+
+        $publication_6_66 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 12,
+
+            "titre" => "J. R. Mboupda Pone, A. Tiedeu, M. Kom, G. Kenne, Contribution à l’amélioration de la commande des sondes échographiques par le codage Golay, 4ième Rencontres EGa, 4-6 décembre 2012 à l’ENSP de l’Université de Yaoundé I, Cameroun.",
+
+            "description_1" => "J. R. Mboupda Pone, A. Tiedeu, M. Kom, G. Kenne, Contribution à l’amélioration de la commande des sondes échographiques par le codage Golay, 4ième Rencontres EGa, 4-6 décembre 2012 à l’ENSP de l’Université de Yaoundé I, Cameroun.",
+
+            "description_1" => "J. R. Mboupda Pone, A. Tiedeu, M. Kom, G. Kenne, Contribution à l’amélioration de la commande des sondes échographiques par le codage Golay, 4ième Rencontres EGa, 4-6 décembre 2012 à l’ENSP de l’Université de Yaoundé I, Cameroun.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_67 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 12,
+
+            "titre" => "J. R. Mboupda Pone, A. Tiedeu, M. Kom, G. Kenne, Modeling Improvement of Probes Capabilities by use of Golay Coding, Journées de la recherche, ENSP, édition 2012, Université de Yaoundé 1, Cameroun.",
+
+            "description_1" => "J. R. Mboupda Pone, A. Tiedeu, M. Kom, G. Kenne, Modeling Improvement of Probes Capabilities by use of Golay Coding, Journées de la recherche, ENSP, édition 2012, Université de Yaoundé 1, Cameroun.",
+
+            "description_1" => "J. R. Mboupda Pone, A. Tiedeu, M. Kom, G. Kenne, Modeling Improvement of Probes Capabilities by use of Golay Coding, Journées de la recherche, ENSP, édition 2012, Université de Yaoundé 1, Cameroun.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_68 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 12,
+
+            "titre" => "Marcellin NKENLIFACK, Raoul NANGUE et Victor KUATE, Plateforme de Modernisation d’Enseignement de l’Informatique et de Gestion des Lycées du Cameroun, 13e Rencontres Mondiales du Logiciel Libre (RMLL), 7 au 12 juillet 2012, Genève, Suisse.  http://2012.rmll.info.",
+
+            "description_1" => "Marcellin NKENLIFACK, Raoul NANGUE et Victor KUATE, Plateforme de Modernisation d’Enseignement de l’Informatique et de Gestion des Lycées du Cameroun, 13e Rencontres Mondiales du Logiciel Libre (RMLL), 7 au 12 juillet 2012, Genève, Suisse.  http://2012.rmll.info.",
+
+            "description_1" => "Marcellin NKENLIFACK, Raoul NANGUE et Victor KUATE, Plateforme de Modernisation d’Enseignement de l’Informatique et de Gestion des Lycées du Cameroun, 13e Rencontres Mondiales du Logiciel Libre (RMLL), 7 au 12 juillet 2012, Genève, Suisse.  http://2012.rmll.info.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_69 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 12,
+
+            "titre" => "Marcellin Nkenlifack, Identité numérique et plateforme d'enseignement des langues et cultures locales grâce aux TIC, 7ème Conférence Internationale Consacrée aux TIC appliqués au Développement, à l’Enseignement et à la Formation (Elearning Africa 2012), 23-25 mai 2012, Cotonou, Benin, http://www.elearning-africa.com/programme_programme.php.",
+
+            "description_1" => "Marcellin Nkenlifack, Identité numérique et plateforme d'enseignement des langues et cultures locales grâce aux TIC, 7ème Conférence Internationale Consacrée aux TIC appliqués au Développement, à l’Enseignement et à la Formation (Elearning Africa 2012), 23-25 mai 2012, Cotonou, Benin, http://www.elearning-africa.com/programme_programme.php.",
+
+            "description_1" => "Marcellin Nkenlifack, Identité numérique et plateforme d'enseignement des langues et cultures locales grâce aux TIC, 7ème Conférence Internationale Consacrée aux TIC appliqués au Développement, à l’Enseignement et à la Formation (Elearning Africa 2012), 23-25 mai 2012, Cotonou, Benin, http://www.elearning-africa.com/programme_programme.php.",
+
+            "lien_externe" => "http://www.elearning-africa.com/programme_programme.php",
+
+            "status" => true,
+        ];
+
+        $publication_6_70 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 12,
+
+            "titre" => "Fotsing, J., Tonye, E., Essimbi Zobo B., Talla Tankam, N., Rudant, J.P., 2012, Characterization of the texture of Digital Images by variography approach: Application to the Classification of SAR images. 9th AARSE Conference 29 October 2012 to 2 November 2012 in El JadidaMorocco.Jointly funded by IEEE-GRSS and AARSE.",
+
+            "description_1" => "Fotsing, J., Tonye, E., Essimbi Zobo B., Talla Tankam, N., Rudant, J.P., 2012, Characterization of the texture of Digital Images by variography approach: Application to the Classification of SAR images. 9th AARSE Conference 29 October 2012 to 2 November 2012 in El JadidaMorocco.Jointly funded by IEEE-GRSS and AARSE.",
+
+            "description_1" => "Fotsing, J., Tonye, E., Essimbi Zobo B., Talla Tankam, N., Rudant, J.P., 2012, Characterization of the texture of Digital Images by variography approach: Application to the Classification of SAR images. 9th AARSE Conference 29 October 2012 to 2 November 2012 in El JadidaMorocco.Jointly funded by IEEE-GRSS and AARSE.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_71 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 12,
+
+            "titre" => "Narcisse Talla Tankam, Albert Dipanda, J. Fotsing, Emmanuel Tonyé, 2012. Apport du variogramme dans la classification d’images radar RSO. CARI'12: Eleventh African Conference on Research in Computer Science and Applied Mathematics 13th - 16th October, Location, Algiers, Algeria",
+
+            "description_1" => "Narcisse Talla Tankam, Albert Dipanda, J. Fotsing, Emmanuel Tonyé, 2012. Apport du variogramme dans la classification d’images radar RSO. CARI'12: Eleventh African Conference on Research in Computer Science and Applied Mathematics 13th - 16th October, Location, Algiers, Algeria",
+
+            "description_1" => "Narcisse Talla Tankam, Albert Dipanda, J. Fotsing, Emmanuel Tonyé, 2012. Apport du variogramme dans la classification d’images radar RSO. CARI'12: Eleventh African Conference on Research in Computer Science and Applied Mathematics 13th - 16th October, Location, Algiers, Algeria",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_72 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 12,
+
+            "titre" => "G. H. Kom, A. Tiedeu, J. M. Ngundam, 2012. Mise au point  d’algorithmes de détection et de classification  automatiques  des masses dans les mammographies en vue de l’aide au diagnostic du cancer du sein, Journées de recherche ENSP des 25 et 26 septembre 2012 à Yaoundé, Université de Yaoundé I.",
+
+            "description_1" => "G. H. Kom, A. Tiedeu, J. M. Ngundam, 2012. Mise au point  d’algorithmes de détection et de classification  automatiques  des masses dans les mammographies en vue de l’aide au diagnostic du cancer du sein, Journées de recherche ENSP des 25 et 26 septembre 2012 à Yaoundé, Université de Yaoundé I.",
+
+            "description_1" => "G. H. Kom, A. Tiedeu, J. M. Ngundam, 2012. Mise au point  d’algorithmes de détection et de classification  automatiques  des masses dans les mammographies en vue de l’aide au diagnostic du cancer du sein, Journées de recherche ENSP des 25 et 26 septembre 2012 à Yaoundé, Université de Yaoundé I.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_73 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 12,
+
+            "titre" => "M. FOGUE, Prof. M. NKENLIFACK, 2012. Axes de Projets que les Collectivités peuvent développer en collaboration avec l’Université, Salon des Communes de l’Ouest (SACO 2012), 5 – 13 avril 2012, Bandjoun, Cameroun. http://www.saco-cameroun.com/edition-2012",
+
+            "description_1" => "M. FOGUE, Prof. M. NKENLIFACK, 2012. Axes de Projets que les Collectivités peuvent développer en collaboration avec l’Université, Salon des Communes de l’Ouest (SACO 2012), 5 – 13 avril 2012, Bandjoun, Cameroun. http://www.saco-cameroun.com/edition-2012",
+
+            "description_1" => "M. FOGUE, Prof. M. NKENLIFACK, 2012. Axes de Projets que les Collectivités peuvent développer en collaboration avec l’Université, Salon des Communes de l’Ouest (SACO 2012), 5 – 13 avril 2012, Bandjoun, Cameroun. http://www.saco-cameroun.com/edition-2012",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_74 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 12,
+
+            "titre" => "Fotsing E., Njomaha C., 2012. Rapport de la 2ème rencontre des parties prenantes sur la synthèse des résultats et perspectives du Projet Edulink-ESPRIT (Environmental Sustainability, Priority education and Research In the Tropics), Programme de coopération ACP-UE, 15 pages.",
+
+            "description_1" => "Fotsing E., Njomaha C., 2012. Rapport de la 2ème rencontre des parties prenantes sur la synthèse des résultats et perspectives du Projet Edulink-ESPRIT (Environmental Sustainability, Priority education and Research In the Tropics), Programme de coopération ACP-UE, 15 pages.",
+
+            "description_1" => "Fotsing E., Njomaha C., 2012. Rapport de la 2ème rencontre des parties prenantes sur la synthèse des résultats et perspectives du Projet Edulink-ESPRIT (Environmental Sustainability, Priority education and Research In the Tropics), Programme de coopération ACP-UE, 15 pages.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+
+        // publication de type : Communications de Conférences => id = 8
+        // annee 2013 => id = 13
+        $publication_6_75 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 13,
+
+            "titre" => "Kameni E. D., Fotsing E. et de Groot W. T., 2013. Passage d’un modèle acteur à un modèle multi-agent pour la gestion des ressources naturelles: Utilisation du méta-modèle d’acteur Action-in-Context. Actes du CNRIA’ 2012, Colloque National sur la Recherche en Informatique et ses Applications, publié dans le numéro spécial de la Revue URED éditée par les Presses Universitaires de Saint Louis, ISSN 08502161. Pp.  89-96.",
+
+            "description_1" => "Kameni E. D., Fotsing E. et de Groot W. T., 2013. Passage d’un modèle acteur à un modèle multi-agent pour la gestion des ressources naturelles: Utilisation du méta-modèle d’acteur Action-in-Context. Actes du CNRIA’ 2012, Colloque National sur la Recherche en Informatique et ses Applications, publié dans le numéro spécial de la Revue URED éditée par les Presses Universitaires de Saint Louis, ISSN 08502161. Pp.  89-96.",
+
+            "description_1" => "Kameni E. D., Fotsing E. et de Groot W. T., 2013. Passage d’un modèle acteur à un modèle multi-agent pour la gestion des ressources naturelles: Utilisation du méta-modèle d’acteur Action-in-Context. Actes du CNRIA’ 2012, Colloque National sur la Recherche en Informatique et ses Applications, publié dans le numéro spécial de la Revue URED éditée par les Presses Universitaires de Saint Louis, ISSN 08502161. Pp.  89-96.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_76 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 13,
+
+            "titre" => "Marcellin Nkenlifack & Mboubé-Etouké Serge, An Ontological Driven Approach of HAD Specific Language Designing, IEEE Technically Co-Sponsored Science and Information Conference, October 7-9, 2013 London UK.",
+
+            "description_1" => "Marcellin Nkenlifack & Mboubé-Etouké Serge, An Ontological Driven Approach of HAD Specific Language Designing, IEEE Technically Co-Sponsored Science and Information Conference, October 7-9, 2013 London UK.",
+
+            "description_1" => "Marcellin Nkenlifack & Mboubé-Etouké Serge, An Ontological Driven Approach of HAD Specific Language Designing, IEEE Technically Co-Sponsored Science and Information Conference, October 7-9, 2013 London UK.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_77 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 13,
+
+            "titre" => "Fernando Jaramillo-Lopez, Gilney Damm, Godpromesse Kenne and Francoise Lamnabhi-Lagarrigue. Adaptive control scheme for maximum power point tracking of a photovoltaic system connected to the grid, Proceedings of the European Control Conference-ECC2013, Zurich Switzerland, July 17-19 2013.",
+
+            "description_1" => "Fernando Jaramillo-Lopez, Gilney Damm, Godpromesse Kenne and Francoise Lamnabhi-Lagarrigue. Adaptive control scheme for maximum power point tracking of a photovoltaic system connected to the grid, Proceedings of the European Control Conference-ECC2013, Zurich Switzerland, July 17-19 2013.",
+
+            "description_1" => "Fernando Jaramillo-Lopez, Gilney Damm, Godpromesse Kenne and Francoise Lamnabhi-Lagarrigue. Adaptive control scheme for maximum power point tracking of a photovoltaic system connected to the grid, Proceedings of the European Control Conference-ECC2013, Zurich Switzerland, July 17-19 2013.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_78 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 13,
+
+            "titre" => "Fernando Jaramillo-Lopez, Gilney Damm, Godpromesse Kenne and Francoise Lamnabhi-Lagarrigue. Adaptive control scheme for grid-connected photovoltaic systems with unknown bounds, Proceedings of the 11th IFAC International Workshop on adaptation and Learning in Control and Signal Processing (ALCOSP'2013), Caen - France, July 03-05 2013.",
+
+            "description_1" => "Fernando Jaramillo-Lopez, Gilney Damm, Godpromesse Kenne and Francoise Lamnabhi-Lagarrigue. Adaptive control scheme for grid-connected photovoltaic systems with unknown bounds, Proceedings of the 11th IFAC International Workshop on adaptation and Learning in Control and Signal Processing (ALCOSP'2013), Caen - France, July 03-05 2013.",
+
+            "description_1" => "Fernando Jaramillo-Lopez, Gilney Damm, Godpromesse Kenne and Francoise Lamnabhi-Lagarrigue. Adaptive control scheme for grid-connected photovoltaic systems with unknown bounds, Proceedings of the 11th IFAC International Workshop on adaptation and Learning in Control and Signal Processing (ALCOSP'2013), Caen - France, July 03-05 2013.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_79 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 13,
+
+            "titre" => "M. Dansoko, H. Nkwawo, B. Diourté, F. Floret, R. Goma and G. Kenne, Decentralized sliding mode control for marine turbines connected to Grid, Proceedings of the 11th IFAC International Workshop on Adaptation and Learning in Control and Signal Processing (ALCOSP'2013), Caen - France, July 03-05 2013.",
+
+            "description_1" => "M. Dansoko, H. Nkwawo, B. Diourté, F. Floret, R. Goma and G. Kenne, Decentralized sliding mode control for marine turbines connected to Grid, Proceedings of the 11th IFAC International Workshop on Adaptation and Learning in Control and Signal Processing (ALCOSP'2013), Caen - France, July 03-05 2013.",
+
+            "description_1" => "M. Dansoko, H. Nkwawo, B. Diourté, F. Floret, R. Goma and G. Kenne, Decentralized sliding mode control for marine turbines connected to Grid, Proceedings of the 11th IFAC International Workshop on Adaptation and Learning in Control and Signal Processing (ALCOSP'2013), Caen - France, July 03-05 2013.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_80 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 13,
+
+            "titre" => "M. Dansoko, H. Nkwawo, B. Diourté, F. Floret, R. Goma and G. Kenne. Commande par Mode Glissant des Hydroliennes en Configuration Multimachine, Poster session Première Conférence en Recherche en Informatique, ENSP Yaoundé - Cameroun, 09-13, Décembre 2013",
+
+            "description_1" => "M. Dansoko, H. Nkwawo, B. Diourté, F. Floret, R. Goma and G. Kenne. Commande par Mode Glissant des Hydroliennes en Configuration Multimachine, Poster session Première Conférence en Recherche en Informatique, ENSP Yaoundé - Cameroun, 09-13, Décembre 2013",
+
+            "description_1" => "M. Dansoko, H. Nkwawo, B. Diourté, F. Floret, R. Goma and G. Kenne. Commande par Mode Glissant des Hydroliennes en Configuration Multimachine, Poster session Première Conférence en Recherche en Informatique, ENSP Yaoundé - Cameroun, 09-13, Décembre 2013",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_81 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 13,
+
+            "titre" => "J. R. Mboupda Pone, A. Tiedeu, M. Kom, G. Kenne, An accurate method for simulation of acousticfields using linear phased array in ultrasound imaging, Conférence Internationale de la Societé Camerounaise de  Physique, novembre 2013, Université de Yaoundé I, Cameroun",
+
+            "description_1" => "J. R. Mboupda Pone, A. Tiedeu, M. Kom, G. Kenne, An accurate method for simulation of acousticfields using linear phased array in ultrasound imaging, Conférence Internationale de la Societé Camerounaise de  Physique, novembre 2013, Université de Yaoundé I, Cameroun",
+
+            "description_1" => "J. R. Mboupda Pone, A. Tiedeu, M. Kom, G. Kenne, An accurate method for simulation of acousticfields using linear phased array in ultrasound imaging, Conférence Internationale de la Societé Camerounaise de  Physique, novembre 2013, Université de Yaoundé I, Cameroun",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_82 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 13,
+
+            "titre" => "H. G. Kom, A. Tiedeu, J. M. Ngundam, Computerized mass detection on mammograms using wavelets enhancement and entropy maximization thresholding methods, in Medical physics, on 27 November 2013 during Cameroon physical Society 3rd International Conference  on high level physics and appropriate solutions to real life problems in developing countries plus  a special session on the state of physics in Africa., 25 – 29 november 2013, Yaounde, Cameroon, www.scp-web.org.",
+
+            "description_1" => "H. G. Kom, A. Tiedeu, J. M. Ngundam, Computerized mass detection on mammograms using wavelets enhancement and entropy maximization thresholding methods, in Medical physics, on 27 November 2013 during Cameroon physical Society 3rd International Conference  on high level physics and appropriate solutions to real life problems in developing countries plus  a special session on the state of physics in Africa., 25 – 29 november 2013, Yaounde, Cameroon, www.scp-web.org.",
+
+            "description_1" => "H. G. Kom, A. Tiedeu, J. M. Ngundam, Computerized mass detection on mammograms using wavelets enhancement and entropy maximization thresholding methods, in Medical physics, on 27 November 2013 during Cameroon physical Society 3rd International Conference  on high level physics and appropriate solutions to real life problems in developing countries plus  a special session on the state of physics in Africa., 25 – 29 november 2013, Yaounde, Cameroon, www.scp-web.org.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_83 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 13,
+
+            "titre" => "Fotsing E., 2013. Scientific, education and dissemination outputs of ESPRIT project from 2009 to 2012: A review and the way forward. Research Report Edulink-ESPRIT (Environmental Sustainability, Priority education and Research In the Tropics), Programme de coopération ACP-UE 30 pages.",
+
+            "description_1" => "Fotsing E., 2013. Scientific, education and dissemination outputs of ESPRIT project from 2009 to 2012: A review and the way forward. Research Report Edulink-ESPRIT (Environmental Sustainability, Priority education and Research In the Tropics), Programme de coopération ACP-UE 30 pages.",
+
+            "description_1" => "Fotsing E., 2013. Scientific, education and dissemination outputs of ESPRIT project from 2009 to 2012: A review and the way forward. Research Report Edulink-ESPRIT (Environmental Sustainability, Priority education and Research In the Tropics), Programme de coopération ACP-UE 30 pages.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_84 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 13,
+
+            "titre" => "Fotsing E., 2013. Rapport de l’atelier de formation sur les modèles de système de production (IAT) et à base d’agents (ASMALL) tenu du 8 au 15 février 2013 à Bobo Dioulassso, Burkina Faso. Projet ISIAE (« Intensification durable des systèmes intégrés agriculture-élevage en vue d’accroître la productivité agropastorale et la sécurité alimentaire en Afrique de l’Ouest et du Centre »), financé par AusAID (Agence australienne pour le développement International) et porté par APESS (Association pour la Promotion de l'Elevage au Sahel et en Savane), 42 pages",
+
+            "description_1" => "Fotsing E., 2013. Rapport de l’atelier de formation sur les modèles de système de production (IAT) et à base d’agents (ASMALL) tenu du 8 au 15 février 2013 à Bobo Dioulassso, Burkina Faso. Projet ISIAE (« Intensification durable des systèmes intégrés agriculture-élevage en vue d’accroître la productivité agropastorale et la sécurité alimentaire en Afrique de l’Ouest et du Centre »), financé par AusAID (Agence australienne pour le développement International) et porté par APESS (Association pour la Promotion de l'Elevage au Sahel et en Savane), 42 pages",
+
+            "description_1" => "Fotsing E., 2013. Rapport de l’atelier de formation sur les modèles de système de production (IAT) et à base d’agents (ASMALL) tenu du 8 au 15 février 2013 à Bobo Dioulassso, Burkina Faso. Projet ISIAE (« Intensification durable des systèmes intégrés agriculture-élevage en vue d’accroître la productivité agropastorale et la sécurité alimentaire en Afrique de l’Ouest et du Centre »), financé par AusAID (Agence australienne pour le développement International) et porté par APESS (Association pour la Promotion de l'Elevage au Sahel et en Savane), 42 pages",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        // publication de type : Communications de Conférences => id = 8
+        // annee 2014 => id = 14
+
+        $publication_6_85 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 14,
+
+            "titre" => "Étienne André, Christine Choppy, and Thierry Noulamo. Modelling timed concurrent systems using activity diagram patterns. In Viet-Ha Nguyen, Anh-Cuong Le, and Van-Nam Huynh, editors, Proceedings of the 6th International Conference on Knowledge and Systems Engineering (KSE’14), volume 326 of Advances in Intelligent Systems and Computing, pages 339–351. Springer, November 2014.",
+
+            "description_1" => "Étienne André, Christine Choppy, and Thierry Noulamo. Modelling timed concurrent systems using activity diagram patterns. In Viet-Ha Nguyen, Anh-Cuong Le, and Van-Nam Huynh, editors, Proceedings of the 6th International Conference on Knowledge and Systems Engineering (KSE’14), volume 326 of Advances in Intelligent Systems and Computing, pages 339–351. Springer, November 2014.",
+
+            "description_1" => "Étienne André, Christine Choppy, and Thierry Noulamo. Modelling timed concurrent systems using activity diagram patterns. In Viet-Ha Nguyen, Anh-Cuong Le, and Van-Nam Huynh, editors, Proceedings of the 6th International Conference on Knowledge and Systems Engineering (KSE’14), volume 326 of Advances in Intelligent Systems and Computing, pages 339–351. Springer, November 2014.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_86 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 14,
+
+            "titre" => "Jean-Pierre Lienou, Emmanuel Tanyi, Marcellin Nkenlifack and Thierry Noulamo, “A Tool Architecture for Diagnostic in Power Electric Network Using Method Engineering and Multi Agent Systems“ ICONS 2014 : Proceedings of The Ninth International Conference on Systems. ISBN: 978-1-61208-319-3, IARIA 2014.",
+
+            "description_1" => "Jean-Pierre Lienou, Emmanuel Tanyi, Marcellin Nkenlifack and Thierry Noulamo, “A Tool Architecture for Diagnostic in Power Electric Network Using Method Engineering and Multi Agent Systems“ ICONS 2014 : Proceedings of The Ninth International Conference on Systems. ISBN: 978-1-61208-319-3, IARIA 2014.",
+
+            "description_1" => "Jean-Pierre Lienou, Emmanuel Tanyi, Marcellin Nkenlifack and Thierry Noulamo, “A Tool Architecture for Diagnostic in Power Electric Network Using Method Engineering and Multi Agent Systems“ ICONS 2014 : Proceedings of The Ninth International Conference on Systems. ISBN: 978-1-61208-319-3, IARIA 2014.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_87 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 14,
+
+            "titre" => "Marcellin Nkenlifack : « Processus d’Inscriptions en ligne avec SIGES (Système Intégré de Gestion des Etablissements du Supérieur) », Séminaire atelier sur l’harmonisation des plateformes d’inscriptions en ligne dans les Universités du Cameroun, organisé par le MINESUP, à l’IGN – Yaoundé, 12-13 mars 2014.",
+
+            "description_1" => "Marcellin Nkenlifack : « Processus d’Inscriptions en ligne avec SIGES (Système Intégré de Gestion des Etablissements du Supérieur) », Séminaire atelier sur l’harmonisation des plateformes d’inscriptions en ligne dans les Universités du Cameroun, organisé par le MINESUP, à l’IGN – Yaoundé, 12-13 mars 2014.",
+
+            "description_1" => "Marcellin Nkenlifack : « Processus d’Inscriptions en ligne avec SIGES (Système Intégré de Gestion des Etablissements du Supérieur) », Séminaire atelier sur l’harmonisation des plateformes d’inscriptions en ligne dans les Universités du Cameroun, organisé par le MINESUP, à l’IGN – Yaoundé, 12-13 mars 2014.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        // publication de type : Communications de Conférences => id = 8
+        // annee 2015 => id = 15
+
+        $publication_6_88 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 15,
+
+            "titre" => "A. M. Fombu, G. Kenne, Comparison of decentralized nonlinear coordinated steam valve and excitation control strategies for multi-machine power systems, Actes, IUTENT – 2015, IUT Douala, 23-28 novembre 2015.",
+
+            "description_1" => "A. M. Fombu, G. Kenne, Comparison of decentralized nonlinear coordinated steam valve and excitation control strategies for multi-machine power systems, Actes, IUTENT – 2015, IUT Douala, 23-28 novembre 2015.",
+
+            "description_1" => "A. M. Fombu, G. Kenne, Comparison of decentralized nonlinear coordinated steam valve and excitation control strategies for multi-machine power systems, Actes, IUTENT – 2015, IUT Douala, 23-28 novembre 2015.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_89 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 15,
+
+            "titre" => "Marcellin Nkenlifack & Mboubé-Etouké Serge, Une Ontologie du méta-modèle HAD pour la spécification des SDH, Conf. Internationale de Recherche en Informatique - CRI2015, 14-15 dec 2015, Yaounde, Cameroon",
+
+            "description_1" => "Marcellin Nkenlifack & Mboubé-Etouké Serge, Une Ontologie du méta-modèle HAD pour la spécification des SDH, Conf. Internationale de Recherche en Informatique - CRI2015, 14-15 dec 2015, Yaounde, Cameroon",
+
+            "description_1" => "Marcellin Nkenlifack & Mboubé-Etouké Serge, Une Ontologie du méta-modèle HAD pour la spécification des SDH, Conf. Internationale de Recherche en Informatique - CRI2015, 14-15 dec 2015, Yaounde, Cameroon",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_90 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 15,
+
+            "titre" => "Marcellin Nkenlifack, Bethin Demsong, Les TIC au service du développement : Traduction automatique des appels téléphoniques inter-linguistiques pour l’essor des langues et cultures nationales, Colloque International IUT-Entreprises, 23 - 28 novembre 2015, Douala, Cameroun.",
+
+            "description_1" => "Marcellin Nkenlifack, Bethin Demsong, Les TIC au service du développement : Traduction automatique des appels téléphoniques inter-linguistiques pour l’essor des langues et cultures nationales, Colloque International IUT-Entreprises, 23 - 28 novembre 2015, Douala, Cameroun.",
+
+            "description_1" => "Marcellin Nkenlifack, Bethin Demsong, Les TIC au service du développement : Traduction automatique des appels téléphoniques inter-linguistiques pour l’essor des langues et cultures nationales, Colloque International IUT-Entreprises, 23 - 28 novembre 2015, Douala, Cameroun.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_91 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 15,
+
+            "titre" => "Nana Njontchou Sambalis, Nkenlifack Marcellin Julius & Kamla Vivient Corneille, Mecanismes de Mise en Œuvre des Modeles Décisionnels Multiniveaux Génériques pour les Applications de E-Gouvernance, Colloque International IUT-Entreprises, 23 - 28 novembre 2015, Douala, Cameroun.",
+
+            "description_1" => "Nana Njontchou Sambalis, Nkenlifack Marcellin Julius & Kamla Vivient Corneille, Mecanismes de Mise en Œuvre des Modeles Décisionnels Multiniveaux Génériques pour les Applications de E-Gouvernance, Colloque International IUT-Entreprises, 23 - 28 novembre 2015, Douala, Cameroun.",
+
+            "description_1" => "Nana Njontchou Sambalis, Nkenlifack Marcellin Julius & Kamla Vivient Corneille, Mecanismes de Mise en Œuvre des Modeles Décisionnels Multiniveaux Génériques pour les Applications de E-Gouvernance, Colloque International IUT-Entreprises, 23 - 28 novembre 2015, Douala, Cameroun.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_92 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 15,
+
+            "titre" => "Marcellin Nkenlifack, Fabrice Fokou, Emmanuel Tanyi  & Landry Domche, Mise en Œuvre de l’Interoperabilite entre HAD et Grafcet pour L’Analyse de la Commande du Réseau Electrique du Cameroun, Colloque International IUT-Entreprises, 23 - 28 novembre 2015, Douala, Cameroun.",
+
+            "description_1" => "Marcellin Nkenlifack, Fabrice Fokou, Emmanuel Tanyi  & Landry Domche, Mise en Œuvre de l’Interoperabilite entre HAD et Grafcet pour L’Analyse de la Commande du Réseau Electrique du Cameroun, Colloque International IUT-Entreprises, 23 - 28 novembre 2015, Douala, Cameroun.",
+
+            "description_1" => "Marcellin Nkenlifack, Fabrice Fokou, Emmanuel Tanyi  & Landry Domche, Mise en Œuvre de l’Interoperabilite entre HAD et Grafcet pour L’Analyse de la Commande du Réseau Electrique du Cameroun, Colloque International IUT-Entreprises, 23 - 28 novembre 2015, Douala, Cameroun.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_93 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 15,
+
+            "titre" => "Marcellin Nkenlifack & Mboubé-Etouké Serge, Une Architecture MDA et in Framework HAD de Modélisation et Description des Systèmes Dynamiques Hybrides, Colloque International IUT-Entreprises, 23 - 28 novembre 2015, Douala, Cameroun.",
+
+            "description_1" => "Marcellin Nkenlifack & Mboubé-Etouké Serge, Une Architecture MDA et in Framework HAD de Modélisation et Description des Systèmes Dynamiques Hybrides, Colloque International IUT-Entreprises, 23 - 28 novembre 2015, Douala, Cameroun.",
+
+            "description_1" => "Marcellin Nkenlifack & Mboubé-Etouké Serge, Une Architecture MDA et in Framework HAD de Modélisation et Description des Systèmes Dynamiques Hybrides, Colloque International IUT-Entreprises, 23 - 28 novembre 2015, Douala, Cameroun.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        // publication de type : Communications de Conférences => id = 8
+        // annee 2016 => id = 16
+
+        $publication_6_94 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 16,
+
+            "titre" => "94.	Jean de Dieu Nguimfack–Ndongmo, Godpromesse Kenne, Eustace Mbaka Nfah. Design of nonlinear synergetic controller for transient stabilization Enhancement of DFIG in multimachine wind power systems, in Energy Procedia (Proc. Africa-EU Symposium on Renewable Energy Research and Innovation, RERIS 2016, 8-10 March 2016, University Abou Bekr Belkaid, Tlemcen, Algeria), Elsevier Edition, Vol.93, pp.125 – 132, 2016
+            University Abou Bekr Belkaid Tlemcen, Algeria, 8-10 March 2016.
+            ",
+
+            "description_1" => "94.	Jean de Dieu Nguimfack–Ndongmo, Godpromesse Kenne, Eustace Mbaka Nfah. Design of nonlinear synergetic controller for transient stabilization Enhancement of DFIG in multimachine wind power systems, in Energy Procedia (Proc. Africa-EU Symposium on Renewable Energy Research and Innovation, RERIS 2016, 8-10 March 2016, University Abou Bekr Belkaid, Tlemcen, Algeria), Elsevier Edition, Vol.93, pp.125 – 132, 2016
+            University Abou Bekr Belkaid Tlemcen, Algeria, 8-10 March 2016.
+            ",
+
+            "description_1" => "94.	Jean de Dieu Nguimfack–Ndongmo, Godpromesse Kenne, Eustace Mbaka Nfah. Design of nonlinear synergetic controller for transient stabilization Enhancement of DFIG in multimachine wind power systems, in Energy Procedia (Proc. Africa-EU Symposium on Renewable Energy Research and Innovation, RERIS 2016, 8-10 March 2016, University Abou Bekr Belkaid, Tlemcen, Algeria), Elsevier Edition, Vol.93, pp.125 – 132, 2016
+            University Abou Bekr Belkaid Tlemcen, Algeria, 8-10 March 2016.
+            ",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_95 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 16,
+
+            "titre" => "Eustace Mbaka Nfah, Ngundam John Mucho, Kenne Godpromesse. Performance of a standalone photovoltaic panel on the rooftop of a grid-connected home in Bambui, Cameroon, in Proc. African Network for Solar Energy, ANSOLECAF 2016. 18-19 November 2016, HTTTC Bambili, University of Bamenda, Cameroon.",
+
+            "description_1" => "Eustace Mbaka Nfah, Ngundam John Mucho, Kenne Godpromesse. Performance of a standalone photovoltaic panel on the rooftop of a grid-connected home in Bambui, Cameroon, in Proc. African Network for Solar Energy, ANSOLECAF 2016. 18-19 November 2016, HTTTC Bambili, University of Bamenda, Cameroon.",
+
+            "description_1" => "Eustace Mbaka Nfah, Ngundam John Mucho, Kenne Godpromesse. Performance of a standalone photovoltaic panel on the rooftop of a grid-connected home in Bambui, Cameroon, in Proc. African Network for Solar Energy, ANSOLECAF 2016. 18-19 November 2016, HTTTC Bambili, University of Bamenda, Cameroon.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_96 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 16,
+
+            "titre" => "Eustace Mbaka Nfah, Ngundam John Muchob, Kenne Godpromesse. Analysis of energy consumption data for Bandjoun and identification of factors affecting power supply infrastructure for remote villages, in Proc. African Network for Solar Energy, ANSOLECAF 2016. 18-19 November 2016, HTTTC Bambili, University of Bamenda, Cameroon.",
+
+            "description_1" => "Eustace Mbaka Nfah, Ngundam John Muchob, Kenne Godpromesse. Analysis of energy consumption data for Bandjoun and identification of factors affecting power supply infrastructure for remote villages, in Proc. African Network for Solar Energy, ANSOLECAF 2016. 18-19 November 2016, HTTTC Bambili, University of Bamenda, Cameroon.",
+
+            "description_1" => "Eustace Mbaka Nfah, Ngundam John Muchob, Kenne Godpromesse. Analysis of energy consumption data for Bandjoun and identification of factors affecting power supply infrastructure for remote villages, in Proc. African Network for Solar Energy, ANSOLECAF 2016. 18-19 November 2016, HTTTC Bambili, University of Bamenda, Cameroon.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_97 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 16,
+
+            "titre" => "Jean de Dieu Nguimfack–Ndongmo, Godpromesse Kenne. Improved direct feedback linearization technique for transient stabilization enhancement of DFIG-based wind power systems, in Proc. African Network for Solar Energy, ANSOLECAF 2016. 18-19 November 2016, HTTTC Bambili, University of Bamenda, Cameroon.",
+
+            "description_1" => "Jean de Dieu Nguimfack–Ndongmo, Godpromesse Kenne. Improved direct feedback linearization technique for transient stabilization enhancement of DFIG-based wind power systems, in Proc. African Network for Solar Energy, ANSOLECAF 2016. 18-19 November 2016, HTTTC Bambili, University of Bamenda, Cameroon.",
+
+            "description_1" => "Jean de Dieu Nguimfack–Ndongmo, Godpromesse Kenne. Improved direct feedback linearization technique for transient stabilization enhancement of DFIG-based wind power systems, in Proc. African Network for Solar Energy, ANSOLECAF 2016. 18-19 November 2016, HTTTC Bambili, University of Bamenda, Cameroon.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_98 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 16,
+
+            "titre" => "Jean de Dieu Nguimfack–Ndongmo, Godpromesse Kenne. Improved direct feedback linearization technique for transient stabilization enhancement of DFIG-based wind power systems, in Proc. African Network for Solar Energy, ANSOLECAF 2016. 18-19 November 2016, HTTTC Bambili, University of Bamenda, Cameroon.",
+
+            "description_1" => "Jean de Dieu Nguimfack–Ndongmo, Godpromesse Kenne. Improved direct feedback linearization technique for transient stabilization enhancement of DFIG-based wind power systems, in Proc. African Network for Solar Energy, ANSOLECAF 2016. 18-19 November 2016, HTTTC Bambili, University of Bamenda, Cameroon.",
+
+            "description_1" => "Jean de Dieu Nguimfack–Ndongmo, Godpromesse Kenne. Improved direct feedback linearization technique for transient stabilization enhancement of DFIG-based wind power systems, in Proc. African Network for Solar Energy, ANSOLECAF 2016. 18-19 November 2016, HTTTC Bambili, University of Bamenda, Cameroon.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_99 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 16,
+
+            "titre" => "Jean de Dieu Nguimfack–Ndongmo, Godpromesse Kenne. Eustace Mbaka Nfah. A MPPT and solar tracking controller of PV-system for rural households, in Proc. African Network for Solar Energy, ANSOLECAF 2016. 18-19 November 2016, HTTTC Bambili, University of Bamenda, Cameroon.",
+
+            "description_1" => "Jean de Dieu Nguimfack–Ndongmo, Godpromesse Kenne. Eustace Mbaka Nfah. A MPPT and solar tracking controller of PV-system for rural households, in Proc. African Network for Solar Energy, ANSOLECAF 2016. 18-19 November 2016, HTTTC Bambili, University of Bamenda, Cameroon.",
+
+            "description_1" => "Jean de Dieu Nguimfack–Ndongmo, Godpromesse Kenne. Eustace Mbaka Nfah. A MPPT and solar tracking controller of PV-system for rural households, in Proc. African Network for Solar Energy, ANSOLECAF 2016. 18-19 November 2016, HTTTC Bambili, University of Bamenda, Cameroon.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_100 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 16,
+
+            "titre" => "Rostand Marc DOUANLA, Godpromesse Kenne. François Béceau Pelap. RBF neuro-sliding mode network control of a stand-alone permanent magnet synchronous generator for variable speed wind energy conversion system, in Proc. African Network for Solar Energy, ANSOLECAF 2016. 18-19 November 2016, HTTTC Bambili, University of Bamenda, Cameroon.",
+
+            "description_1" => "Rostand Marc DOUANLA, Godpromesse Kenne. François Béceau Pelap. RBF neuro-sliding mode network control of a stand-alone permanent magnet synchronous generator for variable speed wind energy conversion system, in Proc. African Network for Solar Energy, ANSOLECAF 2016. 18-19 November 2016, HTTTC Bambili, University of Bamenda, Cameroon.",
+
+            "description_1" => "Rostand Marc DOUANLA, Godpromesse Kenne. François Béceau Pelap. RBF neuro-sliding mode network control of a stand-alone permanent magnet synchronous generator for variable speed wind energy conversion system, in Proc. African Network for Solar Energy, ANSOLECAF 2016. 18-19 November 2016, HTTTC Bambili, University of Bamenda, Cameroon.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_101 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 16,
+
+            "titre" => "Godpromesse Kenne, Clotaire Thierry Sanjong, Andrew Muluh Fombu. Comparison of control strategies for a grid connected self-excited induction generator driven by a variable low wind speed turbine, in Proc. African Network for Solar Energy, ANSOLECAF 2016. 18-19 November 2016, HTTTC Bambili, University of Bamenda, Cameroon.",
+
+            "description_1" => "Godpromesse Kenne, Clotaire Thierry Sanjong, Andrew Muluh Fombu. Comparison of control strategies for a grid connected self-excited induction generator driven by a variable low wind speed turbine, in Proc. African Network for Solar Energy, ANSOLECAF 2016. 18-19 November 2016, HTTTC Bambili, University of Bamenda, Cameroon.",
+
+            "description_1" => "Godpromesse Kenne, Clotaire Thierry Sanjong, Andrew Muluh Fombu. Comparison of control strategies for a grid connected self-excited induction generator driven by a variable low wind speed turbine, in Proc. African Network for Solar Energy, ANSOLECAF 2016. 18-19 November 2016, HTTTC Bambili, University of Bamenda, Cameroon.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_102 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 16,
+
+            "titre" => "A. CHIME, L. ZENG, M. CHAKAROUN, M. W. Lee, S. BENSMIDA, H. NKWAWO, A. P. A. FISCHER, A. BOUDRIOUA, Caractérisation de micro-oleds sous le régime des impulsions électriques nano-secondes, Congrès National de la Recherche en IUT, Nantes, France,8-9 2016.",
+
+            "description_1" => "A. CHIME, L. ZENG, M. CHAKAROUN, M. W. Lee, S. BENSMIDA, H. NKWAWO, A. P. A. FISCHER, A. BOUDRIOUA, Caractérisation de micro-oleds sous le régime des impulsions électriques nano-secondes, Congrès National de la Recherche en IUT, Nantes, France,8-9 2016.",
+
+            "description_1" => "A. CHIME, L. ZENG, M. CHAKAROUN, M. W. Lee, S. BENSMIDA, H. NKWAWO, A. P. A. FISCHER, A. BOUDRIOUA, Caractérisation de micro-oleds sous le régime des impulsions électriques nano-secondes, Congrès National de la Recherche en IUT, Nantes, France,8-9 2016.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_103 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 16,
+
+            "titre" => "KUATE TAGNE Paulin, FOUAGOU TIEMGNE Christian Willy, NKENLIFACK Josiane, FOTSO KUATE Victor & NKENLIFACK Marcellin, « Numérisation des données d’archives et des informations dans l’optique de l’élaboration d’un plan moderne de sécurisation ou d’échange de données », Symposium TIC–Africa-2016, 02 - 05 août 2016, ENSPT Yaoundé et Djeuga Hotel Yaoundé, sur le thème :  «Transition Digitale dans un Contexte de Construction des Villes Ubiquitaires et Enjeux de l’Amélioration des Services, Considérant la Protection en Ligne de  l’Enfance, des Filles, des Personnes avec Handicap et des Personnes Vulnérables».",
+
+            "description_1" => "KUATE TAGNE Paulin, FOUAGOU TIEMGNE Christian Willy, NKENLIFACK Josiane, FOTSO KUATE Victor & NKENLIFACK Marcellin, « Numérisation des données d’archives et des informations dans l’optique de l’élaboration d’un plan moderne de sécurisation ou d’échange de données », Symposium TIC–Africa-2016, 02 - 05 août 2016, ENSPT Yaoundé et Djeuga Hotel Yaoundé, sur le thème :  «Transition Digitale dans un Contexte de Construction des Villes Ubiquitaires et Enjeux de l’Amélioration des Services, Considérant la Protection en Ligne de  l’Enfance, des Filles, des Personnes avec Handicap et des Personnes Vulnérables».",
+
+            "description_1" => "KUATE TAGNE Paulin, FOUAGOU TIEMGNE Christian Willy, NKENLIFACK Josiane, FOTSO KUATE Victor & NKENLIFACK Marcellin, « Numérisation des données d’archives et des informations dans l’optique de l’élaboration d’un plan moderne de sécurisation ou d’échange de données », Symposium TIC–Africa-2016, 02 - 05 août 2016, ENSPT Yaoundé et Djeuga Hotel Yaoundé, sur le thème :  «Transition Digitale dans un Contexte de Construction des Villes Ubiquitaires et Enjeux de l’Amélioration des Services, Considérant la Protection en Ligne de  l’Enfance, des Filles, des Personnes avec Handicap et des Personnes Vulnérables».",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_104 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 16,
+
+            "titre" => "BENSONG Aude France & NKENLIFACK Marcellin, « Comment les technologies numériques transforment la ville et les pratiques urbaines ? », Symposium TIC–Africa-2016, 02 - 05 août 2016, ENSPT Yaoundé et Djeuga Hotel Yaoundé, sur le thème: «Transition Digitale dans un Contexte de Construction des Villes Ubiquitaires et Enjeux de l’Amélioration des Services, Considérant la Protection en Ligne de  l’Enfance, des Filles, des Personnes avec Handicap et des Personnes Vulnérables».",
+
+            "description_1" => "BENSONG Aude France & NKENLIFACK Marcellin, « Comment les technologies numériques transforment la ville et les pratiques urbaines ? », Symposium TIC–Africa-2016, 02 - 05 août 2016, ENSPT Yaoundé et Djeuga Hotel Yaoundé, sur le thème: «Transition Digitale dans un Contexte de Construction des Villes Ubiquitaires et Enjeux de l’Amélioration des Services, Considérant la Protection en Ligne de  l’Enfance, des Filles, des Personnes avec Handicap et des Personnes Vulnérables».",
+
+            "description_1" => "BENSONG Aude France & NKENLIFACK Marcellin, « Comment les technologies numériques transforment la ville et les pratiques urbaines ? », Symposium TIC–Africa-2016, 02 - 05 août 2016, ENSPT Yaoundé et Djeuga Hotel Yaoundé, sur le thème: «Transition Digitale dans un Contexte de Construction des Villes Ubiquitaires et Enjeux de l’Amélioration des Services, Considérant la Protection en Ligne de  l’Enfance, des Filles, des Personnes avec Handicap et des Personnes Vulnérables».",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_105 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 16,
+
+            "titre" => "SOH Mathurin, TEGOMO Germain & NKENLIFACK Marcellin, « Internet, TIC et identités dans le processus de patrimonialisation en Afrique » Symposium TIC–Africa-2016, 02 - 05 août 2016, ENSPT Yaoundé et Djeuga Hotel Yaoundé, sur le thème : «Transition Digitale dans un Contexte de Construction des Villes Ubiquitaires et Enjeux de l’Amélioration des Services, Considérant la Protection en Ligne de  l’Enfance, des Filles, des Personnes avec Handicap et des Personnes Vulnérables».",
+
+            "description_1" => "SOH Mathurin, TEGOMO Germain & NKENLIFACK Marcellin, « Internet, TIC et identités dans le processus de patrimonialisation en Afrique » Symposium TIC–Africa-2016, 02 - 05 août 2016, ENSPT Yaoundé et Djeuga Hotel Yaoundé, sur le thème : «Transition Digitale dans un Contexte de Construction des Villes Ubiquitaires et Enjeux de l’Amélioration des Services, Considérant la Protection en Ligne de  l’Enfance, des Filles, des Personnes avec Handicap et des Personnes Vulnérables».",
+
+            "description_1" => "SOH Mathurin, TEGOMO Germain & NKENLIFACK Marcellin, « Internet, TIC et identités dans le processus de patrimonialisation en Afrique » Symposium TIC–Africa-2016, 02 - 05 août 2016, ENSPT Yaoundé et Djeuga Hotel Yaoundé, sur le thème : «Transition Digitale dans un Contexte de Construction des Villes Ubiquitaires et Enjeux de l’Amélioration des Services, Considérant la Protection en Ligne de  l’Enfance, des Filles, des Personnes avec Handicap et des Personnes Vulnérables».",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_106 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 16,
+
+            "titre" => "Marcellin Nkenlifack & SIEWE Armand Rostand, « Stratégie de présence digitale à l’Université de Dschang », Symposium TIC–Africa-2016, 02 - 05 août 2016, ENSPT Yaoundé et Djeuga Hotel Yaoundé, sur le thème : «Transition Digitale dans un Contexte de Construction des Villes Ubiquitaires et Enjeux de l’Amélioration des Services, Considérant la Protection en Ligne de  l’Enfance, des Filles, des Personnes avec Handicap et des Personnes Vulnérables».",
+
+            "description_1" => "Marcellin Nkenlifack & SIEWE Armand Rostand, « Stratégie de présence digitale à l’Université de Dschang », Symposium TIC–Africa-2016, 02 - 05 août 2016, ENSPT Yaoundé et Djeuga Hotel Yaoundé, sur le thème : «Transition Digitale dans un Contexte de Construction des Villes Ubiquitaires et Enjeux de l’Amélioration des Services, Considérant la Protection en Ligne de  l’Enfance, des Filles, des Personnes avec Handicap et des Personnes Vulnérables».",
+
+            "description_1" => "Marcellin Nkenlifack & SIEWE Armand Rostand, « Stratégie de présence digitale à l’Université de Dschang », Symposium TIC–Africa-2016, 02 - 05 août 2016, ENSPT Yaoundé et Djeuga Hotel Yaoundé, sur le thème : «Transition Digitale dans un Contexte de Construction des Villes Ubiquitaires et Enjeux de l’Amélioration des Services, Considérant la Protection en Ligne de  l’Enfance, des Filles, des Personnes avec Handicap et des Personnes Vulnérables».",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        // publication de type : Communications de Conférences => id = 8
+        // annee 2017 => id = 17
+
+        $publication_6_107 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 17,
+
+            "titre" => "Godpromesse Kenne, and Françoise Lamnabhi. Challenges of mastering the energy sector for development in Africa, Plenary session talk, Conférence Internationale sur les « Mathématiques Appliquées à des questions de DEVeloppement, MADEV17» à Rabat (Maroc), 13-22 Octobre 2017.",
+
+            "description_1" => "Godpromesse Kenne, and Françoise Lamnabhi. Challenges of mastering the energy sector for development in Africa, Plenary session talk, Conférence Internationale sur les « Mathématiques Appliquées à des questions de DEVeloppement, MADEV17» à Rabat (Maroc), 13-22 Octobre 2017.",
+
+            "description_1" => "Godpromesse Kenne, and Françoise Lamnabhi. Challenges of mastering the energy sector for development in Africa, Plenary session talk, Conférence Internationale sur les « Mathématiques Appliquées à des questions de DEVeloppement, MADEV17» à Rabat (Maroc), 13-22 Octobre 2017.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_108 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 17,
+
+            "titre" => "A. M. Fombu, G. Kenne. Global nonlinear decentralized control for multi-machine power systems, IUTENT – 2017, IUT-FV Bandjoun, UDs, 19-21 décembre 2017.",
+
+            "description_1" => "A. M. Fombu, G. Kenne. Global nonlinear decentralized control for multi-machine power systems, IUTENT – 2017, IUT-FV Bandjoun, UDs, 19-21 décembre 2017.",
+
+            "description_1" => "A. M. Fombu, G. Kenne. Global nonlinear decentralized control for multi-machine power systems, IUTENT – 2017, IUT-FV Bandjoun, UDs, 19-21 décembre 2017.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_109 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 17,
+
+            "titre" => "109.	 Lionel Leroy Sonfack, Godpromesse Kenne. A New SSSC Control Strategy for Power Flow Control, IUT-FV Bandjoun, UDs, 19-21 décembre 2017.",
+
+            "description_1" => "109.	 Lionel Leroy Sonfack, Godpromesse Kenne. A New SSSC Control Strategy for Power Flow Control, IUT-FV Bandjoun, UDs, 19-21 décembre 2017.",
+
+            "description_1" => "109.	 Lionel Leroy Sonfack, Godpromesse Kenne. A New SSSC Control Strategy for Power Flow Control, IUT-FV Bandjoun, UDs, 19-21 décembre 2017.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_110 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 17,
+
+            "titre" => "R. M. Douanla, G. Kenne, F. B. Pelap. A control scheme for grid connected PMSG variable speed wind turbines, IUT-FV Bandjoun, UDs, 19-21 décembre 2017.",
+
+            "description_1" => "R. M. Douanla, G. Kenne, F. B. Pelap. A control scheme for grid connected PMSG variable speed wind turbines, IUT-FV Bandjoun, UDs, 19-21 décembre 2017.",
+
+            "description_1" => "R. M. Douanla, G. Kenne, F. B. Pelap. A control scheme for grid connected PMSG variable speed wind turbines, IUT-FV Bandjoun, UDs, 19-21 décembre 2017.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_111 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 17,
+
+            "titre" => "A.S. Kemnang Tsafack, J.R. Mboupda Pone, G. Kenne, R. Kengne. Nonlinear dynamics, bursting phenomena and Control of chaotic in IFOC motor, IUT-FV Bandjoun, UDs, 19-21 décembre 2017.",
+
+            "description_1" => "A.S. Kemnang Tsafack, J.R. Mboupda Pone, G. Kenne, R. Kengne. Nonlinear dynamics, bursting phenomena and Control of chaotic in IFOC motor, IUT-FV Bandjoun, UDs, 19-21 décembre 2017.",
+
+            "description_1" => "A.S. Kemnang Tsafack, J.R. Mboupda Pone, G. Kenne, R. Kengne. Nonlinear dynamics, bursting phenomena and Control of chaotic in IFOC motor, IUT-FV Bandjoun, UDs, 19-21 décembre 2017.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_112 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 17,
+
+            "titre" => "E. M. Nfah, G. Kenne, M. Fogue, R. Tchinda, G. Tchuen. Evaluation of Optimal Hybrid Photovoltaic System with minimum Energy Storage, IUT-FV Bandjoun, UDs, 19-21 décembre 2017.",
+
+            "description_1" => "E. M. Nfah, G. Kenne, M. Fogue, R. Tchinda, G. Tchuen. Evaluation of Optimal Hybrid Photovoltaic System with minimum Energy Storage, IUT-FV Bandjoun, UDs, 19-21 décembre 2017.",
+
+            "description_1" => "E. M. Nfah, G. Kenne, M. Fogue, R. Tchinda, G. Tchuen. Evaluation of Optimal Hybrid Photovoltaic System with minimum Energy Storage, IUT-FV Bandjoun, UDs, 19-21 décembre 2017.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_113 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 17,
+
+            "titre" => "NKENLIFACK Marcellin, TALLA Narcisse et FOTSO KUATE Victor, « Modèle Générique de Plateforme d’Automatisation de la Gestion des Examens au Supérieur (PAGES) : Application à la Gestion des Evaluations en Ligne à l’Université de Dschang », Symposium international TIC-Afrique, 11-14 juillet 2017, Yaoundé, Cameroun.",
+
+            "description_1" => "NKENLIFACK Marcellin, TALLA Narcisse et FOTSO KUATE Victor, « Modèle Générique de Plateforme d’Automatisation de la Gestion des Examens au Supérieur (PAGES) : Application à la Gestion des Evaluations en Ligne à l’Université de Dschang », Symposium international TIC-Afrique, 11-14 juillet 2017, Yaoundé, Cameroun.",
+
+            "description_1" => "NKENLIFACK Marcellin, TALLA Narcisse et FOTSO KUATE Victor, « Modèle Générique de Plateforme d’Automatisation de la Gestion des Examens au Supérieur (PAGES) : Application à la Gestion des Evaluations en Ligne à l’Université de Dschang », Symposium international TIC-Afrique, 11-14 juillet 2017, Yaoundé, Cameroun.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_114 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 17,
+
+            "titre" => "Blandine Djika Mezatio, Christian Fotsing Takoutsi, Alain Plantec, Frank Signhoff and Marcellin Nkenlifack, Taxonomie des anomalies d’ordonnancement dans des systèmes temps réel: Simulation dans Cheddar, Conf. Internationale de Recherche en Informatique - CRI2017, 28-29 nov 2017, ENSP Yaounde, Cameroon.",
+
+            "description_1" => "Blandine Djika Mezatio, Christian Fotsing Takoutsi, Alain Plantec, Frank Signhoff and Marcellin Nkenlifack, Taxonomie des anomalies d’ordonnancement dans des systèmes temps réel: Simulation dans Cheddar, Conf. Internationale de Recherche en Informatique - CRI2017, 28-29 nov 2017, ENSP Yaounde, Cameroon.",
+
+            "description_1" => "Blandine Djika Mezatio, Christian Fotsing Takoutsi, Alain Plantec, Frank Signhoff and Marcellin Nkenlifack, Taxonomie des anomalies d’ordonnancement dans des systèmes temps réel: Simulation dans Cheddar, Conf. Internationale de Recherche en Informatique - CRI2017, 28-29 nov 2017, ENSP Yaounde, Cameroon.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_115 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 17,
+
+            "titre" => "M. Nkenlifack and Vivien L. Beyala, A hybrid model of artificial neural networks and factorized sta-tistics for the automatic translation of local languages; an appli-cation to the ghomala-Yemba language pair, Int. Conf. IUTENT-2017 (University Institute of Technology – Enterprise), 19-21 dec 2017, IUTFV of Bandjoun, Cameroon. http://iutent2017-iutfv-bandjoun.net/.",
+
+            "description_1" => "M. Nkenlifack and Vivien L. Beyala, A hybrid model of artificial neural networks and factorized sta-tistics for the automatic translation of local languages; an appli-cation to the ghomala-Yemba language pair, Int. Conf. IUTENT-2017 (University Institute of Technology – Enterprise), 19-21 dec 2017, IUTFV of Bandjoun, Cameroon. http://iutent2017-iutfv-bandjoun.net/.",
+
+            "description_1" => "M. Nkenlifack and Vivien L. Beyala, A hybrid model of artificial neural networks and factorized sta-tistics for the automatic translation of local languages; an appli-cation to the ghomala-Yemba language pair, Int. Conf. IUTENT-2017 (University Institute of Technology – Enterprise), 19-21 dec 2017, IUTFV of Bandjoun, Cameroon. http://iutent2017-iutfv-bandjoun.net/.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_116 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 17,
+
+            "titre" => "Tadjo T. Yves and Nkenlifack Marcellin, Approche Multi-Agents pour l'Evaluation de Performances dans un Système de Vote Electronique, Int. Conf. IUTENT-2017 (University Institute of Technology – Enterprise), 19-21 dec 2017, IUTFV of Bandjoun, Cameroon. http://iutent2017-iutfv-bandjoun.net/.",
+
+            "description_1" => "Tadjo T. Yves and Nkenlifack Marcellin, Approche Multi-Agents pour l'Evaluation de Performances dans un Système de Vote Electronique, Int. Conf. IUTENT-2017 (University Institute of Technology – Enterprise), 19-21 dec 2017, IUTFV of Bandjoun, Cameroon. http://iutent2017-iutfv-bandjoun.net/.",
+
+            "description_1" => "Tadjo T. Yves and Nkenlifack Marcellin, Approche Multi-Agents pour l'Evaluation de Performances dans un Système de Vote Electronique, Int. Conf. IUTENT-2017 (University Institute of Technology – Enterprise), 19-21 dec 2017, IUTFV of Bandjoun, Cameroon. http://iutent2017-iutfv-bandjoun.net/.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_117 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 17,
+
+            "titre" => "Tegomo Ngoune Germain and Nkenlifack Marcellin, Modèle de Traduction Automatique Contextuelle de SMS dans nos Langues Locales lors des Echanges Téléphoniques : cas du Yemba-Français, Int. Conf. IUTENT-2017 (University Institute of Technology – Enterprise), 19-21 dec 2017, IUTFV of Bandjoun, Cameroon. http://iutent2017-iutfv-bandjoun.net/.",
+
+            "description_1" => "Tegomo Ngoune Germain and Nkenlifack Marcellin, Modèle de Traduction Automatique Contextuelle de SMS dans nos Langues Locales lors des Echanges Téléphoniques : cas du Yemba-Français, Int. Conf. IUTENT-2017 (University Institute of Technology – Enterprise), 19-21 dec 2017, IUTFV of Bandjoun, Cameroon. http://iutent2017-iutfv-bandjoun.net/.",
+
+            "description_1" => "Tegomo Ngoune Germain and Nkenlifack Marcellin, Modèle de Traduction Automatique Contextuelle de SMS dans nos Langues Locales lors des Echanges Téléphoniques : cas du Yemba-Français, Int. Conf. IUTENT-2017 (University Institute of Technology – Enterprise), 19-21 dec 2017, IUTFV of Bandjoun, Cameroon. http://iutent2017-iutfv-bandjoun.net/.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_118 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 17,
+
+            "titre" => "Talla Narcisse, Nkenlifack Marcellin et Fotso Kuate Victor, Modèle d’architecture de plateforme pour un système de composition « verte » dans un campus universitaire, Int. Conf. IUTENT-2017 (University Institute of Technology – Enterprise), 19-21 dec 2017, IUTFV of Bandjoun, Cameroon. http://iutent2017-iutfv-bandjoun.net/.",
+
+            "description_1" => "Talla Narcisse, Nkenlifack Marcellin et Fotso Kuate Victor, Modèle d’architecture de plateforme pour un système de composition « verte » dans un campus universitaire, Int. Conf. IUTENT-2017 (University Institute of Technology – Enterprise), 19-21 dec 2017, IUTFV of Bandjoun, Cameroon. http://iutent2017-iutfv-bandjoun.net/.",
+
+            "description_1" => "Talla Narcisse, Nkenlifack Marcellin et Fotso Kuate Victor, Modèle d’architecture de plateforme pour un système de composition « verte » dans un campus universitaire, Int. Conf. IUTENT-2017 (University Institute of Technology – Enterprise), 19-21 dec 2017, IUTFV of Bandjoun, Cameroon. http://iutent2017-iutfv-bandjoun.net/.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_119 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 17,
+
+            "titre" => "Kuete Donald, Ngame Ekwelle Fred, Nkenlifack Marcellin et Fotso Kuate Victor, Modèle d’Identification biométrique faciale, de Contrôle d'accès et Amélioration de qualité et effectivité de Services (ICAS), Int. Conf. IUTENT-2017 (University Institute of Technology – Enterprise), 19-21 dec 2017, IUTFV of Bandjoun, Cameroon. http://iutent2017-iutfv-bandjoun.net/.",
+
+            "description_1" => "Kuete Donald, Ngame Ekwelle Fred, Nkenlifack Marcellin et Fotso Kuate Victor, Modèle d’Identification biométrique faciale, de Contrôle d'accès et Amélioration de qualité et effectivité de Services (ICAS), Int. Conf. IUTENT-2017 (University Institute of Technology – Enterprise), 19-21 dec 2017, IUTFV of Bandjoun, Cameroon. http://iutent2017-iutfv-bandjoun.net/.",
+
+            "description_1" => "Kuete Donald, Ngame Ekwelle Fred, Nkenlifack Marcellin et Fotso Kuate Victor, Modèle d’Identification biométrique faciale, de Contrôle d'accès et Amélioration de qualité et effectivité de Services (ICAS), Int. Conf. IUTENT-2017 (University Institute of Technology – Enterprise), 19-21 dec 2017, IUTFV of Bandjoun, Cameroon. http://iutent2017-iutfv-bandjoun.net/.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        // publication de type : Communications de Conférences => id = 8
+        // annee 2019 => id = 19
+        $publication_6_120 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 19,
+
+            "titre" => "G. Kenné, F. A. Tchouani Njomo, R. M. Douanla, L. L. Sonfack, F. Lamnabhi-Lagarrigue. Contrôleurs robustes des systèmes hybrides de production d’énergie électrique, Mathématiques Appliquées à des questions de Développement (MADEV2019), Session « Théorie du contrôle appliquée aux problèmes liés à l’énergie»,  25-27 Novembre 2019, Dakar, Sénégal.",
+
+            "description_1" => "G. Kenné, F. A. Tchouani Njomo, R. M. Douanla, L. L. Sonfack, F. Lamnabhi-Lagarrigue. Contrôleurs robustes des systèmes hybrides de production d’énergie électrique, Mathématiques Appliquées à des questions de Développement (MADEV2019), Session « Théorie du contrôle appliquée aux problèmes liés à l’énergie»,  25-27 Novembre 2019, Dakar, Sénégal.",
+
+            "description_1" => "G. Kenné, F. A. Tchouani Njomo, R. M. Douanla, L. L. Sonfack, F. Lamnabhi-Lagarrigue. Contrôleurs robustes des systèmes hybrides de production d’énergie électrique, Mathématiques Appliquées à des questions de Développement (MADEV2019), Session « Théorie du contrôle appliquée aux problèmes liés à l’énergie»,  25-27 Novembre 2019, Dakar, Sénégal.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_121 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 19,
+
+            "titre" => "Rodrigue Konan Tchinda and Clémentin Tayou Djamegni. Enhancing Reasoning with the Extension Rule in CDCL SAT Solvers. Conf »rence de Recherche en Informatique (CRI), Université de Yaoundé I, 2019.",
+
+            "description_1" => "Rodrigue Konan Tchinda and Clémentin Tayou Djamegni. Enhancing Reasoning with the Extension Rule in CDCL SAT Solvers. Conf »rence de Recherche en Informatique (CRI), Université de Yaoundé I, 2019.",
+
+            "description_1" => "Rodrigue Konan Tchinda and Clémentin Tayou Djamegni. Enhancing Reasoning with the Extension Rule in CDCL SAT Solvers. Conf »rence de Recherche en Informatique (CRI), Université de Yaoundé I, 2019.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_122 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 19,
+
+            "titre" => "122.	NKENLIFACK Marcellin, «l’Economie Numérique et les Besoins en Compétences», 1rst Enterprise, Research and Development Forum (EREDEF-2020), 24 – 28 nov 2020, University of Dschang-Cameroon, subject \"Artificial Intelligence, Digital Economy and African Transformation \".https://cmi2019.univ-dschang.org/ ",
+
+            "description_1" => "122.	NKENLIFACK Marcellin, «l’Economie Numérique et les Besoins en Compétences», 1rst Enterprise, Research and Development Forum (EREDEF-2020), 24 – 28 nov 2020, University of Dschang-Cameroon, subject \"Artificial Intelligence, Digital Economy and African Transformation \".https://cmi2019.univ-dschang.org/ ",
+
+            "description_1" => "122.	NKENLIFACK Marcellin, «l’Economie Numérique et les Besoins en Compétences», 1rst Enterprise, Research and Development Forum (EREDEF-2020), 24 – 28 nov 2020, University of Dschang-Cameroon, subject \"Artificial Intelligence, Digital Economy and African Transformation \".https://cmi2019.univ-dschang.org/ ",
+
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        // publication de type : Communications de Conférences => id = 8
+        // annee 2020 => id = 20
+        $publication_6_123 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 20,
+
+            "titre" => "Rodrigue Konan Tchinda and Clémentin Tayou Djamegni. Parallel Hybridization for SAT: An efficient Conbination of Search Space Splitting and Portfolio. CARI’2020. https://www.cari-info.org.",
+
+            "description_1" => "Rodrigue Konan Tchinda and Clémentin Tayou Djamegni. Parallel Hybridization for SAT: An efficient Conbination of Search Space Splitting and Portfolio. CARI’2020. https://www.cari-info.org.",
+
+            "description_1" => "Rodrigue Konan Tchinda and Clémentin Tayou Djamegni. Parallel Hybridization for SAT: An efficient Conbination of Search Space Splitting and Portfolio. CARI’2020. https://www.cari-info.org.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_124 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 20,
+
+            "titre" => "Sévérine Fetgo Betmbe and Clémentin Tayou Djamegni. Horizontally Elastic Edge-Finder For Cumulative Resource Constraint Revisited. CARI’20.  https://www.cari-info.org.",
+
+            "description_1" => "Sévérine Fetgo Betmbe and Clémentin Tayou Djamegni. Horizontally Elastic Edge-Finder For Cumulative Resource Constraint Revisited. CARI’20.  https://www.cari-info.org.",
+
+            "description_1" => "Sévérine Fetgo Betmbe and Clémentin Tayou Djamegni. Horizontally Elastic Edge-Finder For Cumulative Resource Constraint Revisited. CARI’20.  https://www.cari-info.org.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_125 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 20,
+
+            "titre" => "Edith Belise Kenmogne and Clémentin Tayou Djamegni. An Efficient Algorithm to Discover Intra-Periodic Frequent Sequences. CARI’2020.  https://www.cari-info.org.",
+
+            "description_1" => "Edith Belise Kenmogne and Clémentin Tayou Djamegni. An Efficient Algorithm to Discover Intra-Periodic Frequent Sequences. CARI’2020.  https://www.cari-info.org.",
+
+            "description_1" => "Edith Belise Kenmogne and Clémentin Tayou Djamegni. An Efficient Algorithm to Discover Intra-Periodic Frequent Sequences. CARI’2020.  https://www.cari-info.org.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_126 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 20,
+
+            "titre" => "Clémentin Tayou Djamegni, Laurent Cabrel Tabueu Fotso and Edith Belise Kenmogne. Un nouvel algorithme d’extraction des motifs graduels appelé Sgrite. CARI’2020. https://www.cari-info.org.",
+
+            "description_1" => "Clémentin Tayou Djamegni, Laurent Cabrel Tabueu Fotso and Edith Belise Kenmogne. Un nouvel algorithme d’extraction des motifs graduels appelé Sgrite. CARI’2020. https://www.cari-info.org.",
+
+            "description_1" => "Clémentin Tayou Djamegni, Laurent Cabrel Tabueu Fotso and Edith Belise Kenmogne. Un nouvel algorithme d’extraction des motifs graduels appelé Sgrite. CARI’2020. https://www.cari-info.org.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_127 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 20,
+
+            "titre" => "Mathurin Soh, Baudouin Nguimeya Tsofack and Clémentin Tayou Djamegni. Approche Heuristique Multi Colonie Des Fourmis Pour La Résolution du Problème de Voyageur de Commerce. CARI’2020.  https://www.cari-info.org.",
+
+            "description_1" => "Mathurin Soh, Baudouin Nguimeya Tsofack and Clémentin Tayou Djamegni. Approche Heuristique Multi Colonie Des Fourmis Pour La Résolution du Problème de Voyageur de Commerce. CARI’2020.  https://www.cari-info.org.",
+
+            "description_1" => "Mathurin Soh, Baudouin Nguimeya Tsofack and Clémentin Tayou Djamegni. Approche Heuristique Multi Colonie Des Fourmis Pour La Résolution du Problème de Voyageur de Commerce. CARI’2020.  https://www.cari-info.org.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_128 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 20,
+
+            "titre" => "Milliam Maxime Zekeng Ndadji, Maurice Tchoupé Tchendji, Clémentin Tayou Djamégni, Didier Parigot: A Grammatical Model for the Specification of Administrative Workflow Using Scenario as Modelling Unit. ICAI 2020: 131-145",
+
+            "description_1" => "Milliam Maxime Zekeng Ndadji, Maurice Tchoupé Tchendji, Clémentin Tayou Djamégni, Didier Parigot: A Grammatical Model for the Specification of Administrative Workflow Using Scenario as Modelling Unit. ICAI 2020: 131-145",
+
+            "description_1" => "Milliam Maxime Zekeng Ndadji, Maurice Tchoupé Tchendji, Clémentin Tayou Djamégni, Didier Parigot: A Grammatical Model for the Specification of Administrative Workflow Using Scenario as Modelling Unit. ICAI 2020: 131-145",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_129 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 20,
+
+            "titre" => "Milliam Maxime Zekeng Ndadji, Maurice Tchoupé Tchendji, Clémentin Tayou Djamégni, Didier Parigot: A Language for the Specification of Administrative Workflow Processes with Emphasis on Actors' Views. ICCSA (6) 2020: 231-245",
+
+            "description_1" => "Milliam Maxime Zekeng Ndadji, Maurice Tchoupé Tchendji, Clémentin Tayou Djamégni, Didier Parigot: A Language for the Specification of Administrative Workflow Processes with Emphasis on Actors' Views. ICCSA (6) 2020: 231-245",
+
+            "description_1" => "Milliam Maxime Zekeng Ndadji, Maurice Tchoupé Tchendji, Clémentin Tayou Djamégni, Didier Parigot: A Language for the Specification of Administrative Workflow Processes with Emphasis on Actors' Views. ICCSA (6) 2020: 231-245",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_130 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 20,
+
+            "titre" => "NKENLIFACK Marcellin, «TECHNOLOGIES NUMERIQUES ET DEVELOPPEMENT DE L’AGRO-INDUSTRIE», 1st Colloquium of Mathematics and Computer Science (CMC-2019), 08 – 12 April 2019, University of Dschang, Dschang, Cameroon, Subject : “Internet of Things, Big Data Analysis and Development”.https://fered2020.univ-dschang.org/ ",
+
+            "description_1" => "NKENLIFACK Marcellin, «TECHNOLOGIES NUMERIQUES ET DEVELOPPEMENT DE L’AGRO-INDUSTRIE», 1st Colloquium of Mathematics and Computer Science (CMC-2019), 08 – 12 April 2019, University of Dschang, Dschang, Cameroon, Subject : “Internet of Things, Big Data Analysis and Development”.https://fered2020.univ-dschang.org/ ",
+
+            "description_1" => "NKENLIFACK Marcellin, «TECHNOLOGIES NUMERIQUES ET DEVELOPPEMENT DE L’AGRO-INDUSTRIE», 1st Colloquium of Mathematics and Computer Science (CMC-2019), 08 – 12 April 2019, University of Dschang, Dschang, Cameroon, Subject : “Internet of Things, Big Data Analysis and Development”.https://fered2020.univ-dschang.org/ ",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_131 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 20,
+
+            "titre" => "NKENLIFACK Marcellin, «L’Intelligence Artificielle : Concepts, Enjeux et Défis», Colloque national organisé par le Centre d’Etudes et de Recherche en Droit et Développement de la Faculté des Sciences Juridiques de l’Université de Dschang, Thème: « l’Intelligence Artificielle », 18 décembre 2020, Université de Dschang-Cameroun.",
+
+            "description_1" => "NKENLIFACK Marcellin, «L’Intelligence Artificielle : Concepts, Enjeux et Défis», Colloque national organisé par le Centre d’Etudes et de Recherche en Droit et Développement de la Faculté des Sciences Juridiques de l’Université de Dschang, Thème: « l’Intelligence Artificielle », 18 décembre 2020, Université de Dschang-Cameroun.",
+
+            "description_1" => "NKENLIFACK Marcellin, «L’Intelligence Artificielle : Concepts, Enjeux et Défis», Colloque national organisé par le Centre d’Etudes et de Recherche en Droit et Développement de la Faculté des Sciences Juridiques de l’Université de Dschang, Thème: « l’Intelligence Artificielle », 18 décembre 2020, Université de Dschang-Cameroun.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        // publication de type : Communications de Conférences => id = 8
+        // annee 2022 => id = 22
+
+        $publication_6_132 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 22,
+
+            "titre" => "Miguel Landry Foko Sindjoung, Mthulisi Velempini, Pascale Minet. “Combining Learners to Predict Link Quality in Wireless IoT Networks”, The 21st IEEE Mediterranean Electrotechnical Conference (MELECON2022), Accepted for presentation in June 2022.",
+
+            "description_1" => "Miguel Landry Foko Sindjoung, Mthulisi Velempini, Pascale Minet. “Combining Learners to Predict Link Quality in Wireless IoT Networks”, The 21st IEEE Mediterranean Electrotechnical Conference (MELECON2022), Accepted for presentation in June 2022.",
+
+            "description_1" => "Miguel Landry Foko Sindjoung, Mthulisi Velempini, Pascale Minet. “Combining Learners to Predict Link Quality in Wireless IoT Networks”, The 21st IEEE Mediterranean Electrotechnical Conference (MELECON2022), Accepted for presentation in June 2022.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_133 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 22,
+
+            "titre" => "J. D. NGUIMFACK-NDONGMO, K. K. ZANA, R. F. KUATE, G. KENNÉ. Development of a Simplified Programming Kit for Embedded Systems, 1st International Conference on Engineering Science and Development: Artificial Intelligence and Sustainable Development (ICESD2022), Bandjoun (Cameroon), IUT-FV, March 16th, 17th and 18th 2022.",
+
+            "description_1" => "J. D. NGUIMFACK-NDONGMO, K. K. ZANA, R. F. KUATE, G. KENNÉ. Development of a Simplified Programming Kit for Embedded Systems, 1st International Conference on Engineering Science and Development: Artificial Intelligence and Sustainable Development (ICESD2022), Bandjoun (Cameroon), IUT-FV, March 16th, 17th and 18th 2022.",
+
+            "description_1" => "J. D. NGUIMFACK-NDONGMO, K. K. ZANA, R. F. KUATE, G. KENNÉ. Development of a Simplified Programming Kit for Embedded Systems, 1st International Conference on Engineering Science and Development: Artificial Intelligence and Sustainable Development (ICESD2022), Bandjoun (Cameroon), IUT-FV, March 16th, 17th and 18th 2022.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_134 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 22,
+
+            "titre" => "M. NJAMEN, R. F. KUATE, L. L. SONFACK, G. KENNÉ. Control of the Voltage Source Inverter-Fed Induction Motors using Differential Flatness Theory, 1st International Conference on Engineering Science and Development: Artificial Intelligence and Sustainable Development (ICESD2022), Bandjoun (Cameroon), IUT-FV, March 16th, 17th and 18th 2022.",
+
+            "description_1" => "M. NJAMEN, R. F. KUATE, L. L. SONFACK, G. KENNÉ. Control of the Voltage Source Inverter-Fed Induction Motors using Differential Flatness Theory, 1st International Conference on Engineering Science and Development: Artificial Intelligence and Sustainable Development (ICESD2022), Bandjoun (Cameroon), IUT-FV, March 16th, 17th and 18th 2022.",
+
+            "description_1" => "M. NJAMEN, R. F. KUATE, L. L. SONFACK, G. KENNÉ. Control of the Voltage Source Inverter-Fed Induction Motors using Differential Flatness Theory, 1st International Conference on Engineering Science and Development: Artificial Intelligence and Sustainable Development (ICESD2022), Bandjoun (Cameroon), IUT-FV, March 16th, 17th and 18th 2022.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_135 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 22,
+
+            "titre" => "D. B. TCHOUMTCHA, C. T. SANJONG, R. M. DOUANLA, G. KENNÉ. Synergetic Control for Stand-Alone Permanent Magnet Synchronous Generator Driven by Wind Turbine, 1st International Conference on Engineering Science and Development: Artificial Intelligence and Sustainable Development (ICESD2022), Bandjoun (Cameroon), IUT-FV, March 16th, 17th and 18th 2022.",
+
+            "description_1" => "D. B. TCHOUMTCHA, C. T. SANJONG, R. M. DOUANLA, G. KENNÉ. Synergetic Control for Stand-Alone Permanent Magnet Synchronous Generator Driven by Wind Turbine, 1st International Conference on Engineering Science and Development: Artificial Intelligence and Sustainable Development (ICESD2022), Bandjoun (Cameroon), IUT-FV, March 16th, 17th and 18th 2022.",
+
+            "description_1" => "D. B. TCHOUMTCHA, C. T. SANJONG, R. M. DOUANLA, G. KENNÉ. Synergetic Control for Stand-Alone Permanent Magnet Synchronous Generator Driven by Wind Turbine, 1st International Conference on Engineering Science and Development: Artificial Intelligence and Sustainable Development (ICESD2022), Bandjoun (Cameroon), IUT-FV, March 16th, 17th and 18th 2022.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_136 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 22,
+
+            "titre" => "T. MBENDE, M. PESDJOCK, G. KENNÉ. PI Control of a Photovoltaic-Hydroelectric Hybrid Systems, 1st International Conference on Engineering Science and Development: Artificial Intelligence and Sustainable Development (ICESD2022), Bandjoun (Cameroon), IUT-FV, March 16th, 17th and 18th 2022.",
+
+            "description_1" => "T. MBENDE, M. PESDJOCK, G. KENNÉ. PI Control of a Photovoltaic-Hydroelectric Hybrid Systems, 1st International Conference on Engineering Science and Development: Artificial Intelligence and Sustainable Development (ICESD2022), Bandjoun (Cameroon), IUT-FV, March 16th, 17th and 18th 2022.",
+
+            "description_1" => "T. MBENDE, M. PESDJOCK, G. KENNÉ. PI Control of a Photovoltaic-Hydroelectric Hybrid Systems, 1st International Conference on Engineering Science and Development: Artificial Intelligence and Sustainable Development (ICESD2022), Bandjoun (Cameroon), IUT-FV, March 16th, 17th and 18th 2022.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_137 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 22,
+
+            "titre" => "S. I. CHE, J-P. LIENOU TCHAWE, G. KENNÉ, M. G. TENENG. Comparative Analysis Between Long Short-Term Memory and Transformer Architecture on the Translation of African Languages, 1st International Conference on Engineering Science and Development: Artificial Intelligence and Sustainable Development (ICESD2022), Bandjoun (Cameroon), IUT-FV, March 16th, 17th and 18th 2022.",
+
+            "description_1" => "S. I. CHE, J-P. LIENOU TCHAWE, G. KENNÉ, M. G. TENENG. Comparative Analysis Between Long Short-Term Memory and Transformer Architecture on the Translation of African Languages, 1st International Conference on Engineering Science and Development: Artificial Intelligence and Sustainable Development (ICESD2022), Bandjoun (Cameroon), IUT-FV, March 16th, 17th and 18th 2022.",
+
+            "description_1" => "S. I. CHE, J-P. LIENOU TCHAWE, G. KENNÉ, M. G. TENENG. Comparative Analysis Between Long Short-Term Memory and Transformer Architecture on the Translation of African Languages, 1st International Conference on Engineering Science and Development: Artificial Intelligence and Sustainable Development (ICESD2022), Bandjoun (Cameroon), IUT-FV, March 16th, 17th and 18th 2022.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        $publication_6_138 = [
+            "type_publication_id" => 8,
+            "annee_publication_id" => 22,
+
+            "titre" => "F. Achille DJONTU TAJOUO, Thiérry NOULAMO, Andre CHEUKEM. TOWARDS A GENERIC APPROACH TO PRODUCING ADOMAIN ONTOLOGY, 1st International Conference on Engineering Science and Development: Artificial Intelligence and Sustainable Development (ICESD2022), Bandjoun (Cameroon), IUT-FV, March 16th, 17th and 18th 2022.",
+
+            "description_1" => "F. Achille DJONTU TAJOUO, Thiérry NOULAMO, Andre CHEUKEM. TOWARDS A GENERIC APPROACH TO PRODUCING ADOMAIN ONTOLOGY, 1st International Conference on Engineering Science and Development: Artificial Intelligence and Sustainable Development (ICESD2022), Bandjoun (Cameroon), IUT-FV, March 16th, 17th and 18th 2022.",
+
+            "description_1" => "F. Achille DJONTU TAJOUO, Thiérry NOULAMO, Andre CHEUKEM. TOWARDS A GENERIC APPROACH TO PRODUCING ADOMAIN ONTOLOGY, 1st International Conference on Engineering Science and Development: Artificial Intelligence and Sustainable Development (ICESD2022), Bandjoun (Cameroon), IUT-FV, March 16th, 17th and 18th 2022.",
+
+            // "lien_externe" => "",
+
+            "status" => true,
+        ];
+
+        Publication::create($publication_6_1);
+        Publication::create($publication_6_2);
+        Publication::create($publication_6_3);
+        Publication::create($publication_6_4);
+        Publication::create($publication_6_5);
+        Publication::create($publication_6_6);
+        Publication::create($publication_6_7);
+        Publication::create($publication_6_8);
+        Publication::create($publication_6_9);
+        Publication::create($publication_6_10);
+
+        Publication::create($publication_6_11);
+        Publication::create($publication_6_12);
+        Publication::create($publication_6_13);
+        Publication::create($publication_6_14);
+        Publication::create($publication_6_15);
+        Publication::create($publication_6_16);
+        Publication::create($publication_6_17);
+        Publication::create($publication_6_18);
+        Publication::create($publication_6_19);
+        Publication::create($publication_6_20);
+
+        Publication::create($publication_6_21);
+        Publication::create($publication_6_22);
+        Publication::create($publication_6_23);
+        Publication::create($publication_6_24);
+        Publication::create($publication_6_25);
+        Publication::create($publication_6_26);
+        Publication::create($publication_6_27);
+        Publication::create($publication_6_28);
+        Publication::create($publication_6_29);
+        Publication::create($publication_6_30);
+
+        Publication::create($publication_6_31);
+        Publication::create($publication_6_32);
+        Publication::create($publication_6_33);
+        Publication::create($publication_6_34);
+        Publication::create($publication_6_35);
+        Publication::create($publication_6_36);
+        Publication::create($publication_6_37);
+        Publication::create($publication_6_38);
+        Publication::create($publication_6_39);
+        Publication::create($publication_6_40);
+
+        Publication::create($publication_6_41);
+        Publication::create($publication_6_42);
+        Publication::create($publication_6_43);
+        Publication::create($publication_6_44);
+        Publication::create($publication_6_45);
+        Publication::create($publication_6_46);
+        Publication::create($publication_6_47);
+        Publication::create($publication_6_49);
+        Publication::create($publication_6_50);
+
+
+        Publication::create($publication_6_51);
+        Publication::create($publication_6_52);
+        Publication::create($publication_6_53);
+        Publication::create($publication_6_54);
+        Publication::create($publication_6_55);
+        Publication::create($publication_6_56);
+        Publication::create($publication_6_57);
+        Publication::create($publication_6_58);
+        Publication::create($publication_6_59);
+        Publication::create($publication_6_60);
+
+        Publication::create($publication_6_61);
+        Publication::create($publication_6_62);
+        Publication::create($publication_6_63);
+        Publication::create($publication_6_64);
+        Publication::create($publication_6_65);
+        Publication::create($publication_6_66);
+        Publication::create($publication_6_67);
+        Publication::create($publication_6_68);
+        Publication::create($publication_6_69);
+        Publication::create($publication_6_70);
+
+        Publication::create($publication_6_71);
+        Publication::create($publication_6_72);
+        Publication::create($publication_6_73);
+        Publication::create($publication_6_74);
+        Publication::create($publication_6_75);
+        Publication::create($publication_6_76);
+        Publication::create($publication_6_77);
+        Publication::create($publication_6_78);
+        Publication::create($publication_6_79);
+        Publication::create($publication_6_80);
+
+        Publication::create($publication_6_81);
+        Publication::create($publication_6_82);
+        Publication::create($publication_6_83);
+        Publication::create($publication_6_84);
+        Publication::create($publication_6_85);
+        Publication::create($publication_6_86);
+        Publication::create($publication_6_87);
+        Publication::create($publication_6_88);
+        Publication::create($publication_6_89);
+        Publication::create($publication_6_90);
+
+        Publication::create($publication_6_91);
+        Publication::create($publication_6_92);
+        Publication::create($publication_6_93);
+        Publication::create($publication_6_94);
+        Publication::create($publication_6_95);
+        Publication::create($publication_6_96);
+        Publication::create($publication_6_97);
+        Publication::create($publication_6_98);
+        Publication::create($publication_6_99);
+        Publication::create($publication_6_100);
+
+        Publication::create($publication_6_100);
+        Publication::create($publication_6_101);
+        Publication::create($publication_6_102);
+        Publication::create($publication_6_103);
+        Publication::create($publication_6_104);
+        Publication::create($publication_6_105);
+        Publication::create($publication_6_106);
+        Publication::create($publication_6_107);
+        Publication::create($publication_6_108);
+        Publication::create($publication_6_109);
+        Publication::create($publication_6_110);
+
+        Publication::create($publication_6_111);
+        Publication::create($publication_6_112);
+        Publication::create($publication_6_113);
+        Publication::create($publication_6_114);
+        Publication::create($publication_6_115);
+        Publication::create($publication_6_116);
+        Publication::create($publication_6_117);
+        Publication::create($publication_6_118);
+        Publication::create($publication_6_119);
+        Publication::create($publication_6_120);
+
+        Publication::create($publication_6_121);
+        Publication::create($publication_6_122);
+        Publication::create($publication_6_123);
+        Publication::create($publication_6_124);
+        Publication::create($publication_6_125);
+        Publication::create($publication_6_126);
+        Publication::create($publication_6_127);
+        Publication::create($publication_6_128);
+        Publication::create($publication_6_129);
+        Publication::create($publication_6_130);
+
+        Publication::create($publication_6_131);
+        Publication::create($publication_6_132);
+        Publication::create($publication_6_133);
+        Publication::create($publication_6_134);
+        Publication::create($publication_6_135);
+        Publication::create($publication_6_136);
+        Publication::create($publication_6_137);
+        Publication::create($publication_6_138);
+
+
+
+
+
+
+
+
     }
 }

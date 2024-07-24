@@ -20,7 +20,7 @@
                             <div class="col-md-8 col-sm-12">
                                 <div class="blog-detail card-box overflow-hidden mb-30">
                                     <div class="blog-img">
-                                        <img src="{{ asset('storage/' . $article->media_url) }}" alt="">
+                                        <img src="{{config('global.S3_url').$article->media_url }}" alt="">
                                     </div>
                                     <h4 style="margin: 20px">{{ $article->titre }}</h4>
 
@@ -92,7 +92,7 @@
                                         <a class="list-group-item d-flex align-items-center justify-content-between"
                                             href="#">
                                             @if ($article->user->profil_url)
-                                                <img src="{{ asset('storage/'.$article->user->profil_url) }} "
+                                                <img src="{{ config('global.S3_url').$article->user->profil_url }} "
                                                 style="width: 70px; height: 70px;" alt="">
                                             @else
                                                 <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }} "

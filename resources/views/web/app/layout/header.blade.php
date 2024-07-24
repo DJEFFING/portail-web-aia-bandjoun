@@ -12,14 +12,14 @@
         <nav id="navbar" class="navbar">
             <ul>
 
-                <li><a href="/" @if ($page == 0) class="active" @endif>Acceuil</a></li>
+                <li><a href="/" @if ($page == 0) class="active" @endif>Accueil</a></li>
                 <li><a href="{{ route('web.apropos') }}" @if ($page == 1) class="active" @endif>Présentation</a></li>
 
 
                 <!-- Pole Et Equipe de recherche -->
                     <li class="dropdown">
                         <a href="#" @if ($page == 2 || $page == 3 || $page == 4 || $page == 5 || $page == 6 || $page == 10) class="active" @endif>
-                            <span>RECHERCHE</span>
+                            <span>RECHERCHES</span>
                             <i class="bi bi-chevron-down dropdown-indicator"></i>
                         </a>
                         <ul>
@@ -27,7 +27,7 @@
                             <li><a href="{{ route('web.equipes') }}" @if ($page == 4) class="active" @endif>Equipes</a></li>
                             <li><a href="{{ route('web.axes') }}" @if ($page == 10) class="active" @endif>Axes de recherche</a></li>
                             <li><a href=" {{ route('web.projets') }} " @if ($page == 5) class="active" @endif>Projets</a></li>
-                            <li><a href="{{ route('web.publications') }}" @if ($page == 6) class="active" @endif>Publication</a></li>
+                            <li><a href="{{ route('web.publications') }}" @if ($page == 6) class="active" @endif>Publications</a></li>
                             <li><a href="{{ route('web.evernement') }}" @if ($page == 2) class="active" @endif>Evenements</a></li>
                         </ul>
                     </li>
@@ -47,7 +47,7 @@
 
                     </ul>
                 </li>
-                <li><a href="{{ route('web.contact') }}" @if ($page == 9) class="active" @endif>Contact</a></li>
+                <li><a href="{{ route('web.contact') }}" @if ($page == 9) class="active" @endif>Contacts</a></li>
             </ul>
         </nav><!-- .navbar -->
 

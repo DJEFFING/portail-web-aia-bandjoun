@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('equipes', function (Blueprint $table) {
             $table->id();
-            $table->string("titre");
+            $table->string("titre")->nullable();
             $table->string("code_equipe")->nullable();
-            $table->longText("description_1");
-            $table->longText("description_2");
-            $table->string("media_url");
+            $table->longText("description_1")->nullable();
+            $table->longText("description_2")->nullable();
+            $table->string("media_url")->nullable();
             $table->unsignedBigInteger("user_id")->unique();
-            $table->unsignedBigInteger("pole_recherche_id");
+            $table->unsignedBigInteger("pole_recherche_id")->nullable();
             $table->boolean("status")->default(false);
 
             $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade");

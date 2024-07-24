@@ -7,9 +7,9 @@
             style="background-image: url('{{ asset('asset_web/assets/img/footer_and_head.jpeg') }}');">
             <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-                <h2>Contact</h2>
+                <h2>Contacts</h2>
                 <ol>
-                    <li><a href="{{ route('web.acceuil') }}">Acceuil</a></li>
+                    <li><a href="{{ route('web.acceuil') }}">Accueil</a></li>
                     <li>Contact</li>
                 </ol>
 

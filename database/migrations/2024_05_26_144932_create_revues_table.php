@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('revues', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("pole_recherche_id");
-            $table->string("titre");
-            $table->longText("description");
+            $table->string("titre")->nullable();
+            $table->longText("description")->nullable();
             $table->boolean("status")->default(false);
 
             $table->foreign("pole_recherche_id")->references("id")->on("pole_recherches")->onDelete("cascade");

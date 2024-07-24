@@ -23,8 +23,6 @@ class EquipeSeeder extends Seeder
             "description_2" => "Nos recherches sont axées sur des problèmes de recherche et développement
             couvrant les domaines de l’Automatique des Systèmes non Linéaires et de Génie
             Biomédical et Instrumentation Industrielle.",
-
-            "media_url" => "media.png",
             "code_equipe" => "ATS",
             "user_id" => 1,
             "pole_recherche_id" => 1,
@@ -40,8 +38,6 @@ class EquipeSeeder extends Seeder
             "description_2" => "Nos recherches sont axées sur des problèmes de développement couvrant les domaines de
             Production de l’Énergie Électrique (méthodes de production optimale dans un
             environnement hydro dominant), du Contrôle du Réseau Électrique et Stabilité",
-
-            "media_url" => "media.png",
             "code_equipe" => "PDER",
             "user_id" => 16,
             "pole_recherche_id" => 1,
@@ -62,8 +58,6 @@ class EquipeSeeder extends Seeder
             l’Automatique des systèmes Hybrides (analyse et simulation de Systèmes Dynamiques
             Hybrides), du Développement TICE et des techniques de « Elearning », des Systèmes
             d’Information Géographiques, des technologies mobiles, et des Web-Services,",
-
-            "media_url" => "media.png",
             "code_equipe" => "STIC",
             "user_id" => 20,
             "pole_recherche_id" => 1,

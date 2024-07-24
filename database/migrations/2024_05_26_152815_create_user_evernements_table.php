@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('user_evernements', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("user_id");
-            $table->unsignedBigInteger("evernement_id");
-            $table->unsignedBigInteger("role_evernement_id");
+            $table->unsignedBigInteger("user_id")->nullable();
+            $table->unsignedBigInteger("evernement_id")->nullable();
+            $table->unsignedBigInteger("role_evernement_id")->nullable();
             $table->boolean("status")->default(false);
 
 

@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('type_publications', function (Blueprint $table) {
             $table->id();
-            $table->string("nom");
+            $table->string("nom")->nullable();
             $table->string("description")->nullable();
             $table->timestamps();
-        }); 
+        });
     }
 
     /**

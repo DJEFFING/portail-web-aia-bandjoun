@@ -6,10 +6,10 @@
             style="background-image: url(' {{ asset('asset_web/assets/img/footer_and_head.jpeg') }} ');">
             <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-                <h2> Evénements</h2>
+                <h2> EVENEMENT</h2>
                 <ol>
                     <li><a href="{{ route('web.acceuil') }}">Acceuil</a></li>
-                    <li> Evénements</li>
+                    <li> EVENEMENT</li>
                 </ol>
 
             </div>
@@ -20,8 +20,8 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
-                    <h2>Nos  Evénements</h2>
-                    <p>Consultez ici la liste complète nos événements.</p>
+                    <h2>Nos  Evènements</h2>
+                    <p>Consultez ici la liste complète nos évènements passé et futur.</p>
                 </div>
 
                 <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"
@@ -33,7 +33,7 @@
                             <li data-filter=".filter-{{ $type->nom }}">{{ $type->nom }}</li>
                         @empty
                             <center>
-                                <p>Pas d'Événement</p>
+                                <p>Pas d'Evènement</p>
                             </center>
                         @endforelse
 
@@ -46,14 +46,14 @@
                                 <div
                                     class="col-lg-4 col-md-6 portfolio-item @foreach ($evernement->types as $type) filter-{{ $type->nom }} @endforeach ">
                                     <div class="portfolio-content h-100">
-                                        <img src=" {{ asset('storage/' . $evernement->media_url) }} " class="img-fluid"
+                                        <img src=" {{ config('global.S3_url'). $evernement->media_url }} " class="img-fluid"
                                             alt="">
 
                                         <div class="portfolio-info">
                                             <h4>{{ $evernement->date }}</h4>
                                             <h4>{{ $evernement->ville }}</h4>
                                             <p>{{ $evernement->titre }}</p>
-                                            <a href=" {{ asset('storage/' . $evernement->media_url) }}"
+                                            <a href=" {{ config('global.S3_url'). $evernement->media_url }}"
                                                 title="{{ $evernement->titre }}" data-gallery="portfolio-gallery-remodeling"
                                                 class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                             <a href="{{ route('web.show-evernement',$evernement->id) }}" title="More Details" class="details-link"><i
@@ -65,13 +65,13 @@
                             @else
                                 <div class="col-lg-4 col-md-6 portfolio-item filter-{{ $evernement->types[0]->nom }} ">
                                     <div class="portfolio-content h-100">
-                                        <img src="  {{ asset('storage/' . $evernement->media_url) }} " class="img-fluid"
+                                        <img src="  {{ config('global.S3_url'). $evernement->media_url }} " class="img-fluid"
                                             alt="">
                                         <div class="portfolio-info">
                                             <h4>{{ $evernement->date }}</h4>
                                             <h4>{{ $evernement->ville }}</h4>
                                             <p>{{ $evernement->titre }}</p>
-                                            <a href="  {{ asset('storage/' . $evernement->media_url) }} "
+                                            <a href="  {{ config('global.S3_url'). $evernement->media_url }} "
                                                 title="{{ $evernement->titre }}" data-gallery="portfolio-gallery-remodeling"
                                                 class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                             <a href="{{ route('web.show-evernement',$evernement->id) }}" title="More Details" class="details-link"><i

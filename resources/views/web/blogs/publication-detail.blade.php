@@ -28,7 +28,7 @@
                         <article class="blog-details">
 
                             <div class="post-img">
-                                <img src="{{ asset('storage/' . $publication->media_url) }}" alt=""
+                                <img src="{{ config('global.S3_url'). $publication->media_url }}" alt=""
                                     class="img-fluid">
                             </div>
 
@@ -44,14 +44,20 @@
                                     @empty
                                     @endforelse
 
-
                                     <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a
                                             href="blog-details.html"><time
                                                 datetime="2020-01-01">{{ $annee->annee_publication }}</time></a>
                                     </li>
+
                                     <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a
                                             href="blog-details.html"> {{ count($publication->commentaires) }} Comments</a>
                                     </li>
+
+                                    @if ($publication->lien_externe)
+                                    <li>
+                                        <a href="{{$publication->lien_externe}}" class="btn btn-primary text-white">consluter</a>
+                                    </li>
+                                    @endif
                                 </ul>
                             </div><!-- End meta top -->
 
@@ -61,12 +67,11 @@
                                     <p>{!! $publication->description_2 !!}</p>
 
                                 </div>
-                                @if ($publication->lien_externe)
-                                <a href="{{$publication->lien_externe}}" class="btn btn-primary">voir plus</a>
-                                @endif
 
 
-                            </div><!-- End post content -->
+
+                            </div>
+                            <!-- End post content -->
 
                             <div class="meta-bottom">
 
@@ -74,15 +79,18 @@
                             <!-- End meta bottom -->
 
                             <!-- documents -->
-                            <div class="row">
-                                <label for="" class="col-md-2" ><span class="btn btn-success">Documents</span></label>
-                                @forelse ($publication->documents as $document)
-                                    <a href="{{route('admin.publication.file_download',$document->id)}}" class="col-md-4">{{$document->titre}} (pdf)</a>
-                                @empty
+                            @if ($publication->documents->isNotEmpty())
+                                <div class="row">
+                                    <label for="" class="col-md-2" ><span class="btn btn-primary">Documents</span></label>
+                                    @forelse ($publication->documents as $document)
+                                        <a href="{{route('web.file_download',$document->id)}}" class="col-md-4">{{ Str::limit($document->titre, 30, '...') }} (pdf) <i class="bi bi-download"></i></a>
+                                    @empty
 
-                                @endforelse
+                                    @endforelse
 
-                            </div>
+                                </div>
+                            @endif
+
                             <!-- End documents -->
 
                         </article><!-- End blog post -->
@@ -92,7 +100,7 @@
                             <div class="post-author d-flex align-items-center">
 
                                 @if ($user->profil_url)
-                                    <img src="{{ asset('storage/' . $user->profil_url) }}"
+                                    <img src="{{ config('global.S3_url'). $user->profil_url }}"
                                         class="p-3 card-img-top rounded-circle img-fluid w-50 h-100" alt="...">
                                 @else
                                     <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }} "
@@ -206,7 +214,7 @@
                                     @forelse ($publicationSimilaire as $publicationItem)
                                         @if (!($publication->id == $publicationItem->id))
                                             <div class="post-item mt-3">
-                                                <img src="{{ asset('storage/' . $publicationItem->media_url) }}"
+                                                <img src="{{ config('global.S3_url'). $publicationItem->media_url }}"
                                                     alt="">
                                                 <div>
                                                     <h4><a

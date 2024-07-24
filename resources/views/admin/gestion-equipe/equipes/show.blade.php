@@ -21,7 +21,7 @@
                             <div class="col-md-8 col-sm-12">
                                 <div class="blog-detail card-box overflow-hidden mb-30">
                                     <div class="blog-img">
-                                        <img src="{{ asset('storage/' . $equipe->media_url) }}" alt="">
+                                        <img src="{{config('global.S3_url').$equipe->media_url}}" alt="">
                                     </div>
                                     <div class="blog-caption">
                                         <h4>{{ $equipe->titre }}</h4>
@@ -38,7 +38,7 @@
                                         <a class="list-group-item d-flex align-items-center justify-content-between"
                                             href="{{ route('admin.user.show',$equipe->user->id) }}">
                                             @if ($equipe->user->profil_url)
-                                                <img src="{{ asset(asset('storage/'.$equipe->user->profil_url)) }} "
+                                                <img src="{{ config('global.S3_url').$equipe->user->profil_url }} "
                                                 class="avatar-photo" style="width: 70px; height: 70px;" alt="">
                                             @else
                                                 <img src="{{ asset(asset('asset_admin/vendors/images/photo-avatar-profil.png')) }} "

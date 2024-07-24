@@ -21,8 +21,13 @@
 
                 <div class="row position-relative">
 
+                    @if ($apropos->image_url)
                     <div class="col-lg-7 about-img"
-                        style="background-image: url( {{ asset('storage/' . $apropos->image_url) }} );"></div>
+                        style="background-image: url( {{ config('global.S3_url'). $apropos->image_url }} );"></div>
+                    @else
+                    <div class="col-lg-7 about-img"
+                        style="background-image: url( {{ asset('asset_web/ur-aia-img/img_4.jpg') }} );"></div>
+                    @endif
 
                     <div class="col-lg-7">
                         <h2>{{ $apropos->titre }}</h2>
@@ -123,13 +128,13 @@
                                 <div class="col">
                                     <div class="row-xl-5">
                                         <div class="card-bg"
-                                            style="background-image: url({{ asset('storage/' . $poleRecherche->media_url) }});">
+                                            style="background-image: url({{ config('global.S3_url'). $poleRecherche->media_url }});">
                                         </div>
                                     </div>
                                     <div class="row-xl-7 d-flex align-items-center">
                                         <div class="card-body">
                                             <p><span
-                                                    style="background-color: #00aefe; color:white; text-align: center; width: 200px; padding: 5px; margin-right: 10px;">Reponsable
+                                                    style="background-color: #00aefe; color:white; text-align: center; width: 200px; padding: 5px; margin-right: 10px;">Responsable
                                                 </span> {{ $poleRecherche->user->name }}
                                                 {{ $poleRecherche->user->prenom }}</p>
                                             <p></p><br>
@@ -158,7 +163,7 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
-                    <h2>{{ count($equipes) }} Equipe</h2>
+                    <h2>{{ count($equipes) }} Equipes</h2>
                 </div>
 
                 <div class="row gy-4">
@@ -170,14 +175,14 @@
                                 <div class="row">
                                     <div class="col-xl-5">
                                         <div class="card-bg d-flex"
-                                            style="background-image: url({{ asset('storage/' . $equipe->media_url) }}); ">
+                                            style="background-image: url({{ config('global.S3_url'). $equipe->media_url }}); ">
                                         </div>
                                     </div>
                                     <div class="col-xl-7 d-flex align-items-center">
                                         <div class="card-body">
                                             <h4 class="card-title">{{ $equipe->titre }}</h4>
                                             <p><span
-                                                    style="background-color: #00aefe; padding: 5px; color:white; text-align: center; width: 200px; margin-right: 10px;">Reponsable
+                                                    style="background-color: #00aefe; padding: 5px; color:white; text-align: center; width: 200px; margin-right: 10px;">Responsable
                                                 </span> {{ $equipe->user->name }} {{ $equipe->user->prenom }}</p>
                                             <p></p><br>
                                             <p>{{ Str::limit($equipe->description_1, 200, '...') }}</p>
@@ -216,14 +221,14 @@
                                 <div class="row">
                                     <div class="col-xl-5">
                                         <div class="card-bg d-flex"
-                                            style="background-image: url({{ asset('storage/' . $axe->media_url) }}); ">
+                                            style="background-image: url({{ config('global.S3_url'). $axe->media_url }}); ">
                                         </div>
                                     </div>
                                     <div class="col-xl-7 d-flex align-items-center">
                                         <div class="card-body">
                                             <h4 class="card-title">{{ $axe->titre }}</h4>
                                             <p><span
-                                                    style="background-color: #00aefe; padding: 5px; color:white; text-align: center; width: 200px; margin-right: 10px;">Reponsable
+                                                    style="background-color: #00aefe; padding: 5px; color:white; text-align: center; width: 200px; margin-right: 10px;">Responsable
                                                 </span> {{ $axe->user->name }} {{ $axe->user->prenom }}</p>
                                             <p></p><br>
                                             <p>{{ Str::limit($axe->description_1, 200, '...') }}</p>
@@ -262,7 +267,7 @@
                             <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
                                 <div class="member-img">
                                     @if ($user->profil_url)
-                                        <img src=" {{ asset('storage/' . $user->profil_url) }} " class="img-fluid"
+                                        <img src=" {{ config('global.S3_url'). $user->profil_url }} " class="img-fluid"
                                             alt="">
                                     @else
                                         <img src=" {{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }} "
@@ -307,7 +312,7 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
-                    <h2>Nos Partenaire</h2>
+                    <h2>Nos Partenaires</h2>
                     <p>Decouvrez ici Nos Partenaires</p>
                 </div>
 
@@ -318,7 +323,7 @@
                             <div class="swiper-slide">
                                 <div class="testimonial-wrap">
                                     <div class="testimonial-item">
-                                        <img src="{{ asset('storage/' . $partenaire->logo_url) }}" class="testimonial-img"
+                                        <img src="{{ config('global.S3_url').$partenaire->media }}" class="testimonial-img"
                                             alt="">
                                         <h3>{{ $partenaire->nom }}</h3>
                                         <h4>Ceo &amp; Founder</h4>

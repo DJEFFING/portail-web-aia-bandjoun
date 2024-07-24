@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            $table->string("titre");
+            $table->string("titre")->nullable();
             $table->string("description")->nullable();
-            $table->string("document_url");
-            $table->unsignedBigInteger("publication_id");
+            $table->string("document_url")->nullable();
+            $table->unsignedBigInteger("publication_id")->nullable();
 
             $table->foreign("publication_id")->references("id")->on("publications")->onDelete("cascade");
             $table->timestamps();

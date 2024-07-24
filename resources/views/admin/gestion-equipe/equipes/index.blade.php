@@ -36,7 +36,7 @@
                                                     <div class="col-lg-4 col-md-12 col-sm-12">
                                                         <div class="blog-img">
                                                             {{-- <img src="{{ Storage::url($equipe->media_url)}}" alt="" class="bg_img"> --}}
-                                                            <img src="{{asset('storage/'.$equipe->media_url)}}" alt="" class="bg_img">
+                                                            <img src="{{ config('global.S3_url').$equipe->media_url }}" alt="" class="bg_img">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-8 col-md-12 col-sm-12">

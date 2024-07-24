@@ -29,13 +29,22 @@ class ProjetController extends Controller
     public function store(Request $request)
     {
         // dd($request);
+        $originalName = $request->file('media_url')->getClientOriginalName();
+
+        // pour sauvegader les fichiers en fonction de l'environement
+        if (app()->environment(['local'])) {
+            $media = $request->file('media_url')->storeAs('projets', $originalName, 'public');
+        } else {
+            $media = $request->file('media_url')->storeAs('projets', $originalName, 's3');
+        }
+
         Projet::create([
             "titre" => $request->titre,
             "description_1" => $request->description_1,
             "description_2"=> $request->description_2,
             "date_debut" => $request->date_debut,
             "date_fin" => $request->date_fin,
-            "media_url" => $request->file('media_url')->store('projets','public'),
+            "media_url" => $media,
             "user_id" => $request->user_id,
             "pole_recherche_id" => $request->pole_recherche_id,
         ]);
@@ -73,8 +82,19 @@ class ProjetController extends Controller
     {
         // dd($request);
         if($request->hasFile("media_url")){
+
+                    // dd($request);
+        $originalName = $request->file('media_url')->getClientOriginalName();
+
+        // pour sauvegader les fichiers en fonction de l'environement
+        if (app()->environment(['local'])) {
+            $media = $request->file('media_url')->storeAs('projets', $originalName, 'public');
+        } else {
+            $media = $request->file('media_url')->storeAs('projets', $originalName, 's3');
+        }
+
             $projet->update([
-                "media_url" => $request->file('media_url')->store('projets','public'),
+                "media_url" => $media,
             ]);
         }
 

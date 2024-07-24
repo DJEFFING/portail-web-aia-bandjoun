@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('type_evernements', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("evernement_id");
-            $table->unsignedBigInteger("type_id");
+            $table->unsignedBigInteger("evernement_id")->nullable();
+            $table->unsignedBigInteger("type_id")->nullable();
             $table->boolean("status")->default(false);
 
             $table->foreign("evernement_id")->references("id")->on("evernements")->onDelete("cascade");

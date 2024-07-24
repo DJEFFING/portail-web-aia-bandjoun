@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
-            $table->integer("note_value");
-            $table->unsignedBigInteger("evernement_id");
+            $table->integer("note_value")->nullable();
+            $table->unsignedBigInteger("evernement_id")->nullable();
             $table->foreign("evernement_id")->references("id")->on("evernements")->onDelete("cascade");
             $table->boolean("status")->default(false);
 

@@ -8,7 +8,7 @@
                         <a href="modal" data-toggle="modal" data-target="#{{ 'update' . $user->id }}"
                             class="edit-avatar"><i class="fa fa-pencil"></i></a>
                     @endif
-                    <img src="{{ asset('storage/' . $user->profil_url) }}" alt="" class="avatar-photo">
+                    <img src="{{ config('global.S3_url'). $user->profil_url }}" alt="" class="avatar-photo">
                 </div>
             @else
                 <div class="profile-photo">
@@ -22,7 +22,7 @@
             @endif
 
             <h5 class="text-center h5 mb-0">
-                {{ $user->name }}
+                {{ $user->name }} {{ $user->prenom }}
                 @if ($user->getRole('admin'))
                     <span class="badge badge-danger">Admin</span>
                 @endif

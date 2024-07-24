@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('commentaire_publications', function (Blueprint $table) {
             $table->id();
-            $table->string("nom");
-            $table->string("email");
+            $table->string("nom")->nullable();
+            $table->string("email")->nullable();
             $table->string("site_web")->nullable();
-            $table->string("text");
+            $table->string("text")->nullable();
             $table->unsignedBigInteger("publication_id");
             $table->boolean("status")->default(false);
 

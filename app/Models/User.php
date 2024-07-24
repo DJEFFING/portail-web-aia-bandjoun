@@ -154,7 +154,7 @@ class User extends Authenticatable
             $projetResp = $this->projet->toArray();
         }
 
-        //les projet du Domaine de Recherche dont l'utilisateur est reponsable
+        //les projet du Domaine de Recherche dont l'utilisateur est Responsable
         if($this->poleRecherches->isNotEmpty() && $this->poleRecherches[0]->projets->isNotEmpty()){
             $projetPoleResp = $this->poleRecherches[0]->projets->toArray();
         }

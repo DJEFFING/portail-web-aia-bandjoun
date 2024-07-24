@@ -5,6 +5,10 @@
             <div class="alert alert-primary" style="margin: 10px;" role="alert">
                 {{ session('message') }}
             </div>
+        @elseif(!empty(session('error')))
+            <div class="alert alert-danger" style="margin: 10px;" role="alert">
+                {{ session('error') }}
+            </div>
         @endif
     </div>
 
@@ -69,7 +73,7 @@
                 <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                     <span class="user-icon">
                         @if (Auth::user()->profil_url)
-                        <img src="{{ asset('storage/' . Auth::user()->profil_url) }}" alt="">
+                        <img src="{{ config('global.S3_url').Auth::user()->profil_url }}" alt="">
                         @else
                         <img src="{{ asset('asset_admin/vendors/images/photo-avatar-profil.png') }}" alt="">
                         @endif

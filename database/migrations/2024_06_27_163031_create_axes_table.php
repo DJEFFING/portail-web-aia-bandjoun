@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('axes', function (Blueprint $table) {
             $table->id();
 
-            $table->string("titre");
+            $table->string("titre")->nullable();
             $table->string("code_axe")->nullable();
-            $table->longText("description_1");
-            $table->longText("description_2");
-            $table->string("media_url");
+            $table->longText("description_1")->nullable();
+            $table->longText("description_2")->nullable();
+            $table->string("media_url")->nullable();
             $table->unsignedBigInteger("user_id")->unique();
             $table->unsignedBigInteger("equipe_id");
             $table->boolean("status")->default(false);
