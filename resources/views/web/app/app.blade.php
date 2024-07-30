@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="google-site-verification" content="BkNy-0RTP3JBK_SeUlO_szjeuu50sZ3vJFeVMggvXxA" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>UR-AIA BANDJOUN WEB SITE</title>

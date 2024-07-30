@@ -3,6 +3,7 @@
 <head>
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
+	<meta name="google-site-verification" content="BkNy-0RTP3JBK_SeUlO_szjeuu50sZ3vJFeVMggvXxA" />
 	<title>UR-AIA BANDJOUN ADMIN</title>
 
 	<!-- Site favicon -->
